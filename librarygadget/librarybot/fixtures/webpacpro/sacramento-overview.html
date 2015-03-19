@@ -1,0 +1,328 @@
+<!-- patronview_web.html -->
+
+
+<html  dir="LTR">
+<head>
+<title>Sacramento Public Library                                            /All Sacto</title>
+<base target="_self"/>
+<link rel="stylesheet" type="text/css" href="/scripts/iiiStyles.css" />
+<link rel="stylesheet" type="text/css" href="/screens/sacramento.css" />
+<link rel="shortcut icon" type="ximage/icon" href="/screens/favicon.ico" />
+<script language="JavaScript" type="text/javascript" src="/scripts/common.js"></script>
+<script language="JavaScript" type="text/javascript" src="/scripts/webbridge.js"></script>
+<script language="JavaScript">
+<!-- Hide the JS
+startTimeout(300000, "/search");
+// -->
+</script>
+
+<noscript>
+<meta http-equiv="Refresh" content="300;URL=/search" />
+</noscript>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+</head>
+<body bgcolor="#FFFFFF" >
+<!--toplogo.html begin-->
+<!--[if IE 7]><link href="/screens/ie7.css" rel="stylesheet" type="text/css"><![endif]-->
+<!--[if IE 6]><link href="/screens/ie.css" rel="stylesheet" type="text/css"><![endif]-->
+ 
+  <div id="container">  
+  <div id="banner">
+   <a href="http://www.saclibrary.org" title="Library Home Page"><img src="/screens/colorlogo2.gif" alt="Sacramento Public Library Logo" width="55" height="51"></a>
+   <img class="splcopy" src="/screens/splcopy_opac.gif" alt="Sacramento Public Library" width="518" height="34">
+   <p class="rlinks"><a href="http://www.saclibrary.org/index.html"><strong>Library Home</strong></a><br>
+
+  <a href="/screens/help_faq.html"><strong>Help</strong></a></p>
+  </div>
+  <div id="nav">
+  <ul>
+   <li class="box grad first"><a href="/search~S51">Catalog</a></li>
+     <li class="box grad"><a href="/patroninfo~S51">My Account</a></li>
+     <li class="box grad"><a href="http://www.saclibrary.org/request/requestforpurchase.cfm">Suggest a Purchase</a></li>
+
+    <li class="box grad"><a href="/ftlist">New this Month</a></li>
+     <li class="box grad"><a href="/search*spi">Cat&aacute;logo en Espa&ntilde;ol</a></li>
+	</ul>
+</div>
+<div style="clear:both;">
+</div>
+<div id="iiiresults">
+<!--toplogo.html end--> 
+<span style="color:#912942; font-size:1em; font-weight:bold;">Welcome, you are logged in to Sacramento Public Library                                            /All Sacto as: BILLEY,  MONICA  V</span><BR>
+
+<br />
+<span style="float: right; padding-right: 15px;">
+<form>
+<a href="/logout~S51?" target="_self"><img src="/screens/logout.gif" alt="Log Out" border="0" /></a>
+<br />
+</form>
+</span>
+
+<!-- BEGIN SEARCH WIDGET -->
+<div align="center">
+
+<div  class="bibSearchtool">
+<script language="JavaScript" type="text/JavaScript">
+<!-- Hide the JS
+var savedTag;
+var savedSearch;
+var savedExactSearch = null; 
+
+var savedScope
+var sortButtonText = null;
+
+var sortTypes = new Array();
+var sortLabels = new Array();
+sortTypes[0] = "t";
+sortLabels[0] = "Title";
+sortTypes[1] = "a";
+sortLabels[1] = "Author";
+sortTypes[2] = "c";
+sortLabels[2] = "Year";
+sortTypes[3] = "r";
+sortLabels[3] = "Reverse Year";
+sortTypes[4] = "n";
+sortLabels[4] = "Call Number";
+sortTypes[5] = "m";
+sortLabels[5] = "Material Type";
+sortLabels[6] = "System Sorted";
+sortTypes[6] = "-";
+var sortSelectedValue = "6";
+var sortExactBrowseURL = ""
+var nonSortTags = "XYZprWw"
+// Unhide the JS -->
+</script>
+<form name="searchtool" target="_self" action="/search~S51/">
+      <select name="searchtype" id="searchtype" onChange="initSort()">
+
+        <option value="a"> Author</option>
+        <option value="t"> Title</option>
+        <option value="s"> Journal Title</option>
+        <option value="h"> Genre</option>
+        <option value="d"> Subject</option>
+
+        <option value="c"> Call No</option>
+        <option value="i"> ISBN</option>
+        <option value="X" selected="selected"> Keyword</option>
+      </select>
+      &nbsp;
+      <input type="text" name="searcharg" size="30" maxlength="75" value="" />
+
+      &nbsp;
+      <select name="searchscope">
+        <option value="38"> Adult Items</option>
+        <option value="39"> Children's Items</option>
+        <option value="40"> Teen Items</option>
+        <option value="41"> Arbuckle</option>
+
+        <option value="1"> Arcade</option>
+        <option value="2"> Arden-Dimick</option>
+        <option value="3"> Barber</option>
+        <option value="8"> Belle Cooledge</option>
+        <option value="4"> Browns</option>
+
+        <option value="5"> Carmichael</option>
+        <option value="6"> Central</option>
+        <option value="7"> Colonial Heights</option>
+        <option value="35"> Courtland</option>
+        <option value="9"> Colusa</option>
+
+        <option value="10"> Del Paso Heights</option>
+        <option value="11"> Elk Grove</option>
+        <option value="12"> Fair Oaks</option>
+        <option value="13"> Folsom</option>
+        <option value="14"> Franklin</option>
+
+        <option value="15"> Galt</option>
+        <option value="42"> Grimes</option>
+        <option value="16"> Isleton</option>
+        <option value="17"> Martin Luther King, Jr</option>
+        <option value="43"> Maxwell</option>
+
+        <option value="18"> McClatchy</option>
+        <option value="19"> McKinley</option>
+        <option value="47"> Norman R Siefkin</option>
+        <option value="20"> North Highlands-Antelope</option>
+        <option value="36"> North Natomas</option>
+
+        <option value="21"> North Sacramento-Hagginwood</option>
+        <option value="22"> Orangevale</option>
+        <option value="23"> Pleasant Grove</option>
+        <option value="44"> Princeton</option>
+        <option value="24"> Rancho Cordova</option>
+
+        <option value="25"> Rio Linda</option>
+        <option value="45"> Sacramento Room</option>
+        <option value="26"> South Natomas</option>
+        <option value="27"> Southgate</option>
+        <option value="46"> Stonyford</option>
+
+        <option value="28"> Sutter</option>
+        <option value="29"> Sutter County (Yuba City)</option>
+        <option value="31"> Sylvan Oaks</option>
+        <option value="32"> Valley Hi-North Laguna</option>
+        <option value="33"> Walnut Grove</option>
+
+        <option value="48"> Williams</option>
+        <option value="34"> Woodland Public Library</option>
+        <option value="49"> All Colusa County Libraries</option>
+        <option value="50"> All Folsom Public Libraries</option>
+        <option value="51" selected="selected"> All Sacramento Public Libraries</option>
+
+        <option value="52"> All Sutter County Libraries</option>
+        <option value="37"> All Libraries</option>
+      </select>
+      &nbsp;
+
+<span id="sort_cell">
+</span>
+
+<script language="JavaScript" type="text/JavaScript">
+<!-- Hide the JS
+initSort();
+// Unhide the JS -->
+
+</script>
+      <input type="hidden" name="SORT" value="D" /><input type="hidden" name="extended" value="0" /><input type="submit" name="SUBMIT" value="Search" />
+<div>
+      <input type="checkbox" name="availlim" value="1"  /> Limit results to available items.<br/>
+</div>
+</form>
+<div></div></div>
+</div>
+
+<!-- END SEARCH WIDGET -->
+
+<br>
+
+<table width="100%" align="center" style="clear: both;">
+
+<tr>
+
+<td align="center" width="35%">
+
+<div class="patMainFuncs">
+
+<div class="patStatusLinks">
+
+
+<a href="/patroninfo~S51/1443596/holds" target="_self">31 requests (holds). 6 ready for pickup.</a>
+
+
+
+
+
+
+
+<a href="/patroninfo~S51/1443596/overdues" target="_self">$7.50 in unpaid fines and bills</a>
+
+
+
+
+
+<a href="/patroninfo~S51/1443596/items" target="_self">36 Items currently checked out</a>
+
+
+
+
+
+
+
+</div>
+
+<div class="patHelpLinks">
+
+<a href="/screens/help_renew.html">Help with Renewals</a>
+
+
+</div>
+
+</div>
+
+</td>
+
+<td align="center" width="40%">
+
+<div class="patNameAddress">
+
+
+<strong>BILLEY,  MONICA  V</strong><br />
+7332 DIEPPE WAY<br />
+SACRAMENTO CA 95842<br />
+<br />
+EXP DATE:10-22-2009<br />
+
+</div>
+
+</td>
+
+
+
+<td align="left">
+
+
+<div class="patSearchLinks">
+
+</div>
+
+</td>
+
+</tr>
+
+</table>
+
+<div class="patActionsLinks">
+
+
+<a href="#" onClick="return open_new_window( '/patroninfo~S51/1443596/newpin' )"><img src="/screens/pat_pin.gif" alt="Modify your PIN" border="0" /></a>
+
+
+
+<a href="#" onClick="return open_new_window( '/patroninfo~S51/1443596/modpinfo' )"><img src="/screens/pat_info.gif" alt="Modify Personal Information" border="0" /></a>
+
+
+
+
+
+
+<a href="/patroninfo~S51/1443596/readinghistory" target="_self"><img src="/screens/reading_hist.gif" alt="Reading History" border="0"></a>
+
+
+<a href="/patroninfo~S51/1443596/searchcatalog" target="_self"><img src="/screens/pat_search.gif" alt="Search the Catalog" border="0" /></a>
+
+
+</div>
+
+<div class="patFuncArea">
+
+
+</div>
+<p><strong>If you have questions about your library account, you may call:</strong><br>
+Colusa County Library - 530-458-7671<br>
+Folsom Public Library - 916-355-7374<br>
+
+Sacramento Public Library - 916-264-2789 Toll-free: 1-800-955-5121<br>
+Sutter County Library - 530-822-7137<br>
+Woodland Public Library - 530-661-5981
+</p>
+<p>For address changes, please e-mail us at contact@saclibrary.org to change your address. Please include your name and library card number with your address change request. </p>
+
+<br />
+<!-- botlogo.html begin-->
+<p class="ftr">Can't find it?  Ask a librarian, <a href="mailto:contact@saclibrary.org">email</a>, or <a href="http://www.saclibrary.org/about_lib/contact_us.html">call</a> us.</p>
+
+</div>
+ <div id="footer">
+  Copyright &copy; 2007-2008. Sacramento Public Library 828 I Street, Sacramento, CA 95814 (916) 264-2920.<br>
+  <a href="mailto:contact@saclibrary.org">contact@saclibrary.org</a>
+</div>	
+</div>
+<!-- botlogo.html end-->
+
+
+</body>
+
+</html>
+
+<!--this is customized <screens/patronview_web.html>-->

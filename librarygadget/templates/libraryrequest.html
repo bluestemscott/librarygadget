@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Library Gadget: Library Request</title>
+<script type="text/javascript" src="/site_media/librarygadget.js"></script>
+
+
+</script>
+{% endblock %}
+
+{% block content %}
+    <div class="section">
+    <p>
+    Most libraries can be added within a day or two. Others, however, use uncommon systems and may take
+    much longer (if ever). I'll try to get back to you either way within a week.
+    </p>
+    </div>
+
+    <div class="section">
+
+    {{ form.non_field_errors }}
+	<form id="requestform" method="POST">
+        {% csrf_token %}
+        <p>{{ form.libraryname.errors }} {{ form.libraryname.label_tag }} {{ form.libraryname }}</p>
+        <p>{{ form.catalogurl.errors }} {{ form.catalogurl.label_tag }} {{ form.catalogurl }}</p>
+
+        <div id="optional">
+        <p>Optional, but extremely helpful information.
+        </p>
+        <p>{{ form.name.errors }} {{ form.name.label_tag }} {{ form.name }}</p>
+        <p>{{ form.patronid.errors }} {{ form.patronid.label_tag }} {{ form.patronid }}</p>
+        <p>{{ form.password.errors }}{{ form.password.label_tag }} {{ form.password }}</p>
+        <p>{{ form.renewal_item.errors }}{{ form.renewal_item.label_tag }} {{ form.renewal_item }}</p>
+        </div>
+		
+		<input type="submit" class="button" value="Request Library"/>
+	</form>
+
+
+
+
+    </div>
+{% endblock %}

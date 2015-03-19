@@ -1,0 +1,379 @@
+libraries.db
+A. K. Smiley Public Library,http://catalog.akspl.org/ipac20/ipac.jsp?menu=account,horizon
+Ada Community Library,http://66.195.188.172/ipac20/ipac.jsp?menu=account,horizon
+Alameda Free Library,http://207.215.17.3/ipac20/ipac.jsp?menu=account,horizon
+Albany Public Library,http://ipac.uhls.org/ipac20/ipac.jsp?menu=account,horizon
+Altamont Free Library,http://ipac.uhls.org/ipac20/ipac.jsp?menu=account,horizon
+Ames Public Library,http://catalog.amespubliclibrary.org/ipac20/ipac.jsp?menu=account,horizon
+Beaumont Public Library System,http://beaumont.ipac.dynixasp.com/ipac20/ipac.jsp?menu=account,horizon
+Bellingham Public Library,http://216.57.213.200/ipac20/ipac.jsp?menu=account,horizon
+Benbrook Public Library,http://fwl.ipac.dynixasp.com/ipac20/ipac.jsp?menu=account,horizon
+Berks County Public Libraries,http://ipac.reading.lib.pa.us/ipac20/ipac.jsp?menu=account,horizon
+Boston Public Library,http://catalog.mbln.org/ipac20/ipac.jsp?menu=account,horizon
+Bracknell Forest Libraries,http://bracknell-hip.epixtech.co.uk/ipac20/ipac.jsp?menu=account,horizon
+Bridgeport Public Library,http://bridgeport_hip1.biblio.org/ipac20/ipac.jsp?menu=account,horizon
+Camrose Public Library,http://ipac.prl.ab.ca/ipac20/ipac.jsp?menu=account,horizon
+Carnegie-Stout Public Library,http://hip.dubuque.lib.ia.us/ipac20/ipac.jsp?menu=account,horizon
+Cass District Library,http://cassd.ipac.sirsidynix.net/ipac20/ipac.jsp?menu=account,horizon
+Central Rappahannock Regional Library,http://ipac.librarypoint.org/ipac20/ipac.jsp?menu=account,horizon
+Centre County Library,http://search.ccfpl.org/ipac20/ipac.jsp?menu=account,horizon
+City of Charles Sturt,http://lib.charlessturt.sa.gov.au/ipac20/ipac.jsp?menu=account,horizon
+City of Port Adelaide Enfield Library,http://elibrary.portenf.sa.gov.au/ipac20/ipac.jsp?menu=account,horizon
+City of Tea Tree Gully Library,http://webpac.teatreegully.sa.gov.au/ipac20/ipac.jsp?menu=account,horizon
+City of West Torrens Library,http://webcat.wtcc.sa.gov.au/ipac20/ipac.jsp?menu=account,horizon
+Coralville Public Library,http://coralcat.coralvillepubliclibrary.org/ipac20/ipac.jsp?menu=account,horizon
+Dayton Metro Library,http://hzportal.daytonmetrolibrary.org/ipac20/ipac.jsp?menu=account,horizon
+Demmer Memorial Library,http://vcat.wvls.lib.wi.us/ipac20/ipac.jsp?menu=account,horizon
+Didsbury Municipal Library,http://ipac.prl.ab.ca/ipac20/ipac.jsp?menu=account,horizon
+Drake Community Library,http://stewart.ipac.dynixasp.com/ipac20/ipac.jsp?menu=account,horizon
+Dryden Township Library,http://valcat.vlc.lib.mi.us/ipac20/ipac.jsp?menu=account,horizon
+Durham County Library,http://catalog.durhamcountylibrary.org/ipac20/ipac.jsp?menu=account,horizon
+East Brunswick Public Library,http://librarycatalog.ebpl.org/ipac20/ipac.jsp?menu=account,horizon
+Elk Grove Village Public Library,http://bronte.egvpl.org/ipac20/ipac.jsp?menu=account,horizon
+Escondido Public Library,http://ipac.ci.escondido.ca.us/ipac20/ipac.jsp?menu=account,horizon
+Fort McMurray Public Library,http://hip.fmpl.ca:8080/ipac20/ipac.jsp?menu=account,horizon
+Fort Worth Library,http://fwl.ipac.dynixasp.com/ipac20/ipac.jsp?menu=account,horizon
+Fresno County Public Library,http://hip1.sjvls.org/ipac20/ipac.jsp?menu=account,horizon
+Fullerton Public Library,http://ipac.cityoffullerton.com/ipac20/ipac.jsp?menu=account,horizon
+Glendale Public Library,http://catalog.glendalepubliclibrary.org/ipac20/ipac.jsp?menu=account,horizon
+Glendale Public Library,http://catalog.glendalepubliclibrary.org/ipac20/ipac.jsp?menu=account,horizon
+Grand Rapids Area Public Library,http://ipac.arrowhead.lib.mn.us/ipac20/ipac.jsp?menu=account,horizon
+Gravenhurst Public Library,http://38.111.103.29:8081/ipac20/ipac.jsp?menu=account,horizon
+Great River Regional Library,http://pac.griver.org/ipac20/ipac.jsp?menu=account,horizon
+Halifax Public Libraries,http://catalogue.halifaxpubliclibraries.ca/ipac20/ipac.jsp?menu=account,horizon
+Hampton Public Library,http://hip.hamptonpubliclibrary.org/ipac20/ipac.jsp?menu=account,horizon
+Hancock County Library System,http://kids.ipac.hancock.lib.ms.us/ipac20/ipac.jsp?menu=account,horizon
+Harris County Public Library,http://catalog.hcpl.net/ipac20/ipac.jsp?menu=account,horizon
+Harrison Community Library,http://valcat.vlc.lib.mi.us/ipac20/ipac.jsp?menu=account,horizon
+Hay Lakes Library,http://ipac.prl.ab.ca/ipac20/ipac.jsp?menu=account,horizon
+Helen Matthes Library,http://hip.rpls.ws/ipac20/ipac.jsp?menu=account,horizon
+Hemet Public Library,http://hip.cityofhemet.org/ipac20/ipac.jsp?menu=account,horizon
+High Plains Library District,http://catalog.mylibrary.us/ipac20/ipac.jsp?menu=account,horizon
+High Point Public Library,http://216.237.225.202/ipac20/ipac.jsp?menu=account,horizon
+Hope Welty Public Library,http://hip.rpls.ws/ipac20/ipac.jsp?menu=account,horizon
+Hume Global Learning Village Library Service,http://catalogue.humelibraries.vic.gov.au/ipac20/ipac.jsp?menu=account,horizon
+Idaho Falls Public Library,http://catalog.ifpl.org/ipac20/ipac.jsp?menu=account,horizon
+Illinois Heartland Library System,http://lincpac.lincolntrail.info:8080/ipac20/ipac.jsp?menu=account,horizon
+Indian Trails Public Library District,http://itpld-hip.itpld.lib.il.us/ipac20/ipac.jsp?menu=account,horizon
+Ipswich Library & Information Service,http://ipac.library.ipswich.qld.gov.au/ipac20/ipac.jsp?menu=account,horizon
+Kern County Library,http://hip1.sjvls.org/ipac20/ipac.jsp?menu=account,horizon
+Kirkwood Public Library,http://catalog.mlc.lib.mo.us/ipac20/ipac.jsp?menu=account,horizon
+Lafayette Public Library,http://ipac.lafayette.lib.la.us:8080/ipac20/ipac.jsp?menu=account,horizon
+Lafayette Public Library,http://ipac.lafayette.lib.la.us:8080/ipac20/ipac.jsp?menu=account,horizon
+Lane Public Library,http://cat.lanepl.org/ipac20/ipac.jsp?menu=account,horizon
+Lapeer District Library,http://valcat.vlc.lib.mi.us/ipac20/ipac.jsp?menu=account,horizon
+Logan City Council Libraries,http://catalogue.logan.qld.gov.au/ipac20/ipac.jsp?menu=account,horizon
+Longmont Public Library,http://library.ci.longmont.co.us/ipac20/ipac.jsp?menu=account,horizon
+Loudoun County Public Library,http://catalog.lcpl.lib.va.us/ipac20/ipac.jsp?menu=account,horizon
+Manatee County Public Library System,http://library.mymanatee.org/ipac20/ipac.jsp?menu=account,horizon
+Marion County Public Library System,http://hip.marioncountyfl.org/ipac20/ipac.jsp?menu=account,horizon
+Mariposa County Library,http://hip1.sjvls.org/ipac20/ipac.jsp?menu=account,horizon
+Metro-Boston Library Network,http://catalog.mbln.org/ipac20/ipac.jsp?menu=account,horizon
+Milton Public Library,http://cat.mpl.on.ca/ipac20/ipac.jsp?menu=account,horizon
+Mission Viejo Public Library,http://libcat.cmvl.org/ipac20/ipac.jsp?menu=account,horizon
+Moonee Valley Library Service,http://catalogue.mvcc.vic.gov.au/ipac20/ipac.jsp?menu=account,horizon
+Mooresville Public Library,http://68.71.163.2:81/ipac20/ipac.jsp?menu=account,horizon
+Mount Prospect Public Library,http://classic.mppl.org/ipac20/ipac.jsp?menu=account,horizon
+Murray Library,http://murray.ipac.dynixasp.com/ipac20/ipac.jsp?menu=account,horizon
+Nampa Public Library,http://66.195.188.172/ipac20/ipac.jsp?menu=account,horizon
+Neill Public Library,http://ipac.neill-lib.org/ipac20/ipac.jsp?menu=account,horizon
+Neosho/Newton County Library,http://neoshonewton.ipac.dynixasp.com/ipac20/ipac.jsp?menu=account,horizon
+New Castle County Libraries,http://tipcatpac.nccdelib.org/ipac20/ipac.jsp?menu=account,horizon
+Newfoundland & Labrador Public Libraries,http://hip.nlpl.ca/ipac20/ipac.jsp?menu=account,horizon
+North Central Regional Library,http://catalog.ncrl.org/ipac20/ipac.jsp?menu=account,horizon
+Okanagan Regional Library,http://ipac.orl.bc.ca/ipac20/ipac.jsp?menu=account,horizon
+Olds Municipal Library,http://ipac.prl.ab.ca/ipac20/ipac.jsp?menu=account,horizon
+Ontario City Library,http://ipac1.ci.ontario.ca.us:8000/ipac20/ipac.jsp?menu=account,horizon
+Orem Public Library,http://catalog.oremlibrary.org/ipac20/ipac.jsp?menu=account,horizon
+Ottumwa Public Library,http://catalog.ottumwapubliclibrary.org/ipac20/ipac.jsp?menu=account,horizon
+Palmerston North City Library,http://ipac.citylibrary.pncc.govt.nz/ipac20/ipac.jsp?menu=account,horizon
+Park County Public Libraries,http://park.ipac.dynixasp.com/ipac20/ipac.jsp?menu=account,horizon
+Pasadena Public Library,http://catalog.cityofpasadena.net/ipac20/ipac.jsp?menu=account,horizon
+Plattsburgh Public Library,http://horizon.cefls.org/ipac20/ipac.jsp?menu=account,horizon
+Pleasant Grove Library,http://pgrove.ipac.dynixasp.com/ipac20/ipac.jsp?menu=account,horizon
+Port Moody Public Library,http://207.102.242.173/ipac20/ipac.jsp?menu=account,horizon
+Portsmouth Public Library,http://216.54.20.117/ipac20/ipac.jsp?menu=account,horizon
+Provo City Library,http://pac.provolibrary.com/ipac20/ipac.jsp?menu=account,horizon
+Public Libraries of Saginaw,https://valcat.vlc.lib.mi.us/ipac20/ipac.jsp?menu=account,horizon
+Public Library Services,http://library.gov.mb.ca:8080/ipac20/ipac.jsp?menu=account,horizon
+Public Library of Charlotte & Mecklenburg County,http://hip.plcmc.org/ipac20/ipac.jsp?menu=account,horizon
+Public Library of Steubenville and Jefferson County,http://seoipac.seo.lib.oh.us/ipac20/ipac.jsp?menu=account,horizon
+Puskarich Public Library,http://seoipac.seo.lib.oh.us/ipac20/ipac.jsp?menu=account,horizon
+Rampart Library District,http://rampart.ipac.dynixasp.com/ipac20/ipac.jsp?menu=account,horizon
+Ramsey County Library,http://ipac.ramsey.lib.mn.us/ipac20/ipac.jsp?menu=account,horizon
+Rhinelander District Library,http://vcat.wvls.lib.wi.us/ipac20/ipac.jsp?menu=account,horizon
+Richardson Public Library,http://hip.cor.gov/ipac20/ipac.jsp?menu=account,horizon
+Richland County Public Library,http://myrcpl.ipac.sirsidynix.net/ipac20/ipac.jsp?menu=account,horizon
+Rochdale Library Service,http://libraries.rochdale.gov.uk/ipac20/ipac.jsp?menu=account,horizon
+Rotorua District Library,http://libopac.rdc.govt.nz/ipac20/ipac.jsp?menu=account,horizon
+Ruth Hughes Memorial Library,http://valcat.vlc.lib.mi.us/ipac20/ipac.jsp?menu=account,horizon
+SEO Library Consortium,http://seoipac.seo.lib.oh.us/ipac20/ipac.jsp?menu=account,horizon
+Salisbury Library Services,http://dhip.salisbury.sa.gov.au/ipac20/ipac.jsp?menu=account,horizon
+Sallie Logan Public Library,http://ipac.shawls.lib.il.us:8080/ipac20/ipac.jsp?menu=account,horizon
+Salt Lake County Library Services,http://ipac.slcolibrary.org/ipac20/ipac.jsp?menu=account,horizon
+Schlow Memorial Library,http://search.ccfpl.org/ipac20/ipac.jsp?menu=account,horizon
+Seattle Public Library,http://catalog.spl.org/ipac20/ipac.jsp?menu=account,horizon
+Sioux City Public Library,http://ecatalog1.siouxcitylibrary.org/ipac20/ipac.jsp?menu=account,horizon
+St Clair County Library System,http://webpac.sccl.lib.mi.us/ipac20/ipac.jsp?menu=account,horizon
+Stanislaus County Library,http://63.200.101.19/ipac20/ipac.jsp?menu=account,horizon
+Strathcona County Library,http://hip.sclibrary.ab.ca/ipac20/ipac.jsp?menu=account,horizon
+Surrey Public Library,http://catalogue.spl.surrey.bc.ca/ipac20/ipac.jsp?menu=account,horizon
+Sussex County Library System,http://ipac.sussexcountylibrary.org/ipac20/ipac.jsp?menu=account,horizon
+T. B. Scott Library,http://vcat.wvls.lib.wi.us/ipac20/ipac.jsp?menu=account,horizon
+Tipp City Public Library,http://seoipac.seo.lib.oh.us/ipac20/ipac.jsp?menu=account,horizon
+Topeka and Shawnee County Public Library,http://catalog.tscpl.org/ipac20/ipac.jsp?menu=account,horizon
+Tulare County Library,http://hip1.sjvls.org/ipac20/ipac.jsp?menu=account,horizon
+University City Public Library,http://catalog.mlc.lib.mo.us/ipac20/ipac.jsp?menu=account,horizon
+University of Canterbury Library,http://ipac.canterbury.ac.nz/ipac20/ipac.jsp?menu=account,horizon
+University of Tasmania,https://ipac.lib.utas.edu.au/ipac20/ipac.jsp?menu=account,horizon
+Upper Hutt City Library,http://www.citylibrary.co.nz:8080/ipac20/ipac.jsp?menu=account,horizon
+Ventura County Library,http://catalog.vencolibrary.org/ipac20/ipac.jsp?menu=account,horizon
+Viking Library System,http://www.leifpac.viking.lib.mn.us/ipac20/ipac.jsp?menu=account,horizon
+Waco-McLennan County Library,http://ipac.ci.waco.tx.us:8080/ipac20/ipac.jsp?menu=account,horizon
+Wanganui District Library,http://203.96.124.23/ipac20/ipac.jsp?menu=account,horizon
+Warrenville Public Library,http://ipac.warrenville.com/ipac20/ipac.jsp?menu=account,horizon
+Washington County Library,http://horizon.washco.utah.gov:8000/ipac20/ipac.jsp?menu=account,horizon
+Washington County Library,http://horizon.washco.utah.gov:8000/ipac20/ipac.jsp?menu=account,horizon
+Way Public Library,http://seoipac.seo.lib.oh.us/ipac20/ipac.jsp?menu=account,horizon
+West Des Moines Public Library,http://libonline.wdm-ia.com/ipac20/ipac.jsp?menu=account,horizon
+West Lothian Libraries,http://webpac.westlothian.gov.uk/ipac20/ipac.jsp?menu=account,horizon
+Western Bay of Plenty District Libraries,http://202.49.48.10/ipac20/ipac.jsp?menu=account,horizon
+Westminster Public Libraries,http://catalog.westminster.lib.co.us/ipac20/ipac.jsp?menu=account,horizon
+Westport Public Library,http://catalog.westportlibrary.org/ipac20/ipac.jsp?menu=account,horizon
+Wichita Falls Public Library,http://wfpl.ipac.dynixasp.com/ipac20/ipac.jsp?menu=account,horizon
+Willingboro Public Library,http://hip.willingboro.org/ipac20/ipac.jsp?menu=account,horizon
+Wilton Library Association,http://catalog.wiltonlibrary.org/ipac20/ipac.jsp?menu=account,horizon
+Winter Park Public Library,http://catalog.wppl.org/ipac20/ipac.jsp?menu=account,horizon
+York County Public Library,http://ipac.yorkcounty.gov:8080/ipac20/ipac.jsp?menu=account,horizon
+Ypsilanti District Library,http://ipac.ypsilibrary.org:8080/ipac20/ipac.jsp?menu=account,horizon
+Blue Hill Public Library,http://www.catalog.bhpl.net/cgi-bin/koha/opac-user.pl,koha
+Corpus Christi Public Libraries,http://elibrary.cclibraries.com/cgi-bin/koha/opac-user.pl,koha
+Harbor-Topky Memorial Library,http://ican.kohalibrary.com,koha
+Henderson Memorial Library,http://ican.kohalibrary.com/,koha
+Independently Cooperating Ashtabula Network,/cgi-bin/koha/opac-user.pl,koha
+John C. Fremont Library District,http://catalog.florencecolibrary.org/cgi-bin/koha/opac-main.pl,koha
+Lincoln City Libraries,http://lincoln.pioneer.kohalibrary.com/cgi-bin/koha/opac-user.pl,koha
+Abilene Christian University,http://alc.alc.org/uhtbin/cgisirsi.exe/x/0/0/57/49?user_id=ACUWEB,opac
+Abilene Public Library,http://apl.alc.org/uhtbin/cgisirsi.exe/x/0/0/57/1/1166/X/3?user_id=APL-MAINWEB,opac
+Alachua County Library District,http://cs-lewis.aclib.us/uhtbin/cgisirsi/0/x/0/29/1167/X/1,opac
+Anoka County Library,http://library.anoka.lib.mn.us/uhtbin/cgisirsi/x/x/0/49/,opac
+Appalachian Regional Library,http://catalog.arlibrary.org/uhtbin/cgisirsi/CtispduIOl/0/0/49,opac
+Atlanta-Fulton Public Library System,http://afcatalog.co.fulton.ga.us/uhtbin/cgisirsi/X/0/0/49/,opac
+Austin Public Library,https://www.ci.austin.tx.us/uhtbin/cgisirsi/x/x/0/49,opac
+Bucks County Public Library,http://unicorn.buckslib.org/uhtbin/cgisirsi/x/ALL/0/49,opac
+Burbank Public Library,http://66.77.127.97/uhtbin/cgisirsi.exe/0/CENTRAL/0/1/1184/X,opac
+Burdekin Library,http://lib.burdekin.qld.gov.au/uhtbin/cgisirsi.exe/0/0/0/49,opac
+Calcasieu Parish Public Library,http://webcat.calcasieu.lib.la.us/uhtbin/cgisirsi/CARNEGIE/0/0/1/1166/X/,opac
+Calgary Public Library,https://catalogue.calgarypubliclibrary.com/uhtbin/cgisirsi/x/x/0/49/,opac
+Camas Public Library,http://catalog.fvrl.org/uhtbin/cgisirsi.exe/0/CA/X/29/1171/X/3%20,opac
+Cedar Park Public Library,http://webcat.cedarparktx.us/uhtbin/cgisirsi.exe/x/0/0/49,opac
+Cedar Rapids Public Library,http://catalog.crlibrary.org/uhtbin/cgisirsi/x/x/0/49/,opac
+Central Piedmont Community College,http://librarycatalog.cpcc.edu/uhtbin/cgisirsi/x/0/0/57/29/70/X/1?user_id=WEBSERVER,opac
+Chandler Public Library,http://library.chandleraz.gov/uhtbin/cgisirsi/0/0/0/1/58/X/1,opac
+Charleston County Public Library,http://192.152.249.240/uhtbin/cgisirsi/0/0/x/49,opac
+City of Melville Library,http://www.melvillecity.com.au/uhtbin/cgisirsi.exe/0/0/0/1/488/X/BLASTOFF,opac
+City of Torrance Public Library,http://library.torrnet.com/uhtbin/cgisirsi.exe/0/0/0/122/2015/X,opac
+Clackamas County Library,http://www.lincc.org/uhtbin/cgisirsi/x/NT/x/1/517/X/BLASTOFF,opac
+County of Los Angeles Public Library,http://catalog.colapl.org/uhtbin/cgisirsi/x/0/0/29/1169/X/1,opac
+Delaware Library Catalog,http://ilsapp.lib.de.us/uhtbin/cgisirsi/x/x/0/49/,opac
+Delta County Public Library District,http://dcpld.sirsi.net/uhtbin/cgisirsi/X/DE/X/1/1168/X/BLASTOFF,opac
+Dodge City Public Library,http://catalog.dodgelibrary.org/uhtbin/cgisirsi/x/0/0/49,opac
+Eastern Regional Libraries,http://swft.erlc.sirsidynix.net.au/uhtbin/cgisirsi/x/0/0/57/1/1198/X/BLASTOFF?user_id=ER-WEBSERVER,opac
+El Dorado County Library,http://ibistro.eldoradolibrary.org/uhtbin/cgisirsi.exe/x/0/0/49/,opac
+Farmers Branch Manske Library,http://fbml.sirsi.net/uhtbin/cgisirsi/0/x/0/1/38/X/BLASTOFF,opac
+Forsyth County Public Library,http://vega.co.forsyth.nc.us/uhtbin/cgisirsi.exe/x/x/0/49/,opac
+Forsyth County Public Library,http://vega.co.forsyth.nc.us/uhtbin/cgisirsi.exe/x/x/0/49/,opac
+Frisco Public Library,http://catalog.friscolibrary.com/uhtbin/cgisirsi.exe/X/x/X/1/1166/X/BLASTOFF,opac
+Greenville County Library System,http://elib.greenvillelibrary.org/uhtbin/cgisirsi/x/x/0/49/,opac
+High Country Library Corporation,http://swft.hclc.sirsidynix.net.au/uhtbin/cgisirsi/x/0/0/57/28/1183/X?user_id=HC-WEBSERVER,opac
+Jackson District Library,http://jacks.sirsi.net/uhtbin/cgisirsi/x/0/0/1/1168/X/BLASTOFF,opac
+James Prendergast Library Association,http://sirsi.cclslib.org/uhtbin/cgisirsi/x/0/0/49/,opac
+Kettering University,http://elibrary.palnet.info/uhtbin/cgisirsi/x/0/0/57/49?user_id=kuweb,opac
+Lake County Library System,http://209.26.59.208/uhtbin/cgisirsi.exe/x/0/0/1/488/X/BLASTOFF,opac
+Leesburg Public Library,http://209.26.59.208/uhtbin/cgisirsi.exe/x/x/0/57/49?user_id=LEEWEB,opac
+Lewisville Public Library,http://library.cityoflewisville.com/uhtbin/cgisirsi/Q0BllwOQEa/0/0/49,opac
+Margaret E. Heggan Free Public Library,http://goco.sirsi.net/uhtbin/cgisirsi/x/x/0/49?user_id=washingtonweb,opac
+Marlborough District Libraries,http://123.255.9.250/uhtbin/cgisirsi/0/x/0/57/1/1168/X?user_id=MAWEB,opac
+Marshalltown Public Library,http://mtpl.sirsi.net/uhtbin/cgisirsi/x/0/0/49,opac
+Martin Counrty Library System,http://www.lib.martin.fl.us/uhtbin/cgisirsi/0/STUART/0/60/1155/X,opac
+McMaster University Libraries,http://mcmaster.sirsidynix.net/uhtbin/cgisirsi/x/MILLS/0/1/1168/X,opac
+Mid-Continent Public Library,http://opac.mcpl.lib.mo.us/uhtbin/cgisirsi/x/x/0/5?srchfield1=GENERAL^SUBJECT^GENERAL^^words+or+phrase&searchdata1=Sabriel{TI}+AND+Nix,+Garth{AU},opac
+Mohave County Library District,http://webcat.co.mohave.az.us/uhtbin/cgisirsi/x/x/0/49,opac
+Moore Memorial Library,http://24.149.201.166:81/uhtbin/cgisirsi.exe/X/0/0/49,opac
+Mott Community College,http://elibrary.palnet.info/uhtbin/cgisirsi/x/0/0/57/49?user_id=mccweb ,opac
+Natrona County Public Library,http://wyldweb.state.wy.us/uhtbin/cgisirsi/x/0/0/57/49?user_id=natrweb,opac
+Nelson Public Libraries,http://daklms01.kotui.org.nz/uhtbin/cgisirsi/0/x/0/57/1/1168/X?user_id=NEWEB,opac
+New River Public Library Cooperative,http://opac.newriver.lib.fl.us/uhtbin/cgisirsi.exe/0/NEWRIVER/0/38/0/POWER_SEARCH,opac
+Noel Wien Public Library,http://catalog.fnsb.lib.ak.us/uhtbin/cgisirsi/X/FAIRBANKS/X/1/1166/X/BLASTOFF,opac
+North Vancouver City Library,http://209.52.67.33/uhtbin/cgisirsi.exe/x/x/x/60/1180/X,opac
+Oconomowoc Public Library,http://www.cafelibraries.org/uhtbin/cgisirsi.exe/x/0/0/57/49?user_id=owweb,opac
+Oswego Public Library, http://osw.sirsi.net/uhtbin/cgisirsi/x/x/0/38/0/POWER_SEARCH,opac
+PALS Plus,http://ibistro.palsplus.org/uhtbin/cgisirsi.exe/x/0/0/29/1167/X/1,opac
+Pikes Peak Library District,http://catalog.ppld.org/uhtbin/cgisirsi/0/0/0/1/1104/X/BLASTOFF,opac
+Pioneer Library System,http://pionrpb.sirsi.net/uhtbin/cgisirsi/x/x/0/1/1168/X/BLASTOFF,opac
+Pioneer Library System,http://pionrpb.sirsi.net/uhtbin/cgisirsi/x/x/0/1/1168/X/BLASTOFF,opac
+Placer County Library,http://apcl.sirsi.net/uhtbin/cgisirsi/x/x/0/49,opac
+Public Library of Cincinnati & Hamilton County,http://catalog.cincinnatilibrary.org/uhtbin/cgisirsi/x/0/0/29/1167/X/1,opac
+Puke Ariki and District Libraries,http://daklms01.kotui.org.nz/uhtbin/cgisirsi/0/x/0/57/1/1168/X?user_id=NPWEB,opac
+Roanoke Valley Libraries,/uhtbin/cgisirsi/x/x/0/49/,opac
+SAILS Library Network,http://opac.sailsinc.org/uhtbin/cgisirsi/x/0/0/57/49?user_id=NOCARD&password=1026,opac
+Saint Charles Parish Library System,http://rooms.stcharles.lib.la.us/uhtbin/cgisirsi.exe/x/WEST/x/1/1166/X/BLASTOFF,opac
+Santa Monica Public Library,http://csmpl.smpl.org/uhtbin/cgisirsi/x/0/0/57/29/39/X/1?user_id=WEBSERVER,opac
+Sparta Public Library,http://spll.sirsi.net/uhtbin/cgisirsi/x/0/0/49,opac
+Stillwater Public Library,http://sirsi.stillwater.org/uhtbin/cgisirsi/C2QPz71stY/SIRSI/187300164/60/1173/X,opac
+Timberland Regional Library,http://cat.trl.org/uhtbin/cgisirsi.exe/x/0/x/60/1180/X,opac
+Timmins Public Library,http://webpac.timmins.ca:8080/uhtbin/cgisirsi.exe/x/0/0/29/1167/X/1,opac
+Toronto Public Library,http://oldcatalogue.torontopubliclibrary.ca/uhtbin/cgisirsi/x/0/0/49,opac
+Trinity Western University Library, http://library.twu.ca/uhtbin/cgisirsi.exe/x/x/0/38/0/POWER_SEARCH,opac
+Uinta County Library,http://wyld.state.wy.us/uhtbin/cgisirsi/x/0/0/57/49?user_id=uintweb,opac
+Victoria Public Library,http://208.180.46.50/uhtbin/cgisirsi/jpHCuT5V9A/x/x/29/1169/X/1,opac
+Waukesha Public Library,http://www.cafelibraries.org/uhtbin/cgisirsi.exe/0/WAUKESHA/0/57/29/1194/X/1?user_id=WKWEB,opac
+West Florida Public Library,http://ibistro.wfrl.lib.fl.us/uhtbin/cgisirsi.exe/x/0/0/60/1180/X,opac
+Westchester Library System,http://www.easywls.org/uhtbin/cgisirsi/X/X/X/1/1168/X/,opac
+Whangarei Libraries,http://elibrary.wdc.govt.nz/uhtbin/cgisirsi.exe/x/x/0/57/49?user_id=WEBSERVER,opac
+Yarra Libraries,http://swft.coyl.sirsidynix.net.au/uhtbin/cgisirsi/xl/YL-TECHSRV/0/57/1/1168/X/1?user_id=YL-WEB&password=COYL,opac
+Allen Public Library,http://catalog.allenlibrary.org/polaris/logon.aspx?src=http%3a%2f%2fcatalog.allenlibrary.org%2fpolaris%2fpatronaccount%2fdefault.aspx%3fctx%3d3.1033.0.0.6&ctx=3.1033.0.0.6,polaris
+Amherst Town Library,http://findit.gmilcs.org/polaris/logon.aspx?src=http://findit.gmilcs.org/polaris/patronaccount/default.aspx?ctx=3.1033.0.0.2&ctx=3.1033.0.0.2,polaris
+Andover Public Library System,http://catalog.andoverlibrary.org/polaris/logon.aspx?Header=1&src=http://catalog.andoverlibrary.org/polaris/default.aspx,polaris
+Apache Junction Public Library,http://catalog.pinalcountyaz.gov/polaris/logon.aspx?src=http%3a%2f%2fcatalog.pinalcountyaz.gov%2fpolaris%2fpatronaccount%2fdefault.aspx%3fctx%3d3.1033.0.0.5&ctx=3.1033.0.0.5,polaris
+Athens-Limestone Public Library,http://catalog.athenslimestone.lib.al.us/polaris/logon.aspx?src=http%3a%2f%2fcatalog.athenslimestone.lib.al.us%2fpolaris%2fpatronaccount%2fdefault.aspx%3fctx%3d3.1033.0.0.1&ctx=3.1033.0.0.1,polaris
+Campbell County Public Library,http://catalog.cc-pl.org/polaris/logon.aspx?src=http%3a%2f%2fcatalog.cc-pl.org%2fpolaris%2fpatronaccount%2fdefault.aspx%3fctx%3d1.1033.0.0.1&ctx=1.1033.0.0.1,polaris
+Cape May County Library,http://cat.cmclibrary.org/polaris/logon.aspx?Header=1&src=http://cat.cmclibrary.org/polaris/default.aspx,polaris
+Casa Grande Public Library,http://catalog.pinalcountyaz.gov/polaris/logon.aspx?Header=1&src=http://catalog.pinalcountyaz.gov/polaris/default.aspx,polaris
+Clark County Public Library,http://catalog.ccpl.lib.oh.us/polaris/logon.aspx?ctx=1.1033.0.0.1&Header=1&src=default.aspx,polaris
+Euless Public Library,http://catalog.eulesstx.gov/polaris/logon.aspx,polaris
+Flower Mound Public Library,http://librarycatalog.flower-mound.com/polaris/logon.aspx?src=http://librarycatalog.flower-mound.com/polaris/patronaccount/default.aspx?ctx=3.1033.0.0.1&ctx=3.1033.0.0.1,polaris
+Franklin-Springboro Public Library,http://catalog.franklin.lib.oh.us/polaris/logon.aspx?ctx=1.1033.0.0.3&src=http%3a%2f%2fcatalog.franklin.lib.oh.us%2fpolaris%2fSearch%2fmisc%2fesources.aspx%3fctx%3d1.1033.0.0.3%26Category%3d0,polaris
+Guelph Public Library,http://catalog.library.guelph.on.ca/polaris/logon.aspx?src=http%3a%2f%2fcatalog.library.guelph.on.ca%2fpolaris%2fpatronaccount%2fdefault.aspx%3fctx%3d1.1033.0.0.1&ctx=1.1033.0.0.1,polaris
+Hooksett Public Library,http://findit.gmilcs.org/polaris/logon.aspx?src=http://findit.gmilcs.org/polaris/patronaccount/default.aspx?ctx=13.1033.0.0.2&ctx=13,polaris
+Hunterdon County Library,http://ipac.hclibrary.us/polaris/logon.aspx?src=http%3a%2f%2fipac.hclibrary.us%2fpolaris%2fpatronaccount%2fdefault.aspx%3fctx%3d1.1033.0.0.1&ctx=1.1033.0.0.1,polaris
+Kelley Public Library,http://findit.gmilcs.org/polaris/logon.aspx?src=http%3a%2f%2ffindit.gmilcs.org%2fpolaris%2fpatronaccount%2fdefault.aspx%3fctx%3d15.1033.0.0.2&ctx=15.1033.0.0.2,polaris
+Klamath County Library,http://catalog.klamathlibrary.org/polaris/logon.aspx?src=http%3a%2f%2fcatalog.klamathlibrary.org%2fpolaris%2fpatronaccount%2fitemsout.aspx%3fctx%3d1.1033.0.0.1&ctx=1.1033.0.0.1,polaris
+Largo Public Library,https://pals.polarislibrary.com/polaris/logon.aspx?Header=1&src=http://pals.polarislibrary.com/polaris/default.aspx,polaris
+Lee County Library System,https://libpac.leegov.com/polaris/logon.aspx?,polaris
+Lower Merion Library System,http://spica.mclinc.org/polaris/logon.aspx,polaris
+Manchester City Library,http://findit.gmilcs.org/polaris/logon.aspx?src=http%3a%2f%2ffindit.gmilcs.org%2fpolaris%2fpatronaccount%2fdefault.aspx%3fctx%3d17.1033.0.0.2&ctx=17.1033.0.0.2,polaris
+Mary L Cook Public Library,http://catalog.mlcook.lib.oh.us/polaris/logon.aspx?src=http%3a%2f%2fcatalog.mlcook.lib.oh.us%2fpolaris%2fpatronaccount%2fdefault.aspx%3fctx%3d3.1033.0.0.1&ctx=3.1033.0.0.1,polaris
+McKinney Public Library,http://ipac.mckinneytexas.org/polaris/logon.aspx?Header=1&src=http://ipac.mckinneytexas.org/polaris/default.aspx,polaris
+Mead Public Library,http://www.easicat.net/polaris/logon.aspx?src=http%3a%2f%2fwww.easicat.net%2fpolaris%2fpatronaccount%2fdefault.aspx%3fctx%3d35.1,polaris
+Monroe County Public Library,http://keyslibraries.polarislibrary.com/polaris/logon.aspx,polaris
+Monroe County Public Library,http://keyslibraries.polarislibrary.com/polaris/logon.aspx,polaris
+Montgomery County Library & Information Network Consortium,http://spica.mclinc.org/polaris/logon.aspx?src=http://spica.mclinc.org/polaris/patronaccount/default.aspx?ctx=1.1033.0.0.2&ctx=1.1033.0.0.2,polaris
+North Olympic Library System,http://pac.nols.org/polaris/logon.aspx?src=http://pac.nols.org/polaris/patronaccount/,polaris
+Northern Lights Library System,http://catalogue.tracpac.ab.ca/polaris/logon.aspx?ctx=1.1033.0.0.3&src=http%3a%2f%2fcatalogue.tracpac.ab.ca%2fpolaris%2fSearch%2fmisc%2fesources.aspx%3fctx%3d1.1033.0.0.3%26Category%3d578,polaris
+Peoria Public Library,https://library.peoriaaz.gov/polaris/logon.aspx?Header=1&src=http://library.peoriaaz.gov/polaris/default.aspx,polaris
+Saline County Library,http://catalog.saline.lib.ar.us/polaris/logon.aspx?src=http%3a%2f%2fcatalog.saline.lib.ar.us%2fpolaris%2fpatronaccount%2fdefault.aspx%3fctx%3d1.1033.0.0.1&ctx=1.1033.0.0.1,polaris
+Santa Rosa County Library,http://catalog.santarosa.fl.gov/polaris/logon.aspx,polaris
+Southlake Library,http://catalog.southlake.lib.tx.us/polaris/logon.aspx,polaris
+Spruce Grove Public Library,http://catalogue.tracpac.ab.ca/polaris/logon.aspx,polaris
+St. Petersburg Public Library,http://pals.polarislibrary.com/polaris/logon.aspx?src=http%3a%2f%2fpals.polarislibrary.com%2fpolaris%2fpatronaccount%2fdefault.aspx%3fctx%3d1.1033.0.0.4&ctx=1.1033.0.0.4,polaris
+Stanly County Public Library,http://catalog.stanlycountylibrary.org/polaris/logon.aspx?src=http%3A//catalog.stanlycountylibrary.org/polaris/patronaccount/default.aspx?ctx=1.1033.0.0.1&ctx=1.1033.0.0.1,polaris
+Webster Parish Library,http://catalog.webster.lib.la.us/polaris/logon.aspx?src=http%3a%2f%2fcatalog.webster.lib.la.us%2fpolaris%2fpatronaccount%2fdefault.aspx%3fctx%3d1.1033.0.0.6&ctx=1.1033.0.0.6,polaris
+Wichita Public Library,http://catalog.wichita.lib.ks.us/polaris/logon.aspx,polaris
+Addison Public Library,http://catalog.addisonlibrary.org/patroninfo/,webpacpro
+Appalachian State University,http://wncln.wncln.org/patroninfo,webpacpro
+Arapahoe Library District,http://aspen.ald.lib.co.us/patroninfo,webpacpro
+Babson College,/patroninfo,webpacpro
+Bedford Public Library,http://catalog.bedfordlibrary.org/patroninfo,webpacpro
+Bedford Public Library,http://catalog.bedfordlibrary.org/patroninfo,webpacpro
+Bedford Public Library,http://catalog.bedfordlibrary.org/patroninfo,webpacpro
+Beekman Library,https://gigcat.midhudson.org/patroninfo~S1/,webpacpro
+Berkeley Public Library,http://www.berkeley-public.org/patroninfo,webpacpro
+Brooklyn Public Library,https://catalog.brooklynpubliclibrary.org/patroninfo/,webpacpro
+Caltech Library System,/patroninfo,webpacpro
+Cape Libraries Automated Materials Sharing,http://library.clamsnet.org/patroninfo,webpacpro
+Capital Area District Library,http://opac.cadl.org/patroninfo,webpacpro
+Cardinal Stritch University Library (TOPCAT),http://topcat.switchinc.org/patroninfo,webpacpro
+Carrollton Public Library,http://innovative.cityofcarrollton.com/patroninfo/,webpacpro
+Carver County Library,http://libraryapp.carverlib.org/patroninfo/,webpacpro
+Chapel Hill Public Library,http://catalog.chapelhillpubliclibrary.org/patroninfo,webpacpro
+Chester County Library System,https://catalog.ccls.org/patroninfo,webpacpro
+Claremont Consortium Libraries,http://blais.claremont.edu/patroninfo/,webpacpro
+Cleveland State University Library,https://scholar.csuohio.edu/patroninfo~S0,webpacpro
+College of DuPage Library,http://lrc.cod.edu/patroninfo/,webpacpro
+Concord Public Library,http://mls.concordnh.gov/patroninfo,webpacpro
+Connecticut State University Library System,/patroninfo,webpacpro
+Cuyahoga County Public Library,https://sciron.cuyahoga.lib.oh.us/patroninfo~S41,webpacpro
+Denver Public Schools LION,/patroninfo,webpacpro
+Deschutes County Library System,http://catalog.dpls.lib.or.us/patroninfo,webpacpro
+East Lyme Public Library,http://catalog.lioninc.org/patroninfo,webpacpro
+Glen Cove Public Library,http://www.alisweb.org/patroninfo,webpacpro
+Gold Coast Public Library,http://www.alisweb.org/patroninfo,webpacpro
+Hagaman Memorial Library,http://leap-catalog.leaplibraries.org/patroninfo,webpacpro
+Hillside Public Library of New Hyde Park,https://alisweb.org/patroninfo~S60,webpacpro
+Houston Public Library,https://catalog.houstonlibrary.org/patroninfo~S1,webpacpro
+Iowa City Public Library,http://catalog.icpl.org/patroninfo/,webpacpro
+John M. Cuelenaere Public Library,https://catalogue.sasklibraries.ca/iii/cas/login?service=https%3A%2F%2Fwww.sasklibraries.ca%3A443%2Fpatroninfo%7ES1%2FIIITICKET&scope=1,webpacpro
+Keele University - Health Library,https://opac.keele.ac.uk/patroninfo,webpacpro
+Kennebec Valley Community College,http://minerva.maine.edu/patroninfo,webpacpro
+Kent Public Library,https://gigcat.midhudson.org/patroninfo,webpacpro
+Kitchigami Regional Library System,http://kitchicat.krls.org/patroninfo,webpacpro
+Knox County Public Library,http://innopac.kcpl.lib.in.us/patroninfo/,webpacpro
+LaGrange Library,http://gigcat.midhudson.org/patroninfo/,webpacpro
+Lake Agassiz Regional Library,http://ils.larl.org/patroninfo,webpacpro
+Lakeland Library Cooperative,http://lakenet.llcoop.org/patroninfo,webpacpro
+Lakeland Library Region,https://catalogue.sasklibraries.ca/iii/cas/login?service=https%3A%2F%2Fcatalogue.sasklibraries.ca%3A443%2Fpatroninfo~S8%2FIIITICKET&scope=8,webpacpro
+Las Vegas-Clark County Library District,https://ilsweb.lvccld.org/patroninfo~S12,webpacpro
+Lincoln Township Public Library,https://catalog.lincolntownshiplibrary.org/patroninfo~S2,webpacpro
+London Public Library,https://encore.londonpubliclibrary.ca/iii/cas/login?service=https://catalogue.londonpubliclibrary.ca:443/patroninfo0/IIITICKET,webpacpro
+MORE,https://www.more.lib.wi.us/patroninfo,webpacpro
+Manukau Libraries,http://www.elgar.govt.nz/patroninfo,webpacpro
+Maplewood Memorial Library,http://catalog.maplewoodlibrary.org/patroninfo/,webpacpro
+Marin County Library,http://catalog.marinet.lib.ca.us/patroninfo,webpacpro
+Massey University Library,http://kea.massey.ac.nz/patroninfo,webpacpro
+Milwaukee County Federated Library System,https://countycat.mcfls.org/patroninfo,webpacpro
+Minerva Consortium,/patroninfo,webpacpro
+Minuteman Library Network,https://library.minlib.net/patroninfo/,webpacpro
+Monterey Park Bruggemeyer Library,http://71.84.198.10/patroninfo.html,webpacpro
+Multnomah County Library,http://catalog.multcolib.org/patroninfo,webpacpro
+Naperville Public Library,http://library.naperville-lib.org/patroninfo,webpacpro
+Nashville Public Library,http://waldo.library.nashville.org/patroninfo,webpacpro
+North Haven Memorial Library,http://catalog.lioninc.org/patroninfo,webpacpro
+North Richland Hills Public Library,http://nrhcat.library.nrhtx.com/patroninfo.html,webpacpro
+North Shore Libraries,http://www.elgar.govt.nz/patroninfo~S6/top,webpacpro
+North of Boston Library Exchange,http://innopac.noblenet.org/patroninfo/,webpacpro
+Northwest Regional Library System,http://ils.larl.org/patroninfo,webpacpro
+Oak Park Public Library,https://swan.mls.lib.il.us/patroninfo,webpacpro
+Oakland Public Library,http://catalog.oaklandlibrary.org/patroninfo,webpacpro
+Omaha Public Library,http://discover.omahalibrary.org/patroninfo~S2,webpacpro
+Otterbein Courtright Memorial Library,https://cat.opal-libraries.org/patroninfo%7ES17,webpacpro
+Peninsula Library System,https://catalog.plsinfo.org/patroninfo,webpacpro
+Pioneerland Library System,http://iii.pioneerland.lib.mn.us/patroninfo,webpacpro
+Pittsfield Public Library,https://minerva.maine.edu/patroninfo~S71,webpacpro
+Port Washington Public Library,http://www.alisweb.org/patroninfo,webpacpro
+Portage County District Library,https://webpac.portagecounty.lib.oh.us/patroninfo/,webpacpro
+Providence Community Library,https://catalog.oslri.net/patroninfo,webpacpro
+Providence Public Library,https://catalog.oslri.net/patroninfo,webpacpro
+Regina Public Library,http://catalogue.sasklibraries.ca/patroninfo%7ES3,webpacpro
+Rod Library - UNI,https://unistar.uni.edu/patroninfo~S1/,webpacpro
+SWAN - Metropolitan Library System,/patroninfo,webpacpro
+Sacramento Public Library,https://www.saclibrarycatalog.org/patroninfo~S51,webpacpro
+Saint Olaf College Libraries,http://bridge.carleton.edu/patroninfo,webpacpro
+Saint Paul Public Library,http://alpha.stpaul.lib.mn.us/patroninfo,webpacpro
+San Antonio Public Library,http://sapl.sat.lib.tx.us/patroninfo,webpacpro
+San Diego County Library,https://dbpcosdcsgt.co.san-diego.ca.us/patroninfo~S38,webpacpro
+San Francisco Public Library,https://sflib1.sfpl.org/patroninfo,webpacpro
+San Jose Public Library,http://catalog.sjlibrary.org/patroninfo/,webpacpro
+San Juan Island Library,http://raven.sjlib.org/patroninfo,webpacpro
+Santa Clara City Library,https://sccl.santaclaraca.gov/patroninfo,webpacpro
+Saskatoon Public Library,http://catalogue.sasklibraries.ca/patroninfo~S2,webpacpro
+Scottsdale Public Library,https://encore.scottsdaleaz.gov/iii/cas/login?service=https://libcat.scottsdaleaz.gov:443/patroninfo~S0/IITICKET,webpacpro
+St. Louis County Library,https://webpac.slcl.org/patroninfo,webpacpro
+Sunnyvale Public Library,http://milcat.sunnyvalelibrary.org/patroninfo,webpacpro
+TOPCAT - SWITCH Library Consortium,/patroninfo,webpacpro
+URSUS,http://ursus.maine.edu/patroninfo/,webpacpro
+University of North Carolina at Chapel Hill,https://webcat.lib.unc.edu/patroninfo/,webpacpro
+Waitakere Library and Information Services,http://www.elgar.govt.nz/patroninfo~S10,webpacpro
+Wallingford Public Library,http://catalog.lioninc.org/patroninfo,webpacpro
+Warren-Newport Public Library,http://innovative.wnpl.info/patroninfo,webpacpro
+Waterloo Public Library,https://books.kpl.org/iii/cas/login?service=http://books.kpl.org/patroninfo~S3/j_acegi_cas_security_check&lang=eng&scope=3,webpacpro
+Waterloo Public Library,https://books.kpl.org/iii/cas/login?service=http://books.kpl.org/patroninfo~S3/j_acegi_cas_security_check&lang=eng&scope=3,webpacpro
+Waterville Public Library,https://minerva.maine.edu/patroninfo~S71,webpacpro
+Waukegan Public Library,https://catalog.waukeganpl.org/patroninfo,webpacpro
+West Vancouver Memorial Library,http://catalogue.westvanlibrary.ca/patroninfo,webpacpro
+Westerville Public Library,https://catalog.westervillelibrary.org/patroninfo/,webpacpro
+Wheaton Public Library,http://wpl.wheaton.lib.il.us/patroninfo,webpacpro
+Willoughby Wallace Memorial Library,http://catalog.lioninc.org/patroninfo,webpacpro
+Wisconsin Lutheran College Library (TOPCAT),http://topcat.switchinc.org/patroninfo/,webpacpro
+Wright State University Libraries,https://wsuol2.wright.edu/patroninfo/,webpacpro
+Yolo County Public Library,http://web-iii.yolocounty.org/patroninfo,webpacpro

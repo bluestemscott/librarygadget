@@ -1,0 +1,1027 @@
+<HTML>
+<!--Copyright 1996-2004 Sirsi Corporation. All rights reserved. Removal of this notice violates applicable copyright laws.-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--U_ENG_iFILES/Login.html-->
+
+
+
+
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+	<style type="text/css">
+
+
+
+a:link, a:active {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: none;
+	color: #006699;
+}
+
+a:visited {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: none;
+	color: #006699;
+}
+
+a:hover {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: underline;
+	color: #FF0000;
+	background-color: #FFFFCC;
+}
+
+body {
+	margin:-10px 0px 0px -10px;
+	background-color: #FFFFFF;
+	color: #000000;
+}
+
+form	{
+accept-charset: utf-8;
+}
+
+html body {
+	margin: 10px 10px 10px 10px;
+	background-color: #FFFFFF;
+	color: #000000;
+}
+
+p, td {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+}
+
+th {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	text-align: left;
+	vertical-align: top;
+}
+
+label {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-weight: bold;
+}
+
+legend {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-weight: bold;
+}
+
+fieldset {
+	border-style: none;
+	border-width: 0px;
+}
+
+form {
+	margin: 0px 0px 0px 0px;
+}
+
+ul {
+  margin-left: 0px;
+}
+
+b.results {
+	color: #00000;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.selectlist	{
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #000000;
+}
+
+span.register	{
+		font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+		font-size: 10px;
+		font-weight: normal;
+		font-style: italic;
+		color: #000000;
+}
+
+.bibinfo {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 12px;
+	background-color: #FFFFFF;
+	color: #000000;
+	border-width: 0px;
+	border-style: none;
+	margin: 5px 5px 5px 5px;
+	text-align: left;
+	width: 100%;
+}
+
+.bibinfo2 {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 12px;
+	background-color: #FFFFFF;
+	color: #000000;
+	margin: 10px 30px 10px 30px;
+}
+
+.summary {
+	background-color: #FFFFFF;
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	border-width: 1px;
+	border-style: solid;
+	padding: 5px 5px 5px 5px;
+	margin: 10px 5px 5px 10px;
+}
+
+.rootbarcell {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	text-align: center;
+	color: #FFFFFF;
+	background-color: #006699;
+	letter-spacing: 0px;
+	margin: 5px 5px 5px 5px;
+}
+
+ /* Use these rootbar declaration for CSS2 browsers */
+
+a:link.blastoff, a:visited.blastoff, a:active.blastoff {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFF99;
+	background-color: #006699;
+	text-decoration: none;
+	white-space: nowrap;
+	margin: 0px 7px 0px 7px;
+}
+
+a:hover.blastoff {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #006699;
+	text-decoration: underline;
+	white-space: nowrap;
+	margin: 0px 7px 0px 7px;
+}
+
+a:link.rootbar, a:visited.rootbar, a:active.rootbar {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #FFFFFF;
+	background-color: #006699;
+	text-decoration: none;
+	white-space: nowrap;
+	margin: 0px 7px 0px 7px;
+}
+
+a:hover.rootbar {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #CC0000;
+	background-color: #006699;
+	text-decoration: underline;
+	white-space: nowrap;
+	margin: 0px 7px 0px 7px;
+}
+
+.defaultstyle {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 12px;
+	background-color: #FFFFFF;
+	color: #000000;
+	vertical-align: top;
+}
+th.defaultstyle {
+	white-space: nowrap;
+	text-align: right;
+}
+
+
+.enrichheader, .enrichheader a {
+	background-color: #FFFFFF;
+	color: #996600;
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	padding: 5px 0px 0px 0px;
+}
+
+.enrichsubheader {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+.enrichcontent {
+	background-color: #FFFFFF;
+	color: #000000;
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 11px;
+	vertical-align: top;
+	padding: 0px 0px 5px 5px;
+}
+
+.enrichmentservices {
+	background-color: #FFFFFF;
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 10px;
+	color: #000000;
+	border-width: 1px;
+	border-style: solid;
+	text-align: left;
+}
+
+.enrichtagline {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	background-color: #FFFFFF;
+	color: #888888;
+}
+
+.footer {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+}
+
+.gatewaystyle, .gatewaystyle a:link, .gatewaystyle a:visited, .gatewaystyle a:active, .gatewaystyle a:hover {
+	background-color: #0099CC;
+	color: #FFFFFF;
+	margin: 0px 0px 0px 0px;
+}
+
+.header {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	background-color: #006699;
+	color: #FFFFFF;
+}
+
+div.header {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	background-color: #006699;
+	color: #FFFFFF;
+	padding: 3px 3px 3px 3px;
+}
+
+.holdingsheader {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	background-color: #FFFFFF;
+	color: #006699;
+}
+
+.holdingslist {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 10px;
+	background-color: #FFFFFF;
+	color: #000000;
+}
+
+th.holdingslist {
+	white-space: nowrap;
+	text-align: right;
+	vertical-align: top;
+}
+
+.indented {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 12px;
+	background-color: #FFFFFF;
+	color: #000000;
+	margin-left: 10px;
+	vertical-align: top;
+}
+
+.itemlisting, label.itemlisting {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 11px;
+	background-color: #FFFFFF;
+	color: #000000;
+	vertical-align: top;
+	font-weight: normal;
+}
+
+.itemlisting2, label.itemlisting2 {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 11px;
+	background-color: #EFEFEF;
+	color: #000000;
+	vertical-align: top;
+	font-weight: normal;
+}
+
+input.itemdetails {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 11px;
+	background-color: #0099CC;
+	color: #FFFFFF;
+	width: 75px;
+	margin: 5px 0px 5px 0px;
+	display: block;
+}
+
+td.itemservices {
+	background-color: #FFFFFF;
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 11px;
+	color: #000000;
+}
+div.itemservices {
+	background-color: #FFFFFF;
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	text-align: left;
+	border-width: 1px;
+	border-style: solid;
+	padding: 7px 7px 7px 7px;
+	margin: 0px 0px 0px 0px;
+}
+
+div.itemservices a:link, div.itemservices a:visited, div.itemservices a:active {
+	display: block;
+	margin: 3px 0px 3px 0px;
+}
+
+div.itemservices a:hover {
+	background-color: #FFFFCC;
+	color: #FF0000;
+	display: block;
+	margin: 3px 0px 3px 0px;
+}
+
+div.options {
+	background-color: #FFFFFF;
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	border-width: 1px;
+	border-style: solid;
+	padding: 5px 5px 5px 5px;
+	margin: 10px 5px 5px 10px;
+}
+
+.overdue, .error {
+	color: #CC0000;
+}
+
+.pagecontainer {
+	background-color: #FFFFFF;
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	border-width: 1px;
+	border-style: solid;
+	width: 100%;
+	position: relative;
+}
+
+.pagecontainer3pg {
+	background-color: #FFFFFF;
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	border-width: 1px;
+	border-style: solid;
+
+}
+
+.rsvholdings {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	background-color: #EEEEEE;
+	color: #000000;
+}
+
+.searchheader {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	background-color: #006699;
+	color: #FFFFFF;
+	padding: 3px 3px 3px 3px;
+	width: 100%;
+}
+
+.searchcontent {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 12px;
+	background-color: #EEEEEE;
+	color: #000000;
+	padding: 3px 3px 3px 3px;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+table.searchcontent {
+	width: 99%;
+}
+
+th.searchcontent {
+	text-align: right;
+	width: 30%;
+}
+
+.searchservices {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 12px;
+	background-color: #EEEEEE;
+	color: #000000;
+	border-width: 1px;
+	border-style: solid;
+}
+
+input.searchbutton {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	background-color: #0099CC;
+	color: #FFFFFF;
+	vertical-align: middle;
+	margin: 5px;
+}
+
+a:link.searchlinks, a:active.searchlinks, a:visited.searchlinks {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none;
+	background-color: #EEEEEE;
+	color: #006699;
+}
+
+a:hover.searchlinks {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: underline;
+	background-color: #EEEEEE;
+	color: #CC0000;
+}
+
+.subheader {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 12px;
+	background-color: #EEEEEE;
+	color: #000000;
+	margin-left: 2px;
+}
+
+.searchsum {
+	color: #000000;
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 11px;
+	text-align: center;
+	background-color: #FFFFFF;
+}
+
+.small {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+}
+
+.titlebar {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	letter-spacing: 3px;
+	background-color: #006699;
+	color: #FFFFFF;
+	text-align: center;
+	margin: 2px;
+}
+
+.vreference {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 10px;
+	text-decoration: none;
+	font-weight: normal;
+	letter-spacing: 0px;
+	background-color: #006699;
+	color: #FFFFFF;
+}
+
+.vreference input {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 10px;
+	text-decoration: none;
+	font-weight: normal;
+	letter-spacing: 0px;
+	background-color: #FFFFFF;
+	color: #006699;
+	margin: 3px 3px 3px 3px;
+}
+.vreference textarea {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 10px;
+	text-decoration: none;
+	font-weight: normal;
+	letter-spacing: 0px;
+	background-color: #FFFFFF;
+	color: #006699;
+	width: 125px;
+	height: 50px;
+	margin: 3px 3px 3px 3px;
+}
+
+.unformatted {
+	font-family: "Courier New", Courier, monospace;
+	font-size: 12px;
+	font-weight: normal;
+	vertical-align: top;
+}
+
+.viewmarcheader, .viewmarcheader a {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	background-color: #FFFFFF;
+	color: #996600;
+}
+
+.viewmarctags {
+   vertical-align: top;
+   font-family: Verdana, Arial, Helvetica, sans-serif;
+   font-size: 10px;
+   background-color: #FFFFFF;
+   color: #000000;
+}
+
+th.viewmarctags {
+	white-space: nowrap;
+	text-align: right;
+	vertical-align: top;
+}
+
+.virtualreference {
+	border-style: none;
+	border-width: 0px;
+	padding: 1px 5px 1px 5px;
+}
+
+.contentholder {
+	padding: 10px 10px 10px 10px;
+	position: relative;
+}
+
+.tabholder {
+	padding: 0px 0px 0px 0px;
+	position: relative;
+	z-index: 2;
+}
+
+.tab {
+	border-style: outset;
+	border-bottom-style: none;
+	border-width: 2px;
+	border-color: #999999;
+	line-height: 150%;
+	text-align: center;
+	padding: 4px;
+	margin-right: 5px;
+	cursor: pointer;
+	cursor: hand;
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	background-color: #006699;
+	color: #FFFFFF;
+}
+
+.panelholder {
+	position: relative;
+	top: -2px;
+	z-index: 1;
+	visibility: visible;
+	display: block;
+	color: #000000;
+	background-color: #FFFFFF;
+}
+
+.panel {
+	position: relative;
+	color: #000000;
+	background-color: #FFFFFF;
+	border: 2px;
+	border-color: #999999;
+	border-style: outset;
+	top: 0;
+	left: 0;
+	padding: 10px 10px 10px 10px;
+	display: none;
+}
+a:link.New, a:visited.New, a:active.New {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #006699;
+	text-decoration: none;
+	white-space: nowrap;
+	margin: 0px 7px 0px 7px;
+}
+
+a:hover.New {
+	font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #FFFF99;
+	background-color: #006699;
+	text-decoration: underline;
+	white-space: nowrap;
+	margin: 0px 7px 0px 7px;
+}
+
+.newiln
+{
+font-family: Verdana, Helvetica, Arial Unicode MS, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #006699;
+	text-decoration: none;
+	white-space: nowrap;
+	margin: 0px 7px 0px 7px;
+}
+</style>
+
+
+
+<TITLE>Login to Web2</title>
+<META HTTP-EQUIV="REFRESH" CONTENT="600 ;URL=/web2/tramp2.exe/log_out/A1g92rf9.000">
+
+</head>
+
+
+<BODY onLoad="document.loginWN.userid.focus()" >
+
+<noscript>
+Your browser does not support JavaScript and this application utilizes JavaScript to build content and provide links to additional information. You should either enable JavaScript in your browser settings or use a browser that supports JavaScript in order to take full advantage of this application.
+</noscript>
+
+<a href="#skipnav"><img src="/html/U_ENG_iFiles/Graphics/clear.gif" height="1" width="1" border="0" alt="Skip navigation" title="Skip navigation"></a>
+<a name="top"></a>
+<div class="pagecontainer">
+
+
+
+	
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tr>
+		<td rowspan="2" class="titlebar">
+			<img SRC="/html/U_ENG_iFiles/Graphics/LIBLOGO.gif" ALT="Web2 Riverside Library" title="Web2 Riverside Library">
+		</td>
+
+		<td class="titlebar" >	<a Class="Blastoff" href="http://www.riverside.lib.ca.us">Riverside County Library System</a><BR>
+
+					<Font Size=1>
+					Member of the Inland Library Network<BR>
+					<Div Class="newiln">					
+					Including the
+					<a Class="New" href="http://www.sbcounty.gov/library/home/">San Bernardino County,</A>
+					<a Class="New" href="http://www.murrieta.org/services/library.asp">Murrieta,</A><BR>
+					<a Class="New" href="http://www.moreno-valley.ca.us/resident_services/library/index_library.shtml">Moreno Valley</A> and 
+					<a Class="New" href="http://www.collegeofthedesert.edu/students/ss/library/Pages/default.aspx">College of the Desert</A> Libraries<BR></font>
+
+					</Div>
+</td>
+	
+	
+
+	</tr>
+	<tr>
+		<td class="rootbarcell">
+	 				
+						<a href="/web2/tramp2.exe/goto/A1g92rf9.000?screen=Home.html" class="rootbar">Search/Home</a>
+					
+
+		 			
+					
+						<a href="/web2/tramp2.exe/goto/A1g92rf9.000?screen=ALL_FindFast.html" class="rootbar">Find It Fast!</a>
+					
+					
+
+					
+					
+						<a href="/web2/tramp2.exe/goto/A1g92rf9.000?screen=ALL_Kids.html" class="rootbar">Kids' Library</a>
+
+					
+					
+
+					
+
+					
+					
+						<a href="/web2/tramp2.exe/goto/A1g92rf9.000?screen=KnowledgePortal.html" class="rootbar">Knowledge Portal</a>
+					
+					
+
+					
+
+					
+					
+						<a href="/web2/tramp2.exe/goto/A1g92rf9.000&screen=MyAccount_Intro.html" onMouseOver="window.status='My Account'; return true" class="blastoff">My Account</a>
+					
+					
+
+					
+					
+					
+						<a href="/web2/tramp2.exe/goto/A1g92rf9.000&screen=SuggestionBox.html" onMouseOver="window.status='Contact the Library';return true" class="rootbar">Contact Us</a>
+					
+					
+					
+
+					
+					<a href="http://www.inlandlibrary.com/web2/tramp2.exe/log_in?setting_key=spanish" onMouseOver="window.status='Español';return true" class="rootbar">Español</a>
+					
+		</td>
+	</tr>
+</table>
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="gatewaystyle">
+	<tr>
+  		<td class="gatewaystyle">
+
+		
+			
+
+
+			
+
+
+			
+
+
+			
+
+
+			
+
+
+			
+			<a href="/web2/tramp2.exe/goto/A1g92rf9.000?screen=Help/log_in.html" target="_blank">
+				<img border="0" SRC="/html/U_ENG_iFiles/Graphics/HELP.gif" alt="Help"></a>
+			
+
+
+			
+
+
+			
+
+
+			
+
+
+			
+
+			
+
+			
+
+
+			
+
+
+			
+
+
+			
+
+
+			
+		
+			
+
+
+
+			
+
+
+
+			
+
+
+			
+
+			
+
+			
+
+			
+			<a href="/web2/tramp2.exe/goto/A1g92rf9.000?screen=Login.html">
+				<img border="0" SRC="/html/U_ENG_iFiles/Graphics/GOBACK.gif"alt="Go Back"></a>
+
+			
+
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+		
+
+
+	
+
+
+	
+
+	
+
+
+	
+
+	
+
+        
+
+	
+
+	
+
+
+	
+
+ 	
+		
+
+
+
+	
+	
+
+
+	
+
+
+	
+	
+	
+
+<script>
+function browser()	{
+	var browser_type=navigator.appName
+	if (browser_type=="Netscape")
+	{
+	alert("MindLeaders/eLearning no longer supports any version of the Netscape browser.  Please open an alternative browser and log into eLearning.");
+	return false;
+	}
+
+	return true;
+}
+</script>
+
+
+	
+	
+	
+
+
+	
+
+
+
+			
+			
+
+
+
+  		<a href="/web2/tramp2.exe/log_out/A1g92rf9.000">
+		<img border="0" SRC="/html/U_ENG_iFiles/Graphics/EXITCAT.gif" ALT="EXIT" onMouseOver="window.status='End your Web 2 session'; return true"></a>
+		</td>
+	</tr>
+</table>
+<a name="skipnav"></a>
+
+
+<FORM NAME="loginWN" ACTION="/web2/tramp2.exe/login_when_needed/A1g92rf9.000" METHOD="POST" ENCTYPE="application/x-www-form-urlencoded">
+<INPUT TYPE="hidden" NAME="fail_screen" VALUE="LoginOTFFailed.html">
+<INPUT TYPE="hidden" NAME="screen" VALUE="MyAccount.html">
+<INPUT TYPE="hidden" NAME="server" VALUE="">
+<INPUT TYPE="hidden" NAME="item" VALUE="">
+<INPUT TYPE="hidden" NAME="item_source" VALUE="">
+
+<table border="0" cellpadding="0" cellspacing="10" width="100%" align="center" title="">
+	<tr>
+  		<td>
+			<table border="0" cellpadding="2" cellspacing="0" align="center">
+				<tr>
+					<td class="header">Login</td>
+
+				</tr>
+       	  		<tr>
+	   				<td class="defaultstyle">Type your ID for information.</td>
+	  			</tr>
+					<td class="defaultstyle">
+					<table border="0" cellpadding="2" cellspacing="0" align="center">
+   						<tr>
+    							<td class="defaultstyle" align="right"><label for="user_id">Library Card #:</label>
+
+							</td>
+    							<td class="defaultstyle" align="left">
+ 								<INPUT NAME="userid" VALUE="" MAXLENGTH="250" SIZE="20"><BR>
+								<size=3>(No spaces between numbers)</size=3>
+								
+							</td>
+  						</tr>
+    						<tr>
+      						<td class="defaultstyle" align="right">
+
+								<label for="pin">PIN:</label>
+							</td>
+      						<td class="defaultstyle"  align="left">
+       							<input type="password" name="pin" id="pin" VALUE="" maxlength="250" size="20"><BR>
+								<size=3>(Usually Last Four Digits of your Phone #)</size>
+	  						</td>
+
+							</tr>
+
+					</table>
+					</td>
+				</tr>
+				<tr>
+					<td class="defaultstyle" align="center">
+	   					<input type="submit" value="Login" class="searchbutton">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="reset" value="Reset Query Values" class="searchbutton">
+	     				</td>
+				</tr>
+
+				
+			</table>
+		</td>
+	</tr>
+</table>
+</form>
+<br>
+<!--<table border="0" cellpadding="3" cellspacing="0" width="100%" class="footer">
+	<tr>
+		<td align="left" class="footer" colspan="3">
+			<a href="/web2/tramp2.exe/log_in/A1g92rf9.000?screen=Home.html&setting_key=FRENCH">
+    		<img border="0" hspace="5" alt="en fran&#231;ais" title="en fran&#231;ais" src="/html/U_ENG_iFiles/Graphics/FRENCH.gif" alt="French"></a>
+		</td>
+	</tr>
+</table>-->
+<table border="0" cellpadding="3" cellspacing="0" width="100%" class="footer">
+<tr><td align="center" valign="bottom" width="15%" class="footer">
+   <img src="/html/U_ENG_iFiles/Graphics/POWEREDBY.gif" alt="[iBistro]" border="0">
+</td><td align="center" class="footer">
+			
+   Your Electronic Library on the Web<br>
+
+   Copyright &#169; 1996 - 2004, Sirsi Corporation<br>
+   v2003_1_4 (435.21)
+</td><td align="center" width="15%" class="footer">
+   <a name="bottom" href="#top">TOP</a>
+</td></tr>
+</table>
+
+</div>
+</body>
+</html>

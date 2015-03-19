@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 TRANSITIONAL//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>King County Library System                                       /All Libraries</title>
+<base target="_self"/>
+<link rel="stylesheet" type="text/css" href="/scripts/ProStyles.css" />
+<link rel="stylesheet" type="text/css" href="/screens/styles.css" />
+<link rel="shortcut icon" type="ximage/icon" href="/screens/favicon.ico" />
+<script language="JavaScript" type="text/javascript" src="/scripts/common.js"></script>
+<script language="JavaScript" type="text/javascript" src="/scripts/features.js"></script>
+<script language="JavaScript" type="text/javascript" src="/scripts/webbridge.js"></script>
+<script language="JavaScript">
+<!-- Hide the JS
+startTimeout(6000000, "/");
+// -->
+</script>
+<noscript>
+<meta http-equiv="Refresh" content="6000;URL=/" />
+</noscript>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+</head>
+<body bgcolor="#FFFFFF" >
+<!-- begin toplogo_loggedin.html file -->
+<!--[if IE 6]>
+<link rel="stylesheet" type="text/css" href="/screens/css/ie6.css" />
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="/screens/css/ie7.css" />
+<![endif]-->
+<link rel="stylesheet" type"text/css" href="/screens/css/print_catalog.css" media="print" />
+
+<!--Begin google code-->
+
+
+<script type="text/javascript">
+	document.write( '<scr'+'ipt type="text/javascript" src="' );
+	if( document.location.toString().indexOf( 'https://' ) != -1 ) {
+		document.write( 'https://ssl' );
+	} else {
+		document.write( 'http://www' );
+	}
+	document.write( '.google-analytics.com/urchin.js"><\/scr'+'ipt>' );
+</script>
+
+<script type="text/javascript">
+_uacct = "UA-3018520-6";
+urchinTracker();
+</script>
+<script type="text/javascript">
+document.write( '<scr'+'ipt type="text/javascript">' );
+	if( document.referrer.toString().indexOf( 'catalog.kcls.org' ) ==-1 ) {
+		document.write( 'urchinTracker(document.referrer);' );
+	}
+document.write( '<\/scr'+'ipt>' );
+</script>
+
+<!--End google code-->
+
+
+<div id="headerContainer" >
+<!-- BEGIN HEADER -->
+<link type="text/css" rel="stylesheet" href="/screens/css/topnavigation.css"/>
+<link type="text/css" rel="stylesheet" href="/screens/css/styles.css"/>
+
+<hr class="hide" />
+	<table id="headerInside" class='rel11'>
+	<tr>
+		<td id="logoHorizontal" rowspan="3">
+
+				<a href="http://www.kcls.org" border="0"><img src="/screens/images/KCLS_logo_horiz.gif" alt="King County Library System"/></a></td>
+		<td id="headerInsideNav" class="rel10" colspan="7">
+
+				<a href="/patroninfo/searchcatalog">CATALOG</a> |
+				<a href="http://www.kcls.org/usingthelibrary/librarycards/">GET A LIBRARY CARD</a> |
+				<a href="/patroninfo/top">YOUR ACCOUNT</a> |
+				<a href="/logout?">LOG OUT</a>
+
+		</td>
+	</tr>
+	<tr>
+		<td id="headerInsideBorder" colspan="7"></td>
+	</tr>
+	<tr id="headerInsideMainNav" class="rel12">
+		<td id="headerInsideMainNavHome" class='inactive'>
+		<a href="http://www.kcls.org">HOME</a></td>
+
+
+		<td id="headerInsideMainNavUsing" class='inactive'>
+		<a href="http://www.kcls.org/usingthelibrary/">USING THE LIBRARY</a></td>
+
+
+		<td id="headerInsideMainNavBooks" class='inactive'>
+		<a href="http://www.kcls.org/booksandreading/">BOOKS & READING</a></td>
+
+
+		<td id="headerInsideMainNavResearch" class='inactive'>
+		<a href="http://www.kcls.org/research/">RESEARCH & HOMEWORK</a></td>
+
+		<td id="headerInsideMainNavPrograms" class='inactive'>
+		<a href="http://www.kcls.org/programs/">PROGRAMS & CLASSES</a></td>
+
+
+		<td id="headerInsideMainNavEvents" class='inactive'>
+		<a href="http://www.kcls.org/events/">EVENTS</a></td>
+
+		<td id="headerInsideMainNavAbout" class='inactive'>
+		<a href="http://www.kcls.org/about/">ABOUT KCLS</a></td>
+	</tr>
+</table>
+<hr class="hide" />
+
+<!-- END HEADER -->
+</div>
+
+<div id="catalogNavContainer"><table>
+<tr>
+	<td class="borderNW"></td>
+	<td id="catalogNav">
+		<h4 id="catalogNavTitle">FIND &gt; <a href="/patroninfo/top">YOUR ACCOUNT</a></h4>
+		<ul>
+		<li class="first-child"><a href="/patroninfo/top/searchcatalog">Catalog Home</a></li>
+		<li><a href="/search/X">Advanced Search</a></li>
+		<li><a href="/airpac/jsp/airpacIndex.jsp">Text Catalog</a></li>
+		<li><a href="http://www.kcls.org/usingthelibrary/request/">Interlibrary Loan</a></li>
+		<li><a href="http://www.kcls.org/usingthelibrary/request/">Request a Purchase</a></li>
+		<li><a href="/screens/help_index.html">Help</a></li>
+		<li><a href="/patroninfo/top/">Your Account</a></li>
+		<li class="last-child"><a href="/logout?">Log Out</a></li>
+		</ul>
+	</td>
+	<td id="tools"><div class="sw">
+		<h4 class="toolItem rel11">
+			Tools
+		</h4>
+		<h4 class="toolItem rel11">
+			<a onclick="showFontTool()">
+				<img src="/screens/images/tool_font.gif" alt=""></a>								
+		</h4>
+		<h4 class="toolItem rel11">
+			<a href="http://www.kcls.org/emailpage.cfm?pg=%2Findex%2Ecfm%3F" onclick="return NewWindow(this.href,'name','500','400','yes')">
+	
+				<img src="/screens/images/tool_mail.gif" alt="Email this page"></a>
+		</h4>
+		<h4 class="toolItem last rel11">
+			<a href="javascript:window.print()">
+				<img src="/screens/images/tool_print.gif" alt="Print this page"></a>
+		</h4>
+	</div></td>
+</tr>
+</table>
+<hr class="hide" />
+</div>
+
+<div id="fontTool" class="hidden">
+	<b class="rtop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+	<div id="fontToolContent">
+	<div id="fontTool_75" onclick="changeBaseFontSize(75)">A</div>
+	<div id="fontTool_100" class="selected" onclick="changeBaseFontSize(100)">A</div>
+	<div id="fontTool_150" onclick="changeBaseFontSize(150)">A</div>
+	<div id="fontTool_200" onclick="changeBaseFontSize(200)">A</div>
+	</div>
+	<b class="rbottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+</div>
+
+<div id="contentContainer">
+<!--<B><p align="center">Delivery of library materials temporarily delayed.   This issue is being addressed and will be resolved as quickly as possible. <BR> <a href="http://www.kcls.org/usingthelibrary/delay_holds.cfm">Please click here for more information</font></p></b></a>!-->
+<!-- end toplogo_loggedin.html file -->
+<!--this is customized <screens/toplogo_loggedin.html>-->
+<H2><span class="loggedInMessage">Logged in on King County Library System                                       /All Libraries as PADMANABHAN, SADHANA</span><br /></H2><BR>
+<br />
+<div id="myAccountTitle">
+	<div id="myAccountToolbar">
+		<ul>
+			<li class="myAccountNav_search">
+<a href="/patroninfo/1931668/searchcatalog" target="_self"><img src="/screens/pat_search.gif" alt="Search the Catalog" border="0" /></a>
+			</li>
+			
+
+			<li class="myAccountNav_modifyinfo">
+<a href="#" onClick="return open_new_window( '/patroninfo/1931668/modpinfo' )"><img src="/screens/pat_info.gif" alt="Modify Personal Information" border="0" /></a>
+			</li>
+			<li class="myAccountNav_modifypin">
+<a href="#" onClick="return open_new_window( '/patroninfo/1931668/newpin' )"><img src="/screens/pat_pin.gif" alt="Modify your PIN" border="0" /></a>
+			</li>
+
+			<li class="myAccountNav_history">
+<a href="/patroninfo/1931668/readinghistory" target="_self"><img src="/screens/reading_history.gif" alt="My Checkout History"></a>
+			</li>
+
+
+<li class="myAccountNav_favsearches">
+<a href="/patroninfo/1931668/getpsearches" target="_self"><img src="/screens/pat_getpsavedrecs.gif" alt="Preferred Searches" border="0" /></a>
+			</li>
+			<li class="myAccountNav_feeds">
+			</li>
+		</ul>
+	</div>
+	<div id="searchtool">
+<!-- BEGIN SEARCH WIDGET -->
+<div align="center">
+
+<div  class="bibSearchtool">
+<script language="JavaScript" type="text/JavaScript">
+<!-- Hide the JS
+var savedTag
+var savedSearch
+var savedScope
+var sortButtonText = null;
+
+var sortTypes = new Array();
+var sortLabels = new Array();
+sortTypes[0] = "r";
+sortLabels[0] = "Date-- Newest First";
+sortTypes[1] = "n";
+sortLabels[1] = "Call Number";
+sortTypes[2] = "m";
+sortLabels[2] = "Material Type";
+sortTypes[3] = "t";
+sortLabels[3] = "Title";
+sortTypes[4] = "a";
+sortLabels[4] = "Author";
+sortTypes[5] = "c";
+sortLabels[5] = "Date--Oldest First";
+sortLabels[6] = "System Sorted";
+sortTypes[6] = "-";
+var sortSelectedValue = "6";
+var sortExactBrowseURL = ""
+var nonSortTags = "XYGKLMNprWw"
+// Unhide the JS -->
+</script>
+<form name="searchtool" target="_self" action="/search/">
+      <select name="searchtype" id="searchtype" onChange="initSort()">
+        <option value="t"> Title begins with...</option>
+        <option value="s"> Magazine Title(English Only)</option>
+        <option value="M"> Title Keywords</option>
+        <option value="a"> Author/Name(Last, First)</option>
+        <option value="K"> Author Keywords</option>
+        <option value="d"> Subject begins with...</option>
+        <option value="L"> Subject Keywords</option>
+        <option value="N"> Content/Note/Summary</option>
+        <option value="G"> Descriptive Keywords</option>
+        <option value="c"> Call Number</option>
+        <option value="i"> ISBN/ISSN/Music No</option>
+        <option value="."> Record No</option>
+        <option value="b"> Barcode</option>
+        <option value="X" selected="selected"> Keyword</option>
+      </select>
+      &nbsp;
+      <input type="text" name="searcharg" size="30" maxlength="75" value="" />
+      &nbsp;
+      <select name="searchscope">
+        <option value="1" selected="selected"> View ALL Formats and Libraries</option>
+        <option value="47"> Book</option>
+        <option value="48"> Magazine</option>
+        <option value="49"> DVD/Video</option>
+        <option value="50"> Book on CD/Cassette</option>
+        <option value="51"> Player</option>
+        <option value="52"> Ebook</option>
+        <option value="53"> Music CD</option>
+        <option value="54"> Music Cassette</option>
+        <option value="55"> Large Print</option>
+        <option value="56"> Kit</option>
+        <option value="57"> Newspaper</option>
+        <option value="46"> Children's Materials</option>
+        <option value="58"> Teen Materials</option>
+        <option value="59"> Map</option>
+        <option value="2"> Algona-Pacific Library</option>
+        <option value="3"> Auburn Library</option>
+        <option value="4"> Bellevue Regional Library</option>
+        <option value="5"> Black Diamond Library</option>
+        <option value="6"> Bothell Regional Library</option>
+        <option value="7"> Boulevard Park Library</option>
+        <option value="8"> Burien Library</option>
+        <option value="9"> Carnation Library</option>
+        <option value="10"> Covington Library</option>
+        <option value="11"> Des Moines Library</option>
+        <option value="12"> Duvall Library</option>
+        <option value="13"> Fairwood Library</option>
+        <option value="14"> Fall City Library</option>
+        <option value="15"> Federal Way 320th Library</option>
+        <option value="16"> Federal Way Regional Library</option>
+        <option value="17"> Foster Library</option>
+        <option value="18"> Issaquah Library</option>
+        <option value="19"> Kenmore Library</option>
+        <option value="20"> Kent Regional Library</option>
+        <option value="21"> Kingsgate Library</option>
+        <option value="22"> Kirkland Library</option>
+        <option value="23"> Lake Forest Park Library</option>
+        <option value="24"> Lake Hills Library</option>
+        <option value="25"> Maple Valley Library</option>
+        <option value="26"> Mercer Island Library</option>
+        <option value="27"> Muckleshoot Library</option>
+        <option value="28"> Newport Way Library</option>
+        <option value="29"> North Bend Library</option>
+        <option value="30"> Redmond Regional Library</option>
+        <option value="31"> Richmond Beach Library</option>
+        <option value="32"> Sammamish Library</option>
+        <option value="33"> Shoreline Library</option>
+        <option value="34"> Skykomish Library</option>
+        <option value="35"> Skyway Library</option>
+        <option value="36"> Snoqualmie Library</option>
+        <option value="37"> Tukwila Library</option>
+        <option value="38"> Valley View Library</option>
+        <option value="39"> Vashon Library</option>
+        <option value="40"> White Center Library</option>
+        <option value="41"> Woodinville Library</option>
+        <option value="42"> Woodmont Library</option>
+        <option value="45"> Books to Grow On</option>
+        <option value="43"> Traveling Library Center</option>
+        <option value="44"> Central Storage</option>
+      </select>
+      &nbsp;
+
+<span id="sort_cell">
+</span>
+
+<script language="JavaScript" type="text/JavaScript">
+<!-- Hide the JS
+initSort();
+// Unhide the JS -->
+</script>
+      <input type="hidden" name="SORT" value="D" /><input type="hidden" name="extended" value="0" /><input type="submit" name="SUBMIT" value="Search" />
+<div>
+      <input type="checkbox" name="availlim" value="1"  /> <span class="availLimMessage"><B>Limit search to available items</b></span><br/>
+</div>
+</form>
+<div></div></div>
+</div>
+
+<!-- END SEARCH WIDGET -->
+	</div>
+</div>
+<table id="myAccountContent">
+	<tr>
+		<td id="myAccountRightCol">
+			<h3>Account Summary</h3>
+			<h4 id="patroninfo">
+<strong>PADMANABHAN, SADHANA</strong><br />
+			</h4>
+			<ul>
+				<li class="myAccountNav_home"><a href="/patroninfo/top/">Your Account</a></li>
+				<li class="myAccountNav_checkouts">
+				</li>
+				<li class="myAccountNav_holds">
+<a href="/patroninfo/1931668/holds" target="_self">19 requests (holds).</a>
+				</li>
+				<li class="myAccountNav_fines">
+<a href="/patroninfo/1931668/overdues" target="_self">$0.00 in unpaid fines and bills</a>
+				</li>
+			</ul>
+			<h3>Tips</h3>
+			<ul>
+				<li>If you need your item today, and it is checked in at your library, please place your hold and then call your library to set it aside. Placing a hold without calling the library will increase your wait time. Library phone numbers are available at <a href="http://www.kcls.org/locations">http://www.kcls.org/locations</a></li>
+				<li>For best possible service, we recommend keeping a printed copy of your most recent holds list.</li>
+			</ul>
+		</td>
+		<td id="myAccountMainCol">
+			<div id="patfuncContainer">
+
+<form method="GET" target="_self" action="/patroninfo/1931668/sorteditems">
+<a href="/patroninfo/1931668/sorteditems" ><img src="/screens/pat_sortbydue.gif" alt="SORT BY DUE DATE" border="0" /></a>
+</form>
+<nobr>
+<form name="renew_form_1" method="GET"><a href="/patroninfo/1931668/items"  onClick="return onClickProcessAll( '/patroninfo/1931668/items', 'renew','This will affect all items. Are you sure?' )"><img src="/screens/pat_renewall.gif" alt="RENEW ALL" border="0" /></a>
+</form>
+<form name="process_form_2" method="GET">
+<a href="/patroninfo/1931668/items"  onClick="return onClickProcessSome( process_form_2, '/patroninfo/1931668/items', 'renew' )"><img src="/screens/pat_renewmark.gif" alt="RENEW SELECTED ITEMS" border="0" /></a>
+</nobr>
+<table id="patfunc_main_func" class="patFunc">
+<tr class="patFuncTitle">
+<td colspan="5" align="center" class="patFuncTitle">
+<strong>5 ITEMS CHECKED OUT</strong></td>
+</tr>
+
+<tr class="patFuncHeaders">
+<th class="patFuncHeaders"> RENEW </th><th class="patFuncHeaders"> TITLE </th><th  class="patFuncHeaders"> BARCODE </th><th class="patFuncHeaders"> STATUS </th><th  class="patFuncHeaders"> CALL NUMBER </th>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew0" value="i6407923" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo/1931668/item&2040560"> Dilwale dulhania le jayenge [videorecording] / story/screenplay, Aditya Chopra ; dialogue, Javed Sid </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 2040274710 </td>
+<td align="left" class="patFuncStatus"> DUE 12-22-08 <em><font color="red">  ITEM CANNOT BE RENEWED BECAUSE THERE ARE HOLDS WAITING</font></em>
+</td>
+<td align="left" class="patFuncCallNo"> DVD 891.43 DIL HINDI  </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew1" value="i7716685" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo/1931668/item&2193135"> Mohabbatein [videorecording] = ?[?Mohabbate??]? / Yash Raj Films presents ; producer, Yash Chopr </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 2067023800 </td>
+<td align="left" class="patFuncStatus"> DUE 12-22-08 <em><b>  RENEWAL SUCCESSFUL</b><br />Now due 12-30-08</em> <span  class="patFuncRenewCount">Renewed 1 time</span>
+</td>
+<td align="left" class="patFuncCallNo"> DVD 891.43 MOH HINDI  </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew2" value="i7111039" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo/1931668/item&2124958"> Provoked [videorecording] : a true story / Media One Global Entertainment Limited ; in association w </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 99102618 </td>
+<td align="left" class="patFuncStatus"> DUE 12-22-08 <em><font color="red">  ITEM CANNOT BE RENEWED BECAUSE THERE ARE HOLDS WAITING</font></em>
+</td>
+<td align="left" class="patFuncCallNo"> DVD FIC P  </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew3" value="i3077639" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo/1931668/item&1397557"> Dhaai akshar prem ke [videorecording] / a Raj Kanwar film ; produced and directed by, Raj Kanwar. </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 98059751 </td>
+<td align="left" class="patFuncStatus"> DUE 12-22-08 <em><b>  RENEWAL SUCCESSFUL</b><br />Now due 12-30-08</em> <span  class="patFuncRenewCount">Renewed 1 time</span>
+</td>
+<td align="left" class="patFuncCallNo"> DVD 891.43 DHA HINDI  </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew4" value="i7370486" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo/1931668/item&2148424"> Chithiram pesuthadi [videorecording] / director, Mysskin ; producer, Dreambridge Productions Private </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 2053495707 </td>
+<td align="left" class="patFuncStatus"> DUE 12-22-08 <em><font color="red">  ITEM CANNOT BE RENEWED BECAUSE THERE ARE HOLDS WAITING</font></em>
+</td>
+<td align="left" class="patFuncCallNo"> DVD 894.811 CHI TAMIL  </td>
+</tr>
+</table>
+</form></dl>			</div>
+		</td>
+	</tr>
+</table>
+<!--End of main page content-->
+<br />
+</div>
+<!-- begin botlogo.html file -->
+<div id="footerWrapper">
+	<div id="footer">
+		<hr />
+			<div class="nw">
+				<a href="http://www.kcls.org/about/contact/contact.cfm?tab=websupport">Contact Us</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+				<a href="http://www.kcls.org/sitehelp.cfm">Site Help</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+				<a href="http://www.kcls.org/sitemap.cfm">Site Map</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+				<a href="http://www.kcls.org/usingthelibrary/policies/privacy.cfm">Privacy Statement</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+				<a href="http://www.kcls.org/about/support">Support KCLS</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+				<a href="http://www.kcls.org/employment">KCLS Employment</a>
+		 </div>
+	</div>
+</div>
+<script language="javascript" type="text/javascript" src="/screens/common.js"></script>
+<script language="javascript" type="text/javascript" src="/screens/getObjects.js"></script>
+<script language="javascript" type="text/javascript" src="/screens/fontTool.js"></script>
+<script language="javascript" type="text/javascript" src="/screens/formattingFixes.js"></script>
+<!-- end botlogo.html file -->
+
+</body>
+</html>

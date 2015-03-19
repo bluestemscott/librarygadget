@@ -1,0 +1,835 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<link rel="stylesheet" type="text/css" href="/scripts/ProStyles.css" />
+<link rel="stylesheet" type="text/css" href="/screens/styles.css" />
+<script language="JavaScript" type="text/javascript" src="/scripts/common.js"></script>
+<script language="JavaScript" type="text/javascript" src="/scripts/features.js"></script>
+<script language="JavaScript" type="text/javascript" src="/scripts/webbridge.js"></script>
+	<!-- title should be specific - general for better usability in bookmarking -->
+	<title>Your Library Record - SFPL.org</title>
+
+	<meta http-equiv="Content-Type"  content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Language" content="en-us" />
+
+    <!-- local style sheet rules -->
+    <style type="text/css">
+		a.expired {
+			color: #f00;
+			}
+		a.expired:visited {
+			color: #f00;
+			}
+		tr.on_ice td.patFuncPickup {
+			background-image: url(/screens/frozen-text.jpg);
+			background-repeat: no-repeat;
+			padding-top: 30px;
+			}
+		tr.on_ice td.patFuncFreeze {
+			background-image: url(/screens/frozen.jpg);
+			background-repeat: no-repeat;
+			padding-top: 30px;
+			width: 56px;
+			}
+		td {
+			font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; 
+			}
+		.bibSearchtool {
+			border: 1px solid #bbb;
+			clear: both;
+			margin: 0 0 20px 0;
+			padding: 6px;
+			}
+		.detail {
+			padding-right : 4px;
+			}
+		
+		.fields {
+			display: inline;
+			width: 13.2em;
+			}
+		.headerlinks {
+			font-size : 12px;
+			padding-top : 4px;
+			padding-right : 4px;
+			}
+		.headerlinks2 {
+			font-size : 11px;
+			padding-right : 4px;
+			padding-top : 4px;
+			}
+		.helpbox {
+			border: 1px solid #c90;
+			clear: none;
+			width: 35%;
+			float: right;
+			padding: 0px;
+			}
+		.helpbox h2 {
+			display: block;
+			margin: 10px 0;
+			text-align: center;
+			}
+		.helpbox ul {
+			font-size : 11px;
+			list-style-type: none;
+			margin: 5px 10px 10px 10px;
+			padding: 0;
+			}
+		.helpbox li {
+			margin: 8px 0;
+			padding : 0;
+			}
+		.hideshow {
+			display : inline;
+			}
+		.hidden {
+			display : none;
+			}
+		.mailnote {
+        	font-size : 11px;
+			font-weight : bold;
+        	color : dark green;
+        	font-style : normal;
+        	text-align : left;
+        	background-color : #cfd3ad;
+        	border:1px solid #cfd3ad;
+        	}
+		.patronoptions {
+			float: left;
+			font-size: .8em;
+			width: 300px;
+			}
+		.patronoptions th {
+			padding: 10px 0;
+			}
+		.userstatuscell {
+			width : 160px;
+			margin-top : 5px;
+			}
+		.userstatustitle {
+			font-family : Verdana;
+			color : #000000;
+			font-size : 11px;
+			font-weight : normal;
+			padding : 10px;
+			padding-top:5px;
+			}
+    </style>
+</head>
+
+<body bgcolor="#ffffff"><a href="#content" style="display:none;">Skip to content</a>
+<div align="center">
+<div class="main"> 
+  <!-- primary content and sidebar navigation -->
+
+	<table align="center" cellpadding="0" cellspacing="0" border="0" summary="This table structures page content.">
+		<tr> 
+			<td colspan="2"> 
+        		<!-- header image, language links, and top navigation -->
+				<table class="navigationtable" cellpadding="0" cellspacing="0" border="0" summary="Table containing primary navigation and language options">              
+					<tr class="headerrow teal">
+						<td class="headertop" colspan="4" align="center"><a href="http://sfpl.org" title="San Francisco Public Library home page"><img src="/screens/logo.gif" border="0" vspace="0" alt="Go to the San Francisco Public Library home page" width="450" height="56" /></a></td>
+					</tr>              
+					<tr class="headerrow teal">
+						<td width="208"><img src="/screens/middleleft_dynamic.gif" vspace="0" alt="Image of library atrium" width="208" height="17" /></td>              
+						<td><img src="/screens/middleright_dynamic.gif" vspace="0" alt="Image of library atrium" width="400" height="17" /></td>              
+						<td width="82"><a href="/search*spi/" title="View Library catalog in Spanish"><img src="/screens/espanol_dynamic.gif" alt="View Library catalog in Spanish" border="0" width="82" height="17"/></a></td>              
+						<td width="67"><a href="/search*cht/" title="View Library catalog in Chinese"><img src="/screens/chinese_dynamic.gif" alt="View Library catalog in Chinese" border="0" width="67" height="17"/></a></td>
+
+					</tr>
+					<tr class="headerrow">              
+						<td valign="top"><img src="/screens/bottomleft_dynamic.jpg" alt="Image of library atrium" width="208" height="19" /></td>              
+						<td colspan="3" align="right" class="headerlinks" valign="middle"> 
+							<a href="http://sfpl.org/" title="SFPL home page [Alt + 1]" accesskey="1" tabindex="1">Home</a>&nbsp;|&nbsp;
+							<a href="http://sfpl.org/sfplonline/" title="SFPL Online directory [Alt + 2]" accesskey="2" tabindex="2"><acronym title="San Francisco Public Library">SFPL</acronym> Online</a>&nbsp;|&nbsp;
+							<a href="http://sfpl.org/services/" title="Library services offered [Alt + 3]" accesskey="3" tabindex="3">Services</a>&nbsp;|&nbsp;
+
+							<a href="http://sfpl.org/librarylocations/ablib.htm" title="About the Library [Alt + 4]" accesskey="4" tabindex="4">About the Library</a>&nbsp;|&nbsp;
+							<a href="http://sfpl.org/news/" title="SFPL News and events [Alt + 6]" accesskey="6" tabindex="6">News</a>&nbsp;|&nbsp;
+							<a href="http://sfpl.org/locallinks/" title="Links to the SF and Bay Area [Alt + 7]" accesskey="7" tabindex="7">Local Links</a>
+						</td>                                                               
+					</tr>                                                               
+				</table>
+			</td>
+
+		</tr>
+		<tr> 
+				<td width="26%" rowspan="3" align="left" valign="top">
+					 
+        			<!-- sidebar  -->
+	<table class="userstatuscell" cellpadding="5" cellspacing="0" border="0" summary="This table contains the library patron log in status information.">
+							<tr> 
+	<td class="userstatustitle" align="center" bgcolor="#f0f0e4">
+<p>
+<strong>BAYER, FRANCIS ALBERT</strong><br />
+Expiration Date:06-24-2012<br />
+
+</p>
+<p>
+<a class="expired" href="http://sfpl.org/sfplonline/faq/borrowing.htm#librarycard">Has your card expired?</a>
+</p>
+<p>
+<form>
+<a href="/logout~S1?" target="_self"><img src="/screens/logout.gif" alt="Log Out" border="0" /></a>
+<br />
+</form>
+<!--{logout}-->
+</p>
+								</td>
+							</tr>
+
+<tr><td class="mailnote">
+<p>
+You can now use your credit card to pay library fines and 
+fees.</p>
+<p>Click on the link for unpaid fines and bills, then click the 
+<b>Pay Online</b> button.</p>
+</td></tr>
+<tr>
+<td align="center">
+<script src=https://seal.verisign.com/getseal?host_name=sflib1.sfpl.org&size=S&use_flash=NO&use_transparent=NO&lang=en></script>
+</td></tr>
+
+
+						</table>
+				</td>
+				<td width="74%" align="right" class="headerlinks2" valign="middle">
+					<a href="http://sfpl.org/librarylocations/main/illguidelines.htm" title="Request an item from another library">Interlibrary Loan</a>&nbsp;|&nbsp; 
+					<a href="http://sfpl.org/sfplonline/suggestatitle/" title="Suggest a title for the Library catalog">Suggest a Title</a>&nbsp;|&nbsp; 
+					<a href="http://sfpl.org/sfplonline/dbcategories.htm" title="Find magazine, newspaper articles and more">Articles &amp; Databases</a>&nbsp;|&nbsp;
+
+					<a href="http://sfpl.org/sfplonline/faq.htm" title="Frequently Asked Questions">Questions?</a>
+				</td>
+			</tr>
+			<tr> 
+				<td align="left" height="30"> 
+        		<!-- page title -->
+				<a name="content"></a>
+				</td>
+			</tr>
+
+			<tr> 
+      			<!-- content area -->
+				<td align="left" valign="top">
+<!-- BEGIN SEARCH WIDGET -->
+<div align="center">
+
+<div  class="bibSearchtool">
+<script language="JavaScript" type="text/JavaScript">
+<!-- Hide the JS
+var savedTag;
+var savedSearch;
+var savedExactSearch = null; 
+
+var savedScope
+var sortButtonText = null;
+
+var sortTypes = new Array();
+var sortLabels = new Array();
+sortTypes[0] = "t";
+sortLabels[0] = "Title";
+sortTypes[1] = "a";
+sortLabels[1] = "Author";
+sortTypes[2] = "c";
+sortLabels[2] = "Year";
+sortTypes[3] = "r";
+sortLabels[3] = "Reverse Year";
+sortTypes[4] = "n";
+sortLabels[4] = "Call Number";
+sortTypes[5] = "m";
+sortLabels[5] = "Material Type";
+sortLabels[6] = "System Sorted";
+sortTypes[6] = "-";
+var sortSelectedValue = "6";
+var sortExactBrowseURL = ""
+var nonSortTags = "XYZprWw"
+// Unhide the JS -->
+</script>
+<form name="searchtool" target="_self" action="/search~S1/">
+      <select name="searchtype" id="searchtype" onChange="initSort()">
+        <option value="a"> Author</option>
+
+        <option value="t"> Title</option>
+        <option value="d"> Subject</option>
+        <option value="c"> Call No</option>
+        <option value="X" selected="selected"> Keyword</option>
+      </select>
+
+      &nbsp;
+      <input type="text" name="searcharg" size="30" maxlength="75" value="" />
+      &nbsp;
+      <select name="searchscope">
+        <option value="1" selected="selected"> View Entire Collection</option>
+        <option value="33"> Adult/Teen Materials</option>
+        <option value="4"> Anza</option>
+
+        <option value="5"> Bayview</option>
+        <option value="6"> Bernal Heights (Closed)</option>
+        <option value="32"> Branch Bookmobile 1</option>
+        <option value="7"> Children's Bookmobile</option>
+        <option value="2"> Children's Materials Only</option>
+
+        <option value="8"> Chinatown</option>
+        <option value="9"> Eureka Valley (Closed)</option>
+        <option value="10"> Excelsior</option>
+        <option value="11"> Glen Park</option>
+        <option value="12"> Golden Gate Valley</option>
+
+        <option value="13"> Ingleside</option>
+        <option value="14"> Library on Wheels</option>
+        <option value="3"> Main Library</option>
+        <option value="15"> Marina</option>
+        <option value="16"> Merced</option>
+
+        <option value="17"> Mission</option>
+        <option value="18"> Mission Bay</option>
+        <option value="19"> Noe Valley</option>
+        <option value="20"> North Beach</option>
+        <option value="21"> Oceanview</option>
+
+        <option value="22"> Ortega</option>
+        <option value="23"> Park</option>
+        <option value="24"> Parkside</option>
+        <option value="25"> Portola</option>
+        <option value="26"> Potrero (Closed)</option>
+
+        <option value="27"> Presidio and ILC</option>
+        <option value="28"> Richmond (Closed)</option>
+        <option value="29"> Sunset</option>
+        <option value="30"> Visitacion Valley</option>
+        <option value="31"> West Portal</option>
+
+        <option value="34"> Western Addition</option>
+      </select>
+      &nbsp;
+
+<span id="sort_cell">
+</span>
+
+<script language="JavaScript" type="text/JavaScript">
+<!-- Hide the JS
+initSort();
+// Unhide the JS -->
+</script>
+      <input type="hidden" name="SORT" value="D" /><input type="hidden" name="extended" value="0" /><input type="submit" name="SUBMIT" value="Search" />
+<div>
+
+      <input type="checkbox" name="availlim" value="1"  /> <EM>Limit to available</EM><br/>
+</div>
+</form>
+<div></div></div>
+</div>
+
+<!-- END SEARCH WIDGET -->
+<table class="patronoptions">
+<tr><th>Your Library Record Options</th></tr>
+<tr class="patFuncBtns">
+<td class="patFuncBtns">
+<a href="#" onClick="return open_new_window( '/patroninfo~S1/1117287/newpin' )">Modify your PIN</a>
+
+</td>
+</tr>
+
+<tr class="patFuncBtns">
+<td class="patFuncBtns">
+<a href="#" onClick="return open_new_window( '/patroninfo~S1/1117287/modpinfo' )">Modify Personal Information</a>
+</td>
+</tr>
+
+<tr class="patFuncBtns">
+<td class="patFuncBtns">
+</td>
+</tr>
+
+<tr class="patFuncBtns">
+<td class="patFuncBtns">
+
+<a href="/patroninfo~S1/1117287/holds" target="_self">9 requests (holds).</a>
+</td>
+</tr>
+
+<tr class="patFuncBtns">
+<td class="patFuncBtns">
+</td>
+</tr>
+
+<tr class="patFuncBtns">
+<td class="patFuncBtns">
+<a href="/patroninfo~S1/1117287/getpsearches" target="_self">Preferred Searches</a>
+</td>
+</tr>
+
+<tr class="patFuncBtns">
+<td class="patFuncBtns">
+<a href="/patroninfo~S1/1117287/searchcatalog" target="_self">Search the Catalog</a>
+</td>
+</tr>
+
+<tr class="patFuncBtns">
+<td class="patFuncBtns">
+</td>
+</tr>
+
+<tr class="patFuncBtns">
+<td class="patFuncBtns">
+<a href="/patroninfo~S1/1117287/patrate" target="_self">My Ratings</a>
+</td>
+
+</tr>
+
+<tr class="patFuncBtns" style="background-color:#ffffff">
+<td class="patFuncBtns">
+<br />
+<a href="http://sfpl.lib.ca.us/news/releases/privacy061704.htm">View Library's Privacy Policy</a>
+</td>
+</tr>
+</table>
+
+<div class="helpbox">
+	<h2>Helpful Resources</h2>
+	<ul>
+
+		<li><a href="http://sfpl.org/sfplonline/faq/libraryrecord.htm#holdstatus" target="_blank">What do the different status categories mean in my requests (holds) list?</a></li>
+		<li><a href="http://sfpl.org/sfplonline/faq/libraryrecord.htm#preferredsearch" target="_blank">What is a preferred search?</a></li>
+		<li><a href="http://sfpl.org/sfplonline/faq/libraryrecord.htm#freeze" target="_blank">How to "freeze" requests.</a></li>
+		<li><a href="/screens/ratings.html#howtorate" target="_blank">How can I rate an item in the Library Catalog?</a></li>
+		<li><a href="http://sfpl.org/sfplonline/faq.htm" target="_blank" title="Frequently Asked Questions">View more Frequently Asked Questions</a></li>
+	</ul>
+
+</div>
+
+</td>
+
+</tr>
+
+<tr>
+<td colspan="2">
+&nbsp;
+</td>
+</tr>
+
+</table>
+
+<table align="center" width="672">
+<tr>
+<td align="left">
+
+<form method="GET" target="_self" action="/patroninfo~S1/1117287/sorteditems">
+<a href="/patroninfo~S1/1117287/sorteditems" ><img src="/screens/pat_sortbydue.gif" alt="SORT BY DUE DATE" border="0" /></a>
+</form>
+<div id="renewfailmsg" style="display:none"  class="errormessage">
+<h2>Not all renewals were successful. See details below.</h2></div>
+<form name="renew_form_1" method="GET"><a href="/patroninfo~S1/1117287/items"  onClick="return onClickProcessAll( '/patroninfo~S1/1117287/items', 'renew','This will affect all items. Are you sure?' )"><img src="/screens/pat_renewall.gif" alt="RENEW ALL" border="0" /></a>
+</form>
+<form name="process_form_2" method="GET">
+<a href="/patroninfo~S1/1117287/items"  onClick="return onClickProcessSome( process_form_2, '/patroninfo~S1/1117287/items', 'renew' )"><img src="/screens/pat_renewmark.gif" alt="RENEW SELECTED ITEMS" border="0" /></a>
+</nobr>
+<table align="left" width="670" border="0" cellpadding="4" cellspacing="0" class="patFunc">
+<tr class="patFuncTitle">
+<th colspan="6"  class="patFuncTitle">
+19 ITEMS CHECKED OUT</th>
+
+</tr>
+
+<tr class="patFuncHeaders">
+<th class="patFuncHeaders"> RENEW </th><th class="patFuncHeaders"> TITLE </th><th  class="patFuncHeaders"> Ratings </th><th  class="patFuncHeaders"> BARCODE </th><th class="patFuncHeaders"> STATUS </th><th  class="patFuncHeaders"> CALL NUMBER </th>
+<style type="text/css">
+<!--
+#ratemy1    { display: inline }
+#rateneed1  { display: none }
+#ratemy2    { display: inline }
+#rateneed2  { display: none }
+#ratemy3    { display: inline }
+#rateneed3  { display: none }
+#ratemy4    { display: inline }
+#rateneed4  { display: none }
+#ratemy5    { display: inline }
+#rateneed5  { display: none }
+#ratemy6    { display: inline }
+#rateneed6  { display: none }
+#ratemy7    { display: inline }
+#rateneed7  { display: none }
+#ratemy8    { display: inline }
+#rateneed8  { display: none }
+#ratemy9    { display: inline }
+#rateneed9  { display: none }
+#ratemy10    { display: inline }
+#rateneed10  { display: none }
+#ratemy11    { display: inline }
+#rateneed11  { display: none }
+#ratemy12    { display: inline }
+#rateneed12  { display: none }
+#ratemy13    { display: inline }
+#rateneed13  { display: none }
+#ratemy14    { display: inline }
+#rateneed14  { display: none }
+#ratemy15    { display: inline }
+#rateneed15  { display: none }
+#ratemy16    { display: inline }
+#rateneed16  { display: none }
+#ratemy17    { display: inline }
+#rateneed17  { display: none }
+#ratemy18    { display: inline }
+#rateneed18  { display: none }
+#ratemy19    { display: inline }
+#rateneed19  { display: none }
+-->
+
+</style>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew0" value="i5222412" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S1/1117287/item&1992888"> Looney tunes golden collection. Volume two [videorecording] / Warner Bros. Pictures, Inc. present. ; </a>
+<br />
+
+</td>
+<td nowrap  class="patFuncRating">
+
+<span id="ratemy1" onmouseover="setToolVisibility ('ratemy1', 'none', 'rateneed1', 'inline')"><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" />
+</span>
+<span id="rateneed1" onmouseout="setToolVisibility ('ratemy1', 'inline', 'rateneed1', 'none')"><a href="/patroninfo~S1/1117287/items?changerating1=b1992888"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating2=b1992888"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating3=b1992888"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating4=b1992888"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating5=b1992888"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a>
+</span></td>
+<td align="left" class="patFuncBarcode"> 31223083465097 </td>
+<td align="left" class="patFuncStatus"> DUE 11-23-08  <span  class="patFuncRenewCount">Renewed 1 time</span>
+
+</td>
+<td align="left" class="patFuncCallNo"> DVD F LOON v.2 pt.4 </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew1" value="i5219903" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S1/1117287/item&2112188"> Looney tunes golden collection. Vol. 4 [videorecording] / [Warner Bros. presents]. </a>
+<br />
+
+</td>
+<td nowrap  class="patFuncRating">
+
+<span id="ratemy2" onmouseover="setToolVisibility ('ratemy2', 'none', 'rateneed2', 'inline')"><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" />
+</span>
+<span id="rateneed2" onmouseout="setToolVisibility ('ratemy2', 'inline', 'rateneed2', 'none')"><a href="/patroninfo~S1/1117287/items?changerating1=b2112188"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating2=b2112188"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating3=b2112188"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating4=b2112188"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating5=b2112188"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a>
+</span></td>
+
+<td align="left" class="patFuncBarcode"> 31223083465683 </td>
+<td align="left" class="patFuncStatus"> DUE 11-23-08  <span  class="patFuncRenewCount">Renewed 1 time</span>
+</td>
+<td align="left" class="patFuncCallNo"> DVD F LOON v.4 pt.1 </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew2" value="i5222404" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S1/1117287/item&1992889"> Looney tunes golden collection. Volume three [videorecording] / Warner Bros. Pictures, Inc. present. </a>
+<br />
+
+</td>
+<td nowrap  class="patFuncRating">
+
+<span id="ratemy3" onmouseover="setToolVisibility ('ratemy3', 'none', 'rateneed3', 'inline')"><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" />
+</span>
+<span id="rateneed3" onmouseout="setToolVisibility ('ratemy3', 'inline', 'rateneed3', 'none')"><a href="/patroninfo~S1/1117287/items?changerating1=b1992889"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating2=b1992889"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating3=b1992889"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating4=b1992889"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating5=b1992889"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a>
+</span></td>
+<td align="left" class="patFuncBarcode"> 31223083465691 </td>
+<td align="left" class="patFuncStatus"> DUE 11-23-08  <span  class="patFuncRenewCount">Renewed 1 time</span>
+</td>
+<td align="left" class="patFuncCallNo"> DVD F LOON v.3 pt.4 </td>
+
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew3" value="i4221670" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S1/1117287/item&1946216"> The Doobie Brothers [sound recording] : greatest hits. </a>
+<br />
+
+</td>
+<td nowrap  class="patFuncRating">
+
+<span id="ratemy4" onmouseover="setToolVisibility ('ratemy4', 'none', 'rateneed4', 'inline')"><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" />
+</span>
+<span id="rateneed4" onmouseout="setToolVisibility ('ratemy4', 'inline', 'rateneed4', 'none')"><a href="/patroninfo~S1/1117287/items?changerating1=b1946216"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating2=b1946216"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating3=b1946216"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating4=b1946216"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating5=b1946216"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a>
+</span></td>
+<td align="left" class="patFuncBarcode"> 31223070179677 </td>
+<td align="left" class="patFuncStatus"> DUE 12-07-08 
+
+</td>
+<td align="left" class="patFuncCallNo"> CD 781.66 DOOB  </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew4" value="i4533497" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S1/1117287/item&2028795"> To our children's children's children [sound recording] / Moody Blues. </a>
+<br />
+
+</td>
+<td nowrap  class="patFuncRating">
+
+<span id="ratemy5" onmouseover="setToolVisibility ('ratemy5', 'none', 'rateneed5', 'inline')"><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" />
+</span>
+<span id="rateneed5" onmouseout="setToolVisibility ('ratemy5', 'inline', 'rateneed5', 'none')"><a href="/patroninfo~S1/1117287/items?changerating1=b2028795"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating2=b2028795"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating3=b2028795"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating4=b2028795"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating5=b2028795"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a>
+</span></td>
+
+<td align="left" class="patFuncBarcode"> 31223072876452 </td>
+<td align="left" class="patFuncStatus"> DUE 12-07-08 
+</td>
+<td align="left" class="patFuncCallNo"> CD 781.66 MOOD  </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew5" value="i5114543" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S1/1117287/item&2117647"> Seventh sojourn [sound recording] </a>
+<br />
+
+</td>
+<td nowrap  class="patFuncRating">
+
+<span id="ratemy6" onmouseover="setToolVisibility ('ratemy6', 'none', 'rateneed6', 'inline')"><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" />
+</span>
+<span id="rateneed6" onmouseout="setToolVisibility ('ratemy6', 'inline', 'rateneed6', 'none')"><a href="/patroninfo~S1/1117287/items?changerating1=b2117647"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating2=b2117647"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating3=b2117647"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating4=b2117647"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating5=b2117647"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a>
+</span></td>
+<td align="left" class="patFuncBarcode"> 31223082919011 </td>
+<td align="left" class="patFuncStatus"> DUE 12-07-08 
+</td>
+<td align="left" class="patFuncCallNo"> CD 781.66 MOOD  </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew6" value="i4943672" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S1/1117287/item&2103862"> Every good boy deserves favour [sound recording] / the Moody Blues. </a>
+
+<br />
+
+</td>
+<td nowrap  class="patFuncRating">
+
+<span id="ratemy7" onmouseover="setToolVisibility ('ratemy7', 'none', 'rateneed7', 'inline')"><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" />
+</span>
+<span id="rateneed7" onmouseout="setToolVisibility ('ratemy7', 'inline', 'rateneed7', 'none')"><a href="/patroninfo~S1/1117287/items?changerating1=b2103862"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating2=b2103862"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating3=b2103862"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating4=b2103862"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating5=b2103862"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a>
+</span></td>
+<td align="left" class="patFuncBarcode"> 31223080832398 </td>
+<td align="left" class="patFuncStatus"> DUE 12-07-08 
+</td>
+<td align="left" class="patFuncCallNo"> CD 781.66 MOOD  </td>
+
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew7" value="i4788872" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S1/1117287/item&2066584"> Hetty Wainthropp investigates. Complete second series [videorecording] / producer, Carol Parks ; dir </a>
+<br />
+
+</td>
+<td nowrap  class="patFuncRating">
+
+<span id="ratemy8" onmouseover="setToolVisibility ('ratemy8', 'none', 'rateneed8', 'inline')"><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 1 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 1 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 1 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 1 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 1 ratings" />
+</span>
+<span id="rateneed8" onmouseout="setToolVisibility ('ratemy8', 'inline', 'rateneed8', 'none')"><a href="/patroninfo~S1/1117287/items?changerating1=b2066584"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating2=b2066584"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating3=b2066584"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating4=b2066584"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating5=b2066584"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a>
+</span></td>
+<td align="left" class="patFuncBarcode"> 31223075915778 </td>
+<td align="left" class="patFuncStatus"> DUE 11-23-08 
+
+</td>
+<td align="left" class="patFuncCallNo"> DVD F HETT v.3 </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew8" value="i4788868" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S1/1117287/item&2066584"> Hetty Wainthropp investigates. Complete second series [videorecording] / producer, Carol Parks ; dir </a>
+<br />
+
+</td>
+<td nowrap  class="patFuncRating">
+
+<span id="ratemy9" onmouseover="setToolVisibility ('ratemy9', 'none', 'rateneed9', 'inline')"><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 1 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 1 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 1 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 1 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 1 ratings" />
+</span>
+<span id="rateneed9" onmouseout="setToolVisibility ('ratemy9', 'inline', 'rateneed9', 'none')"><a href="/patroninfo~S1/1117287/items?changerating1=b2066584"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating2=b2066584"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating3=b2066584"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating4=b2066584"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating5=b2066584"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a>
+</span></td>
+
+<td align="left" class="patFuncBarcode"> 31223075915752 </td>
+<td align="left" class="patFuncStatus"> DUE 11-23-08 
+</td>
+<td align="left" class="patFuncCallNo"> DVD F HETT v.1 </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew9" value="i4265587" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S1/1117287/item&1969701"> The Mary Tyler Moore show. The complete second season [videorecording] / produced by Allan Burns, Ja </a>
+<br />
+
+</td>
+<td nowrap  class="patFuncRating">
+
+<span id="ratemy10" onmouseover="setToolVisibility ('ratemy10', 'none', 'rateneed10', 'inline')"><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" />
+</span>
+<span id="rateneed10" onmouseout="setToolVisibility ('ratemy10', 'inline', 'rateneed10', 'none')"><a href="/patroninfo~S1/1117287/items?changerating1=b1969701"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating2=b1969701"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating3=b1969701"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating4=b1969701"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating5=b1969701"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a>
+</span></td>
+<td align="left" class="patFuncBarcode"> 31223070255899 </td>
+<td align="left" class="patFuncStatus"> DUE 11-23-08 
+</td>
+<td align="left" class="patFuncCallNo"> DVD F MARY pt.2 </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew10" value="i3329871" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S1/1117287/item&1799536"> The Mary Tyler Moore show. The complete first season [videorecording] / produced by Allan Burns, Jam </a>
+
+<br />
+
+</td>
+<td nowrap  class="patFuncRating">
+
+<span id="ratemy11" onmouseover="setToolVisibility ('ratemy11', 'none', 'rateneed11', 'inline')"><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" />
+</span>
+<span id="rateneed11" onmouseout="setToolVisibility ('ratemy11', 'inline', 'rateneed11', 'none')"><a href="/patroninfo~S1/1117287/items?changerating1=b1799536"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating2=b1799536"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating3=b1799536"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating4=b1799536"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating5=b1799536"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a>
+</span></td>
+<td align="left" class="patFuncBarcode"> 31223071275144 </td>
+<td align="left" class="patFuncStatus"> DUE 11-23-08 
+</td>
+<td align="left" class="patFuncCallNo"> DVD F MARY pt.3 </td>
+
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew11" value="i3329868" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S1/1117287/item&1799536"> The Mary Tyler Moore show. The complete first season [videorecording] / produced by Allan Burns, Jam </a>
+<br />
+
+</td>
+<td nowrap  class="patFuncRating">
+
+<span id="ratemy12" onmouseover="setToolVisibility ('ratemy12', 'none', 'rateneed12', 'inline')"><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" />
+</span>
+<span id="rateneed12" onmouseout="setToolVisibility ('ratemy12', 'inline', 'rateneed12', 'none')"><a href="/patroninfo~S1/1117287/items?changerating1=b1799536"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating2=b1799536"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating3=b1799536"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating4=b1799536"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating5=b1799536"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a>
+</span></td>
+<td align="left" class="patFuncBarcode"> 31223063075478 </td>
+<td align="left" class="patFuncStatus"> DUE 11-23-08 
+
+</td>
+<td align="left" class="patFuncCallNo"> DVD F MARY pt.2 </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew12" value="i3329866" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S1/1117287/item&1799536"> The Mary Tyler Moore show. The complete first season [videorecording] / produced by Allan Burns, Jam </a>
+<br />
+
+</td>
+<td nowrap  class="patFuncRating">
+
+<span id="ratemy13" onmouseover="setToolVisibility ('ratemy13', 'none', 'rateneed13', 'inline')"><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" />
+</span>
+<span id="rateneed13" onmouseout="setToolVisibility ('ratemy13', 'inline', 'rateneed13', 'none')"><a href="/patroninfo~S1/1117287/items?changerating1=b1799536"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating2=b1799536"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating3=b1799536"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating4=b1799536"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating5=b1799536"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a>
+</span></td>
+
+<td align="left" class="patFuncBarcode"> 31223063075296 </td>
+<td align="left" class="patFuncStatus"> DUE 11-23-08 
+</td>
+<td align="left" class="patFuncCallNo"> DVD F MARY pt.1 </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew13" value="i5281057" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S1/1117287/item&1309076"> Heart shaped world [sound recording] / [composed and performed by] Chris Isaak. </a>
+<br />
+
+</td>
+<td nowrap  class="patFuncRating">
+
+<span id="ratemy14" onmouseover="setToolVisibility ('ratemy14', 'none', 'rateneed14', 'inline')"><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" />
+</span>
+<span id="rateneed14" onmouseout="setToolVisibility ('ratemy14', 'inline', 'rateneed14', 'none')"><a href="/patroninfo~S1/1117287/items?changerating1=b1309076"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating2=b1309076"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating3=b1309076"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating4=b1309076"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating5=b1309076"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a>
+</span></td>
+<td align="left" class="patFuncBarcode"> 31223083645789 </td>
+<td align="left" class="patFuncStatus"> DUE 12-07-08 
+</td>
+<td align="left" class="patFuncCallNo"> CD 781.66 ISAA  </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew14" value="i4727881" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S1/1117287/item&1556521"> Forever blue [sound recording] / Chris Isaak. </a>
+
+<br />
+
+</td>
+<td nowrap  class="patFuncRating">
+
+<span id="ratemy15" onmouseover="setToolVisibility ('ratemy15', 'none', 'rateneed15', 'inline')"><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" />
+</span>
+<span id="rateneed15" onmouseout="setToolVisibility ('ratemy15', 'inline', 'rateneed15', 'none')"><a href="/patroninfo~S1/1117287/items?changerating1=b1556521"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating2=b1556521"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating3=b1556521"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating4=b1556521"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating5=b1556521"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a>
+</span></td>
+<td align="left" class="patFuncBarcode"> 31223064297261 </td>
+<td align="left" class="patFuncStatus"> DUE 12-07-08 
+</td>
+<td align="left" class="patFuncCallNo"> CD 781.66 ISAA  </td>
+
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew15" value="i3043364" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S1/1117287/item&1702364"> Speak of the devil [sound recording] / Chris Isaak. </a>
+<br />
+
+</td>
+<td nowrap  class="patFuncRating">
+
+<span id="ratemy16" onmouseover="setToolVisibility ('ratemy16', 'none', 'rateneed16', 'inline')"><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" />
+</span>
+<span id="rateneed16" onmouseout="setToolVisibility ('ratemy16', 'inline', 'rateneed16', 'none')"><a href="/patroninfo~S1/1117287/items?changerating1=b1702364"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating2=b1702364"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating3=b1702364"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating4=b1702364"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating5=b1702364"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a>
+</span></td>
+<td align="left" class="patFuncBarcode"> 31223081524960 </td>
+<td align="left" class="patFuncStatus"> DUE 12-07-08 
+
+</td>
+<td align="left" class="patFuncCallNo"> CD 781.66 ISAA  </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew16" value="i3827155" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S1/1117287/item&1888903"> Best of the best [sound recording] : 25 years of rock. </a>
+<br />
+
+</td>
+<td nowrap  class="patFuncRating">
+
+<span id="ratemy17" onmouseover="setToolVisibility ('ratemy17', 'none', 'rateneed17', 'inline')"><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" />
+</span>
+<span id="rateneed17" onmouseout="setToolVisibility ('ratemy17', 'inline', 'rateneed17', 'none')"><a href="/patroninfo~S1/1117287/items?changerating1=b1888903"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating2=b1888903"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating3=b1888903"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating4=b1888903"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating5=b1888903"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a>
+</span></td>
+
+<td align="left" class="patFuncBarcode"> 31223071255583 </td>
+<td align="left" class="patFuncStatus"> DUE 12-07-08 
+</td>
+<td align="left" class="patFuncCallNo"> CD 781.66 BEST  </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew17" value="i2560139" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S1/1117287/item&1537686"> A classic case [sound recording] : London Symphony Orchestra plays the music of Jethro Tull. </a>
+<br />
+
+</td>
+<td nowrap  class="patFuncRating">
+
+<span id="ratemy18" onmouseover="setToolVisibility ('ratemy18', 'none', 'rateneed18', 'inline')"><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" />
+</span>
+<span id="rateneed18" onmouseout="setToolVisibility ('ratemy18', 'inline', 'rateneed18', 'none')"><a href="/patroninfo~S1/1117287/items?changerating1=b1537686"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating2=b1537686"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating3=b1537686"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating4=b1537686"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating5=b1537686"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a>
+</span></td>
+<td align="left" class="patFuncBarcode"> 31223050061077 </td>
+<td align="left" class="patFuncStatus"> DUE 12-07-08 
+</td>
+<td align="left" class="patFuncCallNo"> CD 784.2 LON  </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew18" value="i3319565" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S1/1117287/item&1796136"> Let it rain [sound recording] / Tracy Chapman. </a>
+
+<br />
+
+</td>
+<td nowrap  class="patFuncRating">
+
+<span id="ratemy19" onmouseover="setToolVisibility ('ratemy19', 'none', 'rateneed19', 'inline')"><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" /><img src="/screens/rate_pad.gif" border="0" title="Rated 0 stars out of 5 based on 0 ratings" />
+</span>
+<span id="rateneed19" onmouseout="setToolVisibility ('ratemy19', 'inline', 'rateneed19', 'none')"><a href="/patroninfo~S1/1117287/items?changerating1=b1796136"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating2=b1796136"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating3=b1796136"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating4=b1796136"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a><a href="/patroninfo~S1/1117287/items?changerating5=b1796136"><img src="/screens/rate_need.gif" border="0" title="Rate this material!" /></a>
+</span></td>
+<td align="left" class="patFuncBarcode"> 31223063053210 </td>
+<td align="left" class="patFuncStatus"> DUE 12-07-08 
+</td>
+<td align="left" class="patFuncCallNo"> CD 781.66 CHAP  </td>
+
+</tr>
+</table>
+</form></dl>
+<form method="GET" target="_self" action="/patroninfo~S1/1117287/sorteditems">
+<a href="/patroninfo~S1/1117287/sorteditems" ><img src="/screens/pat_sortbydue.gif" alt="SORT BY DUE DATE" border="0" /></a>
+</form>
+<div id="renewfailmsg" style="display:none"  class="errormessage">
+<h2>Not all renewals were successful. See details below.</h2></div>
+<form name="renew_form_1" method="GET"><a href="/patroninfo~S1/1117287/items"  onClick="return onClickProcessAll( '/patroninfo~S1/1117287/items', 'renew','This will affect all items. Are you sure?' )"><img src="/screens/pat_renewall.gif" alt="RENEW ALL" border="0" /></a>
+</form>
+<a href="/patroninfo~S1/1117287/items"  onClick="return onClickProcessSome( process_form_2, '/patroninfo~S1/1117287/items', 'renew' )"><img src="/screens/pat_renewmark.gif" alt="RENEW SELECTED ITEMS" border="0" /></a>
+</nobr>
+</td>
+</tr>
+</table>
+
+ </div>
+</div>
+
+<br />
+<br />
+<div align="center">
+<table class="footertable" align="center" cellpadding="0" cellspacing="0" summary="Table containing page footer content.">
+	<tr class="headerrow">
+		<td align="center" class="footercell" valign="top">
+			<img src="/screens/stripe.gif" width="672" height="3" border="0" hspace="0" vspace="0" alt="Footer color stripe" />                                                              
+			<div class="footercontent">Have a question? </div>                                                              
+		</td>
+
+	</tr>
+	<tr>
+		<td class="footeradd2" align="center" valign="middle">
+			<a href="http://sfpl.org/librarylocations/contact.htm">Contact Us</a><span class="content">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+			<a href="http://sfpl.org/sfplonline/FAQ.htm">Frequently Asked Questions</a><span class="content">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+			<a href="http://sfpl.org/sfplonline/asklibrarian.htm">Ask a Librarian</a><span class="content">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+
+			<a href="http://sfpl.org/sfplonline/search.htm" title="Search Our Site">Search Our Site</a>
+		</td>
+		
+	</tr>
+	<tr>
+		<td class="detail footeradd" align="center" valign="middle">
+			<a href="http://sfpl.org/librarylocations/libcomm/privacy061704.htm"><strong>Privacy Policy</strong></a>&nbsp;&#183;&nbsp;Copyright &#169; 2002-08 by San Francisco Public Library. All rights reserved.&nbsp;&#183;&nbsp;<a href="http://sfpl.org/sfplonline/internet.htm" title="Read SFPL's Internet use policy"><strong>Internet Use Policy</strong></a>
+
+		</td>
+	</tr>
+</table>
+</div>
+<br />
+<script type="text/javascript" src="/screens/footer.js"></script>
+<!--this is customized <screens/patronview_web.html>-->

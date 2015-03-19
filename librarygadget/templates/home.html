@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Library Gadget: For busy people who love the library</title>
+
+{% endblock %}
+
+{% block content %}
+	<div class="section">
+	<h3>For busy people who love the library</h3>
+        <p>
+            <ul>
+                <li>One easy place to see what you've borrowed, even across multiple cards</li>
+                <li>Auto-renew items before they're due</li>
+                <li>Email notifications for items that can't be auto-renewed</li>
+                <li>Daily email reminders about any overdue items</li>
+
+            </ul>
+
+        </p>
+
+     </div>
+     <div class="section">
+     <h3>No more library fines</h3>
+
+        <p>
+            The more you borrow, the faster overdue fines can accrue. Library Gadget keeps on top of it for you.
+        </p>
+
+    </div>
+
+
+	<div class="section">
+	<h3>Hundreds of libraries</h3>
+	<p>Check our <a href="{% url librarybot.viewsui.libraries %}">list of libraries</a> to see if yours is supported.
+	</p>
+
+	</div>
+
+
+    <div class="section">
+        <a class="fancy_button" style="margin-bottom: 25px; clear: both;" href="{% url pricing_plans %}">
+            <span style="background-color: #070;">Sign Up</span>
+        </a>
+    </div>
+
+    <div class="section">
+        <h3>What people are saying</h3>
+
+        <p>"Fantastic. Incredibly useful, and the maintainer is very, very fast about adding new libraries.
+            I definitely recommend this for anyone who reads a lot."</p>
+
+        <p>"We have four library cards between the wife kids & I, this helps keep it all straight, thanks!"</p>
+
+        <p>"I have been looking everywhere for this kind of service ever since shelling out $15 for an overdue library book.
+            In fact, this just saved me from paying another fine as it showed several books that were due today."</p>
+
+    </div>
+
+
+{% endblock %}

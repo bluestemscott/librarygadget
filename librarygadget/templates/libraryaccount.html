@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Library Gadget: Library Account</title>
+<script type="text/javascript" src="/site_media/librarygadget.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+	$('p[pin_required="False"]')
+        .hide()
+        .find("input")
+            .val("na");
+
+      {% include "useraccounts.js" %}
+  });
+</script>
+
+
+
+{% endblock %}
+
+{% block content %} 
+	
+	<div class="section">
+	<h3>{{ library.name }}</h3>
+	
+	{{ form.non_field_errors }}
+	<form id='add_account' method='POST'>
+		{% csrf_token %}
+		<p>
+            {{ form.name.errors }}
+            <label for="id_name">Name on library card:</label>
+            {{ form.name }}
+         </p>
+        <p>
+            {{ form.patronid.errors }}
+            <label for="id_patronid">Library card number:</label>
+            {{ form.patronid }}
+        </p>
+        <p pin_required="{{ library.pin_required }}">
+            {{ form.pin.errors }}
+            <label for="id_pin">Library website password:</label>
+            {{ form.pin }}
+        </p>
+		<p>
+		<input id="addaccountbtn" class="button" type="submit" value="Add Card"/>
+        </p>
+	</form>
+	<p>Choose <a href="{% url librarybot.viewsui.libraries %}">another library</a>.
+	{% if free and patrons|length > 0 %}
+		<p>Auto-renew materials for only {{ upgrade.total_cost }}.
+            Click <a href="{% url profile %}">here</a> after adding your cards.</p>
+	{% endif %}	
+	</p>
+	</div>
+	
+	
+	<div class="section">
+		{% include "useraccounts.html" %}
+	</div>
+	
+{% endblock %}

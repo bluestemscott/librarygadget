@@ -1,0 +1,355 @@
+<!-- 2006 WebPAC Pro Version, set from 26 March, 2007 -->
+<!-- This file last changed: 20 April, 2006 -->
+<html  dir="LTR">
+<head>
+<title>Lakeland Library Cooperative                                     /All Locations</title>
+<base target="_self"/>
+<link rel="stylesheet" type="text/css" href="/scripts/ProStyles.css" />
+<link rel="stylesheet" type="text/css" href="/screens/styles.css" />
+<link rel="shortcut icon" type="ximage/icon" href="/screens/favicon.ico" />
+<script language="JavaScript" type="text/javascript" src="/scripts/common.js"></script>
+<script language="JavaScript" type="text/javascript" src="/scripts/webbridge.js"></script>
+<script language="JavaScript">
+<!-- Hide the JS
+startTimeout(300000, "/");
+// -->
+</script>
+<noscript>
+<meta http-equiv="Refresh" content="300;URL=/" />
+
+</noscript>
+
+<script type="text/javascript" src="/screens/bibdisplay.js"></script><script type="text/javascript" src="/screens/brief.js"></script><!--[if lte IE 8]><link rel="stylesheet" media="all" type="text/css" href="/screens/ie_styles.css" /><![endif]-->
+</head>
+<body bgcolor="#FFFFFF" >
+<!-- begin toplogo.html file -->
+<!-- 2006 WebPAC Pro Version, set from 26 March, 2007 -->
+<!-- This file last changed: 9 February, 2007 -->
+<div id="topLogohead">
+<div id="topID">
+	<div align="right">
+		<ul>
+<li><a href="/logout?">Log Out</a></li>
+
+<li class="breaker">|</li>
+<li>
+<a href="/patroninfo~S1/1412789/top/">Return To Your Record</a>
+</li>
+<li class="breaker">|</li>
+<li><a href="/search">Start Over</a></li>
+<li class="breaker">|</li>
+<li><a href="/screens/help_index.html">Help</a></li>
+	</ul>
+	</div>
+
+</div>
+<div style="float:left;">
+	<div id="topLogoImage"><a href="/"><img src="/screens/logo.gif" width="171" height="27" border="0" alt="Return to home page" /></a></div>
+</div>
+<div style="clear:both;"></div>
+</div>
+<!--end toplogo.html-->
+<!--this is customized <screens/toplogo_loggedin.html>-->
+<span class="loggedInMessage">You are logged into Lakeland Library Cooperative                                     /All Locations as WEDEVEN, CHAD M</span><br /><BR>
+<br />
+<div class="topDiv">
+<div>
+<div id="bibLeft">&nbsp;</div>
+<div id="bibContent">
+<div class="raised">
+
+<b class="top"><b class="b1"></b><b class="b2"></b><b class="b3"></b><b class="b4"></b></b>
+<div class="tool">
+<!-- BEGIN SEARCH WIDGET -->
+<div align="center">
+
+<div  class="bibSearchtool">
+<script language="JavaScript" type="text/JavaScript">
+<!-- Hide the JS
+var savedTag;
+var savedSearch;
+var savedExactSearch = null; 
+
+var savedScope
+var sortButtonText = null;
+
+var sortTypes = new Array();
+var sortLabels = new Array();
+sortTypes[0] = "t";
+sortLabels[0] = "Title";
+sortTypes[1] = "a";
+sortLabels[1] = "Author";
+sortTypes[2] = "c";
+sortLabels[2] = "Year";
+sortTypes[3] = "r";
+sortLabels[3] = "Reverse Year";
+sortLabels[4] = "System Sorted";
+sortTypes[4] = "-";
+var sortSelectedValue = "4";
+var sortExactBrowseURL = ""
+var nonSortTags = "XYZprWw"
+// Unhide the JS -->
+</script>
+<form name="searchtool" target="_self" action="/search~S1/">
+      <select name="searchtype" id="searchtype" onChange="initSort()">
+        <option value="a"> AUTHOR</option>
+        <option value="t"> TITLE</option>
+
+        <option value="d"> SUBJECT</option>
+        <option value="X" selected="selected"> KEYWORD</option>
+      </select>
+      &nbsp;
+      <input type="text" name="searcharg" size="30" maxlength="75" value="" />
+      &nbsp;
+      <select name="searchscope">
+
+        <option value="1" selected="selected"> All Locations</option>
+        <option value="2"> All Childrens Materials</option>
+        <option value="3"> Allendale Township Library</option>
+        <option value="4"> Alvah N. Belding Library</option>
+        <option value="5"> Carson City/Crystal</option>
+
+        <option value="6"> Cedar Springs Public Library</option>
+        <option value="7"> Dorr Township Library</option>
+        <option value="8"> Fennville District Library</option>
+        <option value="9"> Flat River Community Library</option>
+        <option value="10"> Freeport District Library</option>
+
+        <option value="11"> Fremont Area District Library</option>
+        <option value="12"> Gary Byker Memorial Library</option>
+        <option value="13"> Georgetown Township Library</option>
+        <option value="24"> Grant Area District Library</option>
+        <option value="25"> Hackley Public Library</option>
+
+        <option value="26"> Hastings Public Library</option>
+        <option value="27"> Henika District Library</option>
+        <option value="28"> Herrick Dist. Library (all branches)</option>
+        <option value="29"> Herrick Main Library</option>
+        <option value="30"> Herrick North Branch</option>
+
+        <option value="31"> Herrick District Childrens</option>
+        <option value="32"> Hesperia Community Library</option>
+        <option value="33"> Home Township Library</option>
+        <option value="34"> Hopkins Public Library</option>
+        <option value="35"> Howard Miller Library</option>
+
+        <option value="36"> Ionia Community Library</option>
+        <option value="37"> KDL Alpine Branch</option>
+        <option value="38"> KDL Alto Branch</option>
+        <option value="39"> KDL Byron Branch</option>
+        <option value="40"> KDL Caledonia Branch</option>
+
+        <option value="41"> KDL Cascade Branch</option>
+        <option value="42"> KDL Comstock Park Branch</option>
+        <option value="44"> KDL E. Grand Rapids Branch</option>
+        <option value="43"> KDL Gaines Twp Branch</option>
+        <option value="45"> KDL Grandville Branch</option>
+
+        <option value="46"> KDL Kent City Branch</option>
+        <option value="47"> KDL Kentwood Branch</option>
+        <option value="48"> KDL Lowell Branch</option>
+        <option value="49"> KDL Plainfield Branch</option>
+        <option value="50"> KDL Rockford Branch</option>
+
+        <option value="51"> KDL Sand Lake Branch</option>
+        <option value="52"> KDL Spencer Branch</option>
+        <option value="53"> KDL Walker Branch</option>
+        <option value="54"> KDL Wyoming Branch</option>
+        <option value="55"> Kent District Lib. (all branches)</option>
+
+        <option value="56"> Kent District Childrens</option>
+        <option value="57"> Lake Odessa Community Library</option>
+        <option value="58"> Leighton Township Library</option>
+        <option value="59"> Loutit District Library</option>
+        <option value="61"> MADL Dalton Branch</option>
+
+        <option value="62"> MADL Egelston Branch</option>
+        <option value="63"> MADL Fruitport Branch</option>
+        <option value="64"> MADL Holton Branch</option>
+        <option value="65"> MADL Montague Branch</option>
+        <option value="66"> MADL Muskegon Hts Branch</option>
+
+        <option value="60"> MADL Muskegon Twp Branch</option>
+        <option value="67"> MADL North Muskegon Branch</option>
+        <option value="68"> MADL Norton Shores Branch</option>
+        <option value="69"> MADL Ravenna Branch</option>
+        <option value="70"> Muskegon Area Dist Lib (all branches)</option>
+
+        <option value="71"> Newaygo Area District Library</option>
+        <option value="72"> Northeast Ottawa District Library</option>
+        <option value="74"> Patmos Library</option>
+        <option value="75"> Reynolds Township Library</option>
+        <option value="76"> Salem Township Library</option>
+
+        <option value="77"> Saranac/Clarksville</option>
+        <option value="78"> Saugatuck-Douglas District Library</option>
+        <option value="79"> Sparta Township Library</option>
+        <option value="82"> Spring Lake District Library</option>
+        <option value="80"> Tamarack District Library</option>
+
+        <option value="81"> Thornapple-Kellogg Library</option>
+        <option value="83"> White Cloud Coummunity Library</option>
+        <option value="84"> White Lake Community Library</option>
+        <option value="85"> Allegan County Childrens</option>
+        <option value="86"> Barry County Childrens</option>
+
+        <option value="87"> Ionia County Childrens</option>
+        <option value="88"> Montcalm County Childrens</option>
+        <option value="89"> Muskegon County Childrens</option>
+        <option value="90"> Newaygo County Childrens</option>
+        <option value="91"> Ottawa County Childrens</option>
+
+        <option value="92"> Sparta/Cedar Springs Childrens</option>
+        <option value="73"> Nunica Branch (Herrick)</option>
+        <option value="14"> Grand Rapids Van Belkum</option>
+        <option value="15"> Grand Rapids Madison</option>
+        <option value="16"> Grand Rapids Main</option>
+
+        <option value="17"> Grand Rapids Ottawa</option>
+        <option value="18"> Grand Rapids Seymour</option>
+        <option value="19"> Grand Rapids West Leonard</option>
+        <option value="20"> Grand Rapids West Side</option>
+        <option value="21"> Grand Rapids Yankee Clipper</option>
+
+        <option value="22"> Grand Rapids Public-All branches</option>
+        <option value="23"> Grand Rapids PL Childrens</option>
+      </select>
+      &nbsp;
+
+<span id="sort_cell">
+</span>
+
+<script language="JavaScript" type="text/JavaScript">
+<!-- Hide the JS
+initSort();
+// Unhide the JS -->
+
+</script>
+      <input type="hidden" name="SORT" value="D" /><input type="hidden" name="extended" value="0" /><input type="submit" name="SUBMIT" value="Search" />
+<div>
+      <input type="checkbox" name="availlim" value="1"  /> <EM>Limit results to available items</EM><br/>
+</div>
+</form>
+<div></div></div>
+</div>
+
+<!-- END SEARCH WIDGET -->
+</div>
+<b class="bottom"><b class="b4b"></b><b class="b3b"></b><b class="b2b"></b><b class="b1b"></b></b>
+</div>
+
+</div>
+<div id="bibRight"></div>
+</div>
+<div class="clear"></div>
+</div>
+<!--{patron}-->
+<table width="100%" align="center">
+<tr>
+<td align="center" width="35%">
+<div class="patMainFuncs">
+<div class="patStatusLinks">
+
+
+
+<a href="/patroninfo~S1/1412789/items" target="_self">9 Items currently checked out</a>
+
+
+</div>
+<div class="patHelpLinks">
+<a href="/screens/help_holds.html">Help with Holds</a>
+<a href="/screens/help_renew.html">Help with Renewals</a>
+<a href="/screens/help_prefsearch.html">Help with Preferred Searches</a>
+</div>
+</div>
+</td>
+<td align="center" width="40%">
+<div class="patNameAddress">
+<strong>WEDEVEN, CHAD M</strong><br />
+
+11476 BOYNE BLVD<br />
+ALLENDALE MI  49401-9553<br />
+##616-895-6549<br />
+squeepy@hotmail.com<br />
+EXP DATE:06-07-2011<br />
+</div>
+</td>
+
+<td align="left">
+<div class="patActionsLinks">
+<a href="http://emailnotification.llcoop.org" onclick="return open_new_window( 'http://emailnotification.llcoop.org' )" _base_target="_self"><img src="/screens/email2.gif" alt="Notices By E-mail" _base_target="_self" border="0"></a>
+<br><br>
+
+<a href="#" onClick="return open_new_window( '/patroninfo~S1/1412789/newpin' )"><img src="/screens/pat_pin.gif" alt="Modify your PIN" border="0" /></a>
+<a href="/patroninfo~S1/1412789/getpsearches" target="_self"><img src="/screens/getpsavedrecs.gif" alt="Preferred Searches" border="0" /></a>
+<a href="/patroninfo~S1/1412789/readinghistory" target="_self"><img src="/screens/reading_history.gif" border="0" alt="My Reading History" /></a>
+</div>
+</td>
+</tr>
+</table>
+<div class="patFuncArea">
+<table border="0" class="patFunc">
+</tr><tr><td colspan="3">
+<a href="#" onclick="return open_new_htpatpay_window('/webapp/iii/ecom/pay.do?scope=1&ptype=146')"><img src="/screens/pay.gif" alt="Pay Online" border="0" /></a></td>
+<tr class="patFuncTitle">
+<th colspan="4" class="patFuncTitle">
+FINES
+</th>
+</tr>
+<tr class="patFuncFinesEntryTitle">
+
+<td colspan="4" class="patFuncFinesEntryTitle"><br /><em> The Seuss, the whole Seuss, and nothing but the Seuss : a visual biography of Theo</em></td>
+</tr>
+<tr class="patFuncFinesEntryDetail">
+<td>&nbsp;</td>
+<td class="patFuncFinesDetailType"> OVERDUE ITEM RENEWED  </td>
+<td align="right" class="patFuncFinesDetailAmt"> $1.65 </td>
+<td> &nbsp; </td>
+</tr>
+<tr class="patFuncFinesDetailDate">
+
+<td>&nbsp;</td>
+<td colspan="2" class="patFuncFinesDetailDateLabel"> DATE CHECKED OUT: </td>
+<td class="patFuncFinesDetailDate"> Wed Sep 24 2008 03:20PM </td>
+</tr>
+<tr class="patFuncFinesDetailDate">
+<td>&nbsp;</td><td colspan="2" class="patFuncFinesDetailDateLabel"> DATE DUE: </td>
+<td class="patFuncFinesDetailDate"> Wed Oct 15 2008 </td>
+</tr>
+<tr class="patFuncFinesDetailDate">
+
+<td>&nbsp;</td><td colspan="2" class="patFuncFinesDetailDateLabel"> DATE RENEWED: </td>
+<td class="patFuncFinesDetailDate"> Sun Oct 26 2008 </td>
+</tr>
+<tr class="patFuncFinesTotal">
+<td align="right" colspan="2" class="patFuncFinesTotalLabel"><br /><em>Total Fines</em></td>
+<td align="right" class="patFuncFinesTotalAmt"><br /><em>$1.65</em></td>
+<td>&nbsp;</td>
+</tr><tr><td colspan="3">
+<a href="#" onclick="return open_new_htpatpay_window('/webapp/iii/ecom/pay.do?scope=1&ptype=146')"><img src="/screens/pay.gif" alt="Pay Online" border="0" /></a></td>
+</tr>
+</table>
+
+</div>
+<br />
+<!-- begin botlogo.html file -->
+<!-- 2006 WebPAC Pro Version, set from 26 March, 2007 -->
+<!-- This file last changed: 20 April, 2006 -->
+<br />
+<!--Begin the bottom logo table-->
+<div id="botnav">
+<ul class="botmenuLinks">
+<li><a href="/">Home</a></li>
+<li class="breaker">|</li>
+<li><a href="/screens/help_index.html">Help</a></li>
+<li class="breaker">|</li>
+
+<li><a href="http://grpl.michiganevergreen.org">Grand Rapids Catalog</a></li>
+</ul>
+</div>
+<!--End the bottom logo table-->
+<!-- end botlogo.html file -->
+
+</body>
+</html>
+<!--this is customized <screens/patronview_web.html>-->

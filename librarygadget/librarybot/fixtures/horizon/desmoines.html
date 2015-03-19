@@ -1,0 +1,723 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <title>Des Moines Public Library Catalog</title><link title="bannerstyles" href="/hipres/css/ipac.css" type="text/css" rel="stylesheet"><SCRIPT LANGUAGE="JavaScript">
+<!--
+	function startTimer()
+	{
+		curUrl = window.location.href;
+		if (curUrl.indexOf("startover=true", 0) < 0)
+		{    
+		  var time= new Date();
+	        hours= time.getHours();
+	        mins= time.getMinutes();
+	        secs= time.getSeconds();
+	        closeTime=hours*3600+mins*60+secs;
+	        closeTime+=300;
+	        Timer();
+		}
+	}
+	function Timer()
+	{
+	        var time= new Date();
+	        hours= time.getHours();
+	        mins= time.getMinutes();
+	        secs= time.getSeconds();
+	        curTime=hours*3600+mins*60+secs;
+	        if(curTime>=closeTime)
+		{
+		        location = "http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&profile=ce&logout=true&startover=true";
+		}
+		else
+		{
+			window.setTimeout("Timer()",1000);
+		}
+	}
+//-->
+</SCRIPT><SCRIPT LANGUAGE="JavaScript">
+// the date selector script//////////////////////////////////////
+// author: Robert Price  October 17, 2002
+/////////////////////////////////////////////////////////////////
+
+//values for populating and working with selection fields
+var mdy = new Array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30);
+var mdyShort = new Array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28);
+var mdyShortLeap = new Array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29);
+var mdyLong = new Array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31);
+var myMonths = new Array(1,2,3,4,5,6,7,8,9,10,11,12);
+var myDays = new Array(mdyLong,mdyShortLeap,mdyShort,mdy);
+var myYears;
+
+//values for configuration
+//# years to show in the future
+var yrsToShow = 2;
+//# days to extend into future for default 'suspend until' date
+var daysToExtend = 28;
+//set whether first selector is months or days
+var monthFirst = true;
+var allowPastDays = false;	//when selecting a date, show days in past
+							//for the purpose of selecting a suspend-until date, we don't want them to choose a past date
+
+//common values
+var millisInDay = 86400000;
+var todaysDate = new Date();
+var todayYr = todaysDate.getFullYear();
+var todayMo = todaysDate.getMonth();
+var todayDy = todaysDate.getDate();
+var months;					//placeholders to make ordering of selectors controlled by script, not html ordering
+var days;
+var years;
+
+//called by "change status" button; converts selected date into milliseconds
+function getCurrentDateAsMillis()
+{
+	var dVal = days.options[days.selectedIndex].value;
+	var mVal = months.options[months.selectedIndex].value;
+	var yVal = years.options[years.selectedIndex].value;
+	var dateStr = mVal + "/" + dVal + "/" + yVal;
+	document.ipac.suspend_date.value = Date.parse(dateStr);
+}
+
+//determines if given year is considered a Leap Year
+function isALeapYear(year)
+{
+	if ( (year % 4) == 0 ) return(true);
+	else return(false);
+}
+
+//determines which array of day listings to use based on 0-index months
+function getDaySet(month, year)
+{
+	var isLeapYear = isALeapYear(year);
+	var daySet;
+	
+	//decide which set of days to populate days with.
+	var daySet = "";
+	if ( month == 1 && isLeapYear ) 
+	{
+		//month = February, is leap year; use short month w/ leap day
+		daySet = 1; 
+	}
+	else if ( month == 1 && !isLeapYear ) 
+	{
+		//month = February, is not leap year; use short month
+		daySet = 2; 
+	}
+	else if ((month == 3) || (month == 5) || (month == 8) || (month == 10))
+	{
+	    //month = April, June, September or November; use 30 day month
+		daySet = 3; 
+	}
+	else 
+	{
+	    //default; use 31 day month
+		daySet = 0; 
+	}
+	return(myDays[daySet]);
+}
+
+//populates day list
+function setDaySelector(length, daySet, selectedIdx)
+{
+	days.length = length;
+	for (a = 0; a < length; a++)
+	{
+		days.options[a].text = daySet[a];
+		days.options[a].value = daySet[a];
+	}
+	
+	if (document.getElementById)
+	{
+		if (monthFirst)
+		{
+			document.getElementById("select2").selectedIndex = selectedIdx;
+		}
+		else
+		{
+			document.getElementById("select1").selectedIndex = selectedIdx;
+		}
+	}
+	else
+	{
+		days.selectedIndex = selectedIdx;
+	}
+}
+
+//changes day select list
+function changeDays(day, month, year)
+{
+	var daySet = getDaySet(month, year);
+	
+	if ( !allowPastDays )
+	{		
+		//check if day is past day with current month/year; set to current day
+		if ( year == todayYr && month == todayMo && day < todayDy )
+		{
+			day = todayDy;
+		}
+		
+		//check if day is current day with current month/year; move it ahead 1 for future date
+		if ( year == todayYr && month == todayMo && day == todayDy )
+		{
+			day = day + 1;
+		}
+		
+		//check if day is future day with current month/year; display short listing, else normal listing
+		if ( year == todayYr && month == todayMo && day > todayDy )
+		{
+			//calculate new set of days
+			var newLength = (daySet[daySet.length-1] - day) + 1;	//subtract last day in set (31, 30, 29, or 28) by day, add 1 for 0-index
+			var newSet = new Array(newLength);						//new array to hold subset of days
+			var newSetIdx = 0;
+			var selectedIdx;
+			
+			for (a=day-1; a < daySet.length; a++)
+			{
+				newSet[newSetIdx] = daySet[a];
+				if (day == newSet[newSetIdx])
+				{
+					selectedIdx = newSetIdx;
+				}
+				newSetIdx = newSetIdx + 1;
+			}
+			
+			//short listing because current year/month; selectedIdx = pos in new list
+			setDaySelector(newSet.length, newSet, selectedIdx);
+		}
+		else
+		{
+			//normal day listing because it's either future month/year; day-1 because list is 0-index
+			setDaySelector(daySet.length, daySet, day-1);
+		}
+	}
+	else
+	{
+		//normal day listing; day-1 because list is 0-index
+		setDaySelector(daySet.length, daySet, day-1);
+	}
+}
+
+//populates month list
+function setMonthSelector(length, monthSet, selectedIdx)
+{
+	months.length = length;
+	for(a=0; a < length; a++)
+	{
+		months.options[a].text = monthSet[a];
+		months.options[a].value = monthSet[a];
+	}
+
+	//select month
+	if (document.getElementById)
+	{
+		if (monthFirst)
+		{
+			document.getElementById("select1").selectedIndex = selectedIdx;
+		}
+		else
+		{
+			document.getElementById("select2").selectedIndex = selectedIdx;
+		}
+	}
+	else
+	{
+		months.selectedIndex = selectedIdx;
+	}
+}
+
+function changeMonths(day, month, year)
+{
+	//alert('changeMonths');
+	var monthSet = myMonths;
+	
+	if ( !allowPastDays )
+	{
+		//check if month is past month with current year; set to current month
+		if ( year == todayYr && month < todayMo )
+		{
+			month = todayMo;
+		}
+		
+		//check if current year; display short listing, else normal listing
+		if ( year == todayYr )
+		{
+			//calculate new set of months
+			var newLength = (monthSet[monthSet.length-1] - (todayMo + 1)) + 1;		//always want from today's month on
+			var newSet = new Array(newLength);
+			var newSetIdx = 0;
+			var selectedIdx;
+			
+			for (a=todayMo; a < monthSet.length; a++)
+			{
+				newSet[newSetIdx] = monthSet[a];
+				if ( (month+1) == newSet[newSetIdx] ) 
+				{ 
+					selectedIdx = newSetIdx; 
+				}
+				newSetIdx = newSetIdx + 1;
+			}
+			
+			//short list because current year; selectedIdx = pos in new list
+			setMonthSelector(newSet.length, newSet, selectedIdx);
+		}
+		else
+		{
+			setMonthSelector(monthSet.length, monthSet, month);
+		}
+	}
+	else
+	{
+		//normal month listing; month is already 0-index
+		setMonthSelector(monthSet.length, monthSet, month);
+	}
+	
+	//month has changed, day list may change
+	changeDays(day, month, year);
+}
+
+//populates year list
+function setYearSelector(length, yearSet, selectedIdx)
+{
+	years.length = length;
+	for(a=0; a < length; a++)
+	{
+		years.options[a].text = yearSet[a];
+		years.options[a].value = yearSet[a];
+	}
+
+	//select year; always want first which is current year
+	if (document.getElementById)
+	{
+		document.getElementById("select3").selectedIndex = selectedIdx;
+	}
+	else
+	{
+		years.selectedIndex = selectedIdx;
+	}
+}
+
+function changeYears(day, month, year)
+{
+	//get selected index
+	var selectedIdx;
+	
+	for (a=0; a < myYears.length; a++)
+	{
+		if (year == myYears[a])
+		{
+			selectedIdx = a;
+		}
+	}
+	setYearSelector(myYears.length, myYears, selectedIdx);
+	
+	//changed year, month list may change
+	changeMonths(day, month, year);
+}
+
+//called when value in a selector list changes (really changes, just not selected!)
+function changeSelect(selector){
+	var didx = days.selectedIndex;
+	var midx = months.selectedIndex;
+	var yidx = years.selectedIndex;
+	var currDVal = days.options[didx].value;
+	var currMVal = months.options[midx].value - 1;			//to maintain the 0-index value returned from date.getMonth()
+	var currYVal = years.options[yidx].value;
+	
+	//if past days are not allowed, only show valid (future) dates
+	if ( !allowPastDays )
+	{	
+		//year change
+		if ( selector == years )
+		{
+			changeYears(currDVal, currMVal, currYVal);
+		}
+		
+		//month change
+		if ( selector == months )
+		{
+			changeMonths(currDVal, currMVal, currYVal);
+		}
+		
+		//day change
+		//we don't care about it
+	}
+}
+
+//initialization method - specified by HTML body onload="initDates()"
+function initDates() 
+{
+	//alert('initDates');
+	var todayMillis = todaysDate.getTime();
+	var extendedMillis = todayMillis + (daysToExtend * millisInDay);
+	var displayDate = new Date(extendedMillis);
+
+	//set which selector maps to which data (months/days/years)
+	years = document.ipac.select3;
+	if ( monthFirst )
+	{
+		months = document.ipac.select1;
+		days = document.ipac.select2;
+	}
+	else
+	{
+		months = document.ipac.select2;
+		days = document.ipac.select1;
+	}
+
+	//build year array - always based on today's year
+	myYears = new Array(yrsToShow+1);
+	for(a=0; a < myYears.length; a++)
+	{
+		myYears[a] = todayYr + a;
+	}
+	
+	//establish initial display
+	if (years != null && months != null && days != null)
+	{
+		changeYears(displayDate.getDate(), displayDate.getMonth(), displayDate.getFullYear());
+	}
+}
+</SCRIPT></head><body bgcolor="#FFFFFF" onload="startTimer();initDates()" background="" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"><form name="ipac" method="POST" action="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp"><input type="hidden" name="session" value="12C4382009DQ0.12"><input type="hidden" name="profile" value="ce"><table xmlns:URLEncoder="/com.dynix.util.IpacURLEncoder" width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr valign="bottom"><td valign="bottom" align="middle" width="10%" rowspan="2"><a class="globalAnchor" href="http://www.desmoineslibrary.com"><img src="/hipres/images/dsmpl.gif" border="0" alt="To Des Moines Public Library Home Page"></a><br><a class="tinyAnchor" href="http://www.desmoineslibrary.com">To Des Moines Public Library Home Page</a><br><table width="100%" border="0" cellpadding="0" cellspacing="0" background="/hipres/images/tab_mt.gif"><tbody><tr><td><img height="2" src="/hipres/images/spacer.gif"></td></tr></tbody></table></td><td align="right" width="100%" colspan="2"><table cellspacing="0" cellpadding="3" valign="top" border="0"><tbody><tr><td class="globalLinks" valign="middle" nowrap="true" align="right"><table cellspacing="2" cellpadding="0" valign="top" border="0"><tr><td></td><td><a class="globalAnchor" title="Logout" href="javascript:loginIntoOrOutOfAccount('http%3A%2F%2Flibhip.desmoineslibrary.com%2Fipac20%2Fipac.jsp%3Fsession%3D12C4382009DQ0.12%26profile%3Dce%26logout%3Dtrue%26date%3D1224382037484','')"><img src="/hipres/images/logout_large.gif" width="35" height="30" border="0" alt="Click here to logout" align="middle">Logout</a></td><td><a name="viewlist" class="globalAnchor" title="My List3" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;menu=mylist&amp;listkey=ipac_my_list"><img src="/hipres/images/booklist-view_large.gif" border="0" width="25" height="30" alt="View my Bookbag" align="middle"></a><a name="viewlist" class="globalAnchor" title="View my Bookbag" href="javascript:buildMyList('http%3A%2F%2Flibhip.desmoineslibrary.com%2Fipac20%2Fipac.jsp%3Fsession%3D12C4382009DQ0.12%26profile%3Dce%26menu%3Dmylist%26listkey%3Dipac_my_list','')" id="bookbag">My List - 3</a></td><td><a class="globalAnchor" title="Help" href="javascript:popUpHelp('/hipres/help/eng/horizon/checkedout.htm');"><img src="/hipres/images/help_large.gif" width="25" height="30" border="0" alt="Help" align="middle">Help</a></td></tr><tr><td class="normalBlackFont1" colspan="10" align="right" title="Name">Welcome  Scott A.&nbsp;Peterson</td></tr></table></td></tr></tbody></table></td></tr><tr><td align="center" valign="bottom" width="99%"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="50%" valign="bottom"><table width="100%" border="0" cellpadding="0" cellspacing="0" background="/hipres/images/tab_mt.gif"><tbody><tr><td><img height="2" src="/hipres/images/spacer.gif"></td></tr></tbody></table></td><td valign="bottom"><table bgcolor="#BDC5C9" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="4"><img height="4" src="/hipres/images/NW0-blue.gif" width="4"></td><td background="/hipres/images/bg-N0-blue.gif"><img height="4" src="/hipres/images/spacer.gif" width="8"></td><td width="4"><img height="4" src="/hipres/images/NE0-blue.gif" width="4"></td></tr><tr><td background="/hipres/images/bg-W0-blue.gif"><img height="4" src="/hipres/images/spacer.gif" width="4"></td><td align="middle"><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td><img height="8" src="/hipres/images/spacer.gif" width="2"></td><td nowrap="true" class="tabText" align="middle" height="22">&nbsp;<a class="TabInactive" title="Search Library Catalog" alt="Search Library Catalog" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;menu=search&amp;ts=1224382037484">Search</a>&nbsp;</td><td><img height="8" src="/hipres/images/spacer.gif" width="2"></td></tr></tbody></table></td><td background="/hipres/images/bg-E0-blue.gif"><img height="4" src="/hipres/images/spacer.gif" width="4"></td></tr><tr><td background="/hipres/images/tab_mt.gif"><img height="2" src="/hipres/images/spacer.gif" width="4"></td><td background="/hipres/images/tab_mt.gif"><img height="2" src="/hipres/images/spacer.gif" width="8"></td><td background="/hipres/images/tab_mt.gif"><img height="2" src="/hipres/images/spacer.gif" width="4"></td></tr></tbody></table></td><td valign="bottom"><table bgcolor="#004040" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td width="4"><img height="4" src="/hipres/images/tab_lt.gif" width="4"></td><td background="/hipres/images/tab_mt.gif"><img height="4" src="/hipres/images/spacer.gif" width="8"></td><td width="4"><img height="4" src="/hipres/images/tab_rt.gif" width="4"></td></tr><tr><td background="/hipres/images/tab_lm.gif"><img height="4" src="/hipres/images/spacer.gif" width="4"></td><td nowrap="true"><table cellpadding="0" cellspacing="0" width="100%" border="0"><tbody><tr><td><img height="8" src="/hipres/images/spacer.gif" width="2"></td><td nowrap="true" class="tabText" align="middle" height="22">&nbsp;<a class="TabActive" title="View my account information" alt="View my account information">My Account</a>&nbsp;</td><td><img height="8" src="/hipres/images/spacer.gif" width="2"></td></tr></tbody></table></td><td background="/hipres/images/tab_rm.gif"><img height="4" src="/hipres/images/spacer.gif" width="4"></td></tr><tr><td><img height="2" src="/hipres/images/tab_lb.gif" width="4"></td><td><img height="2" src="/hipres/images/spacer.gif" width="8"></td><td><img height="2" src="/hipres/images/tab_rb.gif" width="4"></td></tr></tbody></table></td><td valign="bottom"><table bgcolor="#BDC5C9" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="4"><img height="4" src="/hipres/images/NW0-blue.gif" width="4"></td><td background="/hipres/images/bg-N0-blue.gif"><img height="4" src="/hipres/images/spacer.gif" width="8"></td><td width="4"><img height="4" src="/hipres/images/NE0-blue.gif" width="4"></td></tr><tr><td background="/hipres/images/bg-W0-blue.gif"><img height="4" src="/hipres/images/spacer.gif" width="4"></td><td align="middle"><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td><img height="8" src="/hipres/images/spacer.gif" width="2"></td><td nowrap="true" class="tabText" align="middle" height="22">&nbsp;<a class="TabInactive" title="Popular Lists" alt="Popular Lists" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;menu=tab10&amp;ts=1224382037484">Popular Lists</a>&nbsp;</td><td><img height="8" src="/hipres/images/spacer.gif" width="2"></td></tr></tbody></table></td><td background="/hipres/images/bg-E0-blue.gif"><img height="4" src="/hipres/images/spacer.gif" width="4"></td></tr><tr><td background="/hipres/images/tab_mt.gif"><img height="2" src="/hipres/images/spacer.gif" width="4"></td><td background="/hipres/images/tab_mt.gif"><img height="2" src="/hipres/images/spacer.gif" width="8"></td><td background="/hipres/images/tab_mt.gif"><img height="2" src="/hipres/images/spacer.gif" width="4"></td></tr></tbody></table></td><td valign="bottom"><table bgcolor="#BDC5C9" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="4"><img height="4" src="/hipres/images/NW0-blue.gif" width="4"></td><td background="/hipres/images/bg-N0-blue.gif"><img height="4" src="/hipres/images/spacer.gif" width="8"></td><td width="4"><img height="4" src="/hipres/images/NE0-blue.gif" width="4"></td></tr><tr><td background="/hipres/images/bg-W0-blue.gif"><img height="4" src="/hipres/images/spacer.gif" width="4"></td><td align="middle"><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td><img height="8" src="/hipres/images/spacer.gif" width="2"></td><td nowrap="true" class="tabText" align="middle" height="22">&nbsp;<a class="TabInactive" title="Magazines&amp; Databases" alt="Magazines&amp; Databases" href="http://www.desmoineslibrary.com/Search/databases.html">Magazines &amp; Databases</a>&nbsp;</td><td><img height="8" src="/hipres/images/spacer.gif" width="2"></td></tr></tbody></table></td><td background="/hipres/images/bg-E0-blue.gif"><img height="4" src="/hipres/images/spacer.gif" width="4"></td></tr><tr><td background="/hipres/images/tab_mt.gif"><img height="2" src="/hipres/images/spacer.gif" width="4"></td><td background="/hipres/images/tab_mt.gif"><img height="2" src="/hipres/images/spacer.gif" width="8"></td><td background="/hipres/images/tab_mt.gif"><img height="2" src="/hipres/images/spacer.gif" width="4"></td></tr></tbody></table></td><td valign="bottom"><table bgcolor="#BDC5C9" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="4"><img height="4" src="/hipres/images/NW0-blue.gif" width="4"></td><td background="/hipres/images/bg-N0-blue.gif"><img height="4" src="/hipres/images/spacer.gif" width="8"></td><td width="4"><img height="4" src="/hipres/images/NE0-blue.gif" width="4"></td></tr><tr><td background="/hipres/images/bg-W0-blue.gif"><img height="4" src="/hipres/images/spacer.gif" width="4"></td><td align="middle"><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td><img height="8" src="/hipres/images/spacer.gif" width="2"></td><td nowrap="true" class="tabText" align="middle" height="22">&nbsp;<a class="TabInactive" title="Newspaper and Obituary Index" alt="Newspaper and Obituary Index" href="http://libhip.desmoineslibrary.com:8080">News &amp; Obit Index</a>&nbsp;</td><td><img height="8" src="/hipres/images/spacer.gif" width="2"></td></tr></tbody></table></td><td background="/hipres/images/bg-E0-blue.gif"><img height="4" src="/hipres/images/spacer.gif" width="4"></td></tr><tr><td background="/hipres/images/tab_mt.gif"><img height="2" src="/hipres/images/spacer.gif" width="4"></td><td background="/hipres/images/tab_mt.gif"><img height="2" src="/hipres/images/spacer.gif" width="8"></td><td background="/hipres/images/tab_mt.gif"><img height="2" src="/hipres/images/spacer.gif" width="4"></td></tr></tbody></table></td><td width="50%" valign="bottom"><table width="100%" border="0" cellpadding="0" cellspacing="0" background="/hipres/images/tab_mt.gif"><tbody><tr><td><img height="2" src="/hipres/images/spacer.gif"></td></tr></tbody></table></td></tr></tbody></table></td><td width="1%" valign="bottom"><table width="180" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td valign="top" align="right" nowrap="true" width="100%"><a class="normalBlackFont1">&nbsp;&nbsp;&nbsp;</a></td></tr><tr><td background="/hipres/images/tab_mt.gif"><img height="2" src="/hipres/images/spacer.gif"></td></tr></tbody></table></td></tr></tbody></table><table xmlns:URLEncoder="/com.dynix.util.IpacURLEncoder" cellspacing="0" cellpadding="3" width="100%" bgcolor="#004040" border="0"><tbody><tr valign="top" align="middle"><td width="100%"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td><img height="30" src="/hipres/images/spacer.gif" width="8"></td><td valign="center" align="middle"><a class="navBarAnchor" title="Overview" alt="Overview" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;menu=account&amp;submenu=overview&amp;ts=1224382037484">Overview</a></td><td><img height="8" src="/hipres/images/spacer.gif" width="8"></td><td><img height="16" src="/hipres/images/bck_tan.gif" width="1"></td><td><img height="30" src="/hipres/images/spacer.gif" width="8"></td><td valign="center" align="middle"><a class="navBarCurrent" title="Items checked out" alt="Items checked out" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;menu=account&amp;submenu=itemsout&amp;ts=1224382037484">Checked Out</a></td><td><img height="8" src="/hipres/images/spacer.gif" width="8"></td><td><img height="16" src="/hipres/images/bck_tan.gif" width="1"></td><td><img height="30" src="/hipres/images/spacer.gif" width="8"></td><td valign="center" align="middle"><a class="navBarAnchor" title="Holds" alt="Holds" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;menu=account&amp;submenu=holds&amp;ts=1224382037484">Holds</a></td><td><img height="8" src="/hipres/images/spacer.gif" width="8"></td><td><img height="16" src="/hipres/images/bck_tan.gif" width="1"></td><td><img height="30" src="/hipres/images/spacer.gif" width="8"></td><td valign="center" align="middle"><a class="navBarAnchor" title="Account Messages" alt="Account Messages" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;menu=account&amp;submenu=subtab44&amp;ts=1224382037484">Account Messages</a></td><td><img height="8" src="/hipres/images/spacer.gif" width="8"></td><td><img height="16" src="/hipres/images/bck_tan.gif" width="1"></td><td><img height="30" src="/hipres/images/spacer.gif" width="8"></td><td valign="center" align="middle"><a class="navBarAnchor" title="Profile" alt="Profile" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;menu=account&amp;submenu=info&amp;ts=1224382037484">Profile</a></td><td><img height="8" src="/hipres/images/spacer.gif" width="8"></td></tr></tbody></table></td></tr></tbody></table><a class="big">Items Out</a><p></p><a class="normalBlackFont2">Checked Out: 27</a><br><a class="normalBlackFont2">Overdue: 0</a><br><a class="normalBlackFont2">Lost: 0</a><p></p><table class="tableBackground" border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td><table class="tableBackgroundHighlight" border="0" width="100%" cellspacing="0" cellpadding="2"><tr bgcolor="#EEEECC"><td><input type="submit" name="renewitems" value="Renew" class="button"></td></tr></table></td></tr><tr><td bgcolor="#EEEECC"><table class="tableBackgroundHighlight" style="0" width="100%" cellspacing="1" cellpadding="1"><tr><td height="20" width="10" colspan="1" bgcolor="#004040"><input type="checkbox" name="renewall" onClick="javascript:selectallrenewal(document.ipac.renewitemkeys)"></td><td colspan="1" bgcolor="#004040" align="center"><a class="boldWhiteFont2" title="Sort by Title" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;menu=account&amp;submenu=itemsout&amp;sortby=sorttitle">Title</a></td><td colspan="1" bgcolor="#004040" align="center"><a class="boldWhiteFont2" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;menu=account&amp;submenu=itemsout&amp;sortby=ckodate">Out</a></td><td colspan="1" bgcolor="#004040" align="center"><a class="boldWhiteFont2" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;menu=account&amp;submenu=itemsout&amp;sortby=duedate">Due Date</a></td><td colspan="1" bgcolor="#004040" align="center"><a class="boldWhiteFont2" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;menu=account&amp;submenu=itemsout&amp;sortby=numrenewals">Times Renewed</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="31704011437431"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;uri=full=3100001~!638663~!6&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">Blink : the power of thinking without thinking /</a></td></tr><tr><td><a class="normalBlackFont1">by Gladwell, Malcolm, 1963-</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">09/17/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">10/29/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">1</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="31704012927620"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;uri=full=3100001~!719871~!17&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">The Bourne ultimatum original motion picture soundtrack /</a></td></tr><tr><td><a class="normalBlackFont1">by Powell, John, composer.</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">09/26/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">11/05/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">1</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="31704014155089"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;uri=full=3100001~!737957~!13&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">The circle : how the power of a single wish can change your life /</a></td></tr><tr><td><a class="normalBlackFont1">by Day, Laura.</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">10/08/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">10/29/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">0</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="31704013426853"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;uri=full=3100001~!725483~!19&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">Detours</a></td></tr><tr><td><a class="normalBlackFont1">by Crow, Sheryl.</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">09/26/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">11/05/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">1</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="31704012617312"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;uri=full=3100001~!656456~!8&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">Early days &amp; latter days the best of Led Zeppelin. Volumes one and two /</a></td></tr><tr><td><a class="normalBlackFont1">by Led Zeppelin (Musical group)</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">09/17/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">10/29/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">1</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="31704014039945"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;uri=full=3100001~!733192~!20&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">Even Buffett isn't perfect : what you can--and can't--learn from the world's greatest investor /</a></td></tr><tr><td><a class="normalBlackFont1">by Janjigian, Vahan.</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">10/15/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">11/05/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">0</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="31704013101134"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;uri=full=3100001~!706772~!14&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">Framed</a></td></tr><tr><td><a class="normalBlackFont1">by Cottrell Boyce, Frank.</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">09/03/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">10/30/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">2</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="31704012816294"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;uri=full=3100001~!713914~!9&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">Gut feelings : the intelligence of the unconscious /</a></td></tr><tr><td><a class="normalBlackFont1">by Gigerenzer, Gerd.</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">09/17/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">10/29/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">1</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="31704012924742"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;uri=full=3100001~!702955~!25&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">If I did it : confessions of the killer /</a></td></tr><tr><td><a class="normalBlackFont1">by Simpson, O. J., 1947-</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">10/17/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">11/07/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">0</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="31704011603081"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;uri=full=3100001~!648294~!23&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">In-flight Greek [learn before you land].</a></td></tr><tr><td><a class="normalBlackFont1">by Living Language (Firm)</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">10/17/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">11/07/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">0</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="31704011550571"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;uri=full=3100001~!648814~!24&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">Last child in the woods : saving our children from nature-deficit disorder /</a></td></tr><tr><td><a class="normalBlackFont1">by Louv, Richard.</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">10/17/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">11/07/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">0</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="31704010006211"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;uri=full=3100001~!53737~!18&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">Little Dorrit.</a></td></tr><tr><td><a class="normalBlackFont1">by Dickens, Charles, 1812-1870.</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">09/26/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">11/05/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">1</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="31704013074059"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;uri=full=3100001~!715129~!10&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">Live in Dublin</a></td></tr><tr><td><a class="normalBlackFont1">by Springsteen, Bruce.</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">09/17/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">10/29/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">1</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="31704011091188"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;uri=full=3100001~!626329~!3&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">Master and commander the far side of the world /</a></td></tr><tr><td><a class="normalBlackFont1">by Henderson, Duncan.</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">10/17/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">10/24/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">0</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="31704012847885"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;uri=full=3100001~!691980~!16&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">The mummy with no name /</a></td></tr><tr><td><a class="normalBlackFont1">by Stilton, Ger&oacute;nimo.</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">09/26/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">11/05/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">1</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="31704004594784"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;uri=full=3100001~!643917~!2&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">National treasure</a></td></tr><tr><td><a class="normalBlackFont1">by Deschanel, Caleb, 1944-</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">10/17/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">10/24/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">0</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="31704014083539"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;uri=full=3100001~!734135~!21&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">Nurturing spirituality in children : simple hands-on activities /</a></td></tr><tr><td><a class="normalBlackFont1">by Jenkins, Peggy Davison.</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">10/17/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">11/07/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">0</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="31704013161385"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;uri=full=3100001~!709877~!15&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">Phantom punch</a></td></tr><tr><td><a class="normalBlackFont1">by Lerche, Sondre.</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">10/15/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">11/05/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">0</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="31704013092150"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;uri=full=3100001~!711397~!26&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">Positive discipline : the first three years : from infant to toddler-- laying the foundation for raising a capable, confident child /</a></td></tr><tr><td><a class="normalBlackFont1">by Nelsen, Jane.</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">10/17/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">11/07/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">0</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="31704014162879"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;uri=full=3100001~!736325~!12&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">Reading people : how to understand people and predict their behavior-- anytime, anyplace /</a></td></tr><tr><td><a class="normalBlackFont1">by Dimitrius, Jo-Ellan.</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">10/08/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">10/29/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">0</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="31704012109757"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;uri=full=3100001~!662627~!11&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">Think and grow rich : the landmark bestseller--now revised and updated for the 21st century /</a></td></tr><tr><td><a class="normalBlackFont1">by Hill, Napoleon, 1883-1970.</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">09/17/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">10/29/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">1</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="31704009392762"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;uri=full=3100001~!558951~!0&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">The universal history of numbers : from prehistory to the invention of the computer /</a></td></tr><tr><td><a class="normalBlackFont1">by Ifrah, Georges.</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">09/11/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">10/21/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">1</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="31704011837929"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;uri=full=3100001~!653378~!1&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">The UV advantage /</a></td></tr><tr><td><a class="normalBlackFont1">by Holick, M. F. (Michael F.)</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">09/11/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">10/21/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">1</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="31704012556569"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;uri=full=3100001~!689087~!7&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">We shall overcome the Seeger sessions /</a></td></tr><tr><td><a class="normalBlackFont1">by Springsteen, Bruce.</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">09/17/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">10/29/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">1</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="31704011047081"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;uri=full=3100001~!626965~!4&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">The well-educated mind : a guide to the classical education you never had /</a></td></tr><tr><td><a class="normalBlackFont1">by Bauer, S. Wise.</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">10/08/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">10/29/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">0</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="31704011420478"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;uri=full=3100001~!686090~!22&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">What color is your parachute?</a></td></tr><tr><td><a class="normalBlackFont1">by Bolles, Richard Nelson.</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">10/17/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">11/07/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">0</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="31704005649108"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?session=12C4382009DQ0.12&amp;profile=ce&amp;uri=full=3100001~!329168~!5&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">William Shakespeare's A midsummer night's dream /</a></td></tr><tr><td><a class="normalBlackFont1">by Coville, Bruce.</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">09/17/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">10/29/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">1</a></td></tr></table></td></tr><tr><td><table class="tableBackgroundHighlight" border="0" width="100%" cellspacing="0" cellpadding="2"><tr bgcolor="#EEEECC"><td><input type="submit" name="renewitems" value="Renew" class="button"></td></tr></table></td></tr></table><input type="hidden" name="menu" value="account"><input type="hidden" name="submenu" value="itemsout"><script language="javascript">
+function selectallrenewal(field)
+{
+	if (!field.length)
+	{
+		document.ipac.renewitemkeys.checked = document.ipac.renewall.checked;
+	}
+	else
+	{
+		for (i = 0; i < field.length; i++)
+		{
+			field[i].checked = document.ipac.renewall.checked;
+		}
+	}
+}
+
+</script><script xmlns:URLEncoder="/com.dynix.util.IpacURLEncoder" LANGUAGE="JavaScript">
+myarr = null;
+count = 0;
+setReturnFlag=0;
+
+function buildReturnPageNewList(thisurl,returnurl)
+{
+
+       if(document.buildLink.returnURL )
+        {
+          if(returnurl != '')
+		  {
+            document.buildLink.returnURL.value = unescape(returnurl);
+			}
+
+        }
+       // window.location = url;
+
+        if(navigator.appName == "Netscape")
+        {
+
+	       document.buildLink.action=unescape(thisurl);
+       }
+        else
+        {
+            document.buildLink.action=thisurl;
+        }
+
+       document.buildLink.submit();
+
+
+
+}
+
+
+function  ReturnSearchPage(url)
+    {
+
+         if(document.SearchResult)
+         {
+
+                   document.SearchResult.action = unescape(url);
+                   document.SearchResult.submit();
+
+         }
+         else if(document.buildLink)
+         {
+                document.buildLink.action = unescape(url);
+                document.buildLink.submit();
+
+         }
+         else
+            window.location = unescape(url);
+    }
+
+
+function buildNewList(url,retURL,summary)
+{
+    i = 0;
+
+
+
+
+       if(myarr != null)
+        {
+                while(myarr[i] != null)
+                 {
+                        var thisString = new String(myarr[i]);
+                        if(thisString.indexOf("bkey") != -1)
+                         {
+                            url +='&addkeys=' + myarr[i];
+
+                          }
+                        i++;
+                 }
+
+
+        }
+
+       if(document.buildLink.returnURL )
+        {
+
+
+         if(setReturnFlag == 1)
+          {
+                  if(retURL)
+                   {
+                     if(summary == 'false')
+                            document.buildLink.returnURL.value = unescape(retURL);
+                      else
+                          document.buildLink.returnURL.value = unescape(document.location.toString());
+                   }
+                  else
+                       document.buildLink.returnURL.value = unescape(document.location.toString());
+           }
+        }
+
+       // window.location = url;
+
+        if(navigator.appName == "Netscape")
+        {
+            document.buildLink.action=unescape(url);
+        }
+        else
+        {
+            document.buildLink.action=url;
+        }
+
+       document.buildLink.submit();
+
+
+
+}
+
+function buildMyList(URL,retURL)
+{
+  i = 0;
+
+
+
+
+if(document.buildLink)
+{
+
+
+
+        if(myarr != null)
+        {
+
+                for(i = 0; i <myarr.length; i++)
+                {
+
+
+                    if(myarr[i] != null)
+                    {
+                         URL+='&addkeys=' + myarr[i];
+
+
+                    }
+                }
+
+
+
+        }
+
+
+
+       if(document.buildLink.returnURL )
+        {
+
+             if(setReturnFlag == 1 || retURL != '')
+             {
+
+                    if(retURL != '')
+                            document.buildLink.returnURL.value = retURL;
+                    else
+                      document.buildLink.returnURL.value = document.location.toString();
+
+                        index = document.buildLink.returnURL.value.indexOf('#focus');
+                        if(index >-1)
+                         {
+                            document.buildLink.returnURL.value = document.buildLink.returnURL.value.substring(0,index);
+                         }
+
+
+
+                        if(myarr != null)
+                        {
+
+                             for(i = 0; i <myarr.length; i++)
+                            {
+                               index = document.buildLink.returnURL.value.indexOf('?');
+                               if(index == -1)
+                               {
+                                   document.buildLink.returnURL.value +='?';
+                               }
+                               else
+                               {
+                                  document.buildLink.returnURL.value+='&';
+                               }
+                               if(myarr[i] != null)
+                                    document.buildLink.returnURL.value+='addkeys=' + myarr[i];
+
+                            }
+
+                        }
+
+
+
+                  document.buildLink.returnURL.value = unescape(document.buildLink.returnURL.value);
+
+             }
+
+        }
+
+
+
+
+        if(navigator.appName == "Netscape")
+        {
+            document.buildLink.action=unescape(URL);
+        }
+        else
+        {
+            document.buildLink.action=URL;
+        }
+
+
+        document.buildLink.submit();
+}
+else
+{
+
+    window.location = unescape(URL);
+}
+
+
+}
+
+function   loginIntoOrOutOfAccount(URL,retURL)
+    {
+         i = 0;
+
+
+
+
+
+    setReturnFlag = 1;
+
+
+        if(document.buildLink)
+        {
+
+
+                if(navigator.appName == "Netscape")
+                {
+                    document.buildLink.action=unescape(URL);
+                }
+                else
+                {
+                    document.buildLink.action=URL;
+                }
+
+
+                if(myarr != null)
+                {
+                        while(myarr[i] != null)
+                         {
+                                 document.buildLink.action+='&addkeys=' + myarr[i];
+                                i++;
+                         }
+
+
+                }
+
+
+               if(document.buildLink.returnURL || setReturnFlag == 1 )
+                {
+
+                     if(retURL != '')
+                     {
+                          document.buildLink.returnURL.value = retURL;
+                     }
+                     else
+                     {
+                           document.buildLink.returnURL.value = document.location.toString();
+                     }
+                     if(myarr != null)
+                     {
+                              i = 0;
+                              while(myarr[i] != null)
+                              {
+                                      document.buildLink.returnURL.value+='&addkeys=' + myarr[i];
+                                      i++;
+                               }
+
+                      }
+
+
+                    document.buildLink.returnURL.value = unescape(document.buildLink.returnURL.value);
+
+
+
+                }
+
+
+
+                document.buildLink.submit();
+        }
+        else
+        {
+
+            if(navigator.appName == "Netscape")
+            {
+                window.location = unescape(URL);
+            }
+            else
+            {
+                window.location = URL;
+            }
+
+        }
+
+
+ }
+
+function popUpHelp(URL)
+{
+	day = new Date();
+	id = day.getTime();
+	eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=1,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=1,width=350,height=650');");
+}
+function changeBookbagText(text)
+{
+	if (document.getElementById)
+	{
+ 		document.getElementById('bookbag').innerHTML=text;
+	}
+	else if (document.layers)
+	{
+  		document.anchors["viewlist"].text=text;
+	}
+	else
+	{
+
+		bookbag.innerHTML=text;
+	}
+}
+</script><center><table class="tableBackground" valign="bottom" width="100%"><tr><td align="center"><a class="boldBlackFont1">Horizon Information Portal 3.08_RC1_57.01</a></td></tr><tr><td align="center">&nbsp;<a href="http://www.dynix.com"><img src="/hipres/logos/poweredbydynix.gif" border="0" alt="Powered by Dynix"></a></td></tr><tr><td align="center"><font size="1">© 2001-2004 <a class="mediumAnchor" href="http://www.dynix.com">Dynix</a> All rights reserved.</font></td></tr><br></table></center></form></body></html>

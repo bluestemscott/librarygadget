@@ -1,0 +1,136 @@
+<script type="text/javascript">
+    jQuery(document).ready( function () {
+
+            document.getElementById("resultsOverflowedText").style.display = "block";
+
+    });
+</script>
+<div id="lib-search-results">
+<h2>Results for <strong>"des moines public library"</strong></h2>
+<div id="lib-searchwrap">
+<!-- Library search facets -->
+   <div id="libsearch-facets" class="yui-b">
+      <h3>Refine Your Search</h3>
+      <h4>Library Type</h4>
+         <ul>
+<li><strong>All Types</strong> (2)</li>
+<li><a href="javascript:findLibs(1, 'none', 3)">Public</a> (2)</li>
+</ul></div>
+<!-- Library search results table -->
+<div id="yui-main">
+<div id="wclibs" class="yui-b">
+
+<table id="libsresults" cellspacing="0" cellpadding="0">
+
+<tr>
+    <td class="libsdisplay" colspan="2">
+        Displaying <a href="#" id="libsdisplay-num" rel="libsdisplay-num-sub" title="Change how many library results are displayed">10</a> libraries (<b>1-2</b> of <b>2</b>)
+        <div id="libsdisplay-num-sub" class="dropdiv2 dropdiv2-util">
+            <div class="dropdiv2-util-int">
+                <div class="hd"><a class="close" alt="Close" href="javascript:dropdowncontent.hidediv('libsdisplay-num-sub')" title="Close" /><img src="/wcpa/rel20111216/images/spacer.gif" width="13" height="13" alt="Close" /></a>Number of libraries shown</div>
+                <form name="numbertodisplayform" id="numbertodisplayform" method="post" action="javascript:changeDisplayNum();">
+                    <fieldset>
+                        <label for="count">Number of libraries per results page:</label>
+                         <select name="count" id="count">
+<option value="5" >5</option>
+<option value="10" selected>10</option>
+<option value="25" >25</option>
+<option value="50" >50</option>
+<option value="100" >100</option>
+</select>
+<input class="submit-primary" type="submit" value="Apply" name="" id="" /><a class="secondary" style="font-weight: normal" href="javascript:dropdowncontent.hidediv('libsdisplay-num-sub')">Cancel</a>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </td>
+
+    <td class="libsshow" colspan="4">
+        <form id="sort-filter">
+            <label for="sort-type">Sort by: </label>
+            <select id="sort-type" name="sort-type" onchange="javascript:sortBy(this.options[this.selectedIndex].value)">
+                <option value="rel" selected = "selected">Relevance</option><option value="ab">Alphabetical</option></select>
+        </form>
+    </td>
+</tr>
+
+<tr>
+    <th colspan="2">Library</th>
+    <th>Features</th>
+    <th><span id="distanceTitle" class="hovertxt" title="Distances, where provided, are approximate and based on postal-code geographic centers">Distance</span></th>
+    <th>Library Type</th>
+    <th></th>
+</tr>
+<tr id="Des Moines Public Library">
+        <td class= "colnum" style="width:3% !important; border-right: none; padding: 10px 5px 0 8px; font-size: 11px;">1.</td>
+        <td class="name" style="width:auto;">
+            <p class="lib">
+                <a href="/libraries/9115?backfrom=libraryProfile&searchTerm=des moines public library&start=1&count=10&libTypeNum=0&sortBy=rel" onclick="LibServices(this,'wctlink_librarySearch_libraryProflie_9115',';wctlink_librarySearch_libraryProfile_9115');" title="View more information about&nbsp;Des Moines Public Library">Des Moines Public Library</a>&nbsp;<img src="/wcpa/rel20111216/images/LibraryProfile/icon-worldcat.png" title="This Library's holdings are visible on WorldCat.org" alt="WorldCat Member"/></p>
+             <p class="lib-search-address">
+             1000 Grand Avenue&nbsp;
+                 <br/>DES MOINES, Iowa&nbsp;50309<br/>United States<br/>(515) 283-4152</p>
+        </td>
+        <td class="features">
+            <ul class="lib-links">
+                <li><a href="http://www.dmpl.org" onclick="LibServices(this,'9115_librarySearch_Libhome',';9115_librarySearch_Libhome');" target="_blank" title="Visit this library's website" class="lib-website">Website</a></li><li><a href="http://libhip.desmoineslibrary.com/" onclick="LibServices(this,'9115_librarySearch_Catalog',';9115_librarySearch_Catalog');" target="_blank" title="View this library's online catalog" class="lib-catalog">Online Catalog</a></li><li><a href="http://www.dmpl.org/branches_hours/index.html" onclick="LibServices(this,'9115_librarySearch_Libinfo',';9115_librarySearch_Libinfo');" target="_blank" title="More information about this library" class="lib-info">Information Page</a></li><li><a href="http://www.dmpl.org/about_us/policies/librarycard.html" onclick="LibServices(this,'9115_LibProfile_LibCard',';9115_LibProfile_LibCard');" target="_blank" title="Apply for a library card" class="lib-card">Apply for a library card</a></li></ul>
+        </td>
+        <td class="dist"><a href="http://maps.google.com/maps?f=q&q=1000 Grand Avenue+DES MOINES+Iowa+United States+50309(Des Moines Public Library)@41.585686,-93.618919&ie=UTF8&view=map" onClick="LibServices(this,'wctlink_librarySearch_mapIt',';wctlink_librarySearch_mapIt');" title="Map this library on Google" target="_blank" class="lib-map-sm">Map It</a></td>
+        <td class="library-type"><p>Public</p></td>
+        <td class="actions">
+            <a href="" onclick="showLoginPre('IOU', 'Des Moines Public Library', 'des moines public library', '1', '10', 'rel');return false;" class="favelib" title="Add this library to your WorldCat favorites">Add as favorite</a>
+                </td>
+    </tr>
+<tr id="West Des Moines Public Library">
+        <td class= "colnum" style="width:3% !important; border-right: none; padding: 10px 5px 0 8px; font-size: 11px;">2.</td>
+        <td class="name" style="width:auto;">
+            <p class="lib">
+                <a href="/libraries/9234?backfrom=libraryProfile&searchTerm=des moines public library&start=1&count=10&libTypeNum=0&sortBy=rel" onclick="LibServices(this,'wctlink_librarySearch_libraryProflie_9234',';wctlink_librarySearch_libraryProfile_9234');" title="View more information about&nbsp;West Des Moines Public Library">West Des Moines Public Library</a>&nbsp;<img src="/wcpa/rel20111216/images/LibraryProfile/icon-worldcat.png" title="This Library's holdings are visible on WorldCat.org" alt="WorldCat Member"/></p>
+             <p class="lib-search-address">
+             4000 MILLS CIVIC PKWY&nbsp;
+                 <br/>W DES MOINES, Iowa&nbsp;50265-3595<br/>United States<br/>(515) 222-3400</p>
+        </td>
+        <td class="features">
+            <ul class="lib-links">
+                <li><a href="http://WWW.WDMLIBRARY.ORG" onclick="LibServices(this,'9234_librarySearch_Libhome',';9234_librarySearch_Libhome');" target="_blank" title="Visit this library's website" class="lib-website">Website</a></li><li><a href="http://libonline.wdm-ia.com/" onclick="LibServices(this,'9234_librarySearch_Catalog',';9234_librarySearch_Catalog');" target="_blank" title="View this library's online catalog" class="lib-catalog">Online Catalog</a></li><li><a href="http://www.wdmlibrary.org/" onclick="LibServices(this,'9234_librarySearch_Libinfo',';9234_librarySearch_Libinfo');" target="_blank" title="More information about this library" class="lib-info">Information Page</a></li></ul>
+        </td>
+        <td class="dist"><a href="http://maps.google.com/maps?f=q&q=4000 MILLS CIVIC PKWY+W DES MOINES+Iowa+United States+50265-3595(West Des Moines Public Library)@41.567543,-93.756808&ie=UTF8&view=map" onClick="LibServices(this,'wctlink_librarySearch_mapIt',';wctlink_librarySearch_mapIt');" title="Map this library on Google" target="_blank" class="lib-map-sm">Map It</a></td>
+        <td class="library-type"><p>Public</p></td>
+        <td class="actions">
+            <a href="" onclick="showLoginPre('IW9', 'West Des Moines Public Library', 'des moines public library', '1', '10', 'rel');return false;" class="favelib" title="Add this library to your WorldCat favorites">Add as favorite</a>
+                </td>
+    </tr>
+</table>
+
+<p class="lib-search-note">Only libraries that have created a profile in the WorldCat Registry are listed in the library search results.<br />If you are a librarian and do not see your library listed, you may <a hreflang="en" href="http://www.worldcat.org/registry/Institutions" target="_blank" title="(This link leads to a page that is only available in English.)">create a free WorldCat Registry profile</a>.</p>
+
+</div>
+   </div>
+   </div>
+<div id="deleteAffiliationOverlay">
+	<div class="la-gr-450">
+		<!-- div header -->
+		<div class="hd">
+			<div class="cl"><a href="#favlibs" title="Close" onclick='hideDeleteAffiliationOverlay()' ><img src="/wcpa/rel20111216/images/spacer.gif" width="13" height="13" alt="Close" /></a></div>
+			<div class="tx">Delete Favorite Library</div>
+			<div class="clr"></div>
+		</div>
+		<!--div content-->
+		<div class="ct"><div style="width: 400px">
+			<div class="la-al-inf">
+				<div id="deleteMessages" class="mes"></div>
+			</div></div>
+			<div><span class="label" style="font-size:small;">
+					<a id="deleteYes" href="#favlibs" >Yes</a>
+				 </span>&nbsp;&nbsp;
+				 <span class="label" style="font-size:small;">
+					<a id="deleteCancel" href="#favlibs" onclick="hideDeleteAffiliationOverlay();">Cancel</a>
+				 </span>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<style>
+    #deleteAffiliationOverlay  { position: absolute; left: 0px; top: 0px; z-index: 1000; display:none; visibility: visible;  }
+	strong { font-weight: bold !important }
+</style>

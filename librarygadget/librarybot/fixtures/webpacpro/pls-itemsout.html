@@ -1,0 +1,381 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- 2005LE Version, example set from 3 December, 2004-->
+<!-- patronview_web.html -->
+<!-- This file last changed: 13 October, 2004 -->
+
+<head>
+<link rel="stylesheet" type="text/css" href="/scripts/ProStyles.css" />
+<link rel="stylesheet" type="text/css" href="/screens/styles.css" />
+<script language="JavaScript" type="text/javascript" src="/scripts/elcontent.js"></script>
+<script language="JavaScript" type="text/javascript" src="/scripts/common.js"></script>
+<script language="JavaScript" type="text/javascript" src="/scripts/webbridge.js"></script>
+<title>Peninsula Library System Web Catalog</title>
+<meta http-equiv="Content-Type" content="text/html" />
+<link rel="stylesheet" href="/screens/styles.css" type="text/css" />
+<script src="/screens/sorttable.js"></script>
+<!--[if IE]><script defer src="/screens/sorttable.js"></script><![endif]-->
+</head>
+
+<body>
+<html  dir="LTR">
+<head>
+<title>Peninsula Library System                                         /All Locations</title>
+<base target="_self"/>
+<link rel="stylesheet" type="text/css" href="/scripts/ProStyles.css" />
+<link rel="stylesheet" type="text/css" href="/screens/styles.css" />
+<link rel="shortcut icon" type="ximage/icon" href="/screens/favicon.ico" />
+<script language="JavaScript" type="text/javascript" src="/scripts/common.js"></script>
+<script language="JavaScript" type="text/javascript" src="/scripts/webbridge.js"></script>
+<script language="JavaScript" type="text/javascript" src="/scripts/elcontent.js"></script>
+</head>
+<body bgcolor="#FFFFFF" >
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<!-- begin toplogo_loggedin.html file -->
+<!-- toplogo_loggedin.html -->
+<!-- 2005LE Version, example set from 3 December, 2004-->
+<!-- This file last changed: 5 October, 2004 -->
+<head>
+<link rel="stylesheet" type="text/css" href="/scripts/ProStyles.css" />
+<link rel="stylesheet" type="text/css" href="/screens/styles.css" />
+<script language="JavaScript" type="text/javascript" src="/scripts/elcontent.js"></script>
+<script language="JavaScript" type="text/javascript" src="/scripts/common.js"></script>
+<script language="JavaScript" type="text/javascript" src="/scripts/webbridge.js"></script>
+		<title>Peninsula Library System Web Catalog</title>
+		<link rel="stylesheet" type="text/css" href="/screens/styles.css">
+		<link rel="shortcut icon" href="/screens/favicon.ico" />
+	</head>
+	<body>	
+	<div id="display">
+		<!--Not sure what this form is for, but it causes an error message.
+		<form action="mainmenu.html" method="get" name="searchForm"> -->
+		<div class="hdr">
+			<a href="http://www.plsinfo.org" target="_blank" class="logo"><img src="/screens/pls_logo.gif" alt="Peninsula Library System" width="412" height="21" border="0"></a>
+			<div class="lang"><a href="/*spi">Espa&ntilde;ol</a><!--<span> |</span><a href="/*tag"> Tagalog</a>--><span>|</span><a href="/*cht">Chinese</a></div>
+			<div class="gclr"></div>
+	</div>
+		<div class="nav">
+			<ul>
+				<li class="hm"><a href="/search/">Catalog</a></li>
+				<li><a href="/patroninfo">My Library Account</a></li>
+				<li><a href="http://www.plsinfo.org/library-hours" target="_blank">Visit Our Libraries</a></li>
+				<li><a href="/screens/databases.html">Articles &amp; Databases</a></li>
+				<!-- <li class="last"><a href="#">Kids Catalog</a></li> -->
+			</ul>
+			
+			<div class="links"><a href="/screens/help_index.html">Search Help</a><span>|</span><a href="/screens/faq.html">FAQs</a><span>|</span><a href="/screens/contactus.html">Contact Us</a></div>
+			<div class="gclr"></div>  <!-- Required to make yellow bar go across the page.  -->
+			
+		</div>
+	<!-- </form> -->
+	</div>
+
+<!-- To see these buttons remove the non-breaking spaces and put each token on it's own line -->
+<img src="/screens/spacer.gif" alt="space" width="10" height="10">
+<a href="/logout~S1?"><img src="/screens/logout.gif" alt="Log Out" border="0" /></a>
+
+<a href="/patroninfo~S1/1441115/top/"><img src="/screens/ret2prec.gif" alt="Return To Your Record" border="0" /></a>
+
+<a href="/"><img src="/screens/startover.gif" alt="Start Over" border="0" /></a>
+<br>
+<br />
+
+<!--
+<p>
+<font size="3" face="Verdana, Arial, Helvetica, sans-serif" color="#CC3333">
+<img src="/screens/spacer.gif" alt="space" width="10" height="10">
+<strong><center>
+<font color="#CC3333">Online Payment will be unavailable the morning of Monday, October 4th, for an upgrade to the payment system.
+</font>
+</strong></center>
+</font>
+</p>
+-->
+
+
+<!-- end of toplogo_loggedin.html file -->
+</body>
+<!--this is customized <screens/toplogo_loggedin.html>-->
+You are logged into staff mode at Peninsula Library System                                         /All Locations as <font color="#CC0033"><strong>BOGGS, JOHN D</strong></font><br /><br />
+<br />
+<!-- Remove as duplicated in toplogo.html <!--{startover}-->
+<!-- BEGIN SEARCH WIDGET -->
+<div align="center">
+
+<div  class="bibSearchtool">
+<script language="JavaScript" type="text/JavaScript">
+<!-- Hide the JS
+var savedTag;
+var savedSearch;
+var savedExactSearch = null; 
+
+var savedScope;
+var sortButtonText = null;
+
+var sortTypes = new Array();
+var sortLabels = new Array();
+sortTypes[0] = "t";
+sortLabels[0] = "Title";
+sortTypes[1] = "a";
+sortLabels[1] = "Author";
+sortTypes[2] = "c";
+sortLabels[2] = "Year";
+sortTypes[3] = "r";
+sortLabels[3] = "Reverse Year";
+sortTypes[4] = "n";
+sortLabels[4] = "Call Number";
+sortTypes[5] = "m";
+sortLabels[5] = "Material Type";
+sortLabels[6] = "System Sorted";
+sortTypes[6] = "-";
+var sortSelectedValue = "6";
+var sortExactBrowseURL = ""
+var nonSortTags = "XYZprWw"
+// Unhide the JS -->
+</script>
+<form name="searchtool" target="_self" action="/search~S1/">
+      <label for="searchtype" style="display:none;">SearchType</label> <select name="searchtype" id="searchtype" onChange="initSort()">
+        <option value="a"> AUTHOR</option>
+        <option value="t"> TITLE</option>
+        <option value="d"> SUBJECT</option>
+        <option value="c"> CALL NO</option>
+        <option value="X" selected="selected"> KEYWORD</option>
+      </select>
+      &nbsp;
+      <label for="searcharg" style="display:none;">Search</label><input type="text" name="searcharg" id="searcharg" size="30" maxlength="75" value="" />
+      &nbsp;
+      <label for="searchscope" style="display:none;">Search Scope</label><select name="searchscope" id="searchscope">
+        <option value="1" selected="selected"> Search Entire Collection</option>
+        <option value="2"> Burlingame Libraries</option>
+        <option value="3"> Daly City Libraries</option>
+        <option value="4"> Menlo Park Libraries</option>
+        <option value="5"> Redwood City Libraries</option>
+        <option value="6"> San Bruno Library</option>
+        <option value="7"> San Mateo City Libraries</option>
+        <option value="8"> San Mateo County Libraries</option>
+        <option value="9"> San Mateo Community College Libraries</option>
+        <option value="10"> South San Francisco Libraries</option>
+        <option value="11"> Adult Level Collection</option>
+        <option value="12"> Children's Collection</option>
+        <option value="13"> Teen/Young Adult Collection</option>
+      </select>
+      &nbsp;
+
+<span id="sort_cell">
+</span>
+
+<script language="JavaScript" type="text/JavaScript">
+<!-- Hide the JS
+initSort();
+// Unhide the JS -->
+</script>
+      <input type="hidden" name="SORT" value="D" /><input type="hidden" name="extended" value="0" /><input type="submit" name="SUBMIT" value="Search" />
+<div>
+      <input type="checkbox" name="availlim" value="1"  /> <span class="availLimMessage">Limit search to in-stock items</span><br/>
+</div>
+</form>
+<div></div></div>
+</div>
+
+<!-- END SEARCH WIDGET -->
+<!--Begin the main content table-->
+<div class="content">
+<div class="boxtop">
+<div class="cnw"></div>
+<div class="cne"></div>
+</div>
+<div class="tabs">
+<div class="gclr"></div>
+</div>
+<div class="cntnt">
+<!--Beginning main page content-->
+<h1>My Library Account </h1>
+<table width="600" border="0" cellpadding="8" cellspacing="0" class="sortable">
+<tr valign="top">
+<td width="5%" valign="top">&nbsp;</td>
+<td width="43%">
+				
+<table width="100%"  border="1" cellpadding="5" cellspacing="0" bordercolor="#CCCCCC" bgcolor="#FFFFFF" class="sortable">
+<tr>
+<td>
+<a href="/patroninfo~S1/1441115/holds" target="_self">4 requests (holds).</a>
+<br />
+<a href="/patroninfo~S1/1441115/overdues" target="_self">$11.75 in unpaid fines and bills</a>
+<br />
+<br />
+</td>
+</tr>
+</table>
+</td>
+<td width="28%">
+<strong>BOGGS, JOHN D</strong><br />
+2471 FLORES ST<br />
+SAN MATEO CA<br />
+94403<br />
+650-356-2122<br />
+Expiration Date:01-01-2015<br />
+Current Checkouts:4<br />
+<br />
+<a href="#" onClick="return open_new_window( '/patroninfo~S1/1441115/newpin' )">Modify your PIN</a>
+<br />
+<a href="#" onClick="return open_new_window( '/patroninfo~S1/1441115/modpinfo' )">Modify Personal Information</a>
+<br />
+
+</td>
+<td width="24%" align="center">
+
+<a href="/patroninfo~S1/1441115/searchcatalog" target="_self"><img src="/screens/pat_search.gif" alt="Search the Catalog" border="0" /></a>
+
+<a href="/patroninfo~S1/1441115/getpsearches" target="_self"><img src="/screens/pat_getpsavedrecs.gif" alt="Preferred Searches" border="0" /></a>
+
+
+<a href="/patroninfo~S1/1441115/readinghistory" target="_self"><img src="/screens/reading_history.gif" class="button" border="0" alt="My Reading History" /></a>
+<br />
+<a href="/screens/reading_history_info.html" target="_blank" style="text-decoration: none; color: #000000;"><div style="border-top: 1px double #FFFFFF; border-left: 1px double #FFFFFF; border-bottom: 1px solid #6C0EA7; border-right: 1px solid #6C0EA7; border-bottom: 1px solid #716F64; border-right: 1px solid #716F64; background-color: #E0E1E5; height: 20px; width: 110px; margin-top: 2px;"><span style="font-size: 12px; font-family: arial, sans-serif;">Reading Hist. FAQ</span></div></a>
+<a href="http://plsinfo.org/texturlib" target="_blank" style="text-decoration: none; color: #000000;"><div style="border-top: 1px double #FFFFFF; border-left: 1px double #FFFFFF; border-bottom: 1px solid #6C0EA7; border-right: 1px solid #6C0EA7; background-color: #E6DEF7; height: 20px; width: 110px; margin-top: 2px;"><img src="/screens/patronview_web_shoutbomb_logo.jpg" style="height: 18px; vertical-align: middle;"/><span style="font-size: 12px; font-family: arial, sans-serif;">Renewal by Text</span></div></a>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="4" valign="top">
+<form name="checkout_form" method="POST" id="checkout_form" ><input type="HIDDEN" id="checkoutpagecmd" />
+
+<a href="#"  onClick="return submitCheckout( 'sortByCheckoutDate', 'bycheckoutdate' )"><img src="/screens/pat_sortbychkout.gif" alt="SORT BY DATE CHECKED OUT" border="0" /></a>
+<input type="HIDDEN" name="currentsortorder" value="current_duedate" />
+<div id="renewfailmsg" style="display:none"  class="errormessage">
+<h2>Not all renewals were successful. See details below.</h2></div>
+<a href="#"  onClick="return submitCheckout( 'requestRenewAll', 'requestRenewAll' )"><img src="/screens/pat_renewall.gif" alt="RENEW ALL" border="0" /></a>
+<a href="#"  onClick="return submitCheckout( 'requestRenewSome', 'requestRenewSome' )"><img src="/screens/pat_renewmark.gif" alt="RENEW SELECTED ITEMS" border="0" /></a>
+</nobr>
+<table width=100% border="0" class="patFunc">
+<tr class="patFuncTitle">
+<th colspan="5"  class="patFuncTitle">
+4 ITEMS CHECKED OUT</th>
+</tr>
+
+<tr class="patFuncHeaders">
+<th class="patFuncHeaders"> RENEW </th><th class="patFuncHeaders"> TITLE </th><th  class="patFuncHeaders"> BARCODE </th><th class="patFuncHeaders"> STATUS </th><th  class="patFuncHeaders"> CALL NUMBER </th>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew0" id="renew0" value="i3581791" /></td><td align="left" class="patFuncTitle"><label for="renew0"><a href="/record=b1226197~S1"> The best of George Harrison [sound recording]. </a></label>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 39041083463223 </td>
+<td align="left" class="patFuncStatus"> DUE 11-02-11 
+</td>
+<td align="left" class="patFuncCallNo"> CD POP/ROCK  </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew1" id="renew1" value="i5000039" /></td><td align="left" class="patFuncTitle"><label for="renew1"><a href="/record=b1268241~S1"> Independence day / by Richard Ford. </a></label>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 39045081863573 </td>
+<td align="left" class="patFuncStatus"> DUE 11-09-11  <span  class="patFuncRenewCount">Renewed 2 times</span>
+</td>
+<td align="left" class="patFuncCallNo"> FIC FORD  </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew2" id="renew2" value="i1281985" /></td><td align="left" class="patFuncTitle"><label for="renew2"><a href="/record=b1075594~S1"> The artist's way : a spiritual path to higher creativity / Julia Cameron. </a></label>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 39041061962592 </td>
+<td align="left" class="patFuncStatus"> DUE 11-16-11  <span  class="patFuncRenewCount">Renewed 1 time</span>
+</td>
+<td align="left" class="patFuncCallNo"> 153.3 C 2002  </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew3" id="renew3" value="i4719873" /></td><td align="left" class="patFuncTitle"><label for="renew3"><a href="/record=b1878969~S1"> Life inc. : how the world became a corporation, and how to take it back / Douglas Rushkoff. </a></label>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 39046084816261 </td>
+<td align="left" class="patFuncStatus"> DUE 11-16-11  <span  class="patFuncRenewCount">Renewed 1 time</span>
+</td>
+<td align="left" class="patFuncCallNo"> 306 RUS  </td>
+</tr>
+</table>
+</dl>
+<a href="#"  onClick="return submitCheckout( 'sortByCheckoutDate', 'bycheckoutdate' )"><img src="/screens/pat_sortbychkout.gif" alt="SORT BY DATE CHECKED OUT" border="0" /></a>
+<input type="HIDDEN" name="currentsortorder" value="current_duedate" />
+<div id="renewfailmsg" style="display:none"  class="errormessage">
+<h2>Not all renewals were successful. See details below.</h2></div>
+<a href="#"  onClick="return submitCheckout( 'requestRenewAll', 'requestRenewAll' )"><img src="/screens/pat_renewall.gif" alt="RENEW ALL" border="0" /></a>
+<a href="#"  onClick="return submitCheckout( 'requestRenewSome', 'requestRenewSome' )"><img src="/screens/pat_renewmark.gif" alt="RENEW SELECTED ITEMS" border="0" /></a>
+</nobr>
+</form></td>
+</tr>
+</table>
+<p><font color="#666666">___________________________________</font><br>
+  <br>
+  <strong>My Library Account FAQs:</strong></p>
+<ul>
+  <li><a href="/screens/faq.html#23">How do I renew items?</a></li>
+  <li><a href="http://plsinfo.org/texturlib">How do I renew items via text?</a></li>  
+  <li><a href="/screens/faq.html#payonline3">How do I pay my fines and fees online?</a></li>
+  <li><a href="/screens/faq.html#25">How do I get notices by e-mail?</a></li>
+  <li><a href="/screens/faq.html#68">How do I change my PIN and/or e-mail address?</a></li>
+  <li><a href="/screens/faq.html#67">What is the &quot;freeze&quot; function and how does
+      it work? </a> </li>
+  <li><a href="/screens/faq.html#74">How does My Reading History work?</a></li>
+  <li><a href="/screens/faq.html#75">How do New Item Alerts work?</a></li>
+  <li><a href="/screens/faq.html#76">How do reserve fees work?</a></li>
+</ul>
+<blockquote>
+  <p>For more information on these and other features, please see our Frequently
+    Asked Questions (<a href="/screens/faq.html">FAQs</a>).</p>
+  <p><br /> 
+    <!--End of main page content-->
+      </p>
+</blockquote>
+</div>
+</div>
+<!--End the main content table-->
+
+<br />
+<!-- begin botlogo.html file -->
+<!-- 2005LE Version, example set from 3 December, 2004-->
+<!-- This file last changed: 8 July, 2005 -->
+<!-- botlogo.html -->
+
+<br> 
+<!--Begin the bottom logo table-->
+<div class="ftr">
+			<div class="cpyrght">
+				<div><b><a href="http://www.plsinfo.org" target="_blank">Peninsula Library System</a> - Your Library. Always Open.</b></div>
+				<div>
+<!-- &copy;2004 Innovative Interfaces, Inc. All rights reserved. -->
+<a href="/screens/privacy.html">Privacy Policy</a></div>
+			</div>
+			<div class="links"><a href="/">Home</a><span>|</span><a href="/screens/help_index.html">Help</a><span>|</span><a href="/screens/contactus.html">Contact Us</a></div>
+			<div class="gclr"></div>
+	</div>
+<center>
+<a href="http://www.wearefree2.com/"><img src="/screens/free2.jpg" border="0"></a>
+</center>
+
+<!-- Google Analytics Tracking Script starts here.  Tracking beginning August 13, 2010.  -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17648064-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- Google Analytics Tracking Script ends here -->
+
+<!-- end botlogo.html file -->
+
+
+</body>
+</html>
+<!--this is customized <screens/patronview_web.html>-->

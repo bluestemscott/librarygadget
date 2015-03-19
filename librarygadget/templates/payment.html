@@ -1,0 +1,10 @@
+<div class="section">
+    {{ upgrade.form.render }}
+
+    {% if upgrade.test_paypal %}
+        <div class="testaccount">
+            <h3>******* Test Paypal *******</h3>
+            {{ upgrade.form.sandbox }}
+        </div>
+    {% endif %}
+</div>

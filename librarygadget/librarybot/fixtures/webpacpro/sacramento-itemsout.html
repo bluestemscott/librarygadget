@@ -1,0 +1,714 @@
+<!-- patronview_web.html -->
+
+
+<html  dir="LTR">
+<head>
+<title>Sacramento Public Library                                            /All Sacto</title>
+<base target="_self"/>
+<link rel="stylesheet" type="text/css" href="/scripts/iiiStyles.css" />
+<link rel="stylesheet" type="text/css" href="/screens/sacramento.css" />
+<link rel="shortcut icon" type="ximage/icon" href="/screens/favicon.ico" />
+<script language="JavaScript" type="text/javascript" src="/scripts/common.js"></script>
+<script language="JavaScript" type="text/javascript" src="/scripts/webbridge.js"></script>
+<script language="JavaScript">
+<!-- Hide the JS
+startTimeout(300000, "/search");
+// -->
+</script>
+
+<noscript>
+<meta http-equiv="Refresh" content="300;URL=/search" />
+</noscript>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+</head>
+<body bgcolor="#FFFFFF" >
+<!--toplogo.html begin-->
+<!--[if IE 7]><link href="/screens/ie7.css" rel="stylesheet" type="text/css"><![endif]-->
+<!--[if IE 6]><link href="/screens/ie.css" rel="stylesheet" type="text/css"><![endif]-->
+ 
+  <div id="container">  
+  <div id="banner">
+   <a href="http://www.saclibrary.org" title="Library Home Page"><img src="/screens/colorlogo2.gif" alt="Sacramento Public Library Logo" width="55" height="51"></a>
+   <img class="splcopy" src="/screens/splcopy_opac.gif" alt="Sacramento Public Library" width="518" height="34">
+   <p class="rlinks"><a href="http://www.saclibrary.org/index.html"><strong>Library Home</strong></a><br>
+
+  <a href="/screens/help_faq.html"><strong>Help</strong></a></p>
+  </div>
+  <div id="nav">
+  <ul>
+   <li class="box grad first"><a href="/search~S51">Catalog</a></li>
+     <li class="box grad"><a href="/patroninfo~S51">My Account</a></li>
+     <li class="box grad"><a href="http://www.saclibrary.org/request/requestforpurchase.cfm">Suggest a Purchase</a></li>
+
+    <li class="box grad"><a href="/ftlist">New this Month</a></li>
+     <li class="box grad"><a href="/search*spi">Cat&aacute;logo en Espa&ntilde;ol</a></li>
+	</ul>
+</div>
+<div style="clear:both;">
+</div>
+<div id="iiiresults">
+<!--toplogo.html end--> 
+<span style="color:#912942; font-size:1em; font-weight:bold;">Welcome, you are logged in to Sacramento Public Library                                            /All Sacto as: BILLEY,  MONICA  V</span><BR>
+
+<br />
+<span style="float: right; padding-right: 15px;">
+<form>
+<a href="/logout~S51?" target="_self"><img src="/screens/logout.gif" alt="Log Out" border="0" /></a>
+<br />
+</form>
+</span>
+
+<!-- BEGIN SEARCH WIDGET -->
+<div align="center">
+
+<div  class="bibSearchtool">
+<script language="JavaScript" type="text/JavaScript">
+<!-- Hide the JS
+var savedTag;
+var savedSearch;
+var savedExactSearch = null; 
+
+var savedScope
+var sortButtonText = null;
+
+var sortTypes = new Array();
+var sortLabels = new Array();
+sortTypes[0] = "t";
+sortLabels[0] = "Title";
+sortTypes[1] = "a";
+sortLabels[1] = "Author";
+sortTypes[2] = "c";
+sortLabels[2] = "Year";
+sortTypes[3] = "r";
+sortLabels[3] = "Reverse Year";
+sortTypes[4] = "n";
+sortLabels[4] = "Call Number";
+sortTypes[5] = "m";
+sortLabels[5] = "Material Type";
+sortLabels[6] = "System Sorted";
+sortTypes[6] = "-";
+var sortSelectedValue = "6";
+var sortExactBrowseURL = ""
+var nonSortTags = "XYZprWw"
+// Unhide the JS -->
+</script>
+<form name="searchtool" target="_self" action="/search~S51/">
+      <select name="searchtype" id="searchtype" onChange="initSort()">
+
+        <option value="a"> Author</option>
+        <option value="t"> Title</option>
+        <option value="s"> Journal Title</option>
+        <option value="h"> Genre</option>
+        <option value="d"> Subject</option>
+
+        <option value="c"> Call No</option>
+        <option value="i"> ISBN</option>
+        <option value="X" selected="selected"> Keyword</option>
+      </select>
+      &nbsp;
+      <input type="text" name="searcharg" size="30" maxlength="75" value="" />
+
+      &nbsp;
+      <select name="searchscope">
+        <option value="38"> Adult Items</option>
+        <option value="39"> Children's Items</option>
+        <option value="40"> Teen Items</option>
+        <option value="41"> Arbuckle</option>
+
+        <option value="1"> Arcade</option>
+        <option value="2"> Arden-Dimick</option>
+        <option value="3"> Barber</option>
+        <option value="8"> Belle Cooledge</option>
+        <option value="4"> Browns</option>
+
+        <option value="5"> Carmichael</option>
+        <option value="6"> Central</option>
+        <option value="7"> Colonial Heights</option>
+        <option value="35"> Courtland</option>
+        <option value="9"> Colusa</option>
+
+        <option value="10"> Del Paso Heights</option>
+        <option value="11"> Elk Grove</option>
+        <option value="12"> Fair Oaks</option>
+        <option value="13"> Folsom</option>
+        <option value="14"> Franklin</option>
+
+        <option value="15"> Galt</option>
+        <option value="42"> Grimes</option>
+        <option value="16"> Isleton</option>
+        <option value="17"> Martin Luther King, Jr</option>
+        <option value="43"> Maxwell</option>
+
+        <option value="18"> McClatchy</option>
+        <option value="19"> McKinley</option>
+        <option value="47"> Norman R Siefkin</option>
+        <option value="20"> North Highlands-Antelope</option>
+        <option value="36"> North Natomas</option>
+
+        <option value="21"> North Sacramento-Hagginwood</option>
+        <option value="22"> Orangevale</option>
+        <option value="23"> Pleasant Grove</option>
+        <option value="44"> Princeton</option>
+        <option value="24"> Rancho Cordova</option>
+
+        <option value="25"> Rio Linda</option>
+        <option value="45"> Sacramento Room</option>
+        <option value="26"> South Natomas</option>
+        <option value="27"> Southgate</option>
+        <option value="46"> Stonyford</option>
+
+        <option value="28"> Sutter</option>
+        <option value="29"> Sutter County (Yuba City)</option>
+        <option value="31"> Sylvan Oaks</option>
+        <option value="32"> Valley Hi-North Laguna</option>
+        <option value="33"> Walnut Grove</option>
+
+        <option value="48"> Williams</option>
+        <option value="34"> Woodland Public Library</option>
+        <option value="49"> All Colusa County Libraries</option>
+        <option value="50"> All Folsom Public Libraries</option>
+        <option value="51" selected="selected"> All Sacramento Public Libraries</option>
+
+        <option value="52"> All Sutter County Libraries</option>
+        <option value="37"> All Libraries</option>
+      </select>
+      &nbsp;
+
+<span id="sort_cell">
+</span>
+
+<script language="JavaScript" type="text/JavaScript">
+<!-- Hide the JS
+initSort();
+// Unhide the JS -->
+
+</script>
+      <input type="hidden" name="SORT" value="D" /><input type="hidden" name="extended" value="0" /><input type="submit" name="SUBMIT" value="Search" />
+<div>
+      <input type="checkbox" name="availlim" value="1"  /> Limit results to available items.<br/>
+</div>
+</form>
+<div></div></div>
+</div>
+
+<!-- END SEARCH WIDGET -->
+
+<br>
+
+<table width="100%" align="center" style="clear: both;">
+
+<tr>
+
+<td align="center" width="35%">
+
+<div class="patMainFuncs">
+
+<div class="patStatusLinks">
+
+
+<a href="/patroninfo~S51/1443596/holds" target="_self">31 requests (holds). 6 ready for pickup.</a>
+
+
+
+
+
+
+
+<a href="/patroninfo~S51/1443596/overdues" target="_self">$7.50 in unpaid fines and bills</a>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="patHelpLinks">
+
+<a href="/screens/help_renew.html">Help with Renewals</a>
+
+
+</div>
+
+</div>
+
+</td>
+
+<td align="center" width="40%">
+
+<div class="patNameAddress">
+
+
+<strong>BILLEY,  MONICA  V</strong><br />
+7332 DIEPPE WAY<br />
+SACRAMENTO CA 95842<br />
+<br />
+EXP DATE:10-22-2009<br />
+
+</div>
+
+</td>
+
+
+
+<td align="left">
+
+
+<div class="patSearchLinks">
+
+</div>
+
+</td>
+
+</tr>
+
+</table>
+
+<div class="patActionsLinks">
+
+
+<a href="#" onClick="return open_new_window( '/patroninfo~S51/1443596/newpin' )"><img src="/screens/pat_pin.gif" alt="Modify your PIN" border="0" /></a>
+
+
+
+<a href="#" onClick="return open_new_window( '/patroninfo~S51/1443596/modpinfo' )"><img src="/screens/pat_info.gif" alt="Modify Personal Information" border="0" /></a>
+
+
+
+
+
+
+<a href="/patroninfo~S51/1443596/readinghistory" target="_self"><img src="/screens/reading_hist.gif" alt="Reading History" border="0"></a>
+
+
+
+<a href="/patroninfo~S51/1443596/searchcatalog" target="_self"><img src="/screens/pat_search.gif" alt="Search the Catalog" border="0" /></a>
+
+
+</div>
+
+<div class="patFuncArea">
+
+
+<form method="GET" target="_self" action="/patroninfo~S51/1443596/sorteditems">
+<a href="/patroninfo~S51/1443596/sorteditems" ><img src="/screens/pat_sortbydue.gif" alt="SORT BY DUE DATE" border="0" /></a>
+</form>
+<div id="renewfailmsg" style="display:none"  class="errormessage">
+<h2>Not all renewals were successful. See details below.</h2></div>
+<form name="renew_form_1" method="GET"><a href="/patroninfo~S51/1443596/items"  onClick="return onClickProcessAll( '/patroninfo~S51/1443596/items', 'renew','This will affect all items. Are you sure?' )"><img src="/screens/pat_renewall.gif" alt="RENEW ALL" border="0" /></a>
+</form>
+<form name="process_form_2" method="GET">
+
+<input type="SUBMIT" value="RENEW SELECTED ITEMS" onClick="return onClickProcessSome( process_form_2, '/patroninfo~S51/1443596/items', 'renew' )" />
+</nobr>
+<table border="0" class="patFunc">
+<tr class="patFuncTitle">
+<th colspan="5"  class="patFuncTitle">
+36 ITEMS CHECKED OUT</th>
+</tr>
+
+<tr class="patFuncHeaders">
+<th class="patFuncHeaders"> RENEW </th><th class="patFuncHeaders"> TITLE </th><th  class="patFuncHeaders"> BARCODE </th><th class="patFuncHeaders"> STATUS </th><th  class="patFuncHeaders"> CALL NUMBER </th>
+
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew0" value="i5287905" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1816471"> The cleaner / Brett Battles. </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 33029061908216 </td>
+<td align="left" class="patFuncStatus"> DUE 11-18-08  <span  class="patFuncRenewCount">Renewed 4 times</span>
+</td>
+<td align="left" class="patFuncCallNo"> FICTION Battles, B.  </td>
+
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew1" value="i5422840" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1785143"> Women's bodies, women's wisdom : creating physical and emotional health and healing / Christiane Nor </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 33029063067839 </td>
+<td align="left" class="patFuncStatus"> DUE 11-18-08  <span  class="patFuncRenewCount">Renewed 4 times</span>
+</td>
+<td align="left" class="patFuncCallNo"> 618.1 N877 2006  </td>
+
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew2" value="i5316927" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1821734"> Exit ghost / Philip Roth. </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 33029061529939 </td>
+<td align="left" class="patFuncStatus"> DUE 11-17-08  <span  class="patFuncRenewCount">Renewed 3 times</span>
+</td>
+<td align="left" class="patFuncCallNo"> FICTION Roth, P.  </td>
+
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew3" value="i5493547" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1892646"> Tell no lies / Julie Compton. </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 33029065911000 </td>
+<td align="left" class="patFuncStatus"> DUE 11-17-08  <span  class="patFuncRenewCount">Renewed 2 times</span>
+</td>
+<td align="left" class="patFuncCallNo"> MYSTERY Compton, J.  </td>
+
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew4" value="i5510353" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1890146"> The mirror's edge / Steven Sidor. </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 33029063028765 </td>
+<td align="left" class="patFuncStatus"> DUE 11-17-08  <span  class="patFuncRenewCount">Renewed 2 times</span>
+</td>
+<td align="left" class="patFuncCallNo"> MYSTERY  Sidor, S.  </td>
+
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew5" value="i4235201" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1646372"> Live 2002 [sound recording] / Robin Williams. </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 33029049125503 </td>
+<td align="left" class="patFuncStatus"> DUE 11-17-08  <span  class="patFuncRenewCount">Renewed 2 times</span>
+</td>
+<td align="left" class="patFuncCallNo"> CD 792.23 W726 2002 SET  </td>
+
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew6" value="i5483187" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1893715"> Where are you now? / Mary Higgins Clark. </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 33029065866378 </td>
+<td align="left" class="patFuncStatus"> DUE 12-03-08  <span  class="patFuncRenewCount">Renewed 2 times</span>
+</td>
+<td align="left" class="patFuncCallNo"> FICTION Clark, M.  </td>
+
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew7" value="i5427973" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1838608"> Mindset : the new psychology of success / Carol S. Dweck. </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 33029063068654 </td>
+<td align="left" class="patFuncStatus"> DUE 12-01-08  <span  class="patFuncRenewCount">Renewed 2 times</span>
+</td>
+<td align="left" class="patFuncCallNo"> 153.85 D989 2008  </td>
+
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew8" value="i5351261" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1296363"> The 21 indispensable qualities of a leader : becoming the person others will want to follow /  John  </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 33029061427795 </td>
+<td align="left" class="patFuncStatus"> DUE 12-01-08  <span  class="patFuncRenewCount">Renewed 2 times</span>
+</td>
+<td align="left" class="patFuncCallNo"> 158.4 M465 1999  </td>
+
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew9" value="i5506993" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1863844"> Phantom prey / John Sandford. </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 33029063022594 </td>
+<td align="left" class="patFuncStatus"> DUE 12-03-08  <span  class="patFuncRenewCount">Renewed 2 times</span>
+</td>
+<td align="left" class="patFuncCallNo"> MYSTERY Sandford, J.  </td>
+
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew10" value="i5454508" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1870382"> The headhunters / Peter Lovesey. </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 31652002047547 </td>
+<td align="left" class="patFuncStatus"> DUE 12-01-08  <span  class="patFuncRenewCount">Renewed 2 times</span>
+</td>
+<td align="left" class="patFuncCallNo"> FIC M Lovesey  </td>
+
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew11" value="i5189153" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1773007"> The girl's guide to being a boss (without being a bitch) : valuable lessons, smart suggestions, and  </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 33029060920659 </td>
+<td align="left" class="patFuncStatus"> DUE 11-25-08  <span  class="patFuncRenewCount">Renewed 1 time</span>
+</td>
+<td align="left" class="patFuncCallNo"> 658.302 F911 2006  </td>
+
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew12" value="i3110649" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1485867"> Supervisor savvy / LaVerne L. Ludden and Tom Capozzoli, </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 33029041684754 </td>
+<td align="left" class="patFuncStatus"> DUE 11-25-08  <span  class="patFuncRenewCount">Renewed 1 time</span>
+</td>
+<td align="left" class="patFuncCallNo"> 658.302 L944 2000  </td>
+
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew13" value="i5450870" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1868247"> Leadership gold : lessons learned from a lifetime of leading / John C. Maxwell. </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 33029062948542 </td>
+<td align="left" class="patFuncStatus"> DUE 11-26-08  <span  class="patFuncRenewCount">Renewed 1 time</span>
+</td>
+<td align="left" class="patFuncCallNo"> 658.4092 M465L 2008  </td>
+
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew14" value="i3196697" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1507922"> The E-commerce question and answer book : a survival guide for business managers / Anita Rosen. </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 33029042202010 </td>
+<td align="left" class="patFuncStatus"> DUE 11-26-08  <span  class="patFuncRenewCount">Renewed 1 time</span>
+</td>
+<td align="left" class="patFuncCallNo"> 658.800285 R813 2000  </td>
+
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew15" value="i1586772" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1214609"> The electronic commerce dictionary : the definitive terms for doing business on the information supe </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 3 3029 03570 4980 </td>
+<td align="left" class="patFuncStatus"> DUE 11-26-08  <span  class="patFuncRenewCount">Renewed 1 time</span>
+</td>
+<td align="left" class="patFuncCallNo"> 650.028546 H424 1995  </td>
+
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew16" value="i2728870" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1066410"> A guy's guide to dating : everything you need to know about love, sex, relationships, and other thin </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 3 3029 03827 7786 </td>
+<td align="left" class="patFuncStatus"> DUE 12-02-08  <span  class="patFuncRenewCount">Renewed 1 time</span>
+</td>
+<td align="left" class="patFuncCallNo"> 818.5407 B113 1998  </td>
+
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew17" value="i5589959" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1906306"> The politically incorrect guide to western civilization / Anthony Esolen. </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 33029061255931 </td>
+<td align="left" class="patFuncStatus"> DUE 12-02-08  <span  class="patFuncRenewCount">Renewed 1 time</span>
+</td>
+<td align="left" class="patFuncCallNo"> 909.09821 E76 2008  </td>
+
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew18" value="i4881341" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1753853"> The two minute rule / Robert Crais. </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 33029056793110 </td>
+<td align="left" class="patFuncStatus"> DUE 11-20-08 
+</td>
+<td align="left" class="patFuncCallNo"> fic m Crais  </td>
+</tr>
+
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew19" value="i5209858" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1785465"> The watchman / Robert Crais. </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 33029060898160 </td>
+<td align="left" class="patFuncStatus"> DUE 11-20-08 
+</td>
+<td align="left" class="patFuncCallNo"> MYSTERY Crais, R.  </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew20" value="i5515108" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1891021"> Sephora, the beauty authority : the ultimate guide to makeup, skin, and hair from the beauty authori </a>
+
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 33029063042089 </td>
+<td align="left" class="patFuncStatus"> DUE 11-24-08 
+</td>
+<td align="left" class="patFuncCallNo"> 646.72 S413 2008  </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew21" value="i5375153" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1842517"> The superfoodsRx diet : lose weight with the power of supernutrients / Wendy Bazilian, Steven Pratt, </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 33029061961652 </td>
+<td align="left" class="patFuncStatus"> DUE 11-24-08 
+</td>
+<td align="left" class="patFuncCallNo"> 613.25 B363 2008  </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew22" value="i3740906" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1601368"> Gone for good / Harlan Coben. </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 33029046077632 </td>
+<td align="left" class="patFuncStatus"> DUE 11-29-08 
+</td>
+<td align="left" class="patFuncCallNo"> fic m Coben  </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew23" value="i5579012" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1897780"> Heat lightning / John Sandford. </a>
+<br />
+
+</td>
+
+<td align="left" class="patFuncBarcode"> 33029065399842 </td>
+<td align="left" class="patFuncStatus"> DUE 12-01-08 
+</td>
+<td align="left" class="patFuncCallNo"> MYSTERY Sandford, J.  </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew24" value="i5581104" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1902616"> The broken window  [text (large print)]  : a Lincoln Rhyme novel / Jeffery Deaver. </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 33029065401515 </td>
+
+<td align="left" class="patFuncStatus"> DUE 12-01-08 
+</td>
+<td align="left" class="patFuncCallNo"> LARGE PRINT MYSTERY Deaver, J.  </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew25" value="i5579026" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1897782"> Hot mahogany / Stuart Woods. </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 33029065400079 </td>
+<td align="left" class="patFuncStatus"> DUE 12-03-08 
+
+</td>
+<td align="left" class="patFuncCallNo"> MYSTERY Woods, S.  </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew26" value="i1932474" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1332348"> Modern manners : an etiquette book for rude people / P.J. O'Rourke. </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 3 3029 02715 3949 </td>
+<td align="left" class="patFuncStatus"> DUE 12-03-08 
+</td>
+
+<td align="left" class="patFuncCallNo"> 818.5402 O74 1988  </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew27" value="i4554579" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1709087"> QBQ! : the question behind the question : practicing personal accountability in work and in life / J </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 33029054533401 </td>
+<td align="left" class="patFuncStatus"> DUE 12-03-08 
+</td>
+<td align="left" class="patFuncCallNo"> 153.83 M648 2004  </td>
+
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew28" value="i5160219" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1770003"> The clearing [videorecording] / Fox Searchlight Pictures and Thousand Words present in association w </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 33029060220902 </td>
+<td align="left" class="patFuncStatus"> DUE 12-03-08 
+</td>
+<td align="left" class="patFuncCallNo"> DVD FICTION CLEARING  </td>
+</tr>
+
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew29" value="i3973475" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1635353"> O2 [sound recording] / O-Town. </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 33029048430540 </td>
+<td align="left" class="patFuncStatus"> DUE 12-03-08 
+</td>
+<td align="left" class="patFuncCallNo"> CD MUSIC POP/ROCK O-Town 2002  </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew30" value="i5418325" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1825228"> The rough guide to Cuban son [sound recording]. </a>
+
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 33029062699038 </td>
+<td align="left" class="patFuncStatus"> DUE 12-03-08 
+</td>
+<td align="left" class="patFuncCallNo"> CD MUSIC WORLD Rough 2000a  </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew31" value="i5215087" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1805138"> Big [sound recording] / Macy Gray. </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 33029060839115 </td>
+<td align="left" class="patFuncStatus"> DUE 12-06-08 
+</td>
+<td align="left" class="patFuncCallNo"> CD MUSIC R&B/SOUL Gray, M. 2007  </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew32" value="i5383535" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1835778"> Swingin' uptown [videorecording] : Renaissance in Harlem / Northshore Entertainment ; written & dire </a>
+
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 33029059038604 </td>
+<td align="left" class="patFuncStatus"> DUE 12-06-08 
+</td>
+<td align="left" class="patFuncCallNo"> DVD 780.8996 HARLE 2003  </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew33" value="i5073460" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1778590"> An inconvenient truth [videorecording] : a global warning / Paramount Classics and Participant Produ </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 33029060182144 </td>
+<td align="left" class="patFuncStatus"> DUE 12-06-08 
+</td>
+<td align="left" class="patFuncCallNo"> DVD 363.7387 INCON 2006  </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew34" value="i5275547" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1816649"> The big buy [videorecording] : Tom Delay's stolen Congress / Robert Greenwald and Brave New Films pr </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 33029062741442 </td>
+<td align="left" class="patFuncStatus"> DUE 12-06-08 
+</td>
+<td align="left" class="patFuncCallNo"> DVD 320.973 BIG 2006  </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew35" value="i5555666" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S51/1443596/item&1868964"> The prodigy : a novel of suspense / by Charles Atkins. </a>
+<br />
+
+</td>
+
+<td align="left" class="patFuncBarcode"> 33029065808768 </td>
+<td align="left" class="patFuncStatus"> DUE 12-06-08 
+</td>
+<td align="left" class="patFuncCallNo"> FICTION Atkins, C.  </td>
+</tr>
+</table>
+</form></dl>
+<form method="GET" target="_self" action="/patroninfo~S51/1443596/sorteditems">
+<a href="/patroninfo~S51/1443596/sorteditems" ><img src="/screens/pat_sortbydue.gif" alt="SORT BY DUE DATE" border="0" /></a>
+</form>
+<div id="renewfailmsg" style="display:none"  class="errormessage">
+<h2>Not all renewals were successful. See details below.</h2></div>
+
+<form name="renew_form_1" method="GET"><a href="/patroninfo~S51/1443596/items"  onClick="return onClickProcessAll( '/patroninfo~S51/1443596/items', 'renew','This will affect all items. Are you sure?' )"><img src="/screens/pat_renewall.gif" alt="RENEW ALL" border="0" /></a>
+</form>
+<input type="SUBMIT" value="RENEW SELECTED ITEMS" onClick="return onClickProcessSome( process_form_2, '/patroninfo~S51/1443596/items', 'renew' )" />
+</nobr>
+
+</div>
+<p><strong>If you have questions about your library account, you may call:</strong><br>
+Colusa County Library - 530-458-7671<br>
+Folsom Public Library - 916-355-7374<br>
+Sacramento Public Library - 916-264-2789 Toll-free: 1-800-955-5121<br>
+Sutter County Library - 530-822-7137<br>
+Woodland Public Library - 530-661-5981
+
+</p>
+<p>For address changes, please e-mail us at contact@saclibrary.org to change your address. Please include your name and library card number with your address change request. </p>
+
+<br />
+<!-- botlogo.html begin-->
+<p class="ftr">Can't find it?  Ask a librarian, <a href="mailto:contact@saclibrary.org">email</a>, or <a href="http://www.saclibrary.org/about_lib/contact_us.html">call</a> us.</p>
+</div>
+ <div id="footer">
+  Copyright &copy; 2007-2008. Sacramento Public Library 828 I Street, Sacramento, CA 95814 (916) 264-2920.<br>
+
+  <a href="mailto:contact@saclibrary.org">contact@saclibrary.org</a>
+</div>	
+</div>
+<!-- botlogo.html end-->
+
+
+</body>
+
+</html>
+
+<!--this is customized <screens/patronview_web.html>-->

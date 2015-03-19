@@ -1,0 +1,36 @@
+
+<table id="accounts" cellspacing="2">
+
+	{% if patrons|length > 0 %}
+		<thead>
+			<tr>
+			<td>Library</td>
+			<td>Card</td>
+			<td>Cardholder</td>
+			</tr>
+		</thead>
+		<tbody>
+		{% for patron in patrons %}		
+			<tr>
+
+				<td><a href="{{ patron.library.get_catalog_url }}">{{ patron.library.name }}</a></td>
+				<td>{{ patron.patronid }}</td>	
+				<td>{{ patron.name }}</td>
+                <td>
+                    <form action="{% url delete_account %}" method="POST">
+                  		{% csrf_token %}
+			            <input type="hidden" name="return" value="{{ return }}"/>
+                        <input type="hidden" name="patronid" value="{{ patron.patronid }}"/>
+                         <a href="#" class="removeaccount">X</a>
+				    </form>
+                </td>
+			</tr>
+
+		{% endfor %}
+	{% endif %}
+	
+	</tbody>
+</table>
+
+
+

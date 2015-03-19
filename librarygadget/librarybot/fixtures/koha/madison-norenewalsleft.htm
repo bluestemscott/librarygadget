@@ -1,0 +1,904 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en"  xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>
+
+LINKcat Catalog &rsaquo; Library Home for
+
+    REBEKAH S. BOVENMYER
+
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Koha 4.0800001" /> <!-- leave this for stats -->
+<link rel="shortcut icon" href="/opac-tmpl/prog/en/includes/favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" type="text/css" href="/opac-tmpl/prog/en/css/opac.css" />
+
+
+
+<link rel="stylesheet" type="text/css" media="print" href="/opac-tmpl/prog/en/css/print.css" />
+<link rel="stylesheet" type="text/css" href="/opac-tmpl/prog/en/lib/jquery/plugins/ui.tabs.css" />
+<style type="text/css">@import url("http://www.scls.lib.wi.us/linkcathelp/css/opacusercss.css");</style>
+<!-- yui js --> 
+<script type="text/javascript" src="/opac-tmpl/prog/en/lib/yui/utilities/utilities.js"></script> 
+<script type="text/javascript" src="/opac-tmpl/prog/en/lib/yui/container/container-min.js"></script> 
+<script type="text/javascript" src="/opac-tmpl/prog/en/lib/yui/menu/menu-min.js"></script> 
+<script type="text/javascript" src="/opac-tmpl/prog/en/lib/jquery/jquery.js"></script>
+<script type="text/javascript" src="/opac-tmpl/prog/en/lib/jquery/plugins/ui.tabs.js"></script>
+<script type="text/javascript" src="/opac-tmpl/prog/en/lib/jquery/plugins/jquery.hoverIntent.minified.js"></script>
+<script type="text/javascript" src="/opac-tmpl/prog/en/lib/jquery/plugins/jquery.dropshadow-min.js"></script>
+<script type="text/javascript" language="javascript" src="/opac-tmpl/prog/en/js/script.js"></script>
+
+
+<script type="text/javascript" language="javascript">//<![CDATA[
+        var NO_AMAZON_IMAGE = _("No cover image available");
+    //]]>
+</script>
+<script type="text/javascript" language="javascript" src="/opac-tmpl/prog/en/js/amazonimages.js"></script>          
+
+<script type="text/javascript" language="javascript"
+src="/opac-tmpl/prog/en/js/basket.js"></script>
+
+<script type="text/javascript" language="javascript">
+	//<![CDATA[
+    var MSG_BASKET_EMPTY = _("Your Cart is currently empty");
+    var BASKET_NAME = "Cart";
+    var MSG_RECORD_IN_BASKET = _("This item is already in your Cart");
+    var MSG_RECORD_ADDED = _("This item has been added to your Cart");
+    var MSG_NRECORDS_ADDED = _(" item(s) added to your Cart");
+    var MSG_NRECORDS_IN_BASKET = _("already in your Cart");
+    var MSG_NO_RECORD_SELECTED = _("No item was selected");
+    var MSG_NO_RECORD_ADDED = _("No item was added to your Cart");
+    var MSG_CONFIRM_DEL_BASKET = _("Are you sure you want to empty your Cart?");
+    var MSG_CONFIRM_DEL_RECORDS = _("Are you sure you want to remove the selected items?");
+	$("#cartDetails").ready(function(){ $("#cmspan").html("<a href=\"#\" id=\"cartmenulink\" class=\"\"><i><\/i><span><i><\/i><span><\/span><img src=\"/opac-tmpl/prog/images/cart.gif\" width=\"14\" height=\"14\" alt=\"\" border=\"0\" /> "+_("Cart")+"<span id=\"basketcount\"><\/span><\/span><\/a>"); }); 
+	
+	$(window).load(function() {
+            verify_images();
+         });
+	$(document).ready(function(){
+$("#advsearch #advsearch-shelvingloc").remove();
+
+// Add dropshadow to opacheader
+$("#opacheaderprofile").dropShadow({left:3, top:0, blur:3, opacity: 0.2});
+
+// Remove Site Administrator link and change maintenance message
+// $('#bd a:contains("Site Administrator")').remove(); 
+// $('#bd').html($('#bd').html().replace(/System Maintenance \.\.\. we'll be back soon\! If you have any questions, please contact the/, '<h1>System Maintenance</h1><p>LINKcat is currently unavailable.</p><p>We are sorry for the inconvenience.</p>'));
+
+// Change cart and list button images
+
+$("#listsmenulink > span > img").attr('src','http://www.scls.lib.wi.us/linkcathelp/images/koha-overrides/list.gif');
+
+$("#cartmenulink img").attr('src','http://www.scls.lib.wi.us/linkcathelp/images/koha-overrides/cart.gif');
+
+// Add autofocus to the search text input
+$("#transl1").focus();
+
+// Pre-selects Title instead of keyword for masthead search
+$("#masthead_search option").eq(1).attr("selected","selected");
+
+});
+	//]]>
+</script><script type="text/javascript" language="javascript"
+src="/opac-tmpl/prog/en/js/basket.js"></script>
+
+
+<link rel="unapi-server" type="application/xml" title="unAPI" href="https://10.210.131.210:5001/cgi-bin/koha/unapi" />
+
+
+
+<script type="text/javascript" language="javascript" src="/opac-tmpl/prog/en/js/screensaver.js"></script>
+<script type="text/javascript">
+window.onload=function (){
+	var ss = new ScreenSaver( 900 * 1000);
+
+	ss.onstart = function () {
+		document.location = '/cgi-bin/koha/opac-main.pl?logout.x=1';
+                updateBasket(0,null);
+                delCookie("bib_list");
+	};
+}
+</script>
+
+
+<script type="text/javascript" src="/opac-tmpl/prog/en/lib/jquery/plugins/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="/intranet-tmpl/prog/en/js/dates.js"></script>
+<script type="text/JavaScript" language="JavaScript">
+//<![CDATA[
+$.tablesorter.addParser({
+    id: 'articles', 
+    is: function(s) {return false;  }, 
+    format: function(s) { return s.toLowerCase().replace(/^(the|an|a) /,''); }, 
+    type: 'text' 
+});
+            $(function() {
+            $('#opac-user-views > ul').tabs();
+			$("#holdst").tablesorter({
+				widgets : ['zebra'],
+				sortList: [[0,0]],
+		        headers: { 0: { sorter: 'articles' },4: { sorter: false }
+				}
+			}); 
+			$("#checkoutst").tablesorter({
+				widgets : ['zebra'],
+				
+					sortList: [[3,0]],
+						
+							headers: { 0: { sorter: false }, 1: { sorter: 'articles' },4: { sorter: false },5: { sorter: false }}
+						
+				
+			}); 
+			$("#overduest").tablesorter({
+				widgets : ['zebra'],
+				
+					sortList: [[1,0]],
+						
+							headers: { 0: { sorter: false }, 1: { sorter: 'articles' },4: { sorter: false },5: { sorter: false }}
+						
+				
+			});
+
+            });
+//]]>
+
+function checkDates(){
+  var AllDatesValid = true;
+  
+  return AllDatesValid;
+}
+ 
+function isValidDate(theFieldName){
+      reserve_date = document.getElementById( theFieldName );
+      if ( reserve_date.value.length > 0 ) {
+        return isDate(reserve_date.value);  
+      }
+}
+
+</script>
+</head>
+<body id="opac-user">
+<div id="doc3" class="yui-t1">
+   <div id="bd">
+<div id="header-wrapper"><div id="members">
+  
+	<ul><li><span class="members">Welcome, <a href="/cgi-bin/koha/opac-user.pl"><span class="loggedinusername"> REBEKAH S. BOVENMYER</span></a></span></li><li><a class="logout" id="logout" href="/cgi-bin/koha/opac-main.pl?logout.x=1">Log Out</a></li>
+	</ul>	
+  
+</div>
+  
+	<div id="opacheaderprofile">
+<div class="acl">
+<h2><a href="http://www.scls.lib.wi.us/acl/">Adams County Public Library</a></h2>
+<p><a href="http://www.scls.lib.wi.us/acl/">Visit the Library's Home Page</a></p>
+</div>
+<div class="bar">
+<h2><a href="http://www.baraboopubliclibrary.org/">Baraboo Public Library</a></h2>
+<p><a href="http://www.baraboopubliclibrary.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="ber">
+<h2><a href="http://www.bepubliclibrary.org/">Black Earth Public Library</a></h2>
+<p><a href="http://www.bepubliclibrary.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="blv">
+<h2><a href="http://www.scls.lib.wi.us/blv/">Belleville Public Library</a></h2>
+<p><a href="http://www.scls.lib.wi.us/blv/">Visit the Library's Home Page</a></p>
+</div>
+<div class="brd">
+<h2><a href="http://www.brodheadlibrary.org/">Brodhead Memorial Public Library</a></h2>
+<p><a href="http://www.brodheadlibrary.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="cbr">
+<h2><a href="http://www.cambridgelib.org/">Cambridge Community Library</a></h2>
+<p><a href="http://www.cambridgelib.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="cia">
+<h2><a href="http://www.janemorganmemoriallibrary.org/">Jane Morgan Memorial Library</a></h2>
+<p><a href="http://www.janemorganmemoriallibrary.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="col">
+<h2><a href="http://www.columbuspubliclibrary.info/">Columbus Public Library</a></h2>
+<p><a href="http://www.columbuspubliclibrary.info/">Visit the Library's Home Page</a></p>
+</div>
+<div class="csp">
+<h2><a href="http://www.rgpl.org/">Rosemary Garfoot Public Library</a></h2>
+<p><a href="http://www.rgpl.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="dcl">
+<h2><a href="http://www.dcls.info/">Dane County Library Service</a></h2>
+<p><a href="http://www.dcls.info/">Visit the Library's Home Page</a></p>
+</div>
+<div class="dee">
+<h2><a href="http://www.deerfieldpubliclibrary.org/">Deerfield Public Library</a></h2>
+<p><a href="http://www.deerfieldpubliclibrary.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="dft">
+<h2><a href="http://www.deforest.lib.wi.us/">DeForest Public Library</a></h2>
+<p><a href="http://www.deforest.lib.wi.us/">Visit the Library's Home Page</a></p>
+</div>
+<div class="fch">
+<h2><a href="http://www.city.fitchburg.wi.us/library/index.php">Fitchburg Public Library</a></h2>
+<p><a href="http://www.city.fitchburg.wi.us/library/index.php">Visit the Library's Home Page</a></p>
+</div>
+<div class="haw">
+<h2><a href="http://www.madisonpubliclibrary.org/">Madison Public Library - Hawthorne Branch</a></h2>
+<p><a href="http://www.madisonpubliclibrary.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="hpb">
+<h2><a href="http://www.madisonpubliclibrary.org/">Madison Public Library - Alicia Ashman Branch</a></h2>
+<p><a href="http://www.madisonpubliclibrary.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="lak">
+<h2><a href="http://www.madisonpubliclibrary.org/">Madison Public Library - Lakeview Branch</a></h2>
+<p><a href="http://www.madisonpubliclibrary.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="lav">
+<h2><a href="http://www.scls.lib.wi.us/lav/">LaValle Public Library</a></h2>
+<p><a href="http://www.scls.lib.wi.us/lav/">Visit the Library's Home Page</a></p>
+</div>
+<div class="ldi">
+<h2><a href="http://www.lodipubliclibrary.org/">Lodi Woman's Club Public Library</a></h2>
+<p><a href="http://www.lodipubliclibrary.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="mad">
+<h2><a href="http://www.madisonpubliclibrary.org/">Madison Public Library</a></h2>
+<p><a href="http://www.madisonpubliclibrary.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="mar">
+<h2><a href="http://www.marlib.org/">Marshall Community Library</a></h2>
+<p><a href="http://www.marlib.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="maz">
+<h2><a href="http://www.scls.lib.wi.us/mazomanie/">Mazomanie Free Library</a></h2>
+<p><a href="http://www.scls.lib.wi.us/mazomanie/">Visit the Library's Home Page</a></p>
+</div>
+<div class="mcf">
+<h2><a href="http://www.mcfarlandlibrary.org/">E.D. Locke Public Library</a></h2>
+<p><a href="http://www.mcfarlandlibrary.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="mcm">
+<h2><a href="http://www.mcmillanlibrary.org/">McMillan Memorial Library</a></h2>
+<p><a href="http://www.mcmillanlibrary.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="mea">
+<h2><a href="http://www.madisonpubliclibrary.org/">Madison Public Library - Meadowridge Branch</a></h2>
+<p><a href="http://www.madisonpubliclibrary.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="mid">
+<h2><a href="http://www.midlibrary.org/">Middleton Public Library</a></h2>
+<p><a href="http://www.midlibrary.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="moo">
+<h2><a href="http://www.mononalibrary.org/">Monona Public Library</a></h2>
+<p><a href="http://www.mononalibrary.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="mro">
+<h2><a href="http://www.monroepubliclibrary.org/">Monroe Public Library</a></h2>
+<p><a href="http://www.monroepubliclibrary.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="msb">
+<h2><a href="http://www.madisonpubliclibrary.org/">Madison Public Library - Monroe Street Branch</a></h2>
+<p><a href="http://www.madisonpubliclibrary.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="mth">
+<h2><a href="http://www.mhpl.org/">Mount Horeb Public Library</a></h2>
+<p><a href="http://www.mhpl.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="ngl">
+<h2><a href="http://www.newglaruspubliclibrary.org/">New Glarus Public Library</a></h2>
+<p><a href="http://www.newglaruspubliclibrary.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="nof">
+<h2><a href="http://www.northfreedomlibrary.com/">North Freedom Public Library</a></h2>
+<p><a href="http://www.northfreedomlibrary.com/">Visit the Library's Home Page</a></p>
+</div>
+<div class="ore">
+<h2><a href="http://www.oregonpubliclibrary.org/">Oregon Public Library</a></h2>
+<p><a href="http://www.oregonpubliclibrary.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="par">
+<h2><a href="http://www.pardeevillelibrary.com/">Angie W. Cox Public Library</a></h2>
+<p><a href="http://www.pardeevillelibrary.com/">Visit the Library's Home Page</a></p>
+</div>
+<div class="pds">
+<h2><a href="http://www.pdslibrary.org/">Prairie du Sac Public Library</a></h2>
+<p><a href="http://www.pdslibrary.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="pin">
+<h2><a href="http://www.madisonpubliclibrary.org/">Madison Public Library - Pinney Branch</a></h2>
+<p><a href="http://www.madisonpubliclibrary.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="pla">
+<h2><a href="http://www.kraemerlibrary.org/">Kraemer Library &amp; Community Center</a></h2>
+<p><a href="http://www.kraemerlibrary.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="por">
+<h2><a href="http://www.portagelibrary.us/">Portage Public Library</a></h2>
+<p><a href="http://www.portagelibrary.us/">Visit the Library's Home Page</a></p>
+</div>
+<div class="poy">
+<h2><a href="http://www.poynettelibrary.com/">Poynette Public Library</a></h2>
+<p><a href="http://www.poynettelibrary.com/">Visit the Library's Home Page</a></p>
+</div>
+<div class="ree">
+<h2><a href="http://www.reedsburglibrary.org/">Reedsburg Public Library</a></h2>
+<p><a href="http://www.reedsburglibrary.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="rks">
+<h2><a href="http://www.rockspringslibrary.com/">Rock Springs Public Library</a></h2>
+<p><a href="http://www.rockspringslibrary.com/">Visit the Library's Home Page</a></p>
+</div>
+<div class="sca">
+<h2><a href="http://www.scls.info/">SCLS Headquarters</a></h2>
+<p><a href="http://www.scls.info/">Visit the SCLS Home Page</a></p>
+</div>
+<div class="scl">
+<h2><a href="http://www.linkcat.info">SCLS Test Catalog</a></h2>
+<p><a href="http://www.linkcat.info">LINKcat Home</a></p>
+</div>
+<div class="scls">
+<h2><a href="http://help.linkcat.info/ask/index.html">Get help from a LINKcat library</a></h2>
+</div>
+<div class="seq">
+<h2><a href="http://www.madisonpubliclibrary.org/">Madison Public Library - Sequoya Branch</a></h2>
+<p><a href="http://www.madisonpubliclibrary.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="sgr">
+<h2><a href="http://www.springgreenlibrary.org/">Spring Green Community Library</a></h2>
+<p><a href="http://www.springgreenlibrary.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="skc">
+<h2><a href="http://www.saukcitylibrary.org/">Sauk City Public Library</a></h2>
+<p><a href="http://www.saukcitylibrary.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="smb">
+<h2><a href="http://www.madisonpubliclibrary.org/">Madison Public Library - Goodman South Madison Branch</a></h2>
+<p><a href="http://www.madisonpubliclibrary.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="sto">
+<h2><a href="http://www.stoughtonpubliclibrary.org/">Stoughton Public Library</a></h2>
+<p><a href="http://www.stoughtonpubliclibrary.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="sun">
+<h2><a href="http://www.sunprairiepubliclibrary.org/">Sun Prairie Public Library</a></h2>
+<p><a href="http://www.sunprairiepubliclibrary.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="ver">
+<h2><a href="http://www.veronapubliclibrary.org/">Verona Public Library</a></h2>
+<p><a href="http://www.veronapubliclibrary.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="wau">
+<h2><a href="http://www.waunakeepubliclibrary.org/">Waunakee Public Library</a></h2>
+<p><a href="http://www.waunakeepubliclibrary.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="wid">
+<h2><a href="http://www.dellslibrary.org/">Kilbourn Public Library</a></h2>
+<p><a href="http://www.dellslibrary.org/">Visit the Library's Home Page</a></p>
+</div>
+<div class="wyo">
+<h2><a href="http://www.wyocenalibrary.org/ask/">Wyocena Public Library</a></h2>
+<p><a href="http://www.wyocenalibrary.org/ask/">Visit the Library's Home Page</a></p>
+</div>
+</div>
+<div id="opacheader">
+<ul><li><a href="http://help.linkcat.info/">Help</a></li><li><a href="http://www.scls.info/resources/">Databases</a></li><li><a href="http://lists.linkcat.info/">Don't Miss Lists</a></li><li><a href="http://sclsp.kohalibrary.com/" title="Indexes of local newspapers and Wisconsin magazines">Newspapers</a></li>
+</ul>
+</div>
+  
+<div id="opac-main-search" class="yui-g">
+   
+   <h1 id="libraryname" style="background-image: url('http://www.scls.lib.wi.us/linkcathelp/images/koha-overrides/linkcatlogo.png');">
+   <a href="/cgi-bin/koha/opac-main.pl">LINKcat</a></h1>
+
+<div id="fluid">
+<div id="fluid-offset">
+<form name="searchform" method="get" action="/cgi-bin/koha/opac-search.pl" id="searchform">
+    <label for="masthead_search" class="left"> Search </label>
+	<select name="idx" id="masthead_search" class="left" style="max-width:10em;width:10em;">
+	
+        <option value="">Library Catalog</option>
+		
+		
+        <option value="ti">Title</option>
+		
+		
+        <option value="au">Author</option>
+		
+		
+        <option value="su">Subject</option>
+		
+		
+		<option value="nb">ISBN</option>
+		
+		
+        <option value="se">Series</option>
+		
+		
+        <option value="callnum">Call Number</option>
+		</select>
+
+     <!-- NAME="searchdomainoptions" -->
+
+
+        <input type="text" id = "transl1" name="q" class="left" style="width: 35%; font-size: 111%;"/><div id="translControl"></div>
+
+   
+       
+    
+    
+    <input type="submit" value="Go" id="searchsubmit" class="left" />
+<span id="cmspan"></span>
+
+<a href="/cgi-bin/koha/opac-shelves.pl" id="listsmenulink" class=""><i></i><span><i></i><span></span>Lists </span></a>
+    </form>
+
+
+<div id="moresearches">
+<a href="/cgi-bin/koha/opac-search.pl">Advanced Search</a>
+
+
+
+
+
+
+
+</div>
+ </div>
+</div>
+
+<div id="cartDetails">Your Cart is empty.</div>
+
+
+<div id="listsmenu" class="yuimenu" style="display: none">
+    <div class="bd">
+	<h4>Public Lists</h4>
+		
+			<ul class="first-of-type">
+			
+			<li class="yuimenuitem"><a href="/cgi-bin/koha/opac-shelves.pl?viewshelf=50449&amp;sortfield=title">Public lists will be deleted by LINKcat</a></li>
+			
+			</ul>   
+		
+		
+  
+    
+<h4>Your Lists</h4>
+		
+			No Private Lists
+		
+		
+		<ul class="second-of-type">
+        <li class="yuimenuitem"><a class="yuimenuitemlabel" href="/cgi-bin/koha/opac-shelves.pl">Manage Lists</a></li>
+        </ul>
+    
+  
+	  </div>
+</div><!-- /listmenu /virtualshelves -->
+
+<div id="listsDetails"></div>
+</div>
+</div>
+<div id="breadcrumbs" class="yui-g">
+</div>
+
+
+    <div id="yui-main">
+    <div class="yui-b"><div class="yui-g">
+	<div id="userdetails" class="container">
+
+	
+    
+        <h2>Hello, REBEKAH S. BOVENMYER <span class="hint">(<a href="/cgi-bin/koha/opac-main.pl?logout.x=1">Click here</a> if you're not  REBEKAH S. BOVENMYER)</span></h2>
+        
+		
+		
+
+        
+        
+<div id="opac-user-views" class="toptabs">
+        <ul>
+            <li><a href="/cgi-bin/koha/opac-user.pl#opac-user-checkouts">Checked Out</a></li>
+            
+
+            <li><a href="/cgi-bin/koha/opac-user.pl#opac-user-fines">Fines</a></li>
+            
+            
+
+            
+            <li><a href="/cgi-bin/koha/opac-user.pl#opac-user-holds">Holds</a></li>
+        </ul>
+        
+
+        <!-- FINES BOX -->
+        
+            <div id="opac-user-fines"> <h3>Fines and Charges</h3>
+            <table>
+                <tr><th colspan="2">Amount</th></tr>
+                <tr>
+                    <td>You currently owe fines and charges amounting to:</td>
+                    <td><a href="/cgi-bin/koha/opac-account.pl">6.50</a></td>
+                </tr>
+            </table></div>
+        
+
+        
+
+        
+
+    
+    
+
+    
+
+    <div id="opac-user-checkouts">
+        <table id="checkoutst">
+        <caption>7 Items Checked Out</caption>
+       <thead><tr>
+		<th>&nbsp;</th>
+        <th>Title</th>
+		
+        <th>Call No.</th>
+        <th>Due</th>
+        
+        <th>Renew</th>
+        
+
+        <th>Fines</th>
+
+        </tr></thead>
+        <tbody>
+		<!-- FIXME: the styling for highlight overrides the overdue red background,
+				so currently we don't use this conditional as the first thing inside the LOOP:
+        
+           <tr>
+        
+		-->
+		
+        <tr>
+
+<td class="jacketcell">
+
+
+
+
+
+
+
+<img src="https://secure.syndetics.com/index.aspx?isbn=0060254939/SC.GIF&amp;client=sclsp&amp;type=xw10" alt="" class="thumbnail"/>
+
+</td>
+
+                <td><a href="/cgi-bin/koha/opac-detail.pl?biblionumber=35012">Where the wild things are /</a><span class="item-details">
+                        Sendak, Maurice.
+                    </span></td>
+                
+                <td>+ PB SEN 11/08</td>
+                
+                    <td>11/09/2011</td>
+                
+                
+                    
+                    <td>
+                        Not renewable <span class="renewals">(0 of 2 renewals remaining)</span> 
+                        </td>
+                    
+                
+
+                <td>No</td>
+
+            </tr>
+        
+        <tr>
+
+<td class="jacketcell">
+
+
+
+
+
+
+
+<img src="https://secure.syndetics.com/index.aspx?isbn=/SC.GIF&amp;client=sclsp&amp;type=xw10" alt="" class="thumbnail"/>
+
+</td>
+
+                <td><a href="/cgi-bin/koha/opac-detail.pl?biblionumber=257906">Revolution /</a><span class="item-details">
+                        Donnelly, Jennifer.
+                    </span></td>
+                
+                <td>YA FIC DONNELLY J. 10/10</td>
+                
+                    <td>10/25/2011</td>
+                
+                
+                    
+                    <td><a href="/cgi-bin/koha/opac-renew.pl?from=opac_user&amp;item=935263&amp;borrowernumber=800549">Renew</a> <span class="renewals">(2 of 2 renewals remaining)</span>
+                        </td>
+                    
+                
+
+                <td>No</td>
+
+            </tr>
+        
+        <tr>
+
+<td class="jacketcell">
+
+
+
+
+
+
+
+<img src="https://secure.syndetics.com/index.aspx?isbn=/SC.GIF&amp;client=sclsp&amp;type=xw10" alt="" class="thumbnail"/>
+
+</td>
+
+                <td><a href="/cgi-bin/koha/opac-detail.pl?biblionumber=10566">Prom /</a><span class="item-details">
+                        Anderson, Laurie Halse.
+                    </span></td>
+                
+                <td>YA FIC Anderson L.</td>
+                
+                    <td>10/25/2011</td>
+                
+                
+                    
+                    <td><a href="/cgi-bin/koha/opac-renew.pl?from=opac_user&amp;item=39496&amp;borrowernumber=800549">Renew</a> <span class="renewals">(2 of 2 renewals remaining)</span>
+                        </td>
+                    
+                
+
+                <td>No</td>
+
+            </tr>
+        
+        <tr>
+
+<td class="jacketcell">
+
+
+
+
+
+
+
+<img src="https://secure.syndetics.com/index.aspx?isbn=/SC.GIF&amp;client=sclsp&amp;type=xw10" alt="" class="thumbnail"/>
+
+</td>
+
+                <td><a href="/cgi-bin/koha/opac-detail.pl?biblionumber=276116">Ollie&#39;s Halloween /</a><span class="item-details">
+                        Dunrea, Olivier.
+                    </span></td>
+                
+                <td>+ HOL-H DUN 11/10</td>
+                
+                    <td>10/25/2011</td>
+                
+                
+                    
+                    <td><a href="/cgi-bin/koha/opac-renew.pl?from=opac_user&amp;item=997990&amp;borrowernumber=800549">Renew</a> <span class="renewals">(2 of 2 renewals remaining)</span>
+                        </td>
+                    
+                
+
+                <td>No</td>
+
+            </tr>
+        
+        <tr>
+
+<td class="jacketcell">
+
+
+
+
+
+
+
+<img src="https://secure.syndetics.com/index.aspx?isbn=/SC.GIF&amp;client=sclsp&amp;type=xw10" alt="" class="thumbnail"/>
+
+</td>
+
+                <td><a href="/cgi-bin/koha/opac-detail.pl?biblionumber=318385">All the things I love about you /</a><span class="item-details">
+                        Pham, LeUyen.
+                    </span></td>
+                
+                <td>+ PB PHA 02/11</td>
+                
+                    <td>10/25/2011</td>
+                
+                
+                    
+                    <td><a href="/cgi-bin/koha/opac-renew.pl?from=opac_user&amp;item=1144507&amp;borrowernumber=800549">Renew</a> <span class="renewals">(2 of 2 renewals remaining)</span>
+                        </td>
+                    
+                
+
+                <td>No</td>
+
+            </tr>
+        
+        <tr>
+
+<td class="jacketcell">
+
+
+
+
+
+
+
+<img src="https://secure.syndetics.com/index.aspx?isbn=0531301117/SC.GIF&amp;client=sclsp&amp;type=xw10" alt="" class="thumbnail"/>
+
+</td>
+
+                <td><a href="/cgi-bin/koha/opac-detail.pl?biblionumber=717192">Arlene sardine /</a><span class="item-details">
+                        Raschka, Christopher.
+                    </span></td>
+                
+                <td>+ PB Ras</td>
+                
+                    <td>10/25/2011</td>
+                
+                
+                    
+                    <td><a href="/cgi-bin/koha/opac-renew.pl?from=opac_user&amp;item=2589463&amp;borrowernumber=800549">Renew</a> <span class="renewals">(2 of 2 renewals remaining)</span>
+                        </td>
+                    
+                
+
+                <td>No</td>
+
+            </tr>
+        
+        <tr>
+
+<td class="jacketcell">
+
+
+
+
+
+
+
+<img src="https://secure.syndetics.com/index.aspx?isbn=/SC.GIF&amp;client=sclsp&amp;type=xw10" alt="" class="thumbnail"/>
+
+</td>
+
+                <td><a href="/cgi-bin/koha/opac-detail.pl?biblionumber=419692">Dragon dancing /</a><span class="item-details">
+                        Schaefer, Carole Lexa.
+                    </span></td>
+                
+                <td>+ PB SCH</td>
+                
+                    <td>10/25/2011</td>
+                
+                
+                    
+                    <td><a href="/cgi-bin/koha/opac-renew.pl?from=opac_user&amp;item=1485731&amp;borrowernumber=800549">Renew</a> <span class="renewals">(2 of 2 renewals remaining)</span>
+                        </td>
+                    
+                
+
+                <td>No</td>
+
+            </tr>
+        </tbody>
+        </table>
+		
+		<form action="/cgi-bin/koha/opac-renew.pl" method="post">
+			<input type="hidden" name="from" value="opac_user" />
+			<input type="hidden" name="borrowernumber" value="800549" />
+			
+			<input type="hidden" name="item" value="146274" />
+			
+			<input type="hidden" name="item" value="935263" />
+			
+			<input type="hidden" name="item" value="39496" />
+			
+			<input type="hidden" name="item" value="997990" />
+			
+			<input type="hidden" name="item" value="1144507" />
+			
+			<input type="hidden" name="item" value="2589463" />
+			
+			<input type="hidden" name="item" value="1485731" />
+			
+			<input type="submit" value="Renew All" />
+		</form>
+		
+    </div>
+    
+    
+
+    
+
+        <div id="opac-user-holds">
+        <form action="/cgi-bin/koha/opac-modrequest.pl" method="post">
+           
+           <input type="submit" name="submit" class="icon delete cancel" value="Suspend All" />
+           <label>Resume on:</label>
+           <input type="text" size="10" maxlength="10" id="resumealldate" name="resumealldate" />
+           <label for="resumedate">( Optional, use format MM-DD-YYYY )</label>
+        </form>
+        <table id="holdst">
+        <caption>Holds <span class="count">(0 total)</span></caption>
+            <!-- RESERVES TABLE ROWS -->
+            <thead><tr>
+                <th>Title</th>
+                <th>Placed On</th>
+                <th>Expires On</th>
+                <th>Pick Up Location</th>
+				
+				<th>Priority</th>
+				
+                <th>Status</th>
+		<th>Cancel</th>
+		<th>Suspend</th>
+            </tr></thead>
+			<tbody>
+            
+			</tbody>
+        </table>
+
+	
+    </div>
+    </div><!-- /opac-user views -->
+    </div><!-- /userdetails -->
+</div>
+</div>
+</div>
+<div class="yui-b">
+<div class="container">
+
+
+<div id="menu">
+<ul>
+  <li class="active"><a href="/cgi-bin/koha/opac-user.pl">my summary</a></li>
+  
+  <li><a href="/cgi-bin/koha/opac-account.pl">my fines</a></li>
+  
+  <li><a href="/cgi-bin/koha/opac-userupdate.pl">my personal details</a></li>
+  
+  
+    <li><a href="/cgi-bin/koha/opac-passwd.pl">change my password</a></li>
+  
+  
+  <li><a href="/cgi-bin/koha/opac-readingrecord.pl">my reading history</a></li>
+  
+  <li><a href="/cgi-bin/koha/opac-holdhistory.pl">my hold history</a></li>
+  
+  
+  
+  
+   
+  <li><a href="/cgi-bin/koha/opac-shelves.pl?display=privateshelves">my lists</a></li>
+  
+  
+
+</ul>
+</div>
+
+
+
+</div>
+</div>
+</div>
+
+
+	<div class="ft">
+        LINKcat is brought to you by the <a href="http://www.scls.info">South Central Library System</a> and 42 of its 53 member libraries.
+    </div>
+
+</div>
+
+
+
+
+</body>
+</html>
+

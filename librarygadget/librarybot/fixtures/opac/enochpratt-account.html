@@ -1,0 +1,1679 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--  Copyright (c) 2000 - 2003, Sirsi Corporation - Defines the head  body of each page. -->
+
+<html dir="ltr">
+
+<head>
+  <title>Prattcat - Enoch Pratt Free Library Catalog</title>
+
+
+<!-- Set the expiration date to the past so the page will always be reloaded -->
+  <meta http-equiv="Expires" content="Sun, 1 Jan 1995 08:00:00 CST">
+
+  <!-- Not the login page -->
+
+    <!-- Set the refresh to do an EXIT right before the session times out. This will cause timed out sessions to automatically go back to the login/first page, ready for the next user. - Since there is no way to target the _top frame, cannot do this if any frames are used, else the refresh goes into the main frame. - Also, the URL below has to be a full URL, so cannot do this without using the HTTP_ADDRESS. -->
+
+  <meta http-equiv="refresh" content="840; URL=http://pac.epfl.net/uhtbin/cgisirsi/lcHzJi97wW/CENTRAL/170750027/58">
+
+<!--  Copyright (c) 1997 - 2006, SirsiDynix - JavaScript functions defined in every page. -->
+<script language="JavaScript" type="text/javascript">
+
+function open_win(url) {
+	new_win = window.open(url,"new_win",'toolbar=1,location=1,directories=0,status=1,menubar=1,scrollbars=1,resizable=1,width=750,height=250');
+	new_win.focus();
+}
+
+function open_bare_win(url) {
+	new_b_win = window.open(url,"new_b_win",'toolbar=0,location=0,directories=0,status=1,menubar=0,scrollbars=1,resizable=1,width=620,height=450');
+	new_b_win.focus();
+}
+
+function open_hyperion_image_win(url) {
+	hyperion_image_win = window.open(url,"hyperion_image_win",'toolbar=0,location=0,directories=0,status=1,menubar=0,scrollbars=1,resizable=1,width=600,height=450,screenX=410,screenY=210');
+}
+
+function open_hyperion_info_win(url) {
+	hyperion_info_win = window.open(url,"hyperion_info_win",'toolbar=0,location=0,directories=0,status=1,menubar=0,scrollbars=1,resizable=1,width=400,height=450,screenX=0,screenY=210');
+}
+
+function open_win_timeout(url,timeout) {
+	new_win = window.open(url,"new_win",'toolbar=0,location=0,directories=0,status=1,menubar=1,scrollbars=1,resizable=1,width=750,height=250');
+	setTimeout("new_win.close()",timeout);
+}
+
+function open_help_win(url) {
+       new_win = window.open(url,"help_win",'toolbar=1,location=1,directories=0,status=1,menubar=1,scrollbars=1,resizable=1,width=750,height=250');
+       new_win.focus();
+}
+
+function open_bounce_win(url) {
+  new_win = window.open(url,"bounce_win",'toolbar=0,location=0,directories=0,status=1,menubar=0,scrollbars=1,resizable=1,width=620,height=450');
+}
+
+/* Function for icon-type search form action */
+function orig_form_action()
+{
+	if (!document.searchform.search_type[0].checked)
+	  {
+	  return true;
+	  }
+	else
+	  {
+          document.url_form.url.value = "http://www.google.com/search?q=" + document.searchform.searchdata1.value + "&safe=vss&vss=1&sa=Google+Search";
+          open_win(document.url_form.url.value);
+	  return false;
+	  }
+}
+
+/* Function for icon-type search form action */
+function search_form_action()
+{
+	var search_engine_checked = 0;
+	var temp_str;
+
+	for (var i = 0; i < document.searchform.search_type.length; i++)
+	  {
+	  if (document.searchform.search_type[i].value == "searchengine")
+	    if (document.searchform.search_type[i].checked)
+	      search_engine_checked = 1;
+	  }
+
+	if (!search_engine_checked)
+	  {
+	  return true;
+	  }
+	else
+	  {
+          temp_str = document.searchform.searchdata1.value;
+	  temp_str = temp_str.replace(/\s+/g,"+");
+          document.url_form.url.value = "http://www.google.com/search?q=" + temp_str + "&safe=vss&vss=1&sa=Google+Search";
+          open_win(document.url_form.url.value);
+	  return false;
+	  }
+}
+
+
+function getNonJavaHelpFileUrl(file)
+{
+	return "/iBistro_helps/English/" + file;
+}
+
+function put_help_button(file)
+{
+  document.writeln('<a href="javascript:open_help_win(getNonJavaHelpFileUrl(\'' + file + '\'))" title="HELP"><img src="/WebCat_Images/English/Buttons/Bistro/HELP.gif" border="0" alt="HELP"  title="HELP"><\/a>');
+}
+
+
+function put_keepremove_button(ckey,value)
+{
+  document.writeln('<img name="ckey-' + ckey + '"');
+  document.writeln('src="/WebCat_Images/English/Other/Miscib/clear.gif"');
+  document.writeln('alt="' + value + '" border="0">');
+
+  document.writeln('<input type="button"');
+  if (value == 'Keep')
+    {
+    document.writeln('class="itemdetails"');
+    }
+  else
+    {
+    document.writeln('class="itemdetails2"');
+    }
+  document.writeln('name="ckey-' + ckey + '"');
+  document.writeln('value="' + value + '" alt="' + value + '"');
+  document.writeln('onClick="javascript:updatekeptlist(this,' + ckey + ');">');
+}
+
+function updatekeptlist(myButton,ckey)
+{
+  key = myButton.name;
+  if (myButton.value == 'Keep')
+    {
+    myImage = new Image();
+    myImage.src = '/uhtbin/cgisirsi/lcHzJi97wW/CENTRAL/170750027/125/ADD?kept-' + ckey + '=on';
+    document.images[key].src=myImage.src;
+    myImage = new Image();
+    myImage.src = '/WebCat_Images/English/Other/Miscib/clear.gif';
+    document.images[key].src=myImage.src;
+    document.images[key].alt='Remove';
+    myButton.value='Remove';
+		myButton.className='itemdetails2';
+    }
+  else
+    {
+    myImage = new Image();
+    myImage.src = '/uhtbin/cgisirsi/lcHzJi97wW/CENTRAL/170750027/125/REMOVE?kept-' + ckey + '=on';
+    document.images[key].src=myImage.src;
+    myImage = new Image();
+    myImage.src = '/WebCat_Images/English/Other/Miscib/clear.gif';
+    document.images[key].src=myImage.src;
+    document.images[key].alt='Keep';
+    myButton.value='Keep';
+		myButton.className='itemdetails';
+  }
+}
+
+function do_history(form)
+  {
+  // Based on the value of the srch_history <select> list, set the search input fields.
+  var opt_idx;
+  var i = 0;
+  opt_idx = form.srch_history.selectedIndex;
+  // The history "value" is formatted:  "term^label^library"
+  valueArray = form.srch_history.options[opt_idx].value.split("^");
+  // Set the search term
+  form.searchdata1.value = valueArray[0];
+  // Set the search type - if it is present
+  if (form.srchfield1 != null)
+    {
+    for (i<0; i<form.srchfield1.length; i++)
+      {
+      if (form.srchfield1.options[i].text == valueArray[1])
+        {
+        form.srchfield1.options[i].selected = true;
+        break;
+        }
+      }
+    }
+  // Set the library
+  form.library.value = valueArray[2];
+  }
+
+
+
+function sendOpenURL(inISBN,inTITLE,inISSN,inGENRE)
+{
+	aWindow = window.open('','','toolbar=1,location=1,directories=0,status=1,menubar=1,scrollbars=1,resizable=1,width=750,height=250');
+	
+	if (aWindow.document.body == null)
+	  {
+	  aBody = aWindow.document.createElement('body');
+	  aWindow.document.appendChild(aBody);
+	  }
+
+        nFORM=aWindow.document.createElement('form');
+	nFORM.action='';
+	nFORM.target="_self";
+	nFORM.method="post";
+	nFORM.name="OpenURL";
+
+	if (inISBN.length != 0)
+	  {
+	  nISBN=aWindow.document.createElement('input');
+	  nISBN.name='isbn';
+	  nISBN.value=inISBN;
+	  nISBN.type='hidden';
+
+	  nFORM.appendChild(nISBN);
+	  }
+
+	if (inTITLE.length != 0)
+	  {
+	  nTITLE=aWindow.document.createElement('input');
+	  nTITLE.name='title';
+	  nTITLE.value=inTITLE;
+	  nTITLE.type='hidden';
+
+	  nFORM.appendChild(nTITLE);
+	  } 
+
+	if (inISSN.length != 0)
+	  {
+	  nISSN=aWindow.document.createElement('input');
+	  nISSN.name='issn';
+	  nISSN.value=inISSN;
+	  nISSN.type='hidden';
+
+	  nFORM.appendChild(nISSN);
+	  }
+
+	if (inGENRE.length != 0)
+	  {
+	  nGENRE=aWindow.document.createElement('input');
+	  nGENRE.name='genre';
+	  nGENRE.value=inGENRE;
+	  nGENRE.type='hidden';
+
+	  nFORM.appendChild(nGENRE);
+	  }
+
+	aWindow.document.body.appendChild(nFORM);
+
+	nFORM.submit();
+
+	aWindow.document.body.removeChild(nFORM);
+
+}
+
+function sendPayPal(inUser,inLibrary,inBill,inTotal,inAmount)
+{
+
+	currencyStr = '$';
+
+	if (currencyStr == "$")
+	  {
+	  currencyStr = "\\" + currencyStr;  
+	  }
+
+	re = new RegExp(currencyStr,"g");
+
+	inTotal = inTotal.replace(re,"");
+
+	inAmount = inAmount.replace(re,"");
+
+	// convert the strings to numbers and 
+        // test for minimum before opening window
+	
+	if (inAmount.indexOf(",") == -1)
+	  {
+	  floatAmount = parseFloat(inAmount);
+	  }
+	else
+	  {
+	    floatAmount = 0.0;
+	    workstr = inAmount;
+	    while (workstr.indexOf(",") != -1)
+	      {
+		partialstr = workstr.substr(0,workstr.indexOf(","));
+		floatAmount = floatAmount + parseFloat(partialstr);
+		workstr = workstr.substr(workstr.indexOf(",") + 1);
+	      }
+	    floatAmount = floatAmount + parseFloat(workstr);
+	  }
+
+	floatAmount = Math.round(floatAmount*100)/100;
+
+	floatMinimum = parseFloat(0);
+
+	if (floatAmount < floatMinimum)
+	  {
+	    alert ("The amount owed is less than the minimum for using PayPal");
+	    return;
+	  }	  
+	
+	aWindow = window.open('','','toolbar=1,location=1,directories=0,status=1,menubar=1,scrollbars=1,resizable=1,width=750,height=250');
+	
+	if (aWindow.document.body == null)
+	  {
+	  aBody = aWindow.document.createElement('body');
+	  aWindow.document.appendChild(aBody);
+	  }
+
+
+        nFORM=aWindow.document.createElement('form');
+	nFORM.action='';
+	nFORM.target="_self";
+	nFORM.method="post";
+	nFORM.name="PayPal";
+
+	nCustom=aWindow.document.createElement('input');
+	nCustom.name='custom';
+	nCustom.value='user=' + inUser + '&';
+	nCustom.value=nCustom.value + 'library=' + inLibrary + '&';
+	nCustom.value=nCustom.value + 'bill_number=' + inBill + '&';
+	nCustom.value=nCustom.value + 'total_owed=' + inTotal + '&';
+	nCustom.value=nCustom.value + 'amount_paid=' + inAmount;
+	nCustom.type='hidden';
+
+	nFORM.appendChild(nCustom);
+
+	nAmount=aWindow.document.createElement('input');
+	nAmount.name='amount';
+	nAmount.value=floatAmount;
+	nAmount.type='hidden';
+
+	nFORM.appendChild(nAmount);
+	
+	nCmd=aWindow.document.createElement('input');
+	nCmd.name='cmd';
+	nCmd.value='_xclick';
+	nCmd.type='hidden';
+
+	nFORM.appendChild(nCmd);
+	
+	nBusiness=aWindow.document.createElement('input');
+	nBusiness.name='business';
+	nBusiness.value='';
+	nBusiness.type='hidden';
+
+	nFORM.appendChild(nBusiness);
+	
+	nItemName=aWindow.document.createElement('input');
+	nItemName.name='item_name';
+	nItemName.value='bill payment';
+	nItemName.type='hidden';
+
+	nFORM.appendChild(nItemName);
+	
+	nNotifyURL=aWindow.document.createElement('input');
+	nNotifyURL.name='notify_url';
+	nNotifyURL.value='';
+	nNotifyURL.type='hidden';
+
+	nFORM.appendChild(nNotifyURL);
+	
+	nCurrencyCode=aWindow.document.createElement('input');
+	nCurrencyCode.name='currency_code';
+	nCurrencyCode.value='USD';
+	nCurrencyCode.type='hidden';
+
+	nFORM.appendChild(nCurrencyCode);
+
+	aWindow.document.body.appendChild(nFORM);
+
+	nFORM.submit();
+
+	aWindow.document.body.removeChild(nFORM);
+}
+
+function clearCreditCardFields()
+{
+	ouracct_number=document.getElementById("acct_number");
+	ouracct_name=document.getElementById("acct_name");
+	ourexp_date=document.getElementById("exp_date");
+	ouracct_number.value="";
+	ouracct_name.value="";
+	ourexp_date.value="";
+}
+
+function submitVeriSign(inUser,inData)
+{
+	nFORM=document.createElement('form');
+	document.body.appendChild(nFORM);
+	nFORM.action='/uhtbin/cgisirsi/lcHzJi97wW/CENTRAL/170750027/144';
+	nFORM.target="_self";
+	nFORM.method="post";
+	nFORM.name="Payment";
+	
+	nUser=document.createElement('input');
+	nUser.name='user_id';
+	nUser.value=inUser;
+	nUser.type='hidden';
+
+	nFORM.appendChild(nUser);
+
+	nData=document.createElement('input');
+	nData.name='data';
+	nData.value=inData;
+	nData.type='hidden';
+
+	nFORM.appendChild(nData);
+
+	nFORM.submit();
+}
+
+function OpenGateway(inURL,inGateway)
+{
+	var need_to_replace = 0;
+
+	
+	if (need_to_replace)
+	  {
+	  inURL = inURL.replace(":///","://"+location.host+"/");
+	  }
+
+	aWindow = window.open('','','toolbar=0,location=0,directories=0,status=1,menubar=0,scrollbars=1,resizable=1,width=600,height=600');
+
+	inUserId = 'WEBSERVER';
+	inPassword = '';
+
+	if (aWindow.document.body == null)
+	  {
+	  aBody = aWindow.document.createElement('body');
+	  aWindow.document.appendChild(aBody);
+	  }
+
+        nFORM=aWindow.document.createElement('form');
+	nFORM.action=inURL;
+	nFORM.target="_self";
+	nFORM.method="post";
+	nFORM.name="Gateway";
+
+	if (inGateway.length != 0)
+	  {
+	  nGateway=aWindow.document.createElement('input');
+	  nGateway.name='new_gateway_db';
+	  nGateway.value=inGateway;
+	  nGateway.type='hidden';
+
+	  nFORM.appendChild(nGateway);
+	  }
+
+	if (inUserId.length != 0)
+	  {
+	  nUser=aWindow.document.createElement('input');
+	  nUser.name='user_id';
+	  nUser.value=inUserId;
+	  nUser.type='hidden';
+
+	  nFORM.appendChild(nUser);
+	  } 
+
+	if (inPassword.length != 0)
+	  {
+	  nPIN=aWindow.document.createElement('input');
+	  nPIN.name='password';
+	  nPIN.value=inPassword;
+	  nPIN.type='hidden';
+
+	  nFORM.appendChild(nPIN);
+	  }
+
+	aWindow.document.body.appendChild(nFORM);
+
+	nFORM.submit();
+
+	aWindow.document.body.removeChild(nFORM);
+
+}
+
+function OnlineUserRegistrationCheck(formobj){
+	// Enter name of mandatory fields
+	var fieldRequired = Array("firstname", "lastname", "street", "city", "state", "zip", "pin", "validatepin");
+	// Enter field description to appear in the dialog box
+	var fieldDescription = Array("First Name", "Last Name", "Street", "City", "State", "Zip", "PIN", "Re-Type PIN");
+	// dialog message
+	var alertMsg = "Please complete the following required fields" + ":\n";
+
+	var l_Msg = alertMsg.length;
+
+	for (var i = 0; i < fieldRequired.length; i++){
+		var obj = formobj.elements[fieldRequired[i]];
+		if (obj){
+			switch(obj.type){
+			case "select-one":
+				if (obj.selectedIndex == -1 || obj.options[obj.selectedIndex].text == ""){
+					alertMsg += " - " + fieldDescription[i] + "\n";
+				}
+				break;
+			case "select-multiple":
+				if (obj.selectedIndex == -1){
+					alertMsg += " - " + fieldDescription[i] + "\n";
+				}
+				break;
+			case "text":
+			case "textarea":
+				if (obj.value == "" || obj.value == null){
+					alertMsg += " - " + fieldDescription[i] + "\n";
+				}
+				break;
+			default:
+			}
+			if (obj.type == undefined){
+				var blnchecked = false;
+				for (var j = 0; j < obj.length; j++){
+					if (obj[j].checked){
+						blnchecked = true;
+					}
+				}
+				if (!blnchecked){
+					alertMsg += " - " + fieldDescription[i] + "\n";
+				}
+			}
+		}
+	}
+
+	if (alertMsg.length == l_Msg){
+		if(formobj.pin.value != formobj.validatepin.value) {
+            alert ("The PIN numbers you entered do not match.  Please re-enter your PIN information.");
+			return false;
+		}
+		return true;
+	}else{
+		alert(alertMsg);
+		return false;
+	}
+}
+
+
+function OnlineUserActivationCheck(formobj){
+	// Enter name of mandatory fields
+	var fieldRequired = Array("user_id", "pin", "new_user_id");
+	// Enter field description to appear in the dialog box
+	var fieldDescription = Array("Temporary ID", "PIN", "New User ID");
+	// dialog message
+	var alertMsg = "Please complete the following required fields:\n";
+
+	var l_Msg = alertMsg.length;
+
+	for (var i = 0; i < fieldRequired.length; i++){
+		var obj = formobj.elements[fieldRequired[i]];
+		if (obj){
+			switch(obj.type){
+			case "select-one":
+				if (obj.selectedIndex == -1 || obj.options[obj.selectedIndex].text == ""){
+					alertMsg += " - " + fieldDescription[i] + "\n";
+				}
+				break;
+			case "select-multiple":
+				if (obj.selectedIndex == -1){
+					alertMsg += " - " + fieldDescription[i] + "\n";
+				}
+				break;
+			case "text":
+			case "textarea":
+				if (obj.value == "" || obj.value == null){
+					alertMsg += " - " + fieldDescription[i] + "\n";
+				}
+				break;
+			default:
+			}
+			if (obj.type == undefined){
+				var blnchecked = false;
+				for (var j = 0; j < obj.length; j++){
+					if (obj[j].checked){
+						blnchecked = true;
+					}
+				}
+				if (!blnchecked){
+					alertMsg += " - " + fieldDescription[i] + "\n";
+				}
+			}
+		}
+	}
+
+	if (alertMsg.length == l_Msg){
+		return true;
+	}else{
+		alert(alertMsg);
+		return false;
+	}
+}
+
+</script>
+
+<style type="text/css">
+
+a:link, a:active {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: xx-small;
+	font-weight: normal;
+	text-decoration: none;
+	color: #006699;
+}
+
+a:visited {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: xx-small;
+	font-weight: normal;
+	text-decoration: none;
+	color: #006699;
+}
+
+a:hover {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: xx-small;
+	font-weight: normal;
+	text-decoration: underline;
+	color: #FF0000;
+	/* background-color: #FFFFCC; */
+}
+
+body {
+	margin:-10px 0px 0px -10px;
+	background-color: #FFFFFF;
+	color: #000000;	
+}
+
+html body {
+	margin: 10px 10px 10px 10px;
+	background-color: #FFFFFF;
+	color: #000000;	
+}
+
+p, td {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+
+th {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	text-align: left;
+	vertical-align: top;
+}
+
+label {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-weight: bold;
+}
+
+legend {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-weight: bold;
+}
+
+fieldset {
+	border-style: none;
+	border-width: 0px;
+}
+
+form {
+	margin: 0px 0px 0px 0px;
+}
+
+ul {
+	margin-left: 0px;
+}
+
+.bibinfo {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: x-small;
+	background-color: #FFFFFF;
+	color: #000000;
+	border-width: 0px;
+	border-style: none;
+	margin: 5px 5px 5px 5px;
+	text-align: left;
+	width: 100%;
+}
+
+.bibinfo2 {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: x-small;	
+	background-color: #FFFFFF;
+	color: #000000;
+	margin: 10px 30px 10px 30px;
+}
+
+.summary {
+	background-color: #FFFFFF;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: xx-small;
+	color: #000000;
+	border-width: 1px;
+	border-style: solid;
+	padding: 5px 5px 5px 5px;
+	margin: 10px 5px 5px 10px;
+}
+
+.rootbarcell {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	text-align: left;
+	color: #FFFFFF;
+	background-color: #006699;
+	letter-spacing: 0px;
+	margin: 5px 5px 5px 5px;
+}
+
+ /* Use these rootbar declaration for CSS2 browsers */
+
+a:link.blastoff, a:visited.blastoff, a:active.blastoff {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: x-small;
+	font-weight: bold; 
+	color: #FFFF99;
+	background-color: #006699;
+	text-decoration: none;
+	white-space: nowrap;
+	margin: 0px 7px 0px 7px;
+}
+
+a:hover.blastoff {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: x-small;
+	font-weight: bold; 
+	color: #FFFFFF;
+	background-color: #006699;
+	text-decoration: underline;
+	white-space: nowrap;
+	margin: 0px 7px 0px 7px;
+}
+a:link.rootbar, a:visited.rootbar, a:active.rootbar {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: x-small;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #006699;
+	text-decoration: none;
+	white-space: nowrap;
+	margin: 0px 7px 0px 7px;
+}
+
+a:hover.rootbar {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: x-small;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #006699;
+	text-decoration: underline;
+	white-space: nowrap;
+	margin: 0px 7px 0px 7px;
+}
+.EPlogolink {
+        background-color: #006699;
+}
+
+
+.defaultstyle {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: x-small;
+	background-color: #FFFFFF;
+	color: #000000;
+	vertical-align: top;
+}
+th.defaultstyle {
+	white-space: nowrap;
+	text-align: right;
+}
+
+
+.enrichheader, .enrichheader a {
+	background-color: #FFFFFF; 
+	color: #996600; 
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: x-small;
+<!--	font-weight: bold;-->
+	letter-spacing: 2px;
+	line-height: 150%;
+	padding: 5px 0px 0px 0px;
+}
+
+.enrichsubheader {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: x-small;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+.enrichcontent {
+	background-color: #FFFFFF; 
+	color: #000000; 
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: xx-small;
+	vertical-align: top;
+	padding: 0px 0px 5px 5px;
+} 
+
+.enrichmentservices {
+	background-color: #FFFFFF;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: xx-small;
+	color: #000000;
+	border-width: 1px;
+	border-style: solid;
+	text-align: left;
+}
+
+.enrichtagline {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: xx-small;
+	font-weight: normal;
+	background-color: #FFFFFF;
+	color: #888888;
+}
+
+.footer {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: xx-small;
+	font-weight: normal; 
+}
+
+.gatewaystyle, .gatewaystyle a:link, .gatewaystyle a:visited, .gatewaystyle a:active, .gatewaystyle a:hover {
+	background-color: #0099CC;
+	color: #FFFFFF;
+	margin: 0px 0px 0px 0px;
+}
+
+.header {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: xx-small;
+	font-weight: bold;
+	letter-spacing: 2px; 
+	background-color: #006699;
+	color: #FFFFFF;
+}
+
+div.header {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: xx-small;
+	font-weight: bold;
+	letter-spacing: 2px; 
+	background-color: #006699;
+	color: #FFFFFF;
+	padding: 3px 3px 3px 3px;
+}
+
+.holdingsheader {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: xx-small;
+	font-weight: bold;
+	background-color: #FFFFFF;
+	color: #006699;
+}
+
+.holdingslist {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: xx-small;
+	background-color: #FFFFFF;
+	color: #000000;
+}
+
+th.holdingslist {
+	white-space: nowrap;
+	text-align: right;
+	vertical-align: top;
+}
+
+.indented {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: x-small;
+	background-color: #FFFFFF;
+	color: #000000;
+	margin-left: 10px;
+	vertical-align: top;
+}
+
+.itemlisting, label.itemlisting {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: xx-small;
+	background-color: #FFFFFF;
+	color: #000000;
+	vertical-align: top;
+	font-weight: normal;
+}
+
+.itemlisting2, label.itemlisting2 {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: xx-small;
+	background-color: #EFEFEF;
+	color: #000000;
+	vertical-align: top;
+	font-weight: normal;
+}
+
+input.itemdetails {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: xx-small;
+	background-color: #0099CC;
+	color: #FFFFFF;
+	width: 75px;
+	margin: 5px 0px 5px 0px;
+	display: block;
+}
+
+input.itemdetails2 {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: xx-small;
+	background-color: #006699;
+	color: #FFFFFF;
+	width: 75px;
+	margin: 5px 0px 5px 0px;
+	display: block;
+}
+
+td.itemservices {
+	background-color: #FFFFFF;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: xx-small;
+	color: #000000;
+}
+
+div.itemservices {
+	background-color: #FFFFFF;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: xx-small;
+	color: #000000;
+	text-align: left;
+	border-width: 1px;
+	border-style: solid;
+	padding: 7px 7px 7px 7px;
+	margin: 0px 0px 0px 0px;
+}
+
+div.itemservices a:link, div.itemservices a:visited, div.itemservices a:active {
+	display: block;
+	margin: 3px 0px 3px 0px;
+}
+
+div.itemservices a:hover {
+	background-color: #FFFFCC;
+	color: #FF0000;
+	display: block;
+	margin: 3px 0px 3px 0px;
+}
+
+div.options {
+	background-color: #FFFFFF;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: xx-small;
+	color: #000000;
+	border-width: 1px;
+	border-style: solid;
+	padding: 5px 5px 5px 5px;
+	margin: 10px 5px 5px 10px;
+}
+
+.overdue, .error {
+	color: #CC0000;
+}
+
+.pagecontainer {
+	background-color: #FFFFFF;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: x-small;
+	color: #000000;
+	border-width: 1px;
+	border-style: solid;
+}
+
+.pagecontainer3pg {
+	background-color: #FFFFFF;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: x-small;
+	color: #000000;
+	border-width: 1px;
+	border-style: solid;
+	
+}
+
+.rsvholdings {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: xx-small;
+	font-weight: bold;
+	background-color: #EEEEEE;
+	color: #000000;
+}
+
+.searchheader {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: x-small;
+	font-weight: bold;
+	letter-spacing: 2px; 
+	background-color: #006699;
+	color: #FFFFFF;
+	padding: 3px 3px 3px 3px;
+	width: 100%;
+}
+
+.searchcontent {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: x-small;
+	background-color: #EEEEEE;
+	color: #000000;
+	padding: 3px 3px 3px 3px;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+table.searchcontent {
+	width: 99%;
+}
+
+th.searchcontent {
+	text-align: right;
+	width: 30%;
+}
+
+
+.searchservices {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: x-small;
+	background-color: #EEEEEE;
+	color: #000000;
+	border-width: 1px;
+	border-style: solid;
+}
+
+input.searchbutton {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: xx-small;
+	font-weight: bold;
+	background-color: #0099CC;
+	color: #FFFFFF;
+	vertical-align: middle;
+	margin: 5px;
+}
+
+a:link.searchlinks, a:active.searchlinks, a:visited.searchlinks {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: x-small;
+	font-weight: bold;
+	text-decoration: none;
+	background-color: #EEEEEE;
+	color: #006699;
+}
+
+a:hover.searchlinks {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: x-small;
+	font-weight: bold;
+	text-decoration: underline;
+	background-color: #EEEEEE;
+	color: #CC0000;
+}
+
+.subheader {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: x-small;
+	background-color: #EEEEEE;
+	color: #000000;
+	margin-left: 2px;
+}
+
+.searchsum {
+	color: #000000;
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: xx-small;
+	text-align: center;
+	background-color: #FFFFFF;
+}
+
+.small {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: xx-small;
+	font-weight: normal; 
+}
+.titlebar {
+        font-family: Verdana, Helvetica, Arial, sans-serif;
+        font-size: medium;
+        font-weight: bold;
+        letter-spacing: 1px;
+        background-color: #006699;
+        color: #FFFFFF;
+        vertical-align: top;
+        padding: 10px;
+}
+
+.subtitlebar {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 14px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	background-color: #006699;
+	color: #FFFFFF;
+	line-height: 200%;
+}
+
+.vreference {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: xx-small;
+	text-decoration: none;
+	font-weight: normal;
+	letter-spacing: 0px;
+	background-color: #006699;
+	color: #FFFFFF;
+}
+
+.vreference input {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: xx-small;
+	text-decoration: none;
+	font-weight: normal;
+	letter-spacing: 0px;
+	background-color: #FFFFFF;
+	color: #006699;
+	margin: 3px 3px 3px 3px;
+}
+
+.vreference textarea {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: xx-small;
+	text-decoration: none;
+	font-weight: normal;
+	letter-spacing: 0px;
+	background-color: #FFFFFF;
+	color: #006699;
+	width: 125px;
+	height: 50px;
+	margin: 3px 3px 3px 3px;
+}
+
+.unformatted {
+	font-family: "Courier New", Courier, monospace; 
+	font-size: x-small;
+	font-weight: normal; 
+	vertical-align: top;
+}
+
+.viewmarcheader, .viewmarcheader a {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: x-small;
+	font-weight: bold;
+	letter-spacing: 2px;
+	background-color: #FFFFFF;
+	color: #996600;
+}
+
+.viewmarctags {
+	vertical-align: top;
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: xx-small;
+	background-color: #FFFFFF;
+	color: #000000;
+}
+
+th.viewmarctags {
+	white-space: nowrap;
+	text-align: right;
+	vertical-align: top;
+}
+
+.virtualreference {
+	border-style: none;
+	border-width: 0px;
+	padding: 1px 5px 1px 5px;
+}
+
+/* added by Xiaoyu for one-time login on the title header*/
+a.help:link, a:active {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: xx-small;
+	font-weight: normal;
+	text-decoration: none;
+	color: #006699;
+}
+
+a.help:visited {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: xx-small;
+	font-weight: normal;
+	text-decoration: none;
+	color: #006699;
+}
+
+a.help:hover {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: xx-small;
+	font-weight: normal;
+	text-decoration: underline;
+	color: #FF0000;
+	/* background-color: #FFFFCC; */
+}
+
+span.highlight
+{
+background-color:yellow
+}
+</style>
+</head>
+<!-- Start the body of the document.  WARNING:  No comments are allowed inside of the <BODY> element's definition. - assign CSS Class of 'body_style' to tag -  If this is a download search results state (14, 62), then load the results in a new browser window to facilitate printing. -  If this is an Archive image view state (911), then open a new window to display the image in new window. -  To help prevent premature selection of a toolbar button (i.e., before the new toolbar is loaded), clear it when the page is unloaded. -->
+<body onLoad="">
+
+<noscript>
+Your browser does not support JavaScript and this application utilizes JavaScript to build content and provide links to additional information. You should either enable JavaScript in your browser settings or use a browser that supports JavaScript in order to take full advantage of this application.
+</noscript>
+<!--  Copyright (c) 1996 - 2003, Sirsi Corporation - Generic top-of-page for (almost?) all pages. -->
+<!--  Copyright (c) 1996 - 2005, Sirsi Corporation Form for starting a new session in a new window. -->
+
+<!-- By setting the "document.new_session.action" property to the URL for logging into a new session at the particular  page you want, a new window will be opened and a new WebCat session will be started automatically. Remember that many WebCat states are dependent on previous states, so only certain "cgi types" can be opened.
+
+Also, by setting the "document.new_session.new_gateway_db.value" property to a gateway database name, the new session will use that gateway instead of the user's default gateway. Note that the use of Javascript is required to submit this form. -->
+
+<form name="new_session" method="post" action="/uhtbin/cgisirsi/8GidCeiwmY/CENTRAL/0/57/49" target="new_session">
+  <input type="hidden" name="user_id" value="WEBSERVER">
+  <input type="hidden" name="password" value="">
+  <input type="hidden" name="new_gateway_db" value="">
+</form>
+
+
+<!--  Copyright (c) 2000 - 2003, Sirsi Corporation - Puts the top-of-page information common to all pages. -->
+<a href="#skipnav"><img src="/WebCat_Images/English/Other/Miscib/clear.gif" height="1" width="1" border="0" alt="Skip navigation" title="Skip navigation"></a>  <a name="top"></a>
+<div class="pagecontainer"> <!-- Controls Page Border -->
+
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%"> <!-- title bar -->
+ <tr>
+  <td class="titlebar" align="left">
+      <img border="0" src="/WebCat_Images/English/Other/Miscib/LIBLOGO.gif" alt="State Library Resource Center" title="State Library Resource Center">
+  </td>
+
+  <td class="titlebar" align="center">
+    <!-- Print the gateway envn title if not blank -->
+      <!-- icon was printed -->
+      Enoch Pratt Free Library Catalog
+   <br>State Library Resource Center
+  </td>
+    <!-- no VIRTUAL_REF form -->
+     <td valign="top" class="header" align="right">
+     <form name="loginform" method=POST
+        action="/uhtbin/cgisirsi/8GidCeiwmY/CENTRAL/0/57/49">
+
+<!--  Copyright (c) 2001 - 2002, Sirsi Corporation
+  --
+  --  login form in titlebar or Search/Home box
+  --
+  -->
+<SCRIPT language="JavaScript"> 
+<!--hide 
+
+function newwindow() 
+{ 
+window.open('http://pac.epfl.net/login_help.html','jav','width=400,height=500,resizable=yes,scrollbars=yes'); 
+} 
+//--> 
+</SCRIPT> 
+
+<SCRIPT language="JavaScript1.2">
+function openwindow()
+{
+	popwin=window.open("http://pac.epfl.net/login_help.html","mywindow","menubar=1,resizable=1,scrollbars=1,width=400,height=500");
+	
+	if(popwin==null || typeof(popwin)=="undefined"){
+		 
+		window.location = "http://pac.epfl.net/login_helpsw.html"
+		window.onload=redirect()
+	}else{
+	
+		popwin.focus();
+	}
+}
+
+function redirect() {
+	window.location = "http://pac.epfl.net/login_helpsw.html"
+}
+
+</SCRIPT>
+
+
+<!--  Copyright (c) 1998 - 2003, Sirsi Corporation - Sets the default values for USER_ID, ALT_ID, and PIN prompts. - The USER_ID, ALT_ID, and PIN page variables will be returned. -->
+
+<!-- If the user has not logged in, first try to default to the ID based on the IP address - the $UO and $Uf will be set.  If that fails, then default to the IDs in the config file. If the user has already logged in, default to the logged in user's IDs, unless the user is a shared login. -->
+
+
+
+  <TABLE>
+   <TR>
+
+      <TD ALIGN="right">
+
+
+
+
+<b><A href="javascript: openwindow()"><u><font size="2" color="yellow">Why should I log in?</font></u></A></b><br/>
+
+
+
+
+
+
+
+ <FONT FACE="Verdana, Helvetica, Arial, sans-serif" COLOR="#FFFFFF" SIZE=2>
+
+          <!-- only user ID is used if both on -->
+          Library Card Number (No Spaces): <!-- user ID -->
+          <INPUT TYPE="text" NAME="user_id" SIZE="16" MAXLENGTH="20"
+               VALUE=""></FONT>
+          <BR>
+          <FONT FACE="Verdana, Helvetica, Arial, sans-serif" COLOR="#FFFFFF" SIZE=2>
+          PIN:
+          <INPUT TYPE=password NAME=password SIZE=16 MAXLENGTH=20
+                 VALUE=""></FONT>
+          <FONT FACE="Verdana, Helvetica, Arial, sans-serif" SIZE=1>
+          <BR><BR><INPUT TYPE=submit VALUE="One-time Login"> 
+          </FONT>
+
+        </TD>
+      </TR>
+  </TABLE>
+
+     </form>
+     </td>
+
+
+<!--Zary 04/08 -->
+<!-- login form-->
+ </tr>
+
+</table>
+<table border="0" cellpadding="3" cellspacing="0" width="100%"> <!-- title bar -->
+ <tr>
+  <td class="rootbarcell">
+<!--  Copyright (c) 1996 - 2003, Sirsi Corporation - Gateway Root Bar. -->
+    <!-- display text with CSS instead -->
+          <a href="/uhtbin/cgisirsi/pvMbvr8oBV/CENTRAL/170750027/38/1/X/BLASTOFF" class="rootbar">
+       Search/Home</a>
+       <!-- URL-type elements use javascript to open a new window directly to the Web site, so cannot use the cgisirsi "BLASTOFF" keyword. -->
+
+        <a href="javascript:open_win('http://www.prattlibrary.org/')" class="rootbar">
+       Library Home</a>
+          <a href="/uhtbin/cgisirsi/R93O7gjK9S/CENTRAL/170750027/1/26/X/BLASTOFF" class="rootbar">
+       Browse Subjects</a>
+          <a href="/uhtbin/cgisirsi/R93O7gjK9S/CENTRAL/170750027/1/774/X/BLASTOFF" class="rootbar">
+       Kids' Library</a>
+          <a href="/uhtbin/cgisirsi/R93O7gjK9S/CENTRAL/170750027/1/1095/X/BLASTOFF" class="rootbar">
+
+       Need Material?</a>
+          <a href="/uhtbin/cgisirsi/R93O7gjK9S/CENTRAL/170750027/1/1166/X/BLASTOFF" class="blastoff">
+       My Account</a>
+       <!-- URL-type elements use javascript to open a new window directly to the Web site, so cannot use the cgisirsi "BLASTOFF" keyword. -->
+        <a href="javascript:open_win('http://www.prattlibrary.org/about/contact.aspx')" class="rootbar">
+       Contact Us</a>
+          <a href="/uhtbin/cgisirsi/R93O7gjK9S/CENTRAL/170750027/60/1180/X/BLASTOFF" class="rootbar">
+
+       </a>
+
+  </td>
+ </tr>
+</table>
+<!--  Copyright (c) 1996 - 2003, Sirsi Corporation - Unicorn User Info Display Page; State #25 -->
+<!--  Copyright (c) 2000 - 2003, Sirsi Corporation - Buttons for General User Display Page; State #25 -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="gatewaystyle">
+ <tr>
+  <td class="gatewaystyle">
+
+   <!-- Go back button -->
+
+   <a href="/uhtbin/cgisirsi/UdUSvcrVc3/CENTRAL/170750027/2/4" title="GO BACK"><img src="/WebCat_Images/English/Buttons/Bistro/GOBACK.gif" border="0" alt="GO BACK" title="GO BACK"></a>
+
+  <!-- Help button -->
+  <script language="JavaScript" type="text/javascript">
+    put_help_button('faq10019.html');
+  </script>
+	
+  <a href="/uhtbin/cgisirsi/UdUSvcrVc3/CENTRAL/170750027/49" title="NEW SEARCH"><img src="/WebCat_Images/English/Buttons/Bistro/NSEARCH.gif" border="0" alt="NEW SEARCH" title="NEW SEARCH"></a>
+
+  <!-- gateway's custom buttons -->
+
+
+
+   <a href="/uhtbin/cgisirsi/UdUSvcrVc3/CENTRAL/170750027/58" title="Logout" target="_top"><img src="/WebCat_Images/English/Buttons/Bistro/EXITCAT.gif" border="0" alt="Logout" title="Logout"></a>
+
+  </td>
+ </tr>
+</table>
+<a name="skipnav"></a>
+<table border="0" cellpadding="0" cellspacing="10" width="100%" align="center" title="" summary="This table positions all the elements on this page.">   
+ <tr>
+  <td class="defaultstyle">  <!-- container cell -->
+<!-- figure if no activity message should display at the top -->
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+  <tr>
+
+   <td class="header">My Account</td>
+  </tr>
+  <tr>
+   <td class="indented" align="center">
+
+    <a href="#charges">5 
+     checkouts
+    </a>&nbsp;&nbsp;&nbsp;
+
+	
+	
+
+
+ <!-- 
+    <a href="#requests">3
+      requests.
+    </a>&nbsp;&nbsp;&nbsp;
+  -->
+  </td>
+
+ </tr>
+</table>
+	<!-- Print the message, if one exists -->
+		
+	
+	<!-- Print the no activity message if COUNTER is 0 -->
+	
+   <!-- lists of charges, holds, bills, bookings, etc. -->
+
+  <a name="charges"></a>
+    <table border="0" cellpadding="2" cellspacing="0" width="100%">
+     <tr>
+      <td colspan="7" class="header">Checkouts</td>
+
+	 </tr>
+     <tr>
+      <th class="subheader">Title</th>
+      <th class="subheader">Author</th>
+<th class="subheader">Item Type</td>
+<th class="subheader">Check Out</td>
+<th class="subheader">Renewed</td>
+      <th class="subheader">Due</td>
+
+      <th class="subheader">As of now, you owe</th>
+     </tr>
+     <tr>
+       <td class="defaultstyle" align="left">
+         <!-- Title -->
+<b>            The good night [videorecording]</b>
+        </td>
+       <td class="defaultstyle" align="left">
+
+          <!-- Author -->
+            Gigliotti, Donna.
+        </td>
+
+
+<td class="defaultstyle" align="left">
+          <!-- Item Type -->
+            DVDRENT
+
+
+
+<td class="defaultstyle" align="left">
+          <!-- Charge Date -->
+            12/18/2008,16:39
+
+
+<td class="defaultstyle" align="left">
+          <!-- Renew Date -->
+            12/21/2008,16:30
+
+
+
+
+       <td class="defaultstyle" align="left">
+          <!-- Due Date -->
+            12/28/2008,23:59
+        </td>
+        <td class="defaultstyle" align="left">
+
+          <!-- Est Fines -->
+            &nbsp;
+
+        </td>
+      </tr>
+     <tr>
+       <td class="defaultstyle" align="left">
+         <!-- Title -->
+<b>            A free life [sound recording]</b>
+        </td>
+       <td class="defaultstyle" align="left">
+
+          <!-- Author -->
+            Jin, Ha, 1956-
+        </td>
+
+
+<td class="defaultstyle" align="left">
+          <!-- Item Type -->
+            CD
+
+
+
+<td class="defaultstyle" align="left">
+          <!-- Charge Date -->
+            12/13/2008,16:10
+
+
+<td class="defaultstyle" align="left">
+          <!-- Renew Date -->
+
+
+
+
+       <td class="defaultstyle" align="left">
+          <!-- Due Date -->
+            1/3/2009,23:59
+        </td>
+        <td class="defaultstyle" align="left">
+
+          <!-- Est Fines -->
+            &nbsp;
+        </td>
+      </tr>
+     <tr>
+       <td class="defaultstyle" align="left">
+         <!-- Title -->
+<b>            The block [sound recording]</b>
+
+        </td>
+       <td class="defaultstyle" align="left">
+          <!-- Author -->
+            New Kids on the Block.
+        </td>
+
+
+<td class="defaultstyle" align="left">
+          <!-- Item Type -->
+            CD
+
+
+
+<td class="defaultstyle" align="left">
+
+          <!-- Charge Date -->
+            12/18/2008,16:38
+
+<td class="defaultstyle" align="left">
+          <!-- Renew Date -->
+
+
+
+
+       <td class="defaultstyle" align="left">
+          <!-- Due Date -->
+            1/8/2009,23:59
+        </td>
+
+        <td class="defaultstyle" align="left">
+
+          <!-- Est Fines -->
+            &nbsp;
+        </td>
+      </tr>
+     <tr>
+       <td class="defaultstyle" align="left">
+         <!-- Title -->
+
+<b>            She had it coming [sound recording]</b>
+        </td>
+       <td class="defaultstyle" align="left">
+          <!-- Author -->
+            Monroe, Mary.
+        </td>
+
+
+<td class="defaultstyle" align="left">
+          <!-- Item Type -->
+
+            CD
+
+
+
+<td class="defaultstyle" align="left">
+          <!-- Charge Date -->
+            12/18/2008,16:39
+
+<td class="defaultstyle" align="left">
+          <!-- Renew Date -->
+
+
+
+
+       <td class="defaultstyle" align="left">
+          <!-- Due Date -->
+
+            1/8/2009,23:59
+        </td>
+        <td class="defaultstyle" align="left">
+
+          <!-- Est Fines -->
+            &nbsp;
+        </td>
+      </tr>
+     <tr>
+       <td class="defaultstyle" align="left">
+
+         <!-- Title -->
+<b>            Coming undone [sound recording]</b>
+        </td>
+       <td class="defaultstyle" align="left">
+          <!-- Author -->
+            Andersen, Susan, 1950-
+        </td>
+
+
+<td class="defaultstyle" align="left">
+
+          <!-- Item Type -->
+            CD
+
+
+
+<td class="defaultstyle" align="left">
+          <!-- Charge Date -->
+            12/2/2008,19:45
+
+<td class="defaultstyle" align="left">
+          <!-- Renew Date -->
+            12/21/2008,16:29
+
+
+
+
+       <td class="defaultstyle" align="left">
+          <!-- Due Date -->
+
+            1/11/2009,23:59
+        </td>
+        <td class="defaultstyle" align="left">
+
+          <!-- Est Fines -->
+            &nbsp;
+        </td>
+      </tr>
+    </table> <!-- end of charges box -->
+
+   <br>
+
+
+	   
+ <!-- BOOKINGS -->
+
+  <!-- REQUESTS -->
+ <!-- <a name="requests"></a>
+    <table border="0" cellpadding="2" cellspacing="0" width="100%">
+	 <tr>
+      <td colspan="4" class="defaultstyle" align="center">
+      <form method="post" action="/uhtbin/cgisirsi/JHvwm8An45/CENTRAL/170750027/34">
+       <input type="submit" value="Requests / library messages" class="searchbutton">
+      </form>
+      </td>
+     </tr>
+    </table>
+    <br>
+   -->  
+
+  <!-- Print user's status messages -->
+<!--  Copyright (c) 1996 - 2003, Sirsi Corporation - Unicorn User Status Messages -->
+  </td> <!-- container cell -->
+ </tr>
+
+</table>  
+
+<br>
+<!--  Copyright (c) 1996 - 2003, Sirsi Corporation - Copyright statement -->
+<table border="0" cellpadding="3" cellspacing="0" width="100%" class="footer">
+ <tr>
+  <td align="center" valign="bottom" width="15%" class="footer">
+     <img src="/WebCat_Images/English/Other/Miscib/sirsi_button.gif" alt="Powered by: Sirsi Corporation" border="0">
+  </td>
+  <td align="center" class="footer"><!-- Display the description -->
+   Enoch Pratt Free Library Catalog<br> 
+   Your Electronic Library on the Web<br>
+
+	 
+  </td>
+  <td align="center" width="15%" class="footer"><a name="bottom" href="#top">TOP</a></td>
+ </tr>
+</table>
+</div> <!-- Controls Page Border -->
+</body>
+</html>
+
+
+
+

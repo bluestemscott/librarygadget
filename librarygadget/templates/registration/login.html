@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Library Gadget login</title>
+{% endblock %}
+
+
+{% block content %}
+
+{% if form.errors %}
+<p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+
+<form id="loginform" method="post" action="{% url django.contrib.auth.views.login %}">
+{% csrf_token %}
+<p>
+    <label for="id_username">Email address</label>
+    {{ form.username }}
+</p>
+<p>
+    {{ form.password.label_tag }}
+    {{ form.password }}
+</p>
+<p>
+<input id="login" type="submit" class="button" value="Login" />
+</p>
+<input type="hidden" name="next" value="{{ next }}" />
+</form>
+
+{% endblock %}

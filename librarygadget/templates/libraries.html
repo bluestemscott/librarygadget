@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Library Gadget: Libraries</title>
+<script type="text/javascript" src="/site_media/librarygadget.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {  
+	$("#libraries").dataTable({"bPaginate": false});
+  });
+</script>
+
+
+{% endblock %}
+
+{% block content %} 
+	
+	<table id="libraries" class="libraries">
+		<thead>
+			<tr>
+				<th/>
+				<th/>
+				<th/>
+			</tr>
+		</thead>
+		{% for library in libraries %}			
+			<tr>
+				<td><a href="{% url add_account library_id=library.id %}">Add</a></td>
+				<td>{{ library.state }}</td>
+				<td>{{ library.name }}</td>			
+			</tr>
+		{% endfor %}
+    </table>
+
+	
+	<h3>Oh no, my library isn't listed!</h3>
+    <p><a href="{%  url library_request %}">Request </a> a new library.</p>
+	
+	
+{% endblock %}

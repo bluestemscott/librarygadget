@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Library Gadget: Checked Out Items</title>
+<script type="text/javascript" src="/site_media/librarygadget.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {  
+	$("#items").dataTable(
+            {"bPaginate": false,
+             "bAutoWidth": false,
+              bSort: false,
+             "aoColumns" : [
+                { sWidth: '90px' },
+                { sWidth: '600px' }
+               ]
+            });
+
+    {% include "useraccounts.js" %}
+  });
+</script>
+
+
+
+{% endblock %}
+
+{% block content %} 
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=63108621411";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+    
+     {% if patrons|length > 0 %}
+     <div class="section">
+     <p class="error">Unable to login to these library accounts.</p>
+
+        {% include "useraccounts.html" %}
+
+         Try the following steps.
+         <ul>
+             <li>Make sure you can log into your library's website</li>
+             <li><a href="{% url profile %}">Correct</a>  your card information</li>
+             <li><a href="{% url about %}">Report a problem</a></li>
+
+         </ul>
+    </div>
+    {% endif %}
+
+	<div class="section">
+
+    {% if items|length > 0 and patrons|length == 0 %}
+        <table id="items">
+            <thead>
+             <tr>
+                <td class="noborder">Due Date</td>
+                <td class="noborder">Title</td>
+                
+             </tr>
+            </thead>
+            <tbody>
+            {% for item in items  %}
+
+                <tr {% if item.overdue %}class="overdue"{% endif %}>
+                    <td>{{ item.dueDate }}</td>
+                    <td class="title_column">
+                        <a target="_blank" href="{{ item.amazon_url }}">{{ item.short_title }}</a>
+                    </td>
+                    
+                </tr>
+
+            {% endfor %}
+            </tbody>
+        </table>
+
+    {% endif %}
+
+    <p>{{ message }}</p>
+
+    {% if all_patrons|length == 0 %}
+        <p>
+        First you need to <a href="{% url libraries %}">add a library card</a>.
+        </p>
+    {% endif %}
+
+	</div>
+
+    {% if free %}
+    <div class="section">
+        <a class="fancy_button" style="margin-bottom: 25px; clear: both;" href="{% url profile %}">
+            <span style="background-color: #070;">Auto-renewals and more...</span>
+        </a>
+
+    </div>
+    {% endif %}
+	
+{% endblock %}

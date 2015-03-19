@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Library Gadget: Create Account</title>
+{% endblock %}
+
+{% block content %}
+
+	<h3>Create an account</h3>
+	
+	{% if form.errors %}
+		<div class='errors'>
+	    {% for field in form %}
+			{{ field.errors }}
+	    {% endfor %}
+	    {{ form.non_field_errors }}	
+	    </div>
+	{% endif %}
+	
+	
+	<form id="register" method="POST">
+		{% csrf_token %}
+		<p>	
+			<label for="id_email">* Email</label> <input id="id_email" type="text" name="email" maxlength="100" />
+		</p>
+		<p>
+			<label for="id_password">* Password</label> <input id="id_password" type="password" name="password"/>
+		</p>
+        <input id="id_plan" type="hidden" name="plan"/>
+		<p>
+			<input type="checkbox" name="terms_of_use"/>
+			I agree to the <a href="{% url terms_of_use %}" target="_blank">Terms of Use</a>.
+			I understand that Library Gadget may stop working 
+			if my library's web site makes changes which affect Library Gadget's ability to retrieve 
+			information from my account.			
+		</p>
+		<input id="newuserbtn" class="button" type="submit" value="Create Account"/>
+	</form>
+
+{% endblock %}

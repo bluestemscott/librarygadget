@@ -1,0 +1,13 @@
+
+
+#requestform .instructions {
+	margin-left: 205px; /* instructions/comments left margin set to align w/ right column inputs */
+}
+
+#requestform label {
+	width: 200px; 
+}
+
+#requestform input {
+	width: 300px;
+}

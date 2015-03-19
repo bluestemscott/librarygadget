@@ -1,0 +1,1184 @@
+<!--  Copyright (c) 1996 - 2008, SirsiDynix - Unicorn User Info Display Page; State #25 -->
+<!-- figure if no activity message should display at the top -->
+
+  <!-- count personal and group charges list -->
+
+
+  <!-- count personal and group holds list -->
+
+
+
+  <!-- count personal and group bills list -->
+
+
+  <!-- any suspensions -->
+
+  <!-- Check for user requests -->
+<!--  Copyright (c) 2000, Sirsi Corporation
+  -
+  -  General-purpose SIRSI_Command processor file for doing absolutely nothing.
+  -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr">
+
+<head>
+
+
+
+  <title>Kirkendall Public Library - Online Catalog</title>
+
+
+<!-- Set the expiration date to the past so the page will always be reloaded -->
+
+  <!-- Not the login page -->
+
+    <!-- Set the refresh to do an EXIT right before the session times out. This will cause timed out sessions to automatically go back to the login/first page, ready for the next user. - Since there is no way to target the _top frame, cannot do this if any frames are used, else the refresh goes into the main frame. - Also, the URL below has to be a full URL, so cannot do this without using the HTTP_ADDRESS. -->
+
+  <meta http-equiv="refresh" content="3540; URL=http://kplcatalog.ankenyiowa.gov/uhtbin/cgisirsi.exe/i5HwPDRcJv/x/93210050/58"/>
+<link title="Library News and Events" rel="alternate" type="application/rss+xml" href="http://kplcatalog.ankenyiowa.gov:81/ipac/rss/events.php" />
+<link title="New Audiobooks" rel="alternate" type="application/rss+xml" href="http://kplcatalog.ankenyiowa.gov:81/ipac/rss/audiobookrss.xml" />
+<link title="New DVDs" rel="alternate" type="application/rss+xml" href="http://kplcatalog.ankenyiowa.gov:81/ipac/rss/dvdrss.xml" />
+<link title="New York Times Bestselling Fiction" rel="alternate" type="application/rss+xml" href="http://kplcatalog.ankenyiowa.gov:81/ipac/rss/fiction.xml" />
+<link title="New York Times Bestselling Nonfiction" rel="alternate" type="application/rss+xml" href="http://kplcatalog.ankenyiowa.gov:81/ipac/rss/nonfiction.xml" />
+<link rel="shortcut icon" href="http://www.ci.ankeny.ia.us/favicon.ico" />
+<script type="text/javascript" src="http://kplcatalog.ankenyiowa.gov:81/universalincludes/combine.php?type=javascript&files=sirsidynix.js,jquery.js,qtip.js,autocomplete.js"></script>
+<script type="text/javascript" src="http://kplcatalog.ci.ankeny.ia.us:81/universalincludes/combine.php?type=javascript&files=datetimepicker.js,sirsidynix_tabbed.js,anylinkcssmenu.js,thickbox.js,bgiframe.js"></script>
+<link rel="stylesheet" href="http://kplcatalog.ankenyiowa.gov:81/universalincludes/combine.php?type=css&files=anylinkcssmenu.css,thickbox.css,sirsidynix.css,elibrary.css"  type="text/css" />
+<script type="text/javascript">
+function ajaxUpdater(id,url) {
+$('#'+id).load(url);
+}
+$(document).ready(function() {
+	$('.anylinkcsscols').bgiframe();
+	$('.anylinkcss').bgiframe();
+	$('.anylinkcolumn').bgiframe();
+});
+function show_hide_covers(id) {
+$('#nocover'+id).hide();
+$('#cover'+id).show();
+}
+//get screen dimensions to display overlay
+var myHeight = $(window).height();
+var myWidth = $(window).width();
+var myWidth = Math.round(myWidth*.80);
+var myHeight= Math.round(myHeight*.80);
+if (myWidth<680) {
+  var myWidth=680;
+}
+if (myHeight<500) {
+  var myHeight=500;
+}
+$(function(){
+ajaxUpdater('mylistcount','http://kplcatalog.ankenyiowa.gov/ipac81/mylist/count.php');
+});
+</script>
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="/Css/ie62.css" type="text/css" />
+<![endif]-->
+</head>
+<!-- if copies=0 or no holdings allowed, default tab to Catalog Record  -->
+<!-- Start the body of the document.  WARNING:  No comments are allowed inside of the body element's definition. - assign CSS Class of 'body_style' to tag -  If this is a download search results state (14, 62), then load the results in a new browser window to facilitate printing. -  If this is an Archive image view state (911), then open a new window to display the image in new window. -  To help prevent premature selection of a toolbar button (i.e., before the new toolbar is loaded), clear it when the page is unloaded. -->
+<body onLoad="">
+<noscript>
+Your browser does not support JavaScript and this application utilizes JavaScript to build content and provide links to additional information. You should either enable JavaScript in your browser settings or use a browser that supports JavaScript in order to take full advantage of this application.
+</noscript>
+<!--  Copyright (c) 1996 - 2005, Sirsi Corporation Form for starting a new session in a new window. -->
+
+<!-- By setting the "document.new_session.action" property to the URL for logging into a new session at the particular  page you want, a new window will be opened and a new WebCat session will be started automatically. Remember that many WebCat states are dependent on previous states, so only certain "cgi types" can be opened.
+Also, by setting the "document.new_session.new_gateway_db.value" property to a gateway database name, the new session will use that gateway instead of the user's default gateway. Note that the use of Javascript is required to submit this form. -->
+
+<form name="new_session" method="post" action="/uhtbin/cgisirsi.exe/jHyEOBc0y3/x/0/57/49" target="new_session">
+	
+		<input type="hidden" name="user_id" value="23061000510037"/>
+		<input type="hidden" name="password" value="SCOTT"/>
+	
+	<input type="hidden" name="new_gateway_db" value=""/>
+</form>
+
+
+
+
+<!--  Copyright (c) 2000 - 2008, SirsiDynix - Puts the top-of-page information common to all pages. -->
+<a class="skipnav" href="#skipnav"><img src="/WebCat_Images/English/Other/MiscD/clear.gif" height="1" width="1" border="0" alt="Skip navigation" title="Skip navigation"/></a>  <a name="top"></a>
+<div id="header_container" class="header_container" >
+
+    <div class="branding_container">
+	<div class="branding_image">
+	
+	    
+		<img border="0" width="602" height="106" src="/WebCat_Images/English/Other/MiscD/LIBLOGO.gif" alt="Your Electronic Library on the Web" title="Your Electronic Library on the Web"/>
+	    
+	
+	</div>
+		
+    </div> <!-- end branding -->
+     <!-- eric's branding links -->
+    <div class="branding_links">
+<a href="http://www.ci.ankeny.ia.us/library/" title="Library homepage">homepage</a><span style="color:#cccccc; text-decoration: none;">
+  | </span>
+<a href="http://kplcatalog.ankenyiowa.gov:81/ipac/contactus/index.php?session=93210050&amp;start=true"  title="Contact the library">contact us</a>
+<span style="color:#cccccc; text-decoration: none;">
+  | </span>
+<a title="Suggest an addition to the collection"  href="http://kplcatalog.ankenyiowa.gov:81/ipac/purchaserequest/?session=93210050&amp;start=true">
+make a request</a> <span style="color:#cccccc;text-decoration: none;">
+  | </span>
+  <a title="Keep a list of library items for later viewing"  href="http://kplcatalog.ankenyiowa.gov/ipac81/mylist/?start=true">
+my list</a> <span id="mylistcount" style="font-weight:bold"></span>
+  </div>
+
+     <!-- end eric's branding links -->
+
+	
+<!--  Copyright (c) 2003, Sirsi Corporation
+  -
+  -  Get user information.
+  -
+  -  This page file is processed by a SIRSI_Command for a GC response.
+  -->
+
+
+       		
+	
+		<div align="right" style="font-size:13px;font-weight:bold;color:#FFFFFF;padding:8px;">Welcome
+Maerz, Torey Bernard!
+    |
+		<a style="color:#FFFF66" href="/uhtbin/cgisirsi.exe/x/x/0/58/">Logout</a><br />
+	
+		</div>
+		<!-- end Eric's added login confirmation text -->
+	  <!-- login form-->
+	<div class="top_edge"></div>
+	<div class="right_edge"></div>
+	<div class="bottom_edge"></div>
+	<div class="left_edge"></div>
+	<div class="top_left"></div>
+	<div class="top_right"></div>
+	<div class="bottom_right"></div>
+	<div class="bottom_left"></div>
+</div>
+<div id="header_menu_container" class="header_menu_container">
+<!--  Copyright (c) 1996 - 2006, SirsiDynix - Gateway Root Bar. -->
+    <!-- display text with CSS instead -->
+          <a href="/uhtbin/cgisirsi.exe/TPV4RP3SV6/x/93210050/38/1/X/BLASTOFF" class="rootbar">
+       Search/Home</a>
+<span style="color:#b60606;text-decoration:none">
+|</span>
+          <a href="/uhtbin/cgisirsi.exe/55yPqRW2px/x/93210050/30/BLASTOFF" class="rootbar">
+       My Account</a>
+<span style="color:#b60606;text-decoration:none">
+|</span>
+
+
+
+  <!-- Erics added rootbar links -->
+<a class="rootbar anchorclass"  style="margin-right:0;" href="http://kplcatalog.ankenyiowa.gov:81/ipac/newbooks/?session=93210050&amp;start=true" rel="book_menu">New Books</a>
+<img src="http://kplcatalog.ankenyiowa.gov:81/ipac/images/downgreyarrow.jpg">
+<span  style="color:#b60606;text-decoration:none">|</span>
+<a class="rootbar anchorclass" style="margin-right:0;" href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?session=93210050&amp;start=true" rel="movie_menu">New Movies</a>
+<img src="http://kplcatalog.ankenyiowa.gov:81/ipac/images/downgreyarrow.jpg">
+<span  style="color:#b60606;text-decoration:none">|</span>
+<a class="rootbar anchorclass"  style="margin-right:0;" href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?session=93210050&amp;start=true&amp;media=music" rel="music_menu">New Music</a>
+<img src="http://kplcatalog.ankenyiowa.gov:81/ipac/images/downgreyarrow.jpg">
+<span  style="color:#b60606;text-decoration:none">|</span>
+<a class="rootbar"  href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?session=93210050&amp;start=true&amp;media=audio&amp;grid=false">Audiobooks/Downloads</a>
+<div id="book_menu" class="anylinkcss" style="width:85px">
+<ul>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newbooks/?session=93210050&start=true">All</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newbooks/index.php?genre=Fiction&session=93210050&start=true">Fiction</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newbooks/index.php?genre=Nonfiction&session=93210050&start=true">Nonfiction</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newbooks/index.php?genre=Young Adult&session=93210050&start=true">Young Adult</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newbooks/index.php?genre=Juvenile&session=93210050&start=true">Juvenile</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newbooks/index.php?genre=Easies&session=93210050&start=true">Easies</a></li>
+	</ul>
+</div>
+
+<div id="movie_menu" class="anylinkcsscols">
+<div class="anylinkcolumn">
+	<ul>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?ession=93210050&start=true">All</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=7&session=93210050&start=true">Action & Adventure</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=5&session=93210050&start=true">Anime/Adult Animation</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=28&session=93210050&start=true">Arts</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=27&session=93210050&start=true">Biographical</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=18&session=93210050&start=true">Classic</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=8&session=93210050&start=true">Comedy</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=11&session=93210050&start=true">Critically Acclaimed</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=6&session=93210050&start=true">Drama</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=20&session=93210050&start=true">Exercise</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=14&session=93210050&start=true">Family</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=16&session=93210050&start=true">Foreign</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=26&session=93210050&start=true">History & Culture</a></li>
+	</ul>
+</div>
+<div class="anylinkcolumn">
+	<ul>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=22&session=93210050&start=true">Holiday</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=1&session=93210050&start=true">Juvenile</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=3&session=93210050&start=true">Juvenile Nonfiction</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=24&session=93210050&start=true">Librarian's Picks</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=9&session=93210050&start=true">Mystery</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=25&session=93210050&start=true">Nature & Science</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=4&session=93210050&start=true">Nonfiction/Documentary</a></li>
+	<li><a style="font-weight:bold;color:#b60606" href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=29&session=93210050&start=true">On Order</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=21&session=93210050&start=true">Religious Themed</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=17&session=93210050&start=true">Sci-Fi/Fantasy</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=10&session=93210050&start=true">Suspense/Thriller</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=15&session=93210050&start=true">TV</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=23&session=93210050&start=true">Western</a></li>
+	</ul>
+</div>
+</div>
+
+<div id="music_menu" class="anylinkcss" style="width:110px">
+<ul>
+<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=music&session=93210050&start=true">All</a></li>
+<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=music&genre=BL&session=93210050&start=true">Blues</a></li>
+<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=music&genre=RE&session=93210050&start=true">Christian/Religious</a></li>
+<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=music&genre=CL&session=93210050&start=true">Classical</a></li>
+<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=music&genre=CW&session=93210050&start=true">Country</a></li>
+<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=music&genre=INT&session=93210050&start=true">International</a></li>
+<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=music&genre=JA&session=93210050&start=true">Jazz</a></li>
+<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=music&genre=PORO&session=93210050&start=true">Pop & Rock</a></li>
+<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=music&genre=RA&session=93210050&start=true">Rap/Hip Hop</a></li>
+</ul>
+</div>
+	<div class="top_edge"></div>
+	<div class="right_edge"></div>
+	<div class="bottom_edge"></div>
+	<div class="left_edge"></div>
+	<div class="top_left"></div>
+	<div class="top_right"></div>
+	<div class="bottom_right"></div>
+	<div class="bottom_left"></div>
+</div>
+
+
+
+
+<!--  Copyright (c) 2000 - 2008, SirsiDynix - Buttons for General User Display Page; State #25 -->
+<div class="buttons_container">
+<!--
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="gatewaystyle" >
+ <tr>
+  <td class="gatewaystyle">
+-->
+   <!-- Go back button -->
+  <a class="menu_link" href="/uhtbin/cgisirsi.exe/MCKCkaGbBS/x/93210050/2/2" title="Go Back"  style="color:white;"></>Go Back</a>
+
+<!--
+   <a class="menu_link" href="/uhtbin/cgisirsi.exe/gdtJ28WJg5/x/93210050/2/2" title="Go Back" alt="Go Back">GO BACK</a>
+   -->
+
+  <!-- Help button -->
+  <script language="javascript" type="text/javascript">
+    //<![CDATA[
+    put_help_button('English','Help','faq10019.html');
+    //]]>
+  </script>
+	
+  <a class="menu_link" href="/uhtbin/cgisirsi.exe/3r1i99KkMq/x/93210050/49" title="New Search">New Search</a>
+
+  <!-- gateway's custom buttons -->
+
+<!-- Let personal-access users create/edit their profiles -->
+
+
+   <a class="menu_link" href="/uhtbin/cgisirsi.exe/4SMRxDKkp8/x/93210050/58" title="Logout" target="_top">Logout</a>
+
+<script type="text/javascript">
+$(document).ready(function() {
+   $('#searchdata1').autocomplete({ serviceUrl:'http://kplcatalog.ankenyiowa.gov/ipac81/livesearch/livesearch.php',
+	   params: { rand:Math.random() },
+	   width:340,
+   onSelect: function(value, data){
+	   document.ericssearchform.submit();
+	   }
+   });
+});
+</script>
+<div style="float:right;width:50%;padding:0;margin:0;vertical-align:middle;white-space:nowrap;">
+<form name="ericssearchform" id="ericssearchform"  method="post" action="/uhtbin/cgisirsi.exe/HiPfKq1tEt/x/93210050/123" style="padding:0;margin:0;">
+<p style="white-space:nowrap;text-align:right;margin:0;padding:0;float:right;">
+<label for="searchdata1" class="menu_link" style="margin:0;padding:0;float:none">Search: </label>
+<input size="35" name="searchdata1" id="searchdata1" type="text" style="font-size:11px;float:none;padding:2px;background-color:white; border:1px solid #333333;margin:0;" value="" />
+<select style="border:1px solid black;float:none;padding:1px;background-color:white; margin:0;font-size:11px" name="srchfield1" id="srchfield1">
+	<option value="GENERAL^SUBJECT^GENERAL^^words or phrase" >words or phrase</option>
+	<option value="AU^AUTHOR^AUTHORS^Author Processing^author" >author</option>
+	<option value="TI^TITLE^SERIES^Title Processing^title" >title</option>
+	<option value="SU^SUBJECT^SUBJECTS^^subject" >subject</option>
+   </select>
+<select name="item_1cat" id="item_1cat" style="border:1px solid black;float:none;padding:1px;background-color:white; margin:0;font-size:11px">
+<option selected value="ANY" >ANY</option>
+<option value="AUDIOBOOKS" >Audiobooks</option>
+<option value="BOOKS" >Books</option>
+<option value="DVD" >DVDs</option>
+<option value="MUSIC" >Music CDs</option>
+<option value="VIDEOS" >Videos</option>
+</select>
+<input type="submit" class="button" value="Go" style="padding:1px;margin:0 2px 0 2px;float:none;font-size:11px" />
+<!--
+<a href="/uhtbin/cgisirsi.exe/VtMbAYWwrI/x/93210050/38/0/POWER_SEARCH" class="menu_link" style="font-size:11px;margin:5px 3px 0 3px;color:#ffff66;float:none">Power Search</a>
+-->
+&nbsp;
+	</p> <input type="hidden" name="library" value="ALL">
+        <input type="hidden" name="sort_by" value="ANY"/>
+</form>
+	  </div>
+
+
+
+
+<a name="skipnav"></a>
+	<div class="top_edge"></div>
+	<div class="right_edge"></div>
+	<div class="bottom_edge"></div>
+	<div class="left_edge"></div>
+	<div class="top_left"></div>
+	<div class="top_right"></div>
+	<div class="bottom_right"></div>
+	<div class="bottom_left"></div>	
+</div>
+<!--  Copyright (c) 2008, SirsiDynix -  Set the date format for the date time picker widget -->
+
+<!-- Set the date format for the date picker based on the date_type -->
+
+
+
+
+
+<img name="settab" id="settab" src="/WebCat_Images/English/Other/MiscD/clear.gif" border="0">
+
+<div class="content_container account_details">
+  <div id="tabholder" class="tabholder">
+<!-- list of charges -->
+      <span id="tab1" class="tab" onClick = "showPanel(1,'#FFFF66','#FFFFFF',true);" onMouseOver="hover(this,'#FFFFFF','#FFFF66');" onMouseOut="setState(1,'#FFFF66','#FFFFFF')">Checkouts (0)</span>
+
+
+
+      <span id="tab6" class="tab" onClick = "showPanel(6,'#FFFF66','#FFFFFF',true);" onMouseOver="hover(this,'#FFFFFF','#FFFF66');" onMouseOut="setState(6,'#FFFF66','#FFFFFF')">Fines ($0.00)</span>
+
+
+
+<span id="tab9" class="tab" onClick = "showPanel(9,'#FFFF66','#FFFFFF',true);" onMouseOver="hover(this,'#FFFFFF','#FFFF66');" onMouseOut="setState(9,'#FFFF66','#FFFFFF')">Change Pin</span>
+
+
+  </div>
+
+  <div class="panelholder">
+    <!-- CHARGES -->
+<!-- list of charges: either static or renewable 
+edited by eric removed charge list and added copied renew form in its place -->
+ <!-- list of charges -->
+  <div id="panel1" class="panel">
+  <a name="charges"></a>
+    <table border="0" cellpadding="1" cellspacing="0" width="100%">
+     <tr>
+    <td>
+		 <p style="font-weight:bold;margin:10px 0 10px 0">You currently have no items checked out.</p>
+		 
+		      
+	     </td>
+</tr> 
+</table>  
+
+<!--end of charges box-->
+  </div>
+
+
+
+    <!-- SUSPENSIONS -->
+
+   <!-- list of suspensions -->
+
+
+
+    <!-- HOLDS -->
+
+    <!-- Requests -->
+
+    <!-- BILLS -->
+    <!-- check not only that SAM is on, but that SAM is available -->
+    <!-- and that the patron has funds                            -->
+
+
+
+    <a name="bills"></a>
+    <div id="panel6" class="panel">
+     <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+		      <td> <p style="font-weight:bold;margin:10px 0 10px 0">You currently have no fees or fines.</p>
+		 </td>
+		       
+
+      </tr>
+    </table><!--end of bills box-->
+    </div>
+
+    <!-- BOOKINGS -->
+
+    <!-- RESERVATIONS -->
+<!-- RESERVATIONS -->
+<div id="panel9" class="panel">
+
+<!-- Email and PIN  -->
+<table border="0" cellpadding="0" cellspacing="5" style="width:70%;margin:0 15% 0 15%;float:none;padding:0" title="" summary="This table positions all the elements on this page.">   
+ <tr>
+  <td> <!-- container cell -->  
+   <!-- Allow user to change pin -->
+<form name="accessform" method="post" action="/uhtbin/cgisirsi.exe/Bc08ym4O2v/x/93210050/191">
+  <table border="0" cellpadding="3" cellspacing="0" align="center" width="60%">
+    <tr>
+      <td class="header">Change My Pin</td>
+    </tr>
+    <tr>
+      <td class="subheader" colspan="2" style="border-bottom:1px solid #999">Type your ID.</td>
+    </tr>
+    <tr>
+      <td  colspan="2">
+<!--  Copyright (c) 1996 - 2003, Sirsi Corporation -  Unicorn Access Control Fields. -->
+<!--  Copyright (c) 1998 - 2003, Sirsi Corporation - Sets the default values for USER_ID, ALT_ID, and PIN prompts. - The USER_ID, ALT_ID, and PIN page variables will be returned. -->
+
+<!-- If the user has not logged in, first try to default to the ID based on the IP address - the $UO and $Uf will be set.  If that fails, then default to the IDs in the config file. If the user has already logged in, default to the logged in user's IDs, unless the user is a shared login. -->
+
+
+
+<table border="0" cellpadding="2" cellspacing="0" align="center">
+   <tr>
+    <td  align="right"><label for="user_id">Library Card #:</label></td>
+    <td  align="left">
+      <input type="text" name="user_id" id="user_id" size="20" maxlength="20" value="23061000510037">
+	</td>
+  </tr>
+    <tr>
+      <td  align="right"><label style="cursor:pointer;text-decoration:underline;color:#0072ae" for="password" onclick="window.open('http://kplcatalog.ankenyiowa.gov:81/ipac/pinhelp.html','','width=400,height=400');">Current Pin (what's this?):</label>
+</td>
+      <td   align="left">
+       <input type="password" name="password" id="password" size="20" maxlength="20" value="">
+	  </td>
+    </tr>
+
+</table>
+      </td>
+    </tr>
+ <tr>
+      <td class="subheader" colspan="2" style="border-bottom:1px solid #999">Your new pin must be 10 or fewer characters.</td>
+    </tr> 
+    <tr>
+      <td  colspan="2" align="center">
+        <table>
+	<tr>
+            <td  align="right">
+	      <label for="new_password1">Enter new PIN:</label>
+	    </td>
+            <td  align="left">
+	      <input type="password" name="new_password1" id="new_password1" maxlength="20" size="20" style="width: 100px;">
+	    </td>
+	  </tr>	 
+	  <tr>
+            <td  align="right">
+	      <label for="new_password2">Re-enter new PIN:</label>
+	    </td>
+            <td  align="left">
+	      <input type="password" name="new_password2" id="new_password2" maxlength="20" size="20" style="width: 100px;">
+	    </td></tr></table>
+      </td>
+    </tr>
+    <tr>
+      <td  align="center" colspan="2">
+        <input type="submit" value="Change PIN" class="searchbutton">
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="reset" value="Reset Form" class="searchbutton">  
+      </td>
+    </tr>
+  </table>
+</form>
+  </td> <!-- container cell -->
+ </tr>
+</table> 
+</div>
+
+  </div>
+
+</div>
+
+
+</div>
+
+<!--  Copyright (c) 2000 - 2008, SirsiDynix - Buttons for General User Display Page; State #25 -->
+<div class="buttons_container">
+<!--
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="gatewaystyle" >
+ <tr>
+  <td class="gatewaystyle">
+-->
+   <!-- Go back button -->
+  <a class="menu_link" href="/uhtbin/cgisirsi.exe/h00w9g6wuH/x/93210050/2/2" title="Go Back"  style="color:white;"></>Go Back</a>
+
+<!--
+   <a class="menu_link" href="/uhtbin/cgisirsi.exe/OOS2iFAH4d/x/93210050/2/2" title="Go Back" alt="Go Back">GO BACK</a>
+   -->
+
+  <!-- Help button -->
+  <script language="javascript" type="text/javascript">
+    //<![CDATA[
+    put_help_button('English','Help','faq10019.html');
+    //]]>
+  </script>
+	
+  <a class="menu_link" href="/uhtbin/cgisirsi.exe/QkJseamke9/x/93210050/49" title="New Search">New Search</a>
+
+  <!-- gateway's custom buttons -->
+
+<!-- Let personal-access users create/edit their profiles -->
+
+
+   <a class="menu_link" href="/uhtbin/cgisirsi.exe/CM2AIzVhzx/x/93210050/58" title="Logout" target="_top">Logout</a>
+
+
+
+<a name="skipnav"></a>
+	<div class="top_edge"></div>
+	<div class="right_edge"></div>
+	<div class="bottom_edge"></div>
+	<div class="left_edge"></div>
+	<div class="top_left"></div>
+	<div class="top_right"></div>
+	<div class="bottom_right"></div>
+	<div class="bottom_left"></div>	
+</div>
+<div class="footer_container">
+<!--  Copyright (c) 1996 - 2008, SirsiDynix - Copyright statement -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="footer">
+ <tr>
+  <td  class="footer" style="text-align:right;padding-right:20px"><a href="#top" style=" font-weight:bold;color:#005d96;text-decoration: none;font-size:14px">back to top&nbsp;<img src="http://kplcatalog.ankenyiowa.gov:81/ipac/images/icon_backtotop.gif"border="0"></a></td>
+ </tr>
+ <tr>
+ <td style="text-align:center"><a 
+ href="http://www.ci.ankeny.ia.us/library/">homepage</a>
+<span style="color:#b60606;text-decoration:none">
+&nbsp;|&nbsp;</span>
+<a title="Contact the library" href="http://kplcatalog.ankenyiowa.gov:81/ipac/contactus/index.php?session=93210050&amp;start=true">contact us</a>
+<span style="color:#b60606;text-decoration:none">
+&nbsp;|&nbsp;</span>
+<a title="RSS" href="http://kplcatalog.ankenyiowa.gov:81/ipac/rss/?session=93210050&amp;start=true" style="padding-left:20px;background-image: url(http://kplcatalog.ankenyiowa.gov:81/ipac/images/feed-icon.gif);background-repeat: no-repeat;background-position:0 0 0 10px;">rss</a><span style="color:#b60606;text-decoration:none">
+&nbsp;|&nbsp;</span>
+<a title="Suggest an addition to the collection"  href="http://kplcatalog.ankenyiowa.gov:81/ipac/purchaserequest/?session=93210050&amp;start=true">
+make a request</a>
+</td>
+</tr>
+<tr>
+<td  style="font-size:12px;padding-top:4px;text-align:center"> 
+1210 NW Prairie Ridge Drive | Ankeny, Iowa 50023-1564 | Phone: 515-965-6460
+</td>
+</tr>
+</table>
+<div class="top_edge"></div>
+<div class="right_edge"></div>
+<div class="bottom_edge"></div>
+<div class="left_edge"></div>
+<div class="top_left"></div>
+<div class="top_right"></div>
+<div class="bottom_right"></div>
+<div class="bottom_left"></div>
+</div>	
+<script type="text/javascript">
+anylinkcssmenu.init("anchorclass");
+</script>
+</body>
+</html>
+
+
+
+
+
+2009-06-06 20:06:14,644 ERROR url=http://kplcatalog.ankenyiowa.gov/uhtbin/cgisirsi.exe/55yPqRW2px/x/93210050/30/BLASTOFF
+2009-06-06 20:06:14,644 ERROR <!--  Copyright (c) 1996 - 2008, SirsiDynix - Unicorn User Info Display Page; State #25 -->
+<!-- figure if no activity message should display at the top -->
+
+  <!-- count personal and group charges list -->
+
+
+  <!-- count personal and group holds list -->
+
+
+
+  <!-- count personal and group bills list -->
+
+
+  <!-- any suspensions -->
+
+  <!-- Check for user requests -->
+<!--  Copyright (c) 2000, Sirsi Corporation
+  -
+  -  General-purpose SIRSI_Command processor file for doing absolutely nothing.
+  -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr">
+
+<head>
+
+
+
+  <title>Kirkendall Public Library - Online Catalog</title>
+
+
+<!-- Set the expiration date to the past so the page will always be reloaded -->
+
+  <!-- Not the login page -->
+
+    <!-- Set the refresh to do an EXIT right before the session times out. This will cause timed out sessions to automatically go back to the login/first page, ready for the next user. - Since there is no way to target the _top frame, cannot do this if any frames are used, else the refresh goes into the main frame. - Also, the URL below has to be a full URL, so cannot do this without using the HTTP_ADDRESS. -->
+
+  <meta http-equiv="refresh" content="3540; URL=http://kplcatalog.ankenyiowa.gov/uhtbin/cgisirsi.exe/13tQSz657w/x/93210050/58"/>
+<link title="Library News and Events" rel="alternate" type="application/rss+xml" href="http://kplcatalog.ankenyiowa.gov:81/ipac/rss/events.php" />
+<link title="New Audiobooks" rel="alternate" type="application/rss+xml" href="http://kplcatalog.ankenyiowa.gov:81/ipac/rss/audiobookrss.xml" />
+<link title="New DVDs" rel="alternate" type="application/rss+xml" href="http://kplcatalog.ankenyiowa.gov:81/ipac/rss/dvdrss.xml" />
+<link title="New York Times Bestselling Fiction" rel="alternate" type="application/rss+xml" href="http://kplcatalog.ankenyiowa.gov:81/ipac/rss/fiction.xml" />
+<link title="New York Times Bestselling Nonfiction" rel="alternate" type="application/rss+xml" href="http://kplcatalog.ankenyiowa.gov:81/ipac/rss/nonfiction.xml" />
+<link rel="shortcut icon" href="http://www.ci.ankeny.ia.us/favicon.ico" />
+<script type="text/javascript" src="http://kplcatalog.ankenyiowa.gov:81/universalincludes/combine.php?type=javascript&files=sirsidynix.js,jquery.js,qtip.js,autocomplete.js"></script>
+<script type="text/javascript" src="http://kplcatalog.ci.ankeny.ia.us:81/universalincludes/combine.php?type=javascript&files=datetimepicker.js,sirsidynix_tabbed.js,anylinkcssmenu.js,thickbox.js,bgiframe.js"></script>
+<link rel="stylesheet" href="http://kplcatalog.ankenyiowa.gov:81/universalincludes/combine.php?type=css&files=anylinkcssmenu.css,thickbox.css,sirsidynix.css,elibrary.css"  type="text/css" />
+<script type="text/javascript">
+function ajaxUpdater(id,url) {
+$('#'+id).load(url);
+}
+$(document).ready(function() {
+	$('.anylinkcsscols').bgiframe();
+	$('.anylinkcss').bgiframe();
+	$('.anylinkcolumn').bgiframe();
+});
+function show_hide_covers(id) {
+$('#nocover'+id).hide();
+$('#cover'+id).show();
+}
+//get screen dimensions to display overlay
+var myHeight = $(window).height();
+var myWidth = $(window).width();
+var myWidth = Math.round(myWidth*.80);
+var myHeight= Math.round(myHeight*.80);
+if (myWidth<680) {
+  var myWidth=680;
+}
+if (myHeight<500) {
+  var myHeight=500;
+}
+$(function(){
+ajaxUpdater('mylistcount','http://kplcatalog.ankenyiowa.gov/ipac81/mylist/count.php');
+});
+</script>
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="/Css/ie62.css" type="text/css" />
+<![endif]-->
+</head>
+<!-- if copies=0 or no holdings allowed, default tab to Catalog Record  -->
+<!-- Start the body of the document.  WARNING:  No comments are allowed inside of the body element's definition. - assign CSS Class of 'body_style' to tag -  If this is a download search results state (14, 62), then load the results in a new browser window to facilitate printing. -  If this is an Archive image view state (911), then open a new window to display the image in new window. -  To help prevent premature selection of a toolbar button (i.e., before the new toolbar is loaded), clear it when the page is unloaded. -->
+<body onLoad="">
+<noscript>
+Your browser does not support JavaScript and this application utilizes JavaScript to build content and provide links to additional information. You should either enable JavaScript in your browser settings or use a browser that supports JavaScript in order to take full advantage of this application.
+</noscript>
+<!--  Copyright (c) 1996 - 2005, Sirsi Corporation Form for starting a new session in a new window. -->
+
+<!-- By setting the "document.new_session.action" property to the URL for logging into a new session at the particular  page you want, a new window will be opened and a new WebCat session will be started automatically. Remember that many WebCat states are dependent on previous states, so only certain "cgi types" can be opened.
+Also, by setting the "document.new_session.new_gateway_db.value" property to a gateway database name, the new session will use that gateway instead of the user's default gateway. Note that the use of Javascript is required to submit this form. -->
+
+<form name="new_session" method="post" action="/uhtbin/cgisirsi.exe/ewf9Q9RXqE/x/0/57/49" target="new_session">
+	
+		<input type="hidden" name="user_id" value="23061000510037"/>
+		<input type="hidden" name="password" value="SCOTT"/>
+	
+	<input type="hidden" name="new_gateway_db" value=""/>
+</form>
+
+
+
+
+<!--  Copyright (c) 2000 - 2008, SirsiDynix - Puts the top-of-page information common to all pages. -->
+<a class="skipnav" href="#skipnav"><img src="/WebCat_Images/English/Other/MiscD/clear.gif" height="1" width="1" border="0" alt="Skip navigation" title="Skip navigation"/></a>  <a name="top"></a>
+<div id="header_container" class="header_container" >
+
+    <div class="branding_container">
+	<div class="branding_image">
+	
+	    
+		<img border="0" width="602" height="106" src="/WebCat_Images/English/Other/MiscD/LIBLOGO.gif" alt="Your Electronic Library on the Web" title="Your Electronic Library on the Web"/>
+	    
+	
+	</div>
+		
+    </div> <!-- end branding -->
+     <!-- eric's branding links -->
+    <div class="branding_links">
+<a href="http://www.ci.ankeny.ia.us/library/" title="Library homepage">homepage</a><span style="color:#cccccc; text-decoration: none;">
+  | </span>
+<a href="http://kplcatalog.ankenyiowa.gov:81/ipac/contactus/index.php?session=93210050&amp;start=true"  title="Contact the library">contact us</a>
+<span style="color:#cccccc; text-decoration: none;">
+  | </span>
+<a title="Suggest an addition to the collection"  href="http://kplcatalog.ankenyiowa.gov:81/ipac/purchaserequest/?session=93210050&amp;start=true">
+make a request</a> <span style="color:#cccccc;text-decoration: none;">
+  | </span>
+  <a title="Keep a list of library items for later viewing"  href="http://kplcatalog.ankenyiowa.gov/ipac81/mylist/?start=true">
+my list</a> <span id="mylistcount" style="font-weight:bold"></span>
+  </div>
+
+     <!-- end eric's branding links -->
+
+	
+<!--  Copyright (c) 2003, Sirsi Corporation
+  -
+  -  Get user information.
+  -
+  -  This page file is processed by a SIRSI_Command for a GC response.
+  -->
+
+
+       		
+	
+		<div align="right" style="font-size:13px;font-weight:bold;color:#FFFFFF;padding:8px;">Welcome
+Maerz, Torey Bernard!
+    |
+		<a style="color:#FFFF66" href="/uhtbin/cgisirsi.exe/x/x/0/58/">Logout</a><br />
+	
+		</div>
+		<!-- end Eric's added login confirmation text -->
+	  <!-- login form-->
+	<div class="top_edge"></div>
+	<div class="right_edge"></div>
+	<div class="bottom_edge"></div>
+	<div class="left_edge"></div>
+	<div class="top_left"></div>
+	<div class="top_right"></div>
+	<div class="bottom_right"></div>
+	<div class="bottom_left"></div>
+</div>
+<div id="header_menu_container" class="header_menu_container">
+<!--  Copyright (c) 1996 - 2006, SirsiDynix - Gateway Root Bar. -->
+    <!-- display text with CSS instead -->
+          <a href="/uhtbin/cgisirsi.exe/TPV4RP3SV6/x/93210050/38/1/X/BLASTOFF" class="rootbar">
+       Search/Home</a>
+<span style="color:#b60606;text-decoration:none">
+|</span>
+          <a href="/uhtbin/cgisirsi.exe/55yPqRW2px/x/93210050/30/BLASTOFF" class="rootbar">
+       My Account</a>
+<span style="color:#b60606;text-decoration:none">
+|</span>
+
+
+
+  <!-- Erics added rootbar links -->
+<a class="rootbar anchorclass"  style="margin-right:0;" href="http://kplcatalog.ankenyiowa.gov:81/ipac/newbooks/?session=93210050&amp;start=true" rel="book_menu">New Books</a>
+<img src="http://kplcatalog.ankenyiowa.gov:81/ipac/images/downgreyarrow.jpg">
+<span  style="color:#b60606;text-decoration:none">|</span>
+<a class="rootbar anchorclass" style="margin-right:0;" href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?session=93210050&amp;start=true" rel="movie_menu">New Movies</a>
+<img src="http://kplcatalog.ankenyiowa.gov:81/ipac/images/downgreyarrow.jpg">
+<span  style="color:#b60606;text-decoration:none">|</span>
+<a class="rootbar anchorclass"  style="margin-right:0;" href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?session=93210050&amp;start=true&amp;media=music" rel="music_menu">New Music</a>
+<img src="http://kplcatalog.ankenyiowa.gov:81/ipac/images/downgreyarrow.jpg">
+<span  style="color:#b60606;text-decoration:none">|</span>
+<a class="rootbar"  href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?session=93210050&amp;start=true&amp;media=audio&amp;grid=false">Audiobooks/Downloads</a>
+<div id="book_menu" class="anylinkcss" style="width:85px">
+<ul>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newbooks/?session=93210050&start=true">All</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newbooks/index.php?genre=Fiction&session=93210050&start=true">Fiction</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newbooks/index.php?genre=Nonfiction&session=93210050&start=true">Nonfiction</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newbooks/index.php?genre=Young Adult&session=93210050&start=true">Young Adult</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newbooks/index.php?genre=Juvenile&session=93210050&start=true">Juvenile</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newbooks/index.php?genre=Easies&session=93210050&start=true">Easies</a></li>
+	</ul>
+</div>
+
+<div id="movie_menu" class="anylinkcsscols">
+<div class="anylinkcolumn">
+	<ul>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?ession=93210050&start=true">All</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=7&session=93210050&start=true">Action & Adventure</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=5&session=93210050&start=true">Anime/Adult Animation</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=28&session=93210050&start=true">Arts</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=27&session=93210050&start=true">Biographical</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=18&session=93210050&start=true">Classic</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=8&session=93210050&start=true">Comedy</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=11&session=93210050&start=true">Critically Acclaimed</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=6&session=93210050&start=true">Drama</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=20&session=93210050&start=true">Exercise</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=14&session=93210050&start=true">Family</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=16&session=93210050&start=true">Foreign</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=26&session=93210050&start=true">History & Culture</a></li>
+	</ul>
+</div>
+<div class="anylinkcolumn">
+	<ul>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=22&session=93210050&start=true">Holiday</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=1&session=93210050&start=true">Juvenile</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=3&session=93210050&start=true">Juvenile Nonfiction</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=24&session=93210050&start=true">Librarian's Picks</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=9&session=93210050&start=true">Mystery</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=25&session=93210050&start=true">Nature & Science</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=4&session=93210050&start=true">Nonfiction/Documentary</a></li>
+	<li><a style="font-weight:bold;color:#b60606" href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=29&session=93210050&start=true">On Order</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=21&session=93210050&start=true">Religious Themed</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=17&session=93210050&start=true">Sci-Fi/Fantasy</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=10&session=93210050&start=true">Suspense/Thriller</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=15&session=93210050&start=true">TV</a></li>
+	<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=dvd&genre=23&session=93210050&start=true">Western</a></li>
+	</ul>
+</div>
+</div>
+
+<div id="music_menu" class="anylinkcss" style="width:110px">
+<ul>
+<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=music&session=93210050&start=true">All</a></li>
+<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=music&genre=BL&session=93210050&start=true">Blues</a></li>
+<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=music&genre=RE&session=93210050&start=true">Christian/Religious</a></li>
+<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=music&genre=CL&session=93210050&start=true">Classical</a></li>
+<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=music&genre=CW&session=93210050&start=true">Country</a></li>
+<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=music&genre=INT&session=93210050&start=true">International</a></li>
+<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=music&genre=JA&session=93210050&start=true">Jazz</a></li>
+<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=music&genre=PORO&session=93210050&start=true">Pop & Rock</a></li>
+<li><a href="http://kplcatalog.ankenyiowa.gov:81/ipac/newstuff/?media=music&genre=RA&session=93210050&start=true">Rap/Hip Hop</a></li>
+</ul>
+</div>
+	<div class="top_edge"></div>
+	<div class="right_edge"></div>
+	<div class="bottom_edge"></div>
+	<div class="left_edge"></div>
+	<div class="top_left"></div>
+	<div class="top_right"></div>
+	<div class="bottom_right"></div>
+	<div class="bottom_left"></div>
+</div>
+
+
+
+
+<!--  Copyright (c) 2000 - 2008, SirsiDynix - Buttons for General User Display Page; State #25 -->
+<div class="buttons_container">
+<!--
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="gatewaystyle" >
+ <tr>
+  <td class="gatewaystyle">
+-->
+   <!-- Go back button -->
+  <a class="menu_link" href="/uhtbin/cgisirsi.exe/zsOvr29cnG/x/93210050/2/3" title="Go Back"  style="color:white;"></>Go Back</a>
+
+<!--
+   <a class="menu_link" href="/uhtbin/cgisirsi.exe/Hm8xWbAnG1/x/93210050/2/3" title="Go Back" alt="Go Back">GO BACK</a>
+   -->
+
+  <!-- Help button -->
+  <script language="javascript" type="text/javascript">
+    //<![CDATA[
+    put_help_button('English','Help','faq10019.html');
+    //]]>
+  </script>
+	
+  <a class="menu_link" href="/uhtbin/cgisirsi.exe/ACnxOnK9hH/x/93210050/49" title="New Search">New Search</a>
+
+  <!-- gateway's custom buttons -->
+
+<!-- Let personal-access users create/edit their profiles -->
+
+
+   <a class="menu_link" href="/uhtbin/cgisirsi.exe/yvBLnNJRf9/x/93210050/58" title="Logout" target="_top">Logout</a>
+
+<script type="text/javascript">
+$(document).ready(function() {
+   $('#searchdata1').autocomplete({ serviceUrl:'http://kplcatalog.ankenyiowa.gov/ipac81/livesearch/livesearch.php',
+	   params: { rand:Math.random() },
+	   width:340,
+   onSelect: function(value, data){
+	   document.ericssearchform.submit();
+	   }
+   });
+});
+</script>
+<div style="float:right;width:50%;padding:0;margin:0;vertical-align:middle;white-space:nowrap;">
+<form name="ericssearchform" id="ericssearchform"  method="post" action="/uhtbin/cgisirsi.exe/WEQy3kpoGM/x/93210050/123" style="padding:0;margin:0;">
+<p style="white-space:nowrap;text-align:right;margin:0;padding:0;float:right;">
+<label for="searchdata1" class="menu_link" style="margin:0;padding:0;float:none">Search: </label>
+<input size="35" name="searchdata1" id="searchdata1" type="text" style="font-size:11px;float:none;padding:2px;background-color:white; border:1px solid #333333;margin:0;" value="" />
+<select style="border:1px solid black;float:none;padding:1px;background-color:white; margin:0;font-size:11px" name="srchfield1" id="srchfield1">
+	<option value="GENERAL^SUBJECT^GENERAL^^words or phrase" >words or phrase</option>
+	<option value="AU^AUTHOR^AUTHORS^Author Processing^author" >author</option>
+	<option value="TI^TITLE^SERIES^Title Processing^title" >title</option>
+	<option value="SU^SUBJECT^SUBJECTS^^subject" >subject</option>
+   </select>
+<select name="item_1cat" id="item_1cat" style="border:1px solid black;float:none;padding:1px;background-color:white; margin:0;font-size:11px">
+<option selected value="ANY" >ANY</option>
+<option value="AUDIOBOOKS" >Audiobooks</option>
+<option value="BOOKS" >Books</option>
+<option value="DVD" >DVDs</option>
+<option value="MUSIC" >Music CDs</option>
+<option value="VIDEOS" >Videos</option>
+</select>
+<input type="submit" class="button" value="Go" style="padding:1px;margin:0 2px 0 2px;float:none;font-size:11px" />
+<!--
+<a href="/uhtbin/cgisirsi.exe/yX31geGuBm/x/93210050/38/0/POWER_SEARCH" class="menu_link" style="font-size:11px;margin:5px 3px 0 3px;color:#ffff66;float:none">Power Search</a>
+-->
+&nbsp;
+	</p> <input type="hidden" name="library" value="ALL">
+        <input type="hidden" name="sort_by" value="ANY"/>
+</form>
+	  </div>
+
+
+
+
+<a name="skipnav"></a>
+	<div class="top_edge"></div>
+	<div class="right_edge"></div>
+	<div class="bottom_edge"></div>
+	<div class="left_edge"></div>
+	<div class="top_left"></div>
+	<div class="top_right"></div>
+	<div class="bottom_right"></div>
+	<div class="bottom_left"></div>	
+</div>
+<!--  Copyright (c) 2008, SirsiDynix -  Set the date format for the date time picker widget -->
+
+<!-- Set the date format for the date picker based on the date_type -->
+
+
+
+
+
+<img name="settab" id="settab" src="/WebCat_Images/English/Other/MiscD/clear.gif" border="0">
+
+<div class="content_container account_details">
+  <div id="tabholder" class="tabholder">
+<!-- list of charges -->
+      <span id="tab1" class="tab" onClick = "showPanel(1,'#FFFF66','#FFFFFF',true);" onMouseOver="hover(this,'#FFFFFF','#FFFF66');" onMouseOut="setState(1,'#FFFF66','#FFFFFF')">Checkouts (0)</span>
+
+
+
+      <span id="tab6" class="tab" onClick = "showPanel(6,'#FFFF66','#FFFFFF',true);" onMouseOver="hover(this,'#FFFFFF','#FFFF66');" onMouseOut="setState(6,'#FFFF66','#FFFFFF')">Fines ($0.00)</span>
+
+
+
+<span id="tab9" class="tab" onClick = "showPanel(9,'#FFFF66','#FFFFFF',true);" onMouseOver="hover(this,'#FFFFFF','#FFFF66');" onMouseOut="setState(9,'#FFFF66','#FFFFFF')">Change Pin</span>
+
+
+  </div>
+
+  <div class="panelholder">
+    <!-- CHARGES -->
+<!-- list of charges: either static or renewable 
+edited by eric removed charge list and added copied renew form in its place -->
+ <!-- list of charges -->
+  <div id="panel1" class="panel">
+  <a name="charges"></a>
+    <table border="0" cellpadding="1" cellspacing="0" width="100%">
+     <tr>
+    <td>
+		 <p style="font-weight:bold;margin:10px 0 10px 0">You currently have no items checked out.</p>
+		 
+		      
+	     </td>
+</tr> 
+</table>  
+
+<!--end of charges box-->
+  </div>
+
+
+
+    <!-- SUSPENSIONS -->
+
+   <!-- list of suspensions -->
+
+
+
+    <!-- HOLDS -->
+
+    <!-- Requests -->
+
+    <!-- BILLS -->
+    <!-- check not only that SAM is on, but that SAM is available -->
+    <!-- and that the patron has funds                            -->
+
+
+
+    <a name="bills"></a>
+    <div id="panel6" class="panel">
+     <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+		      <td> <p style="font-weight:bold;margin:10px 0 10px 0">You currently have no fees or fines.</p>
+		 </td>
+		       
+
+      </tr>
+    </table><!--end of bills box-->
+    </div>
+
+    <!-- BOOKINGS -->
+
+    <!-- RESERVATIONS -->
+<!-- RESERVATIONS -->
+<div id="panel9" class="panel">
+
+<!-- Email and PIN  -->
+<table border="0" cellpadding="0" cellspacing="5" style="width:70%;margin:0 15% 0 15%;float:none;padding:0" title="" summary="This table positions all the elements on this page.">   
+ <tr>
+  <td> <!-- container cell -->  
+   <!-- Allow user to change pin -->
+<form name="accessform" method="post" action="/uhtbin/cgisirsi.exe/CDM2EnUK6Y/x/93210050/191">
+  <table border="0" cellpadding="3" cellspacing="0" align="center" width="60%">
+    <tr>
+      <td class="header">Change My Pin</td>
+    </tr>
+    <tr>
+      <td class="subheader" colspan="2" style="border-bottom:1px solid #999">Type your ID.</td>
+    </tr>
+    <tr>
+      <td  colspan="2">
+<!--  Copyright (c) 1996 - 2003, Sirsi Corporation -  Unicorn Access Control Fields. -->
+<!--  Copyright (c) 1998 - 2003, Sirsi Corporation - Sets the default values for USER_ID, ALT_ID, and PIN prompts. - The USER_ID, ALT_ID, and PIN page variables will be returned. -->
+
+<!-- If the user has not logged in, first try to default to the ID based on the IP address - the $UO and $Uf will be set.  If that fails, then default to the IDs in the config file. If the user has already logged in, default to the logged in user's IDs, unless the user is a shared login. -->
+
+
+
+<table border="0" cellpadding="2" cellspacing="0" align="center">
+   <tr>
+    <td  align="right"><label for="user_id">Library Card #:</label></td>
+    <td  align="left">
+      <input type="text" name="user_id" id="user_id" size="20" maxlength="20" value="23061000510037">
+	</td>
+  </tr>
+    <tr>
+      <td  align="right"><label style="cursor:pointer;text-decoration:underline;color:#0072ae" for="password" onclick="window.open('http://kplcatalog.ankenyiowa.gov:81/ipac/pinhelp.html','','width=400,height=400');">Current Pin (what's this?):</label>
+</td>
+      <td   align="left">
+       <input type="password" name="password" id="password" size="20" maxlength="20" value="">
+	  </td>
+    </tr>
+
+</table>
+      </td>
+    </tr>
+ <tr>
+      <td class="subheader" colspan="2" style="border-bottom:1px solid #999">Your new pin must be 10 or fewer characters.</td>
+    </tr> 
+    <tr>
+      <td  colspan="2" align="center">
+        <table>
+	<tr>
+            <td  align="right">
+	      <label for="new_password1">Enter new PIN:</label>
+	    </td>
+            <td  align="left">
+	      <input type="password" name="new_password1" id="new_password1" maxlength="20" size="20" style="width: 100px;">
+	    </td>
+	  </tr>	 
+	  <tr>
+            <td  align="right">
+	      <label for="new_password2">Re-enter new PIN:</label>
+	    </td>
+            <td  align="left">
+	      <input type="password" name="new_password2" id="new_password2" maxlength="20" size="20" style="width: 100px;">
+	    </td></tr></table>
+      </td>
+    </tr>
+    <tr>
+      <td  align="center" colspan="2">
+        <input type="submit" value="Change PIN" class="searchbutton">
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="reset" value="Reset Form" class="searchbutton">  
+      </td>
+    </tr>
+  </table>
+</form>
+  </td> <!-- container cell -->
+ </tr>
+</table> 
+</div>
+
+  </div>
+
+</div>
+
+
+</div>
+
+<!--  Copyright (c) 2000 - 2008, SirsiDynix - Buttons for General User Display Page; State #25 -->
+<div class="buttons_container">
+<!--
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="gatewaystyle" >
+ <tr>
+  <td class="gatewaystyle">
+-->
+   <!-- Go back button -->
+  <a class="menu_link" href="/uhtbin/cgisirsi.exe/fDXWqoXlio/x/93210050/2/3" title="Go Back"  style="color:white;"></>Go Back</a>
+
+<!--
+   <a class="menu_link" href="/uhtbin/cgisirsi.exe/S0IzPBVj4M/x/93210050/2/3" title="Go Back" alt="Go Back">GO BACK</a>
+   -->
+
+  <!-- Help button -->
+  <script language="javascript" type="text/javascript">
+    //<![CDATA[
+    put_help_button('English','Help','faq10019.html');
+    //]]>
+  </script>
+	
+  <a class="menu_link" href="/uhtbin/cgisirsi.exe/AMG3DIVQ4o/x/93210050/49" title="New Search">New Search</a>
+
+  <!-- gateway's custom buttons -->
+
+<!-- Let personal-access users create/edit their profiles -->
+
+
+   <a class="menu_link" href="/uhtbin/cgisirsi.exe/vf5VdWlWlT/x/93210050/58" title="Logout" target="_top">Logout</a>
+
+
+
+<a name="skipnav"></a>
+	<div class="top_edge"></div>
+	<div class="right_edge"></div>
+	<div class="bottom_edge"></div>
+	<div class="left_edge"></div>
+	<div class="top_left"></div>
+	<div class="top_right"></div>
+	<div class="bottom_right"></div>
+	<div class="bottom_left"></div>	
+</div>
+<div class="footer_container">
+<!--  Copyright (c) 1996 - 2008, SirsiDynix - Copyright statement -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="footer">
+ <tr>
+  <td  class="footer" style="text-align:right;padding-right:20px"><a href="#top" style=" font-weight:bold;color:#005d96;text-decoration: none;font-size:14px">back to top&nbsp;<img src="http://kplcatalog.ankenyiowa.gov:81/ipac/images/icon_backtotop.gif"border="0"></a></td>
+ </tr>
+ <tr>
+ <td style="text-align:center"><a 
+ href="http://www.ci.ankeny.ia.us/library/">homepage</a>
+<span style="color:#b60606;text-decoration:none">
+&nbsp;|&nbsp;</span>
+<a title="Contact the library" href="http://kplcatalog.ankenyiowa.gov:81/ipac/contactus/index.php?session=93210050&amp;start=true">contact us</a>
+<span style="color:#b60606;text-decoration:none">
+&nbsp;|&nbsp;</span>
+<a title="RSS" href="http://kplcatalog.ankenyiowa.gov:81/ipac/rss/?session=93210050&amp;start=true" style="padding-left:20px;background-image: url(http://kplcatalog.ankenyiowa.gov:81/ipac/images/feed-icon.gif);background-repeat: no-repeat;background-position:0 0 0 10px;">rss</a><span style="color:#b60606;text-decoration:none">
+&nbsp;|&nbsp;</span>
+<a title="Suggest an addition to the collection"  href="http://kplcatalog.ankenyiowa.gov:81/ipac/purchaserequest/?session=93210050&amp;start=true">
+make a request</a>
+</td>
+</tr>
+<tr>
+<td  style="font-size:12px;padding-top:4px;text-align:center"> 
+1210 NW Prairie Ridge Drive | Ankeny, Iowa 50023-1564 | Phone: 515-965-6460
+</td>
+</tr>
+</table>
+<div class="top_edge"></div>
+<div class="right_edge"></div>
+<div class="bottom_edge"></div>
+<div class="left_edge"></div>
+<div class="top_left"></div>
+<div class="top_right"></div>
+<div class="bottom_right"></div>
+<div class="bottom_left"></div>
+</div>	
+<script type="text/javascript">
+anylinkcssmenu.init("anchorclass");
+</script>
+</body>
+</html>
+
+

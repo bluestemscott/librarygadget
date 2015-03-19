@@ -1,0 +1,277 @@
+/*
+Copyright (c) 2010, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.com/yui/license.html
+version: 3.2.0
+build: 2676
+*/
+.yui3-cssreset html{color:#000;background:#FFF;}.yui3-cssreset body,.yui3-cssreset div,.yui3-cssreset dl,.yui3-cssreset dt,.yui3-cssreset dd,.yui3-cssreset ul,.yui3-cssreset ol,.yui3-cssreset li,.yui3-cssreset h1,.yui3-cssreset h2,.yui3-cssreset h3,.yui3-cssreset h4,.yui3-cssreset h5,.yui3-cssreset h6,.yui3-cssreset pre,.yui3-cssreset code,.yui3-cssreset form,.yui3-cssreset fieldset,.yui3-cssreset legend,.yui3-cssreset input,.yui3-cssreset textarea,.yui3-cssreset p,.yui3-cssreset blockquote,.yui3-cssreset th,.yui3-cssreset td{margin:0;padding:0;}.yui3-cssreset table{border-collapse:collapse;border-spacing:0;}.yui3-cssreset fieldset,.yui3-cssreset img{border:0;}.yui3-cssreset address,.yui3-cssreset caption,.yui3-cssreset cite,.yui3-cssreset code,.yui3-cssreset dfn,.yui3-cssreset em,.yui3-cssreset strong,.yui3-cssreset th,.yui3-cssreset var{font-style:normal;font-weight:normal;}.yui3-cssreset li{list-style:none;}.yui3-cssreset caption,.yui3-cssreset th{text-align:left;}.yui3-cssreset h1,.yui3-cssreset h2,.yui3-cssreset h3,.yui3-cssreset h4,.yui3-cssreset h5,.yui3-cssreset h6{font-size:100%;font-weight:normal;}.yui3-cssreset q:before,.yui3-cssreset q:after{content:'';}.yui3-cssreset abbr,.yui3-cssreset acronym{border:0;font-variant:normal;}.yui3-cssreset sup{vertical-align:text-top;}.yui3-cssreset sub{vertical-align:text-bottom;}.yui3-cssreset input,.yui3-cssreset textarea,.yui3-cssreset select{font-family:inherit;font-size:inherit;font-weight:inherit;}.yui3-cssreset input,.yui3-cssreset textarea,.yui3-cssreset select{*font-size:100%;}.yui3-cssreset legend{color:#000;}
+
+li {
+    padding-bottom: 5px;
+}
+
+img {
+	border-style: none;
+	text-decoration: none;
+} 
+
+body {
+	padding-left:10%;
+	padding-right:10%;
+	font-family: Helvetica,Arial,'Lucida Grande',Verdana,sans-serif;
+	width:880px;
+}
+
+
+table {
+	margin-bottom: 20px;
+}
+
+
+table td {
+	padding-right: 15px;
+
+}
+
+table thead td {
+	font-size:18px;
+	border-bottom: 3px solid #6E8B3D;
+}
+
+
+form label { 
+	display: block;  /* block float the labels to left column, set a width */
+	float: left; 
+	width: 160px;
+	margin-right: 5px; 
+	text-align: right; 
+}
+
+
+form p {
+	clear: both;
+}
+
+
+.header {
+	position: relative;
+	width: 800px;
+	height: 65px;
+	border-bottom:4px solid #6E8B3D;  
+	margin-bottom: 20px;
+}
+
+.logo {
+	position:absolute;
+	width:50%;
+}
+
+.logo a {
+	top:20px;
+	left:20px;
+	margin-right:5px;
+	float:left;
+	text-decoration: none;
+	color:#6E8B3D;
+}
+
+.header a :link{
+	color:#6E8B3D;
+}
+
+.logo h1 {
+	font-size:30px;
+	float: left;
+	margin-top:20px;
+}
+
+.sitenav {
+	margin-top: 36px;
+    font-size: 1.1em;
+	float: right;
+	text-align:right;
+}
+
+.sitenav a{
+	color:#6E8B3D;
+}
+
+.contentbox {
+	float:left;
+	white-space:normal;
+	color: #222222;
+	width:100%;
+}
+
+.contentbox h3 {
+	color: #6E8B3D;
+    margin-bottom: 10px;
+}
+
+.contentbox .section {
+	margin-bottom: 30px;
+    width: 800px;
+    padding-right: 0px;
+}
+
+.section {
+    clear: both;
+}
+
+.section p {
+    margin-top: 0px;
+}
+
+.leftcolumn {
+	float:left;
+	width:550px;
+}
+
+.rightcolumn {
+	float:right;
+}
+
+.footer { 		
+	clear:both;
+	text-align:center;
+	padding-top:20px;
+}
+
+.errors {
+	width: 70%;
+	padding: 5px 5px 5px 5px;
+	background-color: #FF9999;
+}
+
+.errorlist  {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.button {
+	background-color: #070;
+	font-size:16px;
+	font-weight: bold;
+	color: white;
+	letter-spacing:1px;
+    padding: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px;
+}
+
+
+.noborder {
+	border-bottom: 0px;
+}
+
+.total {
+    font-weight: bold;
+}
+
+.testaccount {
+    background-color: #CCCCCC;
+    clear:both;
+}
+#loginform p {
+    width: 300px;
+}
+#loginform label {
+	width: 120px;
+}
+#requestform p {
+    width: 500px;
+}
+#requestform label {
+    width: 200px;
+}
+#requestform input[type="text"] {
+    width: 250px;
+}
+#register label {
+	width: 90px;
+}
+#add_account p {
+    width: 400px;
+}
+#pricing {
+    font-size:20px;
+    font-weight: normal;
+}
+
+#items {
+    border-collapse:  collapse;
+    border-spacing: 0px;
+}
+
+
+.overdue {
+	background-color: #DDD;
+	font-weight:bold;
+}
+
+a.fancy_button, button.fancy_button {
+  background: #555;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.4)), to(rgba(77,77,77,0.4)));
+  background: -moz-linear-gradient(top, rgba(0,0,0,0.4), rgba(77,77,77,0.4));
+  float: left;
+  padding: 4px;
+  text-decoration: none;
+  outline: 0;
+  border-width: 1px;
+  border-style: solid;
+  width: auto;
+  overflow: visible;
+  border-color: transparent transparent #666 transparent;
+  border-color: transparent transparent rgba(202,202,202,0.27) transparent;
+  -webkit-border-radius: 12px; -moz-border-radius: 12px; border-radius: 12px;
+  -webkit-background-clip: padding-box;
+}
+
+a.fancy_button span, button.fancy_button span {
+  display: block;
+  float: left;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ccc #444 #111 #444;
+  border-color: rgba(255,255,255,0.7) rgba(0,0,0,0.5) rgba(0,0,0,0.7) rgba(0,0,0,0.5);
+  font: bold 21px/1em Arial;
+  color: white;
+  padding: 0.48em 2em;
+  cursor: pointer;
+  text-shadow: rgba(0,0,0,0.45) 0 -1px 0;
+  -webkit-box-shadow: rgba(0,0,0,0.75) 0px 0px 3px; -moz-box-shadow: rgba(0,0,0,0.75) 0px 0px 3px; box-shadow: rgba(0,0,0,0.75) 0px 0px 3px;
+  -webkit-border-radius: 7px; -moz-border-radius: 7px; border-radius: 7px;
+  background: transparent -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.6)), color-stop(0.5, rgba(255,255,255,0.15)), color-stop(0.5, rgba(255,255,255,0.01)), to(transparent));
+  background: transparent -moz-linear-gradient(top, rgba(255,255,255,0.6), rgba(255,255,255,0.15) 50%, rgba(255,255,255,0.01) 50%, transparent);
+  filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorstr='#80FFFFFF', EndColorstr='#00FFFFFF');
+  -webkit-background-clip: padding-box;
+}
+
+a.fancy_button:hover span, button.fancy_button:hover span {
+  border-top-color: rgba(255,255,255,0.65);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(220,220,220,0.6)), color-stop(0.5, rgba(100,100,100,0.2)), color-stop(0.5, rgba(0,0,0,0.21)), to(rgba(0, 0, 0, 0.20)));
+  background: -moz-linear-gradient(top, rgba(220,220,220,0.6), rgba(100,100,100,0.2) 50%, rgba(0,0,0,0.21) 50%, rgba(0, 0, 0, 0.20));
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, StartColorStr='#99dcdcdc', EndColorStr='#33000000');
+  -webkit-background-clip: padding-box;
+}
+
+a.fancy_button:active span, button.fancy_button:active span {
+  border-top-color: rgba(255,255,255,0.2);
+  border-left-color: rgba(0,0,0,0.4);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(150,150,150,0.6)), color-stop(0.5, rgba(60,60,60,0.6)), color-stop(0.5, rgba(40,40,40,0.6)), to(rgba(20, 20, 20, 0.5)));
+  background: -moz-linear-gradient(top, rgba(150,150,150,0.6), rgba(60,60,60,0.6) 50%, rgba(40,40,40,0.6) 50%, rgba(20, 20, 20, 0.5));
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, StartColorStr='#80969696', EndColorStr='#59000000');
+  -webkit-box-shadow: inset 0 0 18px rgba(0,0,0,0.75), rgba(0,0,0,0.75) 0px 0px 3px; -moz-box-shadow: inset 0 0 18px rgba(0,0,0,0.75), rgba(0,0,0,0.75) 0px 0px 3px; box-shadow: inset 0 0 18px rgba(0,0,0,0.75), rgba(0,0,0,0.75) 0px 0px 3px;
+  -webkit-background-clip: padding-box;
+}
+
+a.fancy_button span:active, button.fancy_button span:active {
+  border-top-color: rgba(255,255,255,0.2);
+  border-left-color: rgba(0,0,0,0.4);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, StartColorStr='#80969696', EndColorStr='#59000000');
+  -webkit-background-clip: padding-box;
+}

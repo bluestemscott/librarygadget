@@ -1,0 +1,978 @@
+<!-- MJ Mallard moved to Bonner Pages_Custom M-Js page Kathy Moved 7-16-2007 -->
+
+<!-- html_head.h - 9/8/2005 -->
+<!-- This is the main header box - include -->
+
+<!-- This is where the Javascript for the 3.pg Why Login is. -->
+<!-- The Why Login input button resides in 3_module_myprofile.h-->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--  Copyright (c) 2000 - 2003, Sirsi Corporation - Defines the head  body of each page. -->
+
+<html dir="ltr">
+
+<head>
+  <title>[e-Library OPAC] iBistro at ...</title>
+
+
+<!-- Set the expiration date to the past so the page will always be reloaded -->
+  <meta http-equiv="Expires" content="Sun, 1 Jan 1995 08:00:00 CST">
+
+  <!-- Not the login page -->
+
+    <!-- Set the refresh to do an EXIT right before the session times out. This will cause timed out sessions to automatically go back to the login/first page, ready for the next user. - Since there is no way to target the _top frame, cannot do this if any frames are used, else the refresh goes into the main frame. - Also, the URL below has to be a full URL, so cannot do this without using the HTTP_ADDRESS. -->
+
+  <meta http-equiv="refresh" content="840; URL=http://kcmo.sirsi.net/uhtbin/cgisirsi/C2Pt9yBsNV/KC-CENTRAL/41430078/58">
+
+<!-- KCPL js_functions.h moved to KCPL Pages_Custom M-Js page Kathy Moved 7-16-2007 -->
+<!-- changed open_win to open at 500 px-->
+
+<!--  Copyright (c) 1997 - 2003, Sirsi Corporation - JavaScript functions defined in every page. -->
+<script language="JavaScript" type="text/javascript">
+
+function open_win(url) {
+	new_win = window.open(url,"new_win",'toolbar=1,location=1,directories=0,status=1,menubar=1,scrollbars=1,resizable=1,width=750,height=500');
+	new_win.focus();
+}
+
+function open_bare_win(url) {
+	new_b_win = window.open(url,"new_b_win",'toolbar=0,location=0,directories=0,status=1,menubar=0,scrollbars=1,resizable=1,width=620,height=450');
+	new_b_win.focus();
+}
+
+function open_hyperion_image_win(url) {
+	hyperion_image_win = window.open(url,"hyperion_image_win",'toolbar=0,location=0,directories=0,status=1,menubar=0,scrollbars=1,resizable=1,width=600,height=450,screenX=410,screenY=210');
+}
+
+function open_hyperion_info_win(url) {
+	hyperion_info_win = window.open(url,"hyperion_info_win",'toolbar=0,location=0,directories=0,status=1,menubar=0,scrollbars=1,resizable=1,width=400,height=450,screenX=0,screenY=210');
+}
+
+function open_win_timeout(url,timeout) {
+	new_win = window.open(url,"new_win",'toolbar=0,location=0,directories=0,status=1,menubar=1,scrollbars=1,resizable=1,width=750,height=250');
+	setTimeout("new_win.close()",timeout);
+}
+
+function open_help_win(url) {
+       new_win = window.open(url,"help_win",'toolbar=1,location=1,directories=0,status=1,menubar=1,scrollbars=1,resizable=1,width=750,height=250');
+       new_win.focus();
+}
+
+function open_bounce_win(url) {
+  new_win = window.open(url,"bounce_win",'toolbar=0,location=0,directories=0,status=1,menubar=0,scrollbars=1,resizable=1,width=620,height=450');
+}
+
+/* Function for icon-type search form action */
+function orig_form_action()
+{
+	if (!document.searchform.search_type[0].checked)
+	  {
+	  return true;
+	  }
+	else
+	  {
+          document.url_form.url.value = "http://www.google.com/search?q=" + document.searchform.searchdata1.value + "&safe=vss&vss=1&sa=Google+Search";
+          open_win(document.url_form.url.value);
+	  return false;
+	  }
+}
+
+/* Function for icon-type search form action */
+function search_form_action()
+{
+	var search_engine_checked = 0;
+	var temp_str;
+
+	for (var i = 0; i < document.searchform.search_type.length; i++)
+	  {
+	  if (document.searchform.search_type[i].value == "searchengine")
+	    if (document.searchform.search_type[i].checked)
+	      search_engine_checked = 1;
+	  }
+
+	if (!search_engine_checked)
+	  {
+	  return true;
+	  }
+	else
+	  {
+          temp_str = document.searchform.searchdata1.value;
+	  temp_str = temp_str.replace(/\s+/g,"+");
+          document.url_form.url.value = "http://www.google.com/search?q=" + temp_str + "&safe=vss&vss=1&sa=Google+Search";
+          open_win(document.url_form.url.value);
+	  return false;
+	  }
+}
+
+
+function getNonJavaHelpFileUrl(file)
+{
+	return "/iBistro_helps/English/" + file;
+}
+
+function put_help_button(file)
+{
+  document.writeln('<a href="javascript:open_help_win(getNonJavaHelpFileUrl(\'' + file + '\'))"><img src="/WebCat_Images/English/Buttons/KCPLibistro/HELP.gif" border="0" alt="HELP"><\/a>');
+}
+
+
+function put_keepremove_button(ckey,value)
+{
+  document.writeln('<img name="ckey-' + ckey + '"');
+  document.writeln('src="/WebCat_Images/English/Other/Miscib/clear.gif"');
+  document.writeln('alt="' + value + '" border="0">');
+
+  document.writeln('<input type="button"');
+  if (value == 'Keep')
+    {
+    document.writeln('class="itemdetails"');
+    }
+  else
+    {
+    document.writeln('class="itemdetails2"');
+    }
+  document.writeln('name="ckey-' + ckey + '"');
+  document.writeln('value="' + value + '" alt="' + value + '"');
+  document.writeln('onClick="javascript:updatekeptlist(this,' + ckey + ');">');
+}
+
+function updatekeptlist(myButton,ckey)
+{
+  key = myButton.name;
+  if (myButton.value == 'Keep')
+    {
+    myImage = new Image();
+    myImage.src = '/uhtbin/cgisirsi/PBU1XgemgY/KC-CENTRAL/41430078/125/ADD?kept-' + ckey + '=on';
+    document.images[key].src=myImage.src;
+    myImage = new Image();
+    myImage.src = '/WebCat_Images/English/Other/Miscib/clear.gif';
+    document.images[key].src=myImage.src;
+    document.images[key].alt='Remove';
+    myButton.value='Remove';
+		myButton.className='itemdetails2';
+    }
+  else
+    {
+    myImage = new Image();
+    myImage.src = '/uhtbin/cgisirsi/PBU1XgemgY/KC-CENTRAL/41430078/125/REMOVE?kept-' + ckey + '=on';
+    document.images[key].src=myImage.src;
+    myImage = new Image();
+    myImage.src = '/WebCat_Images/English/Other/Miscib/clear.gif';
+    document.images[key].src=myImage.src;
+    document.images[key].alt='Keep';
+    myButton.value='Keep';
+		myButton.className='itemdetails';
+  }
+}
+
+function do_history(form)
+  {
+  // Based on the value of the srch_history <select> list, set the search input fields.
+  var opt_idx;
+  var i = 0;
+  opt_idx = form.srch_history.selectedIndex;
+  // The history "value" is formatted:  "term^label^library"
+  valueArray = form.srch_history.options[opt_idx].value.split("^");
+  // Set the search term
+  form.searchdata1.value = valueArray[0];
+  // Set the search type
+  for (i<0; i<form.srchfield1.length; i++)
+    {
+    if (form.srchfield1.options[i].text == valueArray[1])
+      {
+      form.srchfield1.options[i].selected = true;
+      break;
+      }
+    }
+  // Set the library
+  form.library.value = valueArray[2];
+  }
+
+
+
+</script>
+
+
+
+<!-- BONNER style sheets added enrichmentservices2 Moved to Bonner Pages_Custom M-Js page Kathy Moved 7-16-2007 -->
+<!-- added a.holdicon link and hover, and changed padding to 2px from 0px, and width from 70 to 75 px 5/2007 -->
+<style type="text/css">
+
+a.holdicon:link { 
+	color: #4d300e;
+	border-style: outset;
+	border-color: #c4c89f;
+	background-color: #ffffff;
+	text-align: center;
+	width: 75px;
+	display: block;
+	padding: 2px 2px 2px 2px;
+	margin: 0px 0px 0px 0px;
+}
+
+a.holdicon:hover {
+	color: #3a4321;
+	border-style: outset;
+	border-color: #c4c89f;
+	background-color: #ffffFF;
+	text-align: center;
+	width: 75px;
+	display: block;
+	padding: 2px 2px 2px 2px;
+	margin: 0px 0px 0px 0px;
+}
+
+
+
+a:link, a:active {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: none;
+	color: #3a4321;
+}
+
+a:visited {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: none;
+	color: #667137;
+}
+
+a:hover {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: underline;
+	color: #b98009;
+	background-color: #ffffFF;
+}
+
+body {
+	margin:-10px 0px 0px -10px;
+	background-color: #ffffff;
+	color: #bcbed0;	
+}
+
+html body {
+	margin: 10px 10px 10px 10px;
+	background-color: #ffffff;
+	color: #bcbed0;	
+}
+
+p, td {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+
+th {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	text-align: left;
+	vertical-align: top;
+}
+
+label {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-weight: bold;
+}
+
+legend {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-weight: bold;
+}
+
+fieldset {
+	border-style: none;
+	border-width: 0px;
+}
+
+form {
+	margin: 0px 0px 0px 0px;
+}
+
+ul {
+	margin-left: 0px;
+}
+
+.bibinfo {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	background-color: #fefefe;
+	color: #000000;
+	border-width: 0px;
+	border-style: none;
+	margin: 5px 5px 5px 5px;
+	text-align: left;
+	width: 100%;
+}
+
+.bibinfo2 {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 12px;	
+	background-color: #fefefe;
+	color: #000000;
+	margin: 10px 30px 10px 30px;
+}
+
+.summary {
+	background-color: #fefefe;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	border-width: 1px;
+	border-style: solid;
+	padding: 5px 5px 5px 5px;
+	margin: 10px 5px 5px 10px;
+}
+
+.rootbarcell {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	text-align: center;
+	color: #FFFACD;
+	background-color: #4d300e;
+	letter-spacing: 0px;
+	margin: 5px 5px 5px 5px;
+}
+
+ /* Use these rootbar declaration for CSS2 browsers */
+
+a:link.blastoff, a:visited.blastoff, a:active.blastoff {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 12px;
+	font-weight: bold; 
+	color: #FFFACD;
+	background-color: #4d300e;
+	text-decoration: none;
+	white-space: nowrap;
+	margin: 0px 7px 0px 7px;
+}
+
+a:hover.blastoff {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 12px;
+	font-weight: bold; 
+	color: #FFFACD;
+	background-color: #4d300e;
+	text-decoration: underline;
+	white-space: nowrap;
+	margin: 0px 7px 0px 7px;
+}
+a:link.rootbar, a:visited.rootbar, a:active.rootbar {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #FFFACD;
+	background-color: #4d300e;
+	text-decoration: none;
+	white-space: nowrap;
+	margin: 0px 7px 0px 7px;
+}
+
+a:hover.rootbar {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #cb9732;
+	background-color: #4d300e;
+	text-decoration: underline;
+	white-space: nowrap;
+	margin: 0px 7px 0px 7px;
+}
+
+
+
+.defaultstyle {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 12px;
+	background-color: #fefefe;
+	color: #000000;
+	vertical-align: top;
+}
+th.defaultstyle {
+	white-space: nowrap;
+	text-align: right;
+}
+
+
+.enrichheader, .enrichheader a {
+	background-color: #fefefe; 
+	color: #3a4321; 
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	padding: 5px 0px 0px 0px;
+}
+
+.enrichsubheader {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+.enrichcontent {
+	background-color: #fefefe; 
+	color: #3a4321; 
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 11px;
+	vertical-align: top;
+	padding: 0px 0px 5px 5px;
+} 
+
+.enrichmentservices {
+	background-color: #fefefe;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 10px;
+	color: #000000;
+	border-width: 1px;
+	border-style: solid;
+	text-align: left;
+}
+
+.enrichmentservices2 {
+	background-color: #fefefe;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #000000;
+	border-width: 2px;
+	border-style: solid;
+	text-align: center;
+	padding: 10px 10px 10px 10px;
+}
+	
+.enrichtagline {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	background-color: #FFFFFF;
+	color: #888888;
+}
+
+.footer {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 10px;
+	font-weight: normal; 
+}
+
+.gatewaystyle, .gatewaystyle a:link, .gatewaystyle a:visited, .gatewaystyle a:active, .gatewaystyle a:hover {
+	background-color: #ffffff;
+	color: #3a4321;
+	margin: 0px 0px 0px 0px;
+}
+
+.header {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 11px;
+	font-weight: bold;
+	letter-spacing: 2px; 
+	background-color: #c4c89f;
+	color: #3a4321;
+}
+
+div.header {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 11px;
+	font-weight: bold;
+	letter-spacing: 2px; 
+	background-color: #c4c89f;
+	color: #3a4321;
+	padding: 3px 3px 3px 3px;
+}
+
+.holdingsheader {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 11px;
+	font-weight: bold;
+	background-color: #ebebcf;
+	color: #3a4321;
+}
+
+.holdingslist {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 10px;
+	background-color: #fefefe;
+	color: #000000;
+}
+
+th.holdingslist {
+	white-space: nowrap;
+	text-align: right;
+	vertical-align: top;
+}
+
+.indented {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 12px;
+	background-color: #fefefe;
+	color: #000000;
+	margin-left: 10px;
+	vertical-align: top;
+}
+
+.itemlisting, label.itemlisting {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 11px;
+	background-color: #fefefe;
+	color: #000000;
+	vertical-align: top;
+	font-weight: normal;
+}
+
+.itemlisting2, label.itemlisting2 {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 11px;
+	background-color: #ebebcf;
+	color: #000000;
+	vertical-align: top;
+	font-weight: normal;
+}
+
+input.itemdetails {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 11px;
+	background-color: #ffffff;
+	color: #3a4321;
+	width: 75px;
+	margin: 5px 0px 5px 0px;
+	display: block;
+}
+
+input.itemdetails2 {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 11px;
+	background-color: #4d300e;
+	color: #3a4321;
+	width: 75px;
+	margin: 5px 0px 5px 0px;
+	display: block;
+}
+
+td.itemservices {
+	background-color: #fefefe;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	color: #000000;
+}
+
+div.itemservices {
+	background-color: #fefefe;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	text-align: left;
+	border-width: 1px;
+	border-style: solid;
+	padding: 7px 7px 7px 7px;
+	margin: 0px 0px 0px 0px;
+}
+
+div.itemservices a:link, div.itemservices a:visited, div.itemservices a:active {
+	display: block;
+	margin: 3px 0px 3px 0px;
+}
+
+div.itemservices a:hover {
+	background-color: #ffffFF;
+	color: #b98009;
+	display: block;
+	margin: 3px 0px 3px 0px;
+}
+
+div.options {
+	background-color: #fefefe;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	border-width: 1px;
+	border-style: solid;
+	padding: 5px 5px 5px 5px;
+	margin: 10px 5px 5px 10px;
+}
+
+.overdue, .error {
+	color: #cb9732;
+}
+
+.pagecontainer {
+	background-color: #fefefe;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	border-width: 1px;
+	border-style: solid;
+}
+
+.pagecontainer3pg {
+	background-color: #fefefe;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	border-width: 1px;
+	border-style: solid;
+	
+}
+
+.rsvholdings {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 10px;
+	font-weight: bold;
+	background-color: #EEEEEE;
+	color: #000000;
+}
+
+.searchheader {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: 2px; 
+	background-color: #c4c89f;
+	color: #3a4321;
+	padding: 3px 3px 3px 3px;
+	width: 100%;
+}
+
+.searchcontent {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 12px;
+	background-color: #c4c89f;
+	color: #000000;
+	padding: 3px 3px 3px 3px;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+table.searchcontent {
+	width: 99%;
+}
+
+th.searchcontent {
+	text-align: right;
+	width: 30%;
+}
+
+
+.searchservices {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 12px;
+	background-color: #c4c89f;
+	color: #000000;
+	border-width: 1px;
+	border-style: solid;
+}
+
+input.searchbutton {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 11px;
+	font-weight: bold;
+	background-color: #ffffff;
+	color: #3a4321;
+	vertical-align: middle;
+	margin: 5px;
+}
+
+a:link.searchlinks, a:active.searchlinks, a:visited.searchlinks {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none;
+	background-color: #c4c89f;
+	color: #ebebcf;
+}
+
+a:hover.searchlinks {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: underline;
+	background-color: #c4c89f;
+	color: #cb9732;
+}
+
+.subheader {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 12px;
+	background-color: #EEEEEE;
+	color: #000000;
+	margin-left: 2px;
+}
+
+.searchsum {
+	color: #000000;
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 11px;
+	text-align: center;
+	background-color: #fefefe;
+}
+
+.small {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 10px;
+	font-weight: normal; 
+}
+
+.titlebar {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: medium;
+	font-weight: bold;
+	letter-spacing: 3px;
+	background-color: #ebebcf;
+	color: #4d300e;
+	vertical-align: middle;
+	padding: 3px;
+}
+
+
+
+.titlebar2 {
+		
+	letter-spacing: 0px;
+	background-color: #4d300e;
+	color: #4d300e;
+	padding: 0px;
+}
+
+.vreference {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 10px;
+	text-decoration: none;
+	font-weight: normal;
+	letter-spacing: 0px;
+	background-color: #ebebcf;
+	color: #4d300e;
+}
+
+.vreference input {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 10px;
+	text-decoration: none;
+	font-weight: normal;
+	letter-spacing: 0px;
+	background-color: #4d300e;
+	color: #ebebcf;
+	margin: 3px 3px 3px 3px;
+}
+
+.vreference textarea {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 10px;
+	text-decoration: none;
+	font-weight: normal;
+	letter-spacing: 0px;
+	background-color: #4d300e;
+	color: #ebebcf;
+	width: 125px;
+	height: 50px;
+	margin: 3px 3px 3px 3px;
+}
+
+.unformatted {
+	font-family: "Courier New", Courier, monospace; 
+	font-size: 12px;
+	font-weight: normal; 
+	vertical-align: top;
+}
+
+.viewmarcheader, .viewmarcheader a {
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	background-color: #996600;
+	color: #996600;
+}
+
+.viewmarctags {
+	vertical-align: top;
+	font-family: Verdana, Helvetica, Arial, sans-serif; 
+	font-size: 10px;
+	background-color: #FFFFFF;
+	color: #000000;
+}
+
+th.viewmarctags {
+	white-space: nowrap;
+	text-align: right;
+	vertical-align: top;
+}
+
+.virtualreference {
+	border-style: none;
+	border-width: 0px;
+	padding: 1px 5px 1px 5px;
+}
+
+</style>
+<!-- Why login Javascript starts here--> 
+ <script language="JavaScript">
+<!-- hide
+function openWin3() {
+  myWin= open("", "displayWindow", 
+    "width=280,height=195,status=no,toolbar=no,menubar=no");
+
+  // open document for further output
+  myWin.document.open();
+  // create document
+  myWin.document.write("<html><head><title>Why Login?");
+  myWin.document.write("</title></head><body>");
+  myWin.document.write("<font size=+1>");
+  myWin.document.write("By logging in here you are logged in for your entire catalog session. ");
+  myWin.document.write("You won't have to log in again each time you want to check your account or place a hold. ");
+  myWin.document.write("<p>Be sure to log out by clicking the Logout button when you're finished.</p>");
+  myWin.document.write("</font>");
+  myWin.document.write("</body></html>");
+
+  // close the document - (not the window!)
+  myWin.document.close();  
+}
+// -->
+</script>
+
+<!-- Why login Javascript ends here.--> 
+<!-- The input buotton is on 3_module_myprofile.h-->
+
+<!-- This will put a Why login box with a pop up answering why on the main catalog page 3.pg-->
+
+</head>
+<!-- Start the body of the document.  WARNING:  No comments are allowed inside of the <BODY> element's definition. - assign CSS Class of 'body_style' to tag -  If this is a download search results state (14, 62), then load the results in a new browser window to facilitate printing. -  If this is an Archive image view state (911), then open a new window to display the image in new window. -  To help prevent premature selection of a toolbar button (i.e., before the new toolbar is loaded), clear it when the page is unloaded. -->
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="">
+<!--  Copyright (c) 1996 - 2003, Sirsi Corporation - Generic top-of-page for (almost?) all pages. -->
+<!--  Copyright (c) 1996 - 2005, Sirsi Corporation Form for starting a new session in a new window. -->
+
+<!-- By setting the "document.new_session.action" property to the URL for logging into a new session at the particular  page you want, a new window will be opened and a new WebCat session will be started automatically. Remember that many WebCat states are dependent on previous states, so only certain "cgi types" can be opened.
+
+Also, by setting the "document.new_session.new_gateway_db.value" property to a gateway database name, the new session will use that gateway instead of the user's default gateway. Note that the use of Javascript is required to submit this form. -->
+
+<form name="new_session" method="post" action="/uhtbin/cgisirsi/592AOXQiK2/KC-CENTRAL/0/57/49" target="new_session">
+  <input type="hidden" name="user_id" value="WEBSERVER">
+  <input type="hidden" name="password" value="">
+  <input type="hidden" name="new_gateway_db" value="">
+
+</form>
+
+
+<!--  Copyright (c) 2000 - 2003, Sirsi Corporation - Puts the top-of-page information common to all pages. -->
+<a href="#skipnav"><img src="/WebCat_Images/English/Other/Miscib/clear.gif" height="1" width="1" border="0" alt="Skip navigation" title="Skip navigation"></a>  <a name="top"></a>
+<div class="pagecontainer"> <!-- Controls Page Border -->
+<!-- KCPL titlebar.h  moved to KCPL Pages_Custom M-Js page Kathy Moved 7-16-2007 -->
+<!--3/9/2006 -->
+<!-- Links the LIBLOGO to home page-->
+
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%"> <!-- e-Library title bar -->
+ <tr>
+
+  <td width="1%" class="titlebar" align="left">
+ <!--link NEKLS logo --> 
+   <a href="http://www.kclibrary.org"><img border="0" src="/WebCat_Images/English/Other/Miscib/kcpl_logo.gif" alt="" title=""></a>
+  </td>
+  <td class="titlebar" align="center" valign="middle">
+    <!-- Print the gateway envn title if not blank -->
+      <!-- icon was printed -->
+      Welcome to the Kansas City Public Library
+   <br>
+  </td>
+
+ </tr>
+</table>
+<table border="0" cellpadding="3" cellspacing="0" width="100%"> <!-- e-Library title bar -->
+ <tr>
+  <td class="rootbarcell">
+<!--  Copyright (c) 1996 - 2003, Sirsi Corporation - Gateway Root Bar. -->
+    <!-- display text with CSS instead -->
+          <a href="/uhtbin/cgisirsi/3LH1vHw6Ys/KC-CENTRAL/41430078/38/1/X/BLASTOFF" class="rootbar">
+       Search/Home</a>
+
+          <a href="/uhtbin/cgisirsi/3LH1vHw6Ys/KC-CENTRAL/41430078/1/26/X/BLASTOFF" class="rootbar">
+       Find It Fast!</a>
+          <a href="/uhtbin/cgisirsi/3LH1vHw6Ys/KC-CENTRAL/41430078/1/774/X/BLASTOFF" class="rootbar">
+       Kids' Library</a>
+          <a href="/uhtbin/cgisirsi/3LH1vHw6Ys/KC-CENTRAL/41430078/1/1095/X/BLASTOFF" class="rootbar">
+       I Need Material</a>
+          <a href="/uhtbin/cgisirsi/3LH1vHw6Ys/KC-CENTRAL/41430078/1/1101/X/BLASTOFF" class="rootbar">
+
+       Knowledge Portal</a>
+          <a href="/uhtbin/cgisirsi/3LH1vHw6Ys/KC-CENTRAL/41430078/1/1166/X/BLASTOFF" class="blastoff">
+       My Account</a>
+          <a href="/uhtbin/cgisirsi/3LH1vHw6Ys/KC-CENTRAL/41430078/63/1171/X/BLASTOFF" class="rootbar">
+       Contact Us</a>
+          <a href="/uhtbin/cgisirsi/3LH1vHw6Ys/KC-CENTRAL/41430078/60/1180/X/BLASTOFF" class="rootbar">
+       </a>
+
+  </td>
+ </tr>
+</table>
+<!--  Copyright (c) 2000 - 2005, Sirsi Corporation - Unicorn Items Renewed Page; State #54 -->
+<table border="0" cellpadding="0" cellspacing="10" width="100%" align="center" title="" summary="This table positions all the elements on this page.">   
+ <tr>
+  <td> <!-- container cell -->  
+   <table border="0" cellpadding="3" cellspacing="0" align="center">
+    <tr>
+	 <td class="header">
+
+         <strong>1</strong> item was renewed.
+      	 
+	 </td>
+	</tr>
+	<tr>
+	 <td class="defaultstyle">
+        <!-- Show all items that were renewed or that failed to be renewed -->
+       <dl>
+        <dt>
+
+          <strong>
+            Item renewed
+          </strong><br>
+	    </dt>      
+        <dd>
+          All I want for Christmas is a real good tan [sound recording (compact disc)]<br>
+          Chesney, Kenny.<br>
+          CD CHRISTMAS<br>
+
+          Due: <strong>11/22/2008,23:59</strong><br>
+		</dd>
+       </dl>
+	 
+	 </td>
+	</tr>
+	<tr>
+	 <td class="defaultstyle" align="center">
+	  <!-- "OK" on this page should go back two pages to skip past the old, obsolete charged item list. -->
+
+	  <a href="/uhtbin/cgisirsi/7jLABOV1nI/KC-CENTRAL/41430078/2/1000/2">OK</a>
+	 </td>
+	</tr>
+   </table>
+
+  </td> <!-- container cell -->
+ </tr>
+</table>  
+<br>
+
+<!--  Copyright (c) 1996 - 2005, SirsiDynix - Copyright statement -->
+<table border="0" cellpadding="3" cellspacing="0" width="100%" class="footer">
+ <tr>
+  <td align="center" valign="bottom" width="15%" class="footer">
+      <img src="/WebCat_Images/English/Other/Miscib/sirsi_button.gif" alt="Powered by: Sirsi Corporation" border="0">
+  </td>
+  <td align="center" class="footer"><!-- Display the description -->
+
+   Welcome to the Kansas City Public Library<br> 
+   Online Scholars' Portal<br>
+
+   Copyright &#169; 2000 - 2005, SirsiDynix
+
+  </td>
+  <td align="center" width="15%" class="footer"><a name="bottom" href="#top">TOP</a></td>
+ </tr>
+</table>
+</div> <!-- Controls Page Border -->
+<script type="text/javascript">var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script>
+<script type="text/javascript">var pageTracker = _gat._getTracker("UA-3194503-6");pageTracker._initData();pageTracker._trackPageview();</script>
+
+</body>
+</html>
+
+
+
+

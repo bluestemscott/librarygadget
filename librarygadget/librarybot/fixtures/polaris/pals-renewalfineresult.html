@@ -1,0 +1,254 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en" >
+<HTML>
+  <HEAD>
+		<title>Pinellas Automated Library System
+		</title>
+		<meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">
+		<meta name="CODE_LANGUAGE" content="C#">
+		<meta name="vs_defaultClientScript" content="JavaScript">
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<link type="text/css" rel="stylesheet" href="http://pals.polarislibrary.com/polaris/themes/formal/styles.css"><link rel="shortcut icon" type="image/ico" href="http://pals.polarislibrary.com/polaris/favicon.ico" />
+  </HEAD>
+	<body>
+		<form name="formMain" method="post" action="itemsout.aspx?ctx=1.1033.0.0.4" id="formMain">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTExNDMzOTUyNDAPZBYEZg8VAiFQaW5lbGxhcyBBdXRvbWF0ZWQgTGlicmFyeSBTeXN0ZW3VATxsaW5rIHR5cGU9InRleHQvY3NzIiByZWw9InN0eWxlc2hlZXQiIGhyZWY9Imh0dHA6Ly9wYWxzLnBvbGFyaXNsaWJyYXJ5LmNvbS9wb2xhcmlzL3RoZW1lcy9mb3JtYWwvc3R5bGVzLmNzcyI+PGxpbmsgcmVsPSJzaG9ydGN1dCBpY29uIiB0eXBlPSJpbWFnZS9pY28iIGhyZWY9Imh0dHA6Ly9wYWxzLnBvbGFyaXNsaWJyYXJ5LmNvbS9wb2xhcmlzL2Zhdmljb24uaWNvIiAvPmQCAQ9kFgYCAQ9kFgRmD2QWAmYPFQFMaHR0cDovL3BhbHMucG9sYXJpc2xpYnJhcnkuY29tL3BvbGFyaXMvZGVmYXVsdC5hc3B4P2N0eD1fX29yZ2lkX18uMTAzMy4wLjAuNGQCAQ8WAh4HVmlzaWJsZWhkAgMPZBYCZg9kFgZmD2QWAmYPZBYCZg8WAh8AaBYCZg8VAUxodHRwOi8vcGFscy5wb2xhcmlzbGlicmFyeS5jb20vcG9sYXJpcy9kZWZhdWx0LmFzcHg/Y3R4PV9fb3JnaWRfXy4xMDMzLjAuMC40ZAIBD2QWAmYPZBYCZg9kFgJmD2QWDmYPDxYCHwBoZBYCZg9kFgxmD2QWBGYPZBYCZg9kFgJmDxUBBE5hbWVkAgEPZBYCZg9kFgJmDxUBD0Jvb25lLCBSb2JlcnQgU2QCAQ9kFgRmD2QWAmYPZBYCZg8VAQdCYXJjb2RlZAIBD2QWAmYPZBYCZg8VAQ4yMjExMjAwMzc0MDk3MWQCAg9kFgRmD2QWAmYPZBYCZg8VAQ1SZWdpc3RlcmVkIGF0ZAIBD2QWAmYPZBYCZg8VASBDbGVhcndhdGVyIC0gQ291bnRyeXNpZGUgTGlicmFyeWQCAw9kFgRmD2QWAmYPZBYCZg8VAQtQYXRyb24gY29kZWQCAQ9kFgJmD2QWAmYPFQEFQWR1bHRkAgQPZBYEZg9kFgJmD2QWAmYPFQEdRGF0ZSBvZiBvcmlnaW5hbCByZWdpc3RyYXRpb25kAgEPZBYCZg9kFgJmDxUBCTYvMjMvMjAwOGQCBQ9kFgZmD2QWAmYPZBYCZg8VAQ9FeHBpcmF0aW9uIGRhdGVkAgEPZBYCZg9kFgJmDxUBCTYvMjMvMjAxM2QCAg9kFgICAQ8VAgE0EWl0ZW1zIGNoZWNrZWQgb3V0ZAIBDw8WAh8AaGQWAgIBDzwrAAsBAA8WCB4IRGF0YUtleXMWBAL3oxkCkc0wAqzJGQKKiw4eC18hSXRlbUNvdW50AgQeCVBhZ2VDb3VudAIBHhVfIURhdGFTb3VyY2VJdGVtQ291bnQCBGQWAmYPZBYKZg9kFg5mD2QWAgIBDw8WAh4ISW1hZ2VVcmwFRWh0dHA6Ly9wYWxzLnBvbGFyaXNsaWJyYXJ5LmNvbS9wb2xhcmlzL3RoZW1lcy9mb3JtYWwvY2hlY2tfaGVhZGVyLmdpZmRkAgEPZBYCAgEPDxYCHwUFRGh0dHA6Ly9wYWxzLnBvbGFyaXNsaWJyYXJ5LmNvbS9wb2xhcmlzL3RoZW1lcy9mb3JtYWwvaW5mb19oZWFkZXIuZ2lmZGQCAw9kFgJmDxUBC0NhbGwgTnVtYmVyZAIED2QWAmYPFQEFVGl0bGVkAgUPZBYCZg8VAQ9Bc3NpZ25lZCBCcmFuY2hkAgYPZBYCZg8VAQhEdWUgRGF0ZWQCBw9kFgJmDxUBDVJlbmV3YWxzIExlZnRkAgEPZBYOAgEPZBYCAgEPDxYCHg9Db21tYW5kQXJndW1lbnQFATBkFgJmDw8WAh8FBT1odHRwOi8vcGFscy5wb2xhcmlzbGlicmFyeS5jb20vcG9sYXJpcy90aGVtZXMvZm9ybWFsL2luZm8uZ2lmZGQCAg9kFgICAQ8PFgIfBQVLaHR0cDovL3BhbHMucG9sYXJpc2xpYnJhcnkuY29tL3BvbGFyaXMvdGhlbWVzL2Zvcm1hbC9mb3JtYXRzL0Zvcm1hdElEMDEuZ2lmZGQCAw9kFgICAQ8PFgIeBFRleHQFDjE5NCBDT1RUSU5HSEFNZGQCBA9kFgICAQ8PFgIfBwUJRGVzY2FydGVzZGQCBQ9kFgICAQ8PFgIfBwUjU3QgUGV0ZXJzYnVyZyAtIE1pcnJvciBMYWtlIExpYnJhcnlkZAIGD2QWAgIBDw8WBh4IQ3NzQ2xhc3MFA1JlZB8HBQg1LzcvMjAwOR4EXyFTQgICZGQCBw9kFgICAQ8PFgIfBwUBMmRkAgIPZBYOAgEPZBYCAgEPDxYCHwYFATFkFgJmDw8WAh8FBT1odHRwOi8vcGFscy5wb2xhcmlzbGlicmFyeS5jb20vcG9sYXJpcy90aGVtZXMvZm9ybWFsL2luZm8uZ2lmZGQCAg9kFgICAQ8PFgIfBQVLaHR0cDovL3BhbHMucG9sYXJpc2xpYnJhcnkuY29tL3BvbGFyaXMvdGhlbWVzL2Zvcm1hbC9mb3JtYXRzL0Zvcm1hdElEMDEuZ2lmZGQCAw9kFgICAQ8PFgIfBwUKMTkzIFRBTk5FUmRkAgQPZBYCAgEPDxYCHwcFDFNjaG9wZW5oYXVlcmRkAgUPZBYCAgEPDxYCHwcFI1N0IFBldGVyc2J1cmcgLSBNaXJyb3IgTGFrZSBMaWJyYXJ5ZGQCBg9kFgICAQ8PFgYfCAUDUmVkHwcFCDUvNy8yMDA5HwkCAmRkAgcPZBYCAgEPDxYCHwcFATJkZAIDD2QWDgIBD2QWAgIBDw8WAh8GBQEyZBYCZg8PFgIfBQU9aHR0cDovL3BhbHMucG9sYXJpc2xpYnJhcnkuY29tL3BvbGFyaXMvdGhlbWVzL2Zvcm1hbC9pbmZvLmdpZmRkAgIPZBYCAgEPDxYCHwUFS2h0dHA6Ly9wYWxzLnBvbGFyaXNsaWJyYXJ5LmNvbS9wb2xhcmlzL3RoZW1lcy9mb3JtYWwvZm9ybWF0cy9Gb3JtYXRJRDAxLmdpZmRkAgMPZBYCAgEPDxYCHwcFCDE5NCBHUkFZZGQCBA9kFgICAQ8PFgIfBwUIVm9sdGFpcmVkZAIFD2QWAgIBDw8WAh8HBSNTdCBQZXRlcnNidXJnIC0gTWlycm9yIExha2UgTGlicmFyeWRkAgYPZBYCAgEPDxYGHwgFA1JlZB8HBQg1LzcvMjAwOR8JAgJkZAIHD2QWAgIBDw8WAh8HBQEyZGQCBA9kFg4CAQ9kFgICAQ8PFgIfBgUBM2QWAmYPDxYCHwUFPWh0dHA6Ly9wYWxzLnBvbGFyaXNsaWJyYXJ5LmNvbS9wb2xhcmlzL3RoZW1lcy9mb3JtYWwvaW5mby5naWZkZAICD2QWAgIBDw8WAh8FBUtodHRwOi8vcGFscy5wb2xhcmlzbGlicmFyeS5jb20vcG9sYXJpcy90aGVtZXMvZm9ybWFsL2Zvcm1hdHMvRm9ybWF0SUQwMS5naWZkZAIDD2QWAgIBDw8WAh8HBQxGSUMgUEhJTExJUFNkZAIE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" />
+
+			
+
+    <script language="javascript">
+      <!--
+      function set_sessionOrgID(varNewOrgID)
+      {
+          var strURLTemplate = "http://pals.polarislibrary.com/polaris/default.aspx?ctx=__orgid__.1033.0.0.4";
+	      var strURL = strURLTemplate.replace("__orgid__", varNewOrgID);
+	      location.replace(strURL);
+      }
+      //-->
+    </script>
+
+
+
+<?xml version="1.0" encoding="utf-16"?><table border="0" width="100%" cellpadding="0" cellspacing="0"><tr><td width="100%" nowrap="" class="GradientL2D" align="left">
+         
+        <WelcomeLabel>Welcome</WelcomeLabel>, <b>Robert Boone</b>
+          |
+          <a href="http://pals.polarislibrary.com/polaris/logon.aspx?Header=1&amp;src=http://pals.polarislibrary.com/polaris/default.aspx&amp;logoff=1">Log Out</a></td><td width="1%" class="OrgList" nowrap="1" align="right" valign="middle" style="padding: 2px 2px 2px 2px;"><select size="1" class="RegularSmall" onchange="set_sessionOrgID(this.options[this.selectedIndex].value)"><option value="1">Switch to another branch...</option><option value="1">Pinellas Automated Library System</option><option value="17">Clearwater - Beach Library</option><option value="18">Clearwater - Countryside Library</option><option value="19">Clearwater - East Library</option><option value="16">Clearwater - Main Library</option><option value="20">Clearwater - North Greenwood Library</option><option value="23">Dunedin Public Library - Friends Branch</option><option value="22">Dunedin Public Library - Main Library</option><option value="25">East Lake Community Library</option><option value="9">Gulf Beaches Public Library</option><option value="10">Gulfport Public Library</option><option value="43">Largo Drive Through</option><option value="27">Largo Public Library</option><option value="29">Oldsmar Public Library</option><option value="31">Palm Harbor Library</option><option value="33">Pinellas Park Public Library</option><option value="35">Safety Harbor Public Library</option><option value="37">Seminole Community Library</option><option value="11">St Pete Beach Public Library</option><option value="42">St Petersburg - Childs Park Library</option><option value="4">St Petersburg - Johnson Branch</option><option value="3">St Petersburg - Main Library</option><option value="5">St Petersburg - Mirror Lake Library</option><option value="6">St Petersburg - North Branch Library</option><option value="7">St Petersburg - South Branch Library</option><option value="8">St Petersburg - West Community Library</option><option value="39">Tarpon Springs Public Library</option></select></td></tr></table><table border="0" width="100%" cellpadding="0" cellspacing="0"><tr><td class="Header" valign="top" width="1%" rowspan="2"><a href="http://pals.polarislibrary.com/polaris/default.aspx"><img border="0" src="http://pals.polarislibrary.com/polaris/themes/formal/header_logo.jpg" alt="Polaris" title="Polaris"></img></a></td><td class="GradientD2L" valign="middle" width="100%"><div class="HeaderBranch" align="center">Pinellas Automated Library System</div></td></tr><tr><td class="GradientD2L" align="center" valign="bottom"><table border="0" cellpadding="0" cellspacing="0" width="1%" valign="top"><tr><td width="1%" nowrap="1" class="PriNavBar"><a class="PriNavBar" href="http://pals.polarislibrary.com/polaris/default.aspx?ctx=1.1033.0.0.4&amp;Header=1">
+               Library Info 
+            </a></td><td width="1%" class="TabRight"></td><td width="1">
+                
+            </td><td width="1%" nowrap="1" class="PriNavBar"><a class="PriNavBar" href="http://pals.polarislibrary.com/polaris/search/default.aspx?ctx=1.1033.0.0.4&amp;type=Default">
+               Search 
+            </a></td><td width="1%" class="TabRight"></td><td width="1">
+                
+            </td><td width="1%" nowrap="1" class="PriNavBarHighlight"><a class="PriNavBarHighlight" href="http://pals.polarislibrary.com/polaris/patronaccount/default.aspx?ctx=1.1033.0.0.4&amp;Header=1">
+               Patron Account 
+            </a></td><td width="1%" class="TabRightHighlight"></td><td width="1">
+                
+            </td><td width="1%" nowrap="1" class="PriNavBar"><a class="PriNavBar" href="http://pals.polarislibrary.com/polaris/help/default.aspx?ctx=1.1033.0.0.4&amp;Header=1">
+               Help 
+            </a></td><td width="1%" class="TabRight"></td></tr></table></td></tr></table><table border="0" width="100%" cellpadding="0" cellspacing="0"><tr><td class="navbar" width="100%" align="center"><span class="NavBar"><a class="NavBar" href="http://pals.polarislibrary.com/polaris/patronaccount/default.aspx?ctx=1.1033.0.0.4"> My Record 	</a></span><span class="NavBar"><font class="Separator">|</font></span><span class="NavBarHighlight"><a class="NavBarHighlight" href="http://pals.polarislibrary.com/polaris/patronaccount/itemsout.aspx?ctx=1.1033.0.0.4"> Items Out 	</a></span><span class="NavBar"><font class="Separator">|</font></span><span class="NavBar"><a class="NavBar" href="http://pals.polarislibrary.com/polaris/patronaccount/requests.aspx?ctx=1.1033.0.0.4"> Requests 	</a></span><span class="NavBar"><font class="Separator">|</font></span><span class="NavBar"><a class="NavBar" href="http://pals.polarislibrary.com/polaris/patronaccount/finesfees.aspx?ctx=1.1033.0.0.4"> Fines &amp; Fees 	</a></span><span class="NavBar"><font class="Separator">|</font></span><span class="NavBar"><a class="NavBar" href="http://pals.polarislibrary.com/polaris/patronaccount/readinghistory.aspx?ctx=1.1033.0.0.4"> Reading History 	</a></span><span class="NavBar"><font class="Separator">|</font></span><span class="NavBar"><a class="NavBar" href="http://pals.polarislibrary.com/polaris/patronaccount/searchagent.aspx?ctx=1.1033.0.0.4"> Saved Searches 	</a></span><span class="NavBar"><font class="Separator">|</font></span><span class="NavBar"><a class="NavBar" href="http://pals.polarislibrary.com/polaris/logon.aspx?ctx=1.1033.0.0.4&amp;logoff=1&amp;src=default.aspx"> Log Out 	</a></span></td><td class="navbar" width="1%"> </td></tr></table>
+
+
+
+
+			<table id="tableMain" cellspacing="0" cellpadding="0" border="0" width="100%">
+	<tr>
+		<td class="LeftPanel" valign="top" width="1%">
+
+
+
+
+
+<script language="javascript">
+
+	function DashMouseOver(pBody, oCollapse, bOver)
+	{
+		if (pBody.style.display == "none")
+			oCollapse.src = bOver ? "http://pals.polarislibrary.com/polaris/themes/formal/expand_mo.gif" : "http://pals.polarislibrary.com/polaris/themes/formal/expand.gif";
+		else
+			oCollapse.src = bOver ? "http://pals.polarislibrary.com/polaris/themes/formal/collapse_mo.gif" : "http://pals.polarislibrary.com/polaris/themes/formal/collapse.gif";
+	}
+	
+	function DashExpand(pBody, oCollapse)
+	{
+		var bOver = (oCollapse.src.toLowerCase().indexOf("_mo.gif") != -1);
+
+		if (pBody.style.display == "none")
+		{
+			pBody.style.display = "";
+			oCollapse.src = bOver ? "http://pals.polarislibrary.com/polaris/themes/formal/collapse_mo.gif" : "http://pals.polarislibrary.com/polaris/themes/formal/collapse.gif";
+		}
+		else
+		{
+			pBody.style.display = "none";
+			oCollapse.src = bOver ? "http://pals.polarislibrary.com/polaris/themes/formal/expand_mo.gif" : "http://pals.polarislibrary.com/polaris/themes/formal/expand.gif";
+		}
+	}
+	
+	function StartTLHighlight()
+	{
+	}
+
+	function TLHighlightOn()
+	{
+	}
+
+	function TLHighlightOff()
+	{
+	}
+
+	function RemoveFromTitleList(strPos)
+	{
+		strURL = "http://pals.polarislibrary.com/polaris/Search/titlelist.aspx?delete=" + strPos + "&src=";
+        strURL += "http%3a%2f%2fpals.polarislibrary.com%2fpolaris%2fpatronaccount%2fitemsout.aspx%3fctx%3d1.1033.0.0.4";
+		window.location = strURL;
+	}
+
+</script>
+
+<span id=dashboards>
+
+	<br/>
+	
+	
+	    <div style="width:100%" align="center">
+			<a class=dashextra href=http://pals.polarislibrary.com/polaris/patronaccount/itemsout.aspx?ctx=1.1033.0.0.4&lp=1>Large Text</a>
+		</div>
+		<br />
+	
+	
+	
+	
+	<div id="panelLanguages" style="width:100%" align="center">
+		<div id="hdrLanguages" style="width:92%">
+			<table align=center width="100%" cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td id="titleLanguages" class="DashHeader" width="100%" onclick="DashExpand(bodyLanguages, collapseLanguages2);">Language</td>
+					<td id="collapseLanguages1" class="DashHeader" valign="top" width="1%" onclick="DashExpand(bodyLanguages, collapseLanguages2);"><img id="collapseLanguages2" src='http://pals.polarislibrary.com/polaris/themes/formal/collapse.gif' border="0" onmouseover="DashMouseOver(bodyLanguages, collapseLanguages2, true);" onmouseout="DashMouseOver(bodyLanguages, collapseLanguages2, false);"></td>
+				</tr>
+			</table>
+		</div>
+		<div id="bodyLanguages" class="DashBody" style="width:92%">
+			<table width="100%" cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td colspan="3" height="5"></td>
+				</tr>
+				
+						<tr>
+							<td valign="top" width="1"><img src="http://pals.polarislibrary.com/polaris/themes/formal/bullet.gif" /></td>
+							<td width="3"></td>
+							<td>
+								
+								<span class="RegularXSmall">English</span>
+							</td>
+						</tr>
+					
+						<tr>
+							<td valign="top" width="1"><img src="http://pals.polarislibrary.com/polaris/themes/formal/bullet.gif" /></td>
+							<td width="3"></td>
+							<td>
+								<a class="RegularXSmall" href="http://pals.polarislibrary.com/polaris/patronaccount/itemsout.aspx?ctx=1.3082.0.0.4">Español</a>
+								
+							</td>
+						</tr>
+					
+						<tr><td colspan="3" height="5"></td></tr>
+					
+			</table>
+		</div>
+		<BR>
+	</div>
+	
+	
+    <div id=dashTitleList>
+	
+
+<div id="panelTitleList" style="width:100%" align="center">
+	<div id="hdrTitleList" style="width:95%">
+		<table width="100%" cellpadding="0" cellspacing="0" style="border-width:0px;border-collapse:collapse;">
+			<tr>
+				<td id="titleTitleList" valign="middle" class="DashHeader" onclick="DashExpand(bodyTitleList, collapseTitleList2);"  width="100%">My Lists</td>
+				<td id="collapseTitleList1" valign="top" class="DashHeader" onclick="DashExpand(bodyTitleList, collapseTitleList2);"  width="1%"><img id="collapseTitleList2" src='http://pals.polarislibrary.com/polaris/themes/formal/collapse.gif' style="border-width:0px;" onmouseover="DashMouseOver(bodyTitleList, collapseTitleList2, true);" onmouseout="DashMouseOver(bodyTitleList, collapseTitleList2, false);"></td>
+			</tr>
+		</table>
+	</div>
+	<div id="bodyTitleList" class="DashBody" style="width:95%">
+
+             
+		    <table width="100%" cellpadding="0" cellspacing="0" style="border-width:0px;border-collapse:collapse;">
+		        <tr><td colspan="2"></td><td align=left class="RegularXSmall"><br /><b>Saved Title Lists</b><br /></td></tr>
+			    <tr><td colspan="3" height="5"></td></tr>
+			    
+    			
+			    <tr><td colspan="3" height="5"></td></tr>
+			    <tr>
+				    <td colspan="3" nowrap align="center">
+					    <a class="RegularXSmall" href="http://pals.polarislibrary.com/polaris/Search/titlelistnew.aspx">Create new saved list...
+					    </a>
+				    </td>
+			    </tr>
+			    <tr><td colspan="3" height="5"></td></tr>
+		    </table>
+        
+	
+        
+	</div>
+	<BR>
+</div>
+
+
+	
+	</div>
+
+    <div id="dashNarrowSearch">
+	
+	</div>
+
+	
+	
+	<img src=http://pals.polarislibrary.com/polaris/themes/formal/1x1.gif width="180" height="1">
+
+</span>
+
+
+</td><td valign="top"><table id="tableBody" cellspacing="0" cellpadding="5" border="0" width="100%">
+			<tr>
+				<td width="100%"><div id="panelVerifyCharges" align="center">
+					
+										<br>
+										Some items are overdue.  Your account will be charged $1.35. 
+										<br><br>
+										To accept these charges and continue with the renewal, press 'OK'. 
+										<p></p>
+									    <input type="submit" name="buttonOK" value="OK" id="buttonOK" />
+									    <input type="submit" name="buttonCancel" value="Cancel" id="buttonCancel" />
+									    <br>
+									    <br>
+									
+				</div>
+									<p></p>
+									<table id="tableNavigation" cellspacing="0" cellpadding="4" border="0" width="100%">
+					<tr>
+						<td width="1%"></td><td width="1%"></td><td width="100%"></td><td class="CustomButton" nowrap="nowrap" width="1%"><a id="hyperlinkLogoff" href="../logon.aspx?logoff=1&amp;src=default.aspx&amp;ctx=1.1033.0.0.4">Log Out</a></td>
+					</tr>
+				</table></td>
+			</tr>
+		</table></td><td class="RightPanel" valign="top" width="1%">
+
+
+
+
+
+</td>
+	</tr>
+</table>
+			
+
+<?xml version="1.0" encoding="utf-16"?><p></p><table border="0" width="100%" class="BottomPanel"><tr><td width="33%" align="left"><a href="http://pals.polarislibrary.com/polaris/Children/default.aspx?ctx=1"><img border="0" src="http://pals.polarislibrary.com/polaris/themes/formal/childrenspac.gif" alt="Click here to go to the Children's PAC!"></img></a></td><td width="33%" nowrap="" align="center">Copyright © 2007 Polaris Library Systems</td><td width="33%" align="right"><img border="0" src="http://pals.polarislibrary.com/polaris/themes/formal/poweredbypolaris.jpg" alt="Polaris"></img></td></tr></table>
+
+
+
+
+		</form>
+	</body>
+</HTML>

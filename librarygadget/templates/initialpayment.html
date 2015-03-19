@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Library Gadget: Payment</title>
+{% endblock %}
+
+{% block content %} 
+
+
+        <div class="section">
+        <h3>Payment</h3>
+
+        <p>
+          <ul>
+            <li>Only {{ upgrade.total_cost }}/year</li>
+            <li>Email reminder before items are due</li>
+            <li>Daily email reminder about any overdue items</li>
+            <li>Automatically renew items for extended checkout periods</li>
+        </ul>
+        </p>
+
+         </div>
+
+        {% include "payment.html" %}
+
+{% endblock %}

@@ -1,0 +1,854 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <title>Seattle Public Library - Horizon Information Portal</title><link title="bannerstyles" href="/hipres/css/ipac.css" type="text/css" rel="stylesheet"><script type="text/javascript" src="https://catalog.spl.org/hipres/js/yui/2.2.0/yahoo-min.js"></script><script type="text/javascript" src="https://catalog.spl.org/hipres/js/yui/2.2.0/connection-min.js"></script><SCRIPT LANGUAGE="JavaScript">
+<!--
+	function startTimer()
+	{
+		curUrl = window.location.href;
+		if (curUrl.indexOf("startover=true", 0) < 0)
+		{    
+		  var time= new Date();
+	        hours= time.getHours();
+	        mins= time.getMinutes();
+	        secs= time.getSeconds();
+	        closeTime=hours*3600+mins*60+secs;
+	        closeTime+=1200;
+	        Timer();
+		}
+	}
+	function Timer()
+	{
+	        var time= new Date();
+	        hours= time.getHours();
+	        mins= time.getMinutes();
+	        secs= time.getSeconds();
+	        curTime=hours*3600+mins*60+secs;
+	        if(curTime>=closeTime)
+		{
+		        location = "https://catalog.spl.org/ipac20/ipac.jsp?session=T2243064187VT.23198&profile=dial&lang=eng&logout=true&startover=true";
+		}
+		else
+		{
+			window.setTimeout("Timer()",1000);
+		}
+	}
+//-->
+</SCRIPT><SCRIPT LANGUAGE="JavaScript">
+//values for populating and working with selection fields
+var mdy = new Array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30);
+var mdyShort = new Array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28);
+var mdyShortLeap = new Array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29);
+var mdyLong = new Array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31);
+var myMonths = new Array(1,2,3,4,5,6,7,8,9,10,11,12);
+var myDays = new Array(mdyLong,mdyShortLeap,mdyShort,mdy);
+var myYears;
+
+//values for configuration
+//# years to show in the future
+var yrsToShow = 0;  // we only want to show this year's dates for now...
+ 
+//2;
+//# days to extend into future for default 'suspend until' date
+var daysToExtend = 28;
+//set whether first selector is months or days
+var monthFirst = true;
+var allowPastDays = false;	//when selecting a date, show days in past
+							//for the purpose of selecting a suspend-until date, we don't want them to choose a past date
+
+// only allow requests maxMonths months in the future
+var maxMonths = 6;                            
+                            
+//common values
+var millisInDay = 86400000;
+var todaysDate = new Date();
+var todayYr = todaysDate.getFullYear();
+var todayMo = todaysDate.getMonth();
+var todayDy = todaysDate.getDate();
+
+var months;					//placeholders to make ordering of selectors controlled by script, not html ordering
+var days;
+var years;
+
+
+// NB. todayMo is zero indexed.
+if ( (todayMo + maxMonths + 1) > 12 ) {
+    yrsToShow = 1;      //because we're spilling over to the next year
+}
+
+
+function $() {
+  // shorcut for getElementsById
+  var elements = new Array();
+  for (var i = 0; i < arguments.length; i++) {
+    var element = arguments[i];
+    if (typeof element == 'string') {
+      element = document.getElementById(element);
+    }
+    if (arguments.length == 1) {
+      return element;
+    }
+    elements.push(element);
+  }
+  return elements;
+};
+
+//called by "change status" button; converts selected date into milliseconds
+function getCurrentDateAsMillis()
+{
+	var dVal = days.options[days.selectedIndex].value;
+	var mVal = months.options[months.selectedIndex].value;
+	var yVal = years.options[years.selectedIndex].value;
+	var dateStr = mVal + "/" + dVal + "/" + yVal;
+	document.ipac.suspend_date.value = Date.parse(dateStr);
+	if( $('preactivateCheckbox').checked ) {
+		doPreactivation();
+	}
+
+}
+
+//determines if given year is considered a Leap Year
+function isALeapYear(year)
+{
+	if ( (year % 4) == 0 ) return(true);
+	else return(false);
+}
+
+//determines which array of day listings to use based on 0-index months
+function getDaySet(month, year)
+{
+	var isLeapYear = isALeapYear(year);
+	var daySet;
+	
+	//decide which set of days to populate days with.
+	var daySet = "";
+	if ( month == 1 && isLeapYear ) 
+	{
+		//month = February, is leap year; use short month w/ leap day
+		daySet = 1; 
+	}
+	else if ( month == 1 && !isLeapYear ) 
+	{
+		//month = February, is not leap year; use short month
+		daySet = 2; 
+	}
+	else if ((month == 3) || (month == 5) || (month == 8) || (month == 10))
+	{
+	    //month = April, June, September or November; use 30 day month
+		daySet = 3; 
+	}
+	else 
+	{
+	    //default; use 31 day month
+		daySet = 0; 
+	}
+	return(myDays[daySet]);
+}
+
+//populates day list
+function setDaySelector(length, daySet, selectedIdx)
+{
+	days.length = length;
+	for (a = 0; a < length; a++)
+	{
+		days.options[a].text = daySet[a];
+		days.options[a].value = daySet[a];
+	}
+	
+	if (document.getElementById)
+	{
+		if (monthFirst)
+		{
+			document.getElementById("select2").selectedIndex = selectedIdx;
+		}
+		else
+		{
+			document.getElementById("select1").selectedIndex = selectedIdx;
+		}
+	}
+	else
+	{
+		days.selectedIndex = selectedIdx;
+	}
+}
+
+//changes day select list
+function changeDays(day, month, year)
+{
+	var daySet = getDaySet(month, year);
+	var spillover = (todayMo + 1 + maxMonths ) % 12; 
+
+	if ( !allowPastDays )
+	{		
+		//check if day is past day with current month/year; set to current day
+		if ( year == todayYr && month == todayMo && day < todayDy )
+		{
+			day = todayDy;
+		}
+		
+		//check if day is current day with current month/year; move it ahead 1 for future date
+		if ( year == todayYr && month == todayMo && day == todayDy )
+		{
+			day = day + 1;
+		}
+		
+		//check if day is future day with current month/year; display short listing, else normal listing
+		if ( year == todayYr && month == todayMo && day > todayDy )
+		{
+			//calculate new set of days
+			var newLength = (daySet[daySet.length-1] - day) + 1;	//subtract last day in set (31, 30, 29, or 28) by day, add 1 for 0-index
+			var newSet = new Array(newLength);						//new array to hold subset of days
+			var newSetIdx = 0;
+			var selectedIdx;
+			
+			for (a=day-1; a < daySet.length; a++)
+			{
+				newSet[newSetIdx] = daySet[a];
+				if (day == newSet[newSetIdx])
+				{
+					selectedIdx = newSetIdx;
+				}
+				newSetIdx = newSetIdx + 1;
+			}
+			
+			//short listing because current year/month; selectedIdx = pos in new list
+			setDaySelector(newSet.length, newSet, selectedIdx);
+		}
+        else if ( (year - todayYr) >= 0 &&  ( month + 1) == spillover) {
+            // then we are on the last allowed month (and have wrapped to the next year ).          
+            var newSet = new Array( day );
+            var goUpTo = todayDy;
+            if( todayDy > daySet.length ) {
+                // this ensures that you don't end up with, say, Feb. 31st.
+                goUpTo = daySet.length;
+            }
+            
+            for( a=0; a < goUpTo; a++ ) {
+                newSet[ a ] = daySet[ a ];
+            }
+            
+            setDaySelector( newSet.length, newSet, 1 );
+ 
+        }
+		else
+		{
+			//normal day listing because it's either future month/year; day-1 because list is 0-index
+			setDaySelector(daySet.length, daySet, day-1);
+		}
+	}
+	else
+	{
+		//normal day listing; day-1 because list is 0-index
+		setDaySelector(daySet.length, daySet, day-1);
+	}
+}
+
+//populates month list
+function setMonthSelector(length, monthSet, selectedIdx)
+{
+	months.length = length;
+	for(a=0; a < length; a++)
+	{
+		months.options[a].text = monthSet[a];
+		months.options[a].value = monthSet[a];
+	}
+
+	//select month
+	if (document.getElementById)
+	{
+		if (monthFirst)
+		{
+			document.getElementById("select1").selectedIndex = selectedIdx;
+		}
+		else
+		{
+			document.getElementById("select2").selectedIndex = selectedIdx;
+		}
+	}
+	else
+	{
+		months.selectedIndex = selectedIdx;
+	}
+}
+
+function changeMonths(day, month, year)
+{
+	var monthSet = myMonths;
+	
+	if ( !allowPastDays )
+	{
+		//check if month is past month with current year; set to current month
+		if ( year == todayYr && month < todayMo )
+		{
+			month = todayMo;
+		}
+		
+		//check if current year; display short listing, else normal listing
+		if ( year == todayYr )
+		{
+			//calculate new set of months
+			var newLength = (monthSet[monthSet.length-1] - (todayMo + 1)) + 1;		//always want from today's month on
+            
+            // limit to maxMonths months -- this applies to the current year only.
+            if( newLength > maxMonths ){
+                newLength = maxMonths;
+            }
+            
+            
+            var monthSetLength = monthSet.length;
+            if( monthSetLength > maxMonths ) {
+                monthSetLength = maxMonths;
+                
+            }
+            var goUpToMonth = monthSetLength + todayMo + 1;
+            if( goUpToMonth > 12 ){
+                goUpToMonth = 12;
+            }
+ 
+            
+			var newSet = new Array(newLength);
+			var newSetIdx = 0;
+			var selectedIdx;
+
+            for( a=todayMo; a < goUpToMonth; a++)
+			{
+				newSet[newSetIdx] = monthSet[a];
+				if ( (month+1) == newSet[newSetIdx] ) 
+				{ 
+					selectedIdx = newSetIdx; 
+				}
+				newSetIdx = newSetIdx + 1;
+			}
+			
+
+			//short list because current year; selectedIdx = pos in new list
+			setMonthSelector(newSet.length, newSet, selectedIdx);
+
+		} else if ( year - todayYr >= yrsToShow ) {
+            // then we are on next year and need to limit to the "spillover" months
+            var spillover = (todayMo + 1 + maxMonths ) % 12; 
+            var newSet = new Array( spillover );
+            var newSetIdx = 0;
+            
+            for( a=0; a < spillover; a++) {
+                newSet[a] = monthSet[a];
+            }
+            
+            setMonthSelector( newSet.length, newSet, month);
+        }
+		else
+		{
+			setMonthSelector(monthSet.length, monthSet, month);
+		}
+	}
+	else
+	{
+		//normal month listing; month is already 0-index
+		setMonthSelector(monthSet.length, monthSet, month);
+	}
+	
+	//month has changed, day list may change
+	changeDays(day, month, year);
+}
+
+//populates year list
+function setYearSelector(length, yearSet, selectedIdx)
+{
+	years.length = length;
+	for(a=0; a < length; a++)
+	{
+		years.options[a].text = yearSet[a];
+		years.options[a].value = yearSet[a];
+	}
+
+	//select year; always want first which is current year
+	if (document.getElementById)
+	{
+		document.getElementById("select3").selectedIndex = selectedIdx;
+	}
+	else
+	{
+		years.selectedIndex = selectedIdx;
+	}
+}
+
+function changeYears(day, month, year)
+{
+	//get selected index
+	var selectedIdx;
+	
+	for (a=0; a < myYears.length; a++)
+	{
+		if (year == myYears[a])
+		{
+			selectedIdx = a;
+		}
+	}
+	setYearSelector(myYears.length, myYears, selectedIdx);
+	
+	//changed year, month list may change
+	changeMonths(day, month, year);
+}
+
+//called when value in a selector list changes (really changes, just not selected!)
+function changeSelect(selector){
+	var didx = days.selectedIndex;
+	var midx = months.selectedIndex;
+	var yidx = years.selectedIndex;
+	var currDVal = days.options[didx].value;
+	var currMVal = months.options[midx].value - 1;			//to maintain the 0-index value returned from date.getMonth()
+	var currYVal = years.options[yidx].value;
+	
+	//if past days are not allowed, only show valid (future) dates
+	if ( !allowPastDays )
+	{	
+		//year change
+		if ( selector == years )
+		{
+			changeYears(currDVal, currMVal, currYVal);
+		}
+		
+		//month change
+		if ( selector == months )
+		{
+			changeMonths(currDVal, currMVal, currYVal);
+		}
+		
+		//day change
+		//we don't care about it
+	}
+}
+
+//initialization method - specified by HTML body onload="initDates()"
+function initDates() 
+{
+	var todayMillis = todaysDate.getTime();
+	var extendedMillis = todayMillis + (daysToExtend * millisInDay);
+	var displayDate = new Date(extendedMillis);
+
+	//set which selector maps to which data (months/days/years)
+	years = document.ipac.select3;
+	if ( monthFirst )
+	{
+		months = document.ipac.select1;
+		days = document.ipac.select2;
+	}
+	else
+	{
+		months = document.ipac.select2;
+		days = document.ipac.select1;
+	}
+
+	//build year array - always based on today's year
+	myYears = new Array(yrsToShow+1);
+	for(a=0; a < myYears.length; a++)
+	{
+		myYears[a] = todayYr + a;
+	}
+	
+	//establish initial display
+	if (years != null && months != null && days != null)
+	{
+		changeYears(displayDate.getDate(), displayDate.getMonth(), displayDate.getFullYear());
+	}
+}
+</SCRIPT></head><body bgcolor="#FFFFFF" onload="startTimer();initDates()" background="" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"><form name="ipac" method="POST" action="https://catalog.spl.org/ipac20/ipac.jsp"><input type="hidden" name="session" value="T2243064187VT.23198"><input type="hidden" name="profile" value="dial"><table xmlns:URLEncoder="/com.dynix.util.IpacURLEncoder" width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr valign="bottom"><td valign="bottom" align="left" width="10%" rowspan="2"><img src="/hipres/images/cleardot.gif" width="3" height="3" hspace="3" align="left"><a class="globalAnchor" href="http://www.spl.org"><img src="https://catalog.spl.org/hipres/logos/SPL_horiz_sm_color4.gif" border="0" alt="www.spl.org"></a><br><img src="/hipres/images/cleardot.gif" width="13" height="5" hspace="7" align="left"><a class="smallBlueBoldAnchor" href="http://www.spl.org">www.spl.org</a><br><img src="/hipres/images/cleardot.gif" height="7" valign="bottom"><table width="100%" border="0" cellpadding="0" cellspacing="0" background="/hipres/images/tab_mt.gif"><tbody><tr><td><img height="2" src="/hipres/images/spacer.gif"></td></tr></tbody></table></td><td align="right" width="100%" colspan="2"><table cellspacing="0" cellpadding="0" valign="top" border="0"><tbody><tr align="right"><td><a class="boldBlackFont1">October 17, 2008</a><img src="/hipres/images/cleardot.gif" width="3" height="5"></td></tr><tr><td class="globalLinks" valign="middle" nowrap="true" align="right"><table cellspacing="2" cellpadding="0" valign="top" border="0"><tr><td></td><td><a class="globalAnchor" title="Logout" href="javascript:loginIntoOrOutOfAccount('https%3A%2F%2Fcatalog.spl.org%2Fipac20%2Fipac.jsp%3Fsession%3DT2243064187VT.23198%26profile%3Ddial%26logout%3Dtrue%26date%3D1224306446618','')"><img src="/hipres/images/logout_large.gif" width="35" height="30" border="0" alt="Click here to logout" align="middle">Logout</a></td><td><a name="viewlist" class="globalAnchor" title="My List20" href="https://catalog.spl.org/ipac20/ipac.jsp?session=T2243064187VT.23198&amp;profile=dial&amp;menu=mylist&amp;listkey=ipac_my_list"><img src="/hipres/images/booklist-view_large.gif" border="0" width="25" height="30" alt="View My List" align="middle"></a><a name="viewlist" class="globalAnchor" title="View My List" href="javascript:buildMyList('https%3A%2F%2Fcatalog.spl.org%2Fipac20%2Fipac.jsp%3Fsession%3DT2243064187VT.23198%26profile%3Ddial%26menu%3Dmylist%26listkey%3Dipac_my_list%26lang%3Deng','')" id="bookbag">My List - 20</a></td><td><a class="globalAnchor" title="Help" href="javascript:popUpHelp('/hipres/help/eng/horizon/checkedout.htm');"><img src="/hipres/images/help_large.gif" width="25" height="30" border="0" alt="Help" align="middle">Help</a></td></tr><tr><td colspan="10" align="right" title="Name"><a class="boldRedFont1">Welcome  SARAH JANE&nbsp;OBRIEN</a></td></tr></table></td></tr></tbody></table></td></tr><tr><td align="center" valign="bottom" width="99%"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="50%" valign="bottom"><table width="100%" border="0" cellpadding="0" cellspacing="0" background="/hipres/images/tab_mt.gif"><tbody><tr><td><img height="2" src="/hipres/images/spacer.gif"></td></tr></tbody></table></td><td valign="bottom"><table bgcolor="#BDC5C9" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="4"><img height="4" src="/hipres/images/NW0-blue.gif" width="4"></td><td background="/hipres/images/bg-N0-blue.gif"><img height="4" src="/hipres/images/spacer.gif" width="8"></td><td width="4"><img height="4" src="/hipres/images/NE0-blue.gif" width="4"></td></tr><tr><td background="/hipres/images/bg-W0-blue.gif"><img height="4" src="/hipres/images/spacer.gif" width="4"></td><td align="middle"><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td><img height="8" src="/hipres/images/spacer.gif" width="2"></td><td nowrap="true" class="tabText" align="middle" height="22">&nbsp;<a class="TabInactive" title="Home" alt="Home" href="https://catalog.spl.org/ipac20/ipac.jsp?session=T2243064187VT.23198&amp;profile=dial&amp;menu=home&amp;ts=1224306446618">Welcome</a>&nbsp;</td><td><img height="8" src="/hipres/images/spacer.gif" width="2"></td></tr></tbody></table></td><td background="/hipres/images/bg-E0-blue.gif"><img height="4" src="/hipres/images/spacer.gif" width="4"></td></tr><tr><td background="/hipres/images/tab_mt.gif"><img height="2" src="/hipres/images/spacer.gif" width="4"></td><td background="/hipres/images/tab_mt.gif"><img height="2" src="/hipres/images/spacer.gif" width="8"></td><td background="/hipres/images/tab_mt.gif"><img height="2" src="/hipres/images/spacer.gif" width="4"></td></tr></tbody></table></td><td valign="bottom"><table bgcolor="#BDC5C9" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="4"><img height="4" src="/hipres/images/NW0-blue.gif" width="4"></td><td background="/hipres/images/bg-N0-blue.gif"><img height="4" src="/hipres/images/spacer.gif" width="8"></td><td width="4"><img height="4" src="/hipres/images/NE0-blue.gif" width="4"></td></tr><tr><td background="/hipres/images/bg-W0-blue.gif"><img height="4" src="/hipres/images/spacer.gif" width="4"></td><td align="middle"><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td><img height="8" src="/hipres/images/spacer.gif" width="2"></td><td nowrap="true" class="tabText" align="middle" height="22">&nbsp;<a class="TabInactive" title="Search Library Catalog" alt="Search Library Catalog" href="https://catalog.spl.org/ipac20/ipac.jsp?session=T2243064187VT.23198&amp;profile=dial&amp;menu=search&amp;ts=1224306446618">Search</a>&nbsp;</td><td><img height="8" src="/hipres/images/spacer.gif" width="2"></td></tr></tbody></table></td><td background="/hipres/images/bg-E0-blue.gif"><img height="4" src="/hipres/images/spacer.gif" width="4"></td></tr><tr><td background="/hipres/images/tab_mt.gif"><img height="2" src="/hipres/images/spacer.gif" width="4"></td><td background="/hipres/images/tab_mt.gif"><img height="2" src="/hipres/images/spacer.gif" width="8"></td><td background="/hipres/images/tab_mt.gif"><img height="2" src="/hipres/images/spacer.gif" width="4"></td></tr></tbody></table></td><td valign="bottom"><table bgcolor="#BDC5C9" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="4"><img height="4" src="/hipres/images/NW0-blue.gif" width="4"></td><td background="/hipres/images/bg-N0-blue.gif"><img height="4" src="/hipres/images/spacer.gif" width="8"></td><td width="4"><img height="4" src="/hipres/images/NE0-blue.gif" width="4"></td></tr><tr><td background="/hipres/images/bg-W0-blue.gif"><img height="4" src="/hipres/images/spacer.gif" width="4"></td><td align="middle"><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td><img height="8" src="/hipres/images/spacer.gif" width="2"></td><td nowrap="true" class="tabText" align="middle" height="22">&nbsp;<a class="TabInactive" title="Quick Facts and Subscription Databases" alt="Quick Facts and Subscription Databases" href="https://catalog.spl.org/ipac20/ipac.jsp?session=T2243064187VT.23198&amp;profile=dial&amp;menu=tab9&amp;ts=1224306446618">Databases</a>&nbsp;</td><td><img height="8" src="/hipres/images/spacer.gif" width="2"></td></tr></tbody></table></td><td background="/hipres/images/bg-E0-blue.gif"><img height="4" src="/hipres/images/spacer.gif" width="4"></td></tr><tr><td background="/hipres/images/tab_mt.gif"><img height="2" src="/hipres/images/spacer.gif" width="4"></td><td background="/hipres/images/tab_mt.gif"><img height="2" src="/hipres/images/spacer.gif" width="8"></td><td background="/hipres/images/tab_mt.gif"><img height="2" src="/hipres/images/spacer.gif" width="4"></td></tr></tbody></table></td><td valign="bottom"><table bgcolor="#BDC5C9" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="4"><img height="4" src="/hipres/images/NW0-blue.gif" width="4"></td><td background="/hipres/images/bg-N0-blue.gif"><img height="4" src="/hipres/images/spacer.gif" width="8"></td><td width="4"><img height="4" src="/hipres/images/NE0-blue.gif" width="4"></td></tr><tr><td background="/hipres/images/bg-W0-blue.gif"><img height="4" src="/hipres/images/spacer.gif" width="4"></td><td align="middle"><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td><img height="8" src="/hipres/images/spacer.gif" width="2"></td><td nowrap="true" class="tabText" align="middle" height="22">&nbsp;<a class="TabInactive" title="Reader's Corner" alt="Reader's Corner" href="http://www.spl.org/default.asp?pageID=collection_readinglists">Reader's Corner</a>&nbsp;</td><td><img height="8" src="/hipres/images/spacer.gif" width="2"></td></tr></tbody></table></td><td background="/hipres/images/bg-E0-blue.gif"><img height="4" src="/hipres/images/spacer.gif" width="4"></td></tr><tr><td background="/hipres/images/tab_mt.gif"><img height="2" src="/hipres/images/spacer.gif" width="4"></td><td background="/hipres/images/tab_mt.gif"><img height="2" src="/hipres/images/spacer.gif" width="8"></td><td background="/hipres/images/tab_mt.gif"><img height="2" src="/hipres/images/spacer.gif" width="4"></td></tr></tbody></table></td><td valign="bottom"><table bgcolor="#990033" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td width="4"><img height="4" src="/hipres/images/tab_lt.gif" width="4"></td><td background="/hipres/images/tab_mt.gif"><img height="4" src="/hipres/images/spacer.gif" width="8"></td><td width="4"><img height="4" src="/hipres/images/tab_rt.gif" width="4"></td></tr><tr><td background="/hipres/images/tab_lm.gif"><img height="4" src="/hipres/images/spacer.gif" width="4"></td><td nowrap="true"><table cellpadding="0" cellspacing="0" width="100%" border="0"><tbody><tr><td><img height="8" src="/hipres/images/spacer.gif" width="2"></td><td nowrap="true" class="tabText" align="middle" height="22">&nbsp;<a class="TabActive" title="View my account information" alt="View my account information">My Account</a>&nbsp;</td><td><img height="8" src="/hipres/images/spacer.gif" width="2"></td></tr></tbody></table></td><td background="/hipres/images/tab_rm.gif"><img height="4" src="/hipres/images/spacer.gif" width="4"></td></tr><tr><td><img height="2" src="/hipres/images/tab_lb.gif" width="4"></td><td><img height="2" src="/hipres/images/spacer.gif" width="8"></td><td><img height="2" src="/hipres/images/tab_rb.gif" width="4"></td></tr></tbody></table></td><td width="50%" valign="bottom"><table width="100%" border="0" cellpadding="0" cellspacing="0" background="/hipres/images/tab_mt.gif"><tbody><tr><td><img height="2" src="/hipres/images/spacer.gif"></td></tr></tbody></table></td></tr></tbody></table></td><td width="1%" valign="bottom"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td valign="top" align="right" nowrap="true" width="100%"><a class="normalBlackFont1">&nbsp;&nbsp;&nbsp;</a></td></tr><tr><td background="/hipres/images/tab_mt.gif"><img height="2" src="/hipres/images/spacer.gif"></td></tr></tbody></table></td></tr></tbody></table><table xmlns:URLEncoder="/com.dynix.util.IpacURLEncoder" cellspacing="0" cellpadding="3" width="100%" bgcolor="#990033" border="0"><tbody><tr valign="top" align="middle"><td width="100%"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td><img height="30" src="/hipres/images/spacer.gif" width="8"></td><td valign="center" align="middle"><a class="navBarAnchor" title="View a summary of your Library account information" alt="View a summary of your Library account information" href="https://catalog.spl.org/ipac20/ipac.jsp?session=T2243064187VT.23198&amp;profile=dial&amp;menu=account&amp;submenu=overview&amp;ts=1224306446618">Overview</a></td><td><img height="8" src="/hipres/images/spacer.gif" width="8"></td><td><img height="16" src="/hipres/images/bck_tan.gif" width="1"></td><td><img height="30" src="/hipres/images/spacer.gif" width="8"></td><td valign="center" align="middle"><a class="navBarCurrent" title="See and renew currently checked out items" alt="See and renew currently checked out items" href="https://catalog.spl.org/ipac20/ipac.jsp?session=T2243064187VT.23198&amp;profile=dial&amp;menu=account&amp;submenu=itemsout&amp;ts=1224306446618">Checked Out/Renew</a></td><td><img height="8" src="/hipres/images/spacer.gif" width="8"></td><td><img height="16" src="/hipres/images/bck_tan.gif" width="1"></td><td><img height="30" src="/hipres/images/spacer.gif" width="8"></td><td valign="center" align="middle"><a class="navBarAnchor" title="View your holds ready to be picked up and waiting to become available" alt="View your holds ready to be picked up and waiting to become available" href="https://catalog.spl.org/ipac20/ipac.jsp?session=T2243064187VT.23198&amp;profile=dial&amp;menu=account&amp;submenu=holds&amp;ts=1224306446618">Holds</a></td><td><img height="8" src="/hipres/images/spacer.gif" width="8"></td><td><img height="16" src="/hipres/images/bck_tan.gif" width="1"></td><td><img height="30" src="/hipres/images/spacer.gif" width="8"></td><td valign="center" align="middle"><a class="navBarAnchor" title="Messages and Fees" alt="Messages and Fees" href="https://catalog.spl.org/ipac20/ipac.jsp?session=T2243064187VT.23198&amp;profile=dial&amp;menu=account&amp;submenu=blocks&amp;ts=1224306446618">Messages/Fees</a></td><td><img height="8" src="/hipres/images/spacer.gif" width="8"></td><td><img height="16" src="/hipres/images/bck_tan.gif" width="1"></td><td><img height="30" src="/hipres/images/spacer.gif" width="8"></td><td valign="center" align="middle"><a class="navBarAnchor" title="Check your address, email notification, and phone number." alt="Check your address, email notification, and phone number." href="https://catalog.spl.org/ipac20/ipac.jsp?session=T2243064187VT.23198&amp;profile=dial&amp;menu=account&amp;submenu=info&amp;ts=1224306446618">Profile</a></td><td><img height="8" src="/hipres/images/spacer.gif" width="8"></td><td><img height="16" src="/hipres/images/bck_tan.gif" width="1"></td><td><img height="30" src="/hipres/images/spacer.gif" width="8"></td><td valign="center" align="middle"><a class="navBarAnchor" title="Read Library's policy on user confidentiality" alt="Read Library's policy on user confidentiality" href="http://www.spl.org/default.asp?pageID=about_policies_confidentiality">Confidentiality Policy</a></td><td><img height="8" src="/hipres/images/spacer.gif" width="8"></td></tr></tbody></table></td></tr></tbody></table><a class="big">Checked out/Renew</a><p></p><a class="normalBlackFont2">Checked Out: 18</a><br><a class="normalBlackFont2">Overdue: 0</a><br><a class="normalBlackFont2">Lost or Claimed Returned: 0</a><br><strong>
+
+    Please allow up to 48 hours before returned items are removed from your account.
+</strong><p></p><table class="tableBackground" border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td><p><a href="http://catalog.spl.org/rss/itemsout.jsp?id=l6TFr-YLwkYJ!USAsOpf!S!050UqBLTW"><img src="https://catalog.spl.org/hipres/images/xml.gif"></a><a class="tinyAnchor" href="http://catalog.spl.org/hipres/help/local/rss.html">
+				[what's this?]
+			</a></p></td></tr><tr><td><table class="tableBackgroundHighlight" border="0" width="100%" cellspacing="0" cellpadding="2"><tr bgcolor="#EEEEE4"><td><input type="submit" name="renewitems" value="Renew" class="button"></td></tr></table></td></tr><tr><td bgcolor="#BFBFBF"><table class="tableBackgroundHighlight" style="0" width="100%" cellspacing="1" cellpadding="1"><tr><td height="20" width="10" colspan="1" bgcolor="#990033"><input type="checkbox" name="renewall" onClick="javascript:selectallrenewal(document.ipac.renewitemkeys)"></td><td colspan="1" bgcolor="#990033" align="center"><a class="boldWhiteFont2" title="rawtitle" href="https://catalog.spl.org/ipac20/ipac.jsp?session=T2243064187VT.23198&amp;profile=dial&amp;menu=account&amp;submenu=itemsout&amp;sortby=disptitle">Title</a></td><td colspan="1" bgcolor="#990033" align="center"><a class="boldWhiteFont2" href="https://catalog.spl.org/ipac20/ipac.jsp?session=T2243064187VT.23198&amp;profile=dial&amp;menu=account&amp;submenu=itemsout&amp;sortby=rawckodate">Out</a></td><td colspan="1" bgcolor="#990033" align="center"><a class="boldWhiteFont2" href="https://catalog.spl.org/ipac20/ipac.jsp?session=T2243064187VT.23198&amp;profile=dial&amp;menu=account&amp;submenu=itemsout&amp;sortby=rawduedate">Due Date</a></td><td colspan="1" bgcolor="#990033" align="center"><a class="boldWhiteFont2" href="https://catalog.spl.org/ipac20/ipac.jsp?session=T2243064187VT.23198&amp;profile=dial&amp;menu=account&amp;submenu=itemsout&amp;sortby=numrenewals">Times Renewed</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="0010063632417"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="https://catalog.spl.org/ipac20/ipac.jsp?session=T2243064187VT.23198&amp;profile=dial&amp;uri=full=3100001~!2503576~!0&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">Barbie &amp; the Diamond Castle /</a></td></tr><tr><td><a class="normalBlackFont1">by Depken, Kristen L.</a></td></tr><tr><td><img src="/hipres/images/formaticons/ipac-icon-book.gif" alt="book"></td></tr><tr><td>
+                        barcode: 0010063632417</td></tr><tr><td><a class="normalBlackFont1">9780375856198 (trade)</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">09/30/2008</a></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">10/21/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">0</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="0010056702359"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="https://catalog.spl.org/ipac20/ipac.jsp?session=T2243064187VT.23198&amp;profile=dial&amp;uri=full=3100001~!2399018~!1&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">The adventures of the Little Prince. The greatest gift</a></td></tr><tr><td><a class="normalBlackFont1">by Brewer, Jameson.</a></td></tr><tr><td><img src="/hipres/images/formaticons/ipac-icon-dvd.gif" alt="dvd"></td></tr><tr><td>
+
+                        barcode: 0010056702359</td></tr><tr><td><a class="normalBlackFont1">141722925X</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">10/11/2008</a></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">10/25/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">0</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="0010062567473"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="https://catalog.spl.org/ipac20/ipac.jsp?session=T2243064187VT.23198&amp;profile=dial&amp;uri=full=3100001~!2509680~!2&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">Abel's island</a></td></tr><tr><td><a class="normalBlackFont1">by Sporn, Michael.</a></td></tr><tr><td><img src="/hipres/images/formaticons/ipac-icon-dvd.gif" alt="dvd"></td></tr><tr><td>
+                        barcode: 0010062567473</td></tr><tr><td><a class="normalBlackFont1"></a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">10/11/2008</a></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">10/25/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">0</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="0010057173980"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="https://catalog.spl.org/ipac20/ipac.jsp?session=T2243064187VT.23198&amp;profile=dial&amp;uri=full=3100001~!2433195~!3&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">Thomas &amp; friends. Thomas &amp; the special letter</a></td></tr><tr><td><a class="normalBlackFont1">by Allcroft, Britt.</a></td></tr><tr><td><img src="/hipres/images/formaticons/ipac-icon-dvd.gif" alt="dvd"></td></tr><tr><td>
+
+                        barcode: 0010057173980</td></tr><tr><td><a class="normalBlackFont1"></a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">10/11/2008</a></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">10/25/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">0</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="0010053497250"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="https://catalog.spl.org/ipac20/ipac.jsp?session=T2243064187VT.23198&amp;profile=dial&amp;uri=full=3100001~!2287953~!4&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">Their eyes were watching God</a></td></tr><tr><td><a class="normalBlackFont1">by Hurston, Zora Neale.</a></td></tr><tr><td><img src="/hipres/images/formaticons/ipac-icon-bkcd.gif" alt="book on CD"></td></tr><tr><td>
+                        barcode: 0010053497250</td></tr><tr><td><a class="normalBlackFont1">1402519745</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">10/11/2008</a></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">11/01/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">0</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="0010044822640"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="https://catalog.spl.org/ipac20/ipac.jsp?session=T2243064187VT.23198&amp;profile=dial&amp;uri=full=3100001~!2137732~!5&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">School picture day /</a></td></tr><tr><td><a class="normalBlackFont1">by Plourde, Lynn.</a></td></tr><tr><td><img src="/hipres/images/formaticons/ipac-icon-book.gif" alt="book"></td></tr><tr><td>
+
+                        barcode: 0010044822640</td></tr><tr><td><a class="normalBlackFont1">0525468862 :</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">10/11/2008</a></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">11/01/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">0</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="0010050453553"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="https://catalog.spl.org/ipac20/ipac.jsp?session=T2243064187VT.23198&amp;profile=dial&amp;uri=full=3100001~!2273972~!6&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">When I heard the learn'd astronomer /</a></td></tr><tr><td><a class="normalBlackFont1">by Whitman, Walt, 1819-1892.</a></td></tr><tr><td><img src="/hipres/images/formaticons/ipac-icon-book.gif" alt="book"></td></tr><tr><td>
+                        barcode: 0010050453553</td></tr><tr><td><a class="normalBlackFont1">0689863977</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">10/11/2008</a></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">11/01/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">0</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="0010061298674"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="https://catalog.spl.org/ipac20/ipac.jsp?session=T2243064187VT.23198&amp;profile=dial&amp;uri=full=3100001~!2504832~!7&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">The day we danced in underpants /</a></td></tr><tr><td><a class="normalBlackFont1">by Wilson, Sarah, 1934-</a></td></tr><tr><td><img src="/hipres/images/formaticons/ipac-icon-book.gif" alt="book"></td></tr><tr><td>
+
+                        barcode: 0010061298674</td></tr><tr><td><a class="normalBlackFont1">9781582462059</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">10/11/2008</a></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">11/01/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">0</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="0010048504327"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="https://catalog.spl.org/ipac20/ipac.jsp?session=T2243064187VT.23198&amp;profile=dial&amp;uri=full=3100001~!2238896~!8&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">Macbeth for kids /</a></td></tr><tr><td><a class="normalBlackFont1">by Burdett, Lois, 1952-</a></td></tr><tr><td><img src="/hipres/images/formaticons/ipac-icon-book.gif" alt="book"></td></tr><tr><td>
+                        barcode: 0010048504327</td></tr><tr><td><a class="normalBlackFont1">0887532799 (pbk.) :</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">10/11/2008</a></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">11/01/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">0</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="0010050845618"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="https://catalog.spl.org/ipac20/ipac.jsp?session=T2243064187VT.23198&amp;profile=dial&amp;uri=full=3100001~!2283145~!9&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">Pajama day /</a></td></tr><tr><td><a class="normalBlackFont1">by Plourde, Lynn.</a></td></tr><tr><td><img src="/hipres/images/formaticons/ipac-icon-book.gif" alt="book"></td></tr><tr><td>
+
+                        barcode: 0010050845618</td></tr><tr><td><a class="normalBlackFont1">0525473556</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">10/11/2008</a></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">11/01/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">0</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="0010039914972"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="https://catalog.spl.org/ipac20/ipac.jsp?session=T2243064187VT.23198&amp;profile=dial&amp;uri=full=3100001~!2087629~!10&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">To sleep perchance to dream /</a></td></tr><tr><td><a class="normalBlackFont1">by Shakespeare, William, 1564-1616.</a></td></tr><tr><td><img src="/hipres/images/formaticons/ipac-icon-book.gif" alt="book"></td></tr><tr><td>
+                        barcode: 0010039914972</td></tr><tr><td><a class="normalBlackFont1">0439296552</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">10/11/2008</a></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">11/01/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">0</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="0010051807476"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="https://catalog.spl.org/ipac20/ipac.jsp?session=T2243064187VT.23198&amp;profile=dial&amp;uri=full=3100001~!2293067~!11&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">Families have together /</a></td></tr><tr><td><a class="normalBlackFont1">by Ziefert, Harriet.</a></td></tr><tr><td><img src="/hipres/images/formaticons/ipac-icon-book.gif" alt="book"></td></tr><tr><td>
+
+                        barcode: 0010051807476</td></tr><tr><td><a class="normalBlackFont1">159354071X</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">10/11/2008</a></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">11/01/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">0</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="0010032859604"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="https://catalog.spl.org/ipac20/ipac.jsp?session=T2243064187VT.23198&amp;profile=dial&amp;uri=full=3100001~!1752657~!12&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">A midsummer night's dream /</a></td></tr><tr><td><a class="normalBlackFont1">by Shakespeare, William, 1564-1616.</a></td></tr><tr><td><img src="/hipres/images/formaticons/ipac-icon-book.gif" alt="book"></td></tr><tr><td>
+                        barcode: 0010032859604</td></tr><tr><td><a class="normalBlackFont1">1858542715</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">10/15/2008</a></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">11/05/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">0</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="0010049488058"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="https://catalog.spl.org/ipac20/ipac.jsp?session=T2243064187VT.23198&amp;profile=dial&amp;uri=full=3100001~!2258084~!13&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">Great expectations</a></td></tr><tr><td><a class="normalBlackFont1">by Dickens, Charles, 1812-1870.</a></td></tr><tr><td><img src="/hipres/images/formaticons/ipac-icon-bkcd.gif" alt="book on CD"></td></tr><tr><td>
+
+                        barcode: 0010049488058</td></tr><tr><td><a class="normalBlackFont1">1402549504 :</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">10/15/2008</a></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">11/05/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">0</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="0010032175407"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="https://catalog.spl.org/ipac20/ipac.jsp?session=T2243064187VT.23198&amp;profile=dial&amp;uri=full=3100001~!1710117~!14&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">Something rich and strange : a treasury of Shakespeare's verse /</a></td></tr><tr><td><a class="normalBlackFont1">by Shakespeare, William, 1564-1616.</a></td></tr><tr><td><img src="/hipres/images/formaticons/ipac-icon-book.gif" alt="book"></td></tr><tr><td>
+                        barcode: 0010032175407</td></tr><tr><td><a class="normalBlackFont1">1856975975 (hardcover) :</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">10/15/2008</a></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">11/05/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">0</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="0010048381973"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="https://catalog.spl.org/ipac20/ipac.jsp?session=T2243064187VT.23198&amp;profile=dial&amp;uri=full=3100001~!2237982~!15&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">Superdog : the heart of a hero /</a></td></tr><tr><td><a class="normalBlackFont1">by Buehner, Caralyn.</a></td></tr><tr><td><img src="/hipres/images/formaticons/ipac-icon-book.gif" alt="book"></td></tr><tr><td>
+
+                        barcode: 0010048381973</td></tr><tr><td><a class="normalBlackFont1">0066236207</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">10/15/2008</a></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">11/05/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">0</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="0010043401180"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="https://catalog.spl.org/ipac20/ipac.jsp?session=T2243064187VT.23198&amp;profile=dial&amp;uri=full=3100001~!2073993~!16&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">Where do I sleep? : a Pacific Northwest lullabye /</a></td></tr><tr><td><a class="normalBlackFont1">by Blomgren, Jennifer.</a></td></tr><tr><td><img src="/hipres/images/formaticons/ipac-icon-book.gif" alt="book"></td></tr><tr><td>
+                        barcode: 0010043401180</td></tr><tr><td><a class="normalBlackFont1">1570612587</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">10/15/2008</a></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">11/05/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">0</a></td></tr><tr><td bgcolor="#FFFFFF"><input class="normalBlackFont1" type="checkbox" name="renewitemkeys" value="0010054591879"></td><td bgcolor="#FFFFFF"><table class="tableBackground" cellspacing="1" cellpadding="3"><tr><td><a class="mediumBoldAnchor" href="https://catalog.spl.org/ipac20/ipac.jsp?session=T2243064187VT.23198&amp;profile=dial&amp;uri=full=3100001~!2396002~!17&amp;ri=1&amp;menu=search&amp;source=~!horizon&amp;ipp=20&amp;spp=20">Winter song : a poem /</a></td></tr><tr><td><a class="normalBlackFont1">by Shakespeare, William, 1564-1616.</a></td></tr><tr><td><img src="/hipres/images/formaticons/ipac-icon-book.gif" alt="book"></td></tr><tr><td>
+
+                        barcode: 0010054591879</td></tr><tr><td><a class="normalBlackFont1">1590782755</a></td></tr></table></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">10/15/2008</a></td><td bgcolor="#FFFFFF" align="center" width="110"><a class="normalBlackFont2">11/05/2008</a></td><td bgcolor="#FFFFFF" align="center" width="90"><a class="normalBlackFont2">0</a></td></tr></table></td></tr><tr><td><table class="tableBackgroundHighlight" border="0" width="100%" cellspacing="0" cellpadding="2"><tr bgcolor="#EEEEE4"><td><input type="submit" name="renewitems" value="Renew" class="button"></td></tr></table></td></tr></table><input type="hidden" name="menu" value="account"><input type="hidden" name="submenu" value="itemsout"><script language="javascript">
+function selectallrenewal(field)
+{
+	if (!field.length)
+	{
+		document.ipac.renewitemkeys.checked = document.ipac.renewall.checked;
+	}
+	else
+	{
+		for (i = 0; i < field.length; i++)
+		{
+			field[i].checked = document.ipac.renewall.checked;
+		}
+	}
+}
+</script><script xmlns:URLEncoder="/com.dynix.util.IpacURLEncoder" LANGUAGE="JavaScript">
+myarr = null;
+count = 0;
+setReturnFlag=0;
+
+function buildReturnPageNewList(thisurl,returnurl)
+{
+
+       if(document.buildLink.returnURL )
+        {
+          if(returnurl != '')
+		  {
+            document.buildLink.returnURL.value = unescape(returnurl);
+			}
+
+        }
+       // window.location = url;
+
+        
+        if(navigator.appName == "Netscape" || navigator.userAgent.indexOf("Opera") > -1)
+        
+        {
+
+	       document.buildLink.action=unescape(thisurl);
+       }
+        else
+        {
+            document.buildLink.action=thisurl;
+        }
+
+       document.buildLink.submit();
+
+
+
+}
+
+
+function  ReturnSearchPage(url)
+    {
+
+         if(document.SearchResult)
+         {
+
+                   document.SearchResult.action = unescape(url);
+                   document.SearchResult.submit();
+
+         }
+         else if(document.buildLink)
+         {
+                document.buildLink.action = unescape(url);
+                document.buildLink.submit();
+
+         }
+         else
+            window.location = unescape(url);
+    }
+
+
+function buildNewList(url,retURL,summary)
+{
+    i = 0;
+
+
+
+
+       if(myarr != null)
+        {
+                while(myarr[i] != null)
+                 {
+                        var thisString = new String(myarr[i]);
+                        if(thisString.indexOf("bkey") != -1)
+                         {
+                            url +='&addkeys=' + myarr[i];
+
+                          }
+                        i++;
+                 }
+
+
+        }
+
+       if(document.buildLink.returnURL )
+        {
+
+         if(setReturnFlag == 1)
+          {
+                  if(retURL)
+                   {
+                     if(summary == 'false')
+                            document.buildLink.returnURL.value = unescape(retURL);
+                      else
+                          document.buildLink.returnURL.value = unescape(document.location.toString());
+                   }
+                  else
+                       document.buildLink.returnURL.value = unescape(document.location.toString());
+           }
+        }
+       // window.location = url;
+        
+        if(navigator.appName == "Netscape" || navigator.userAgent.indexOf("Opera") > -1 )
+	
+        {
+            document.buildLink.action=unescape(url);
+        }
+        else
+        {
+            document.buildLink.action=url;
+        }
+
+       document.buildLink.submit();
+
+
+
+}
+
+function buildMyList(URL,retURL)
+{
+  i = 0;
+
+
+
+
+if(document.buildLink)
+{
+
+
+
+        if(myarr != null)
+        {
+
+                for(i = 0; i <myarr.length; i++)
+                {
+
+
+                    if(myarr[i] != null)
+                    {
+                         URL+='&addkeys=' + myarr[i];
+
+
+                    }
+                }
+
+
+
+        }
+
+
+
+       if(document.buildLink.returnURL )
+        {
+
+             if(setReturnFlag == 1 || retURL != '')
+             {
+
+                    if(retURL != '')
+                            document.buildLink.returnURL.value = retURL;
+                    else
+                      document.buildLink.returnURL.value = document.location.toString();
+
+                        index = document.buildLink.returnURL.value.indexOf('#focus');
+                        if(index >-1)
+                         {
+                            document.buildLink.returnURL.value = document.buildLink.returnURL.value.substring(0,index);
+                         }
+
+
+
+                        if(myarr != null)
+                        {
+
+                             for(i = 0; i <myarr.length; i++)
+                            {
+                               index = document.buildLink.returnURL.value.indexOf('?');
+                               if(index == -1)
+                               {
+                                   document.buildLink.returnURL.value +='?';
+                               }
+                               else
+                               {
+                                  document.buildLink.returnURL.value+='&';
+                               }
+                               if(myarr[i] != null)
+                                    document.buildLink.returnURL.value+='addkeys=' + myarr[i];
+
+                            }
+
+                        }
+
+
+
+                  document.buildLink.returnURL.value = unescape(document.buildLink.returnURL.value);
+
+             }
+
+        }
+
+
+
+       
+        if(navigator.appName == "Netscape" || navigator.userAgent.indexOf("Opera") > -1 )
+	
+        {
+            document.buildLink.action=unescape(URL);
+        }
+        else
+        {
+            document.buildLink.action=URL;
+        }
+
+
+        document.buildLink.submit();
+}
+else
+{
+
+    window.location = unescape(URL);
+}
+
+
+}
+
+function   loginIntoOrOutOfAccount(URL,retURL)
+    {
+         i = 0;
+
+
+
+
+
+    setReturnFlag = 1;
+
+
+        if(document.buildLink)
+        {
+                
+		if(navigator.appName == "Netscape" || navigator.userAgent.indexOf("Opera") > -1 )
+		
+                {
+                    document.buildLink.action=unescape(URL);
+                }
+                else
+                {
+                    document.buildLink.action=URL;
+                }
+
+
+                if(myarr != null)
+                {
+                        while(myarr[i] != null)
+                         {
+                                 document.buildLink.action+='&addkeys=' + myarr[i];
+                                i++;
+                         }
+
+
+                }
+
+
+               if(document.buildLink.returnURL || setReturnFlag == 1 )
+                {
+
+                     if(retURL != '')
+                     {
+                          document.buildLink.returnURL.value = retURL;
+                     }
+                     else
+                     {
+                           document.buildLink.returnURL.value = document.location.toString();
+                     }
+                     if(myarr != null)
+                     {
+                              i = 0;
+                              while(myarr[i] != null)
+                              {
+                                      document.buildLink.returnURL.value+='&addkeys=' + myarr[i];
+                                      i++;
+                               }
+
+                      }
+
+
+                    document.buildLink.returnURL.value = unescape(document.buildLink.returnURL.value);
+
+
+
+                }
+
+
+
+                document.buildLink.submit();
+        }
+        else
+        {
+
+            
+	    if(navigator.appName == "Netscape" || navigator.userAgent.indexOf("Opera") > -1 )
+	    
+            {
+                window.location = unescape(URL);
+            }
+            else
+            {
+                window.location = URL;
+            }
+
+        }
+
+
+ }
+
+function popUpHelp(URL)
+{
+	day = new Date();
+	id = day.getTime();
+	eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=1,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=1,width=350,height=650');");
+}
+function changeBookbagText(text)
+{
+    // begin spl locally added stuff for temporary list alert
+    
+  var isAuth = 'true';
+  if( document.buildLink && isAuth == "false"){
+    bookbagText = document.getElementById('bookbag').innerHTML;
+    if(bookbagText == 'My List - 0' || bookbagText == 'TEMPORARY LIST - 0') {
+        alert("You are not currently logged in.  This list is temporary \nand will go away as soon as you close your web browser.  \n\nTo permanently save the items on this list, please \nlog in to your account.");
+    }
+    
+  }
+  // spl end local stuff for temporary list alert.
+
+
+	if (document.getElementById)
+	{
+ 		document.getElementById('bookbag').innerHTML=text;
+	}
+	else if (document.layers)
+	{
+  		document.anchors["viewlist"].text=text;
+	}
+	else
+	{
+
+		bookbag.innerHTML=text;
+	}
+}
+</script><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr height="30" bgcolor="#990033"><td><center><img src="/hipres/images/spacer.gif" height="1" width="25" border="0"><a class="navBarAnchor" href="http://www.spl.org">Library Home Page</a><img src="/hipres/images/spacer.gif" height="1" width="25" border="0"><a class="navBarAnchor" href="http://www.spl.org/default.asp?pageID=about_contact">Contact Us</a><img src="/hipres/images/spacer.gif" height="1" width="25" border="0"><a class="navBarAnchor" href="http://www.spl.org/default.asp?pageID=info_help">Get Help</a><img src="/hipres/images/spacer.gif" height="1" width="25" border="0"><a class="navBarAnchor" href="http://www.spl.org/default.asp?pageID=collection_spurch">Purchase Suggestion</a><img src="/hipres/images/spacer.gif" height="1" width="25" border="0"><a class="navBarAnchor" href="http://www.spl.org/default.asp?pageID=collection_ill">Interlibrary Loan</a></center></td></tr></table><center><p class="splfooter"><b>The Seattle Public Library&nbsp; 1000 Fourth Ave., Seattle, WA 98104-1109</b><font color="white"> (cat1)</font></p></center><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+
+</script><script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-1641813-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script></form></body></html>

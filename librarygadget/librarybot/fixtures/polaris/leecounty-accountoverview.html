@@ -1,0 +1,349 @@
+
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en" >
+<HTML>
+	<HEAD>
+		<title>Lee County Library System</title>
+		<meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">
+		<meta name="CODE_LANGUAGE" content="C#">
+		<meta name="vs_defaultClientScript" content="JavaScript">
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<link type="text/css" rel="stylesheet" href="https://libpac.leegov.com/polaris/themes/classic/styles.css"><link rel="shortcut icon" type="image/ico" href="https://libpac.leegov.com/polaris/favicon.ico" />
+		<script language="JavaScript">
+		<!--
+        
+        var readingHistoryOrig = false;
+        
+		function ConfirmReadingHistory()
+		{
+			var bReturn = true;
+			
+			if (readingHistoryOrig != document.formMain.checkboxReadingHistory.checked)
+			{
+			    if (document.formMain.checkboxReadingHistory.checked == true)		               
+				    bReturn = confirm("The feature you have selected is associated with personal data in your patron account.  Such data may be accessed by law enforcement personnel without your consent.  Do you wish to continue?");
+			    else
+				    bReturn = confirm("Stopping reading history will also delete any existing history. Press OK to continue.")
+	        }
+	        
+			return bReturn;
+		}
+		//-->
+		</script>
+	</HEAD>
+	<body>
+		<form name="formMain" method="post" action="default.aspx?ctx=1.1033.0.0.1" id="formMain">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTIxMTYzOTM2MzkPZBYEZg8VBRlMZWUgQ291bnR5IExpYnJhcnkgU3lzdGVtzAE8bGluayB0eXBlPSJ0ZXh0L2NzcyIgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL2xpYnBhYy5sZWVnb3YuY29tL3BvbGFyaXMvdGhlbWVzL2NsYXNzaWMvc3R5bGVzLmNzcyI+PGxpbmsgcmVsPSJzaG9ydGN1dCBpY29uIiB0eXBlPSJpbWFnZS9pY28iIGhyZWY9Imh0dHBzOi8vbGlicGFjLmxlZWdvdi5jb20vcG9sYXJpcy9mYXZpY29uLmljbyIgLz4FZmFsc2W+AVRoZSBmZWF0dXJlIHlvdSBoYXZlIHNlbGVjdGVkIGlzIGFzc29jaWF0ZWQgd2l0aCBwZXJzb25hbCBkYXRhIGluIHlvdXIgcGF0cm9uIGFjY291bnQuICBTdWNoIGRhdGEgbWF5IGJlIGFjY2Vzc2VkIGJ5IGxhdyBlbmZvcmNlbWVudCBwZXJzb25uZWwgd2l0aG91dCB5b3VyIGNvbnNlbnQuICBEbyB5b3Ugd2lzaCB0byBjb250aW51ZT9VU3RvcHBpbmcgcmVhZGluZyBoaXN0b3J5IHdpbGwgYWxzbyBkZWxldGUgYW55IGV4aXN0aW5nIGhpc3RvcnkuIFByZXNzIE9LIHRvIGNvbnRpbnVlLmQCAQ9kFgYCAQ9kFgRmD2QWAmYPFQFHaHR0cHM6Ly9saWJwYWMubGVlZ292LmNvbS9wb2xhcmlzL2RlZmF1bHQuYXNweD9jdHg9X19vcmdpZF9fLjEwMzMuMC4wLjFkAgEPFgIeB1Zpc2libGVoZAIDD2QWAmYPZBYGZg9kFgJmD2QWAmYPFgIfAGgWAmYPFQFHaHR0cHM6Ly9saWJwYWMubGVlZ292LmNvbS9wb2xhcmlzL2RlZmF1bHQuYXNweD9jdHg9X19vcmdpZF9fLjEwMzMuMC4wLjFkAgEPZBYCZg9kFgJmD2QWAmYPZBYSZg9kFgJmD2QWDmYPZBYEZg9kFgJmD2QWAmYPFQEETmFtZWQCAQ9kFgJmD2QWAmYPFQETSHVtcGhyaWVzLCBNaWNoYWVsIGQCAQ9kFgRmD2QWAmYPZBYCZg8VAQdCYXJjb2RlZAIBD2QWAmYPZBYCZg8VAQ4qKioq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aGQWCAIBD2QWBGYPZBYCZg9kFgJmDw8WBB8JBQVUaXRsZR8KAgJkFgJmDxUBDE5ldyBVc2VybmFtZWQCAQ9kFgJmD2QWAmYPDxYEHwkFBVRpdGxlHwoCAmQWAmYPFQEPVmVyaWZ5IFVzZXJuYW1lZAIDD2QWAmYPFQG/AUFsbCB1c2VybmFtZXMgbXVzdCBiZWdpbiB3aXRoIGEgbGV0dGVyIChhLXosIEEtWiksIGNhbiBjb250YWluIGxldHRlcnMsIG51bWJlcnMsIGFuZCB0aGUgc3BlY2lhbCBjaGFyYWN0ZXJzICAtIF8gLiBAICAgIChTcGFjZXMgYXJlIG5vdCBhbGxvd2VkLCBhbmQgc3BlY2lhbCBjaGFyYWN0ZXJzIGNhbiBub3QgYmUgY29udGlndW91cy4pZAIFDw8WAh8AaGQWAmYPFCsCAWRkAgcPDxYCHwcFBlN1Ym1pdGRkAggPDxYCHwBoZBYIAgEPZBYGZg9kFgJmD2QWAmYPEA8WBB4HQ2hlY2tlZGgfBwUfTWFpbnRhaW4gcGVybWFuZW50IHJlYWRpbmcgbGlzdGRkZGQCAQ9kFgJmD2QWBmYPFQEXU2VuZCBlLW1haWwgbm90aWNlcyBpbjpkAgEPEA8WBB8MZx8HBRhCYXNpYywgcGxhaW4gdGV4dCBmb3JtYXRkZGRkAgMPEA8WBB8MaB8HBRFGdWxsLCBIVE1MIGZvcm1hdGRkZGQCAg8PFgIfAGhkFgJmD2QWBmYPFQETTGFuZ3VhZ2UgcHJlZmVyZW5jZWQCAQ8QDxYCHwhnZBAVIwdFbmdsaXNoB1NwYW5pc2gGR2VybWFuBkZyZW5jaAdJdGFsaWFuBkhlYnJldwlIdW5nYXJpYW4HQ2hpbmVzZQZQb2xpc2gGS29yZWFuCEphcGFuZXNlBkFyYWJpYwVHcmVlawhSb21hbmlhbgpQb3J0dWd1ZXNlClZpZXRuYW1lc2UHUnVzc2lhbghBbGJhbmlhbghBcm1lbmlhbgdCZW5nYWxpB0Jvc25pYW4JQnVsZ2FyaWFuBUN6ZWNoBUR1dGNoCEd1amFyYXRpBUhpbmRpB0thbm5hZGEHTWFyYXRoaQdQZXJzaWFuB1B1bmphYmkHU2VyYmlhbgVUYW1pbAZUZWxlZ3UEVGhhaQRVcmR1FSMBMQEyATMBNAE1ATYBNwE4ATkCMTACMTECMTICMTMCMTQCMTUCMTYCMTcCMTgCMTkCMjACMjECMjICMjMCMjQCMjUCMjYCMjcCMjgCMjkCMzACMzECMzICMzMCMzQCMzUUKwMjZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2cWAWZkAgIPFQEmTm90aWNlcyBhcmUgc2VudCBpbiBFbmdsaXNoIG9yIFNwYW5pc2hkAgMPDxYCHwBoZBYCZg8UKwIBZGQCBQ8PFgIfBwUGU3VibWl0FgIeB29uY2xpY2sFHnJldHVybiBDb25maXJtUmVhZGluZ0hpc3RvcnkoKWQCBg8VAQZDYW5jZWxkAgoPZBYCZg9kFgxmDw8WAh8AaGQWAmYPZBYCZg8VAQRCYWNrZAIBDw8WAh8AaGQWAmYPZBYCZg8VAQRCYWNrZAIDDw8WAh8AaGQWAmYPZBYCZg8VARpDaGFuZ2UgQWNjb3VudCBJbmZvcm1hdGlvbmQCBQ9kFgJmD2QWAmYPFQEMQ2hhbmdlIExvZ29uZAIHDw8WAh8AaGQWAmYPZBYCZg8VARJDaGFuZ2UgUHJlZmVyZW5jZXNkAgkPZBYCZg8PFgIeC05hdmlnYXRlVXJsBTguLi9sb2dvbi5hc3B4P2xvZ29mZj0xJnNyYz1kZWZhdWx0LmFzcHgmY3R4PTEuMTAzMy4wLjAuMWQWAmYPFQEHTG9nIE91dGQCAg9kFgJmD2QWBGYPFgIfAGgWAmYPFQFHaHR0cHM6Ly9saWJwYWMubGVlZ292LmNvbS9wb2xhcmlzL2RlZmF1bHQuYXNweD9jdHg9X19vcmdpZF9fLjEwMzMuMC4wLjFkAgEPFgIfAGhkAgUPZBYEZg8WAh8AaBYCZg8VAUdodHRwczovL2xpYnBhYy5sZWVnb3YuY29tL3BvbGFyaXMvZGVmYXVsdC5hc3B4P2N0eD1fX29yZ2lkX18uMTAzMy4wLjAuMWQCAQ8WAh8AaGRkskevnCJhTUSeMqCWQdwPoAtA4I8=" />
+
+<script type="text/javascript">
+<!--
+var theForm = document.forms['formMain'];
+if (!theForm) {
+    theForm = document.formMain;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+// -->
+</script>
+
+
+			
+
+    <script language="javascript">
+      <!--
+      function set_sessionOrgID(varNewOrgID)
+      {
+          var strURLTemplate = "https://libpac.leegov.com/polaris/default.aspx?ctx=__orgid__.1033.0.0.1";
+	      var strURL = strURLTemplate.replace("__orgid__", varNewOrgID);
+	      location.replace(strURL);
+      }
+      //-->
+    </script>
+
+
+
+<?xml version="1.0" encoding="utf-16"?><table border="0" width="100%" cellpadding="0" cellspacing="0"><tr><td width="100%" nowrap="" class="GradientL2D" align="left">
+         
+        <WelcomeLabel>Welcome</WelcomeLabel>, <b>Michael Humphries</b>
+          |
+          <a href="https://libpac.leegov.com/polaris/logon.aspx?Header=1&amp;src=https://libpac.leegov.com/polaris/default.aspx&amp;logoff=1">Log Out</a></td><td width="1%" class="OrgList" nowrap="1" align="right" valign="middle" style="padding: 2px 2px 2px 2px;"><select size="1" class="RegularSmall" onchange="set_sessionOrgID(this.options[this.selectedIndex].value)"><option value="1">Switch to another branch...</option><option value="1">Lee County Library System</option><option value="3">Boca Grande Reference Room and Library</option><option value="4">Bonita Springs Public Library</option><option value="5">Cape Coral-Lee County Public Library</option><option value="6">Captiva Memorial Library</option><option value="7">Dunbar-Jupiter Hammon Public Library</option><option value="8">East County Regional Library</option><option value="9">Fort Myers-Lee County Public Library</option><option value="10">Lakes Regional Library</option><option value="12">North Fort Myers Public Library</option><option value="19">Online</option><option value="13">Pine Island Public Library</option><option value="14">Riverdale Branch Library</option><option value="15">South County Regional Library</option><option value="17">Talking Books Library</option><option value="16">Victor Yingst Memorial Library</option></select></td></tr></table><table border="0" width="100%" cellpadding="0" cellspacing="0"><tr><td class="Header" valign="top" width="1%" rowspan="2"><a href="&#xD;&#xA;			  http://leegov.com/library/&#xD;&#xA;			"><img border="0" src="https://libpac.leegov.com/polaris/custom/images/keithbuttonlogo.jpg" alt="Polaris" title="Polaris"></img></a></td><td class="GradientD2L" valign="middle" width="100%"><div class="HeaderBranch" align="center">Lee County Library System</div></td></tr><tr><td class="GradientD2L" align="center" valign="bottom"><table border="0" cellpadding="0" cellspacing="0" width="1%" valign="top"><tr><td width="1%" nowrap="1" class="PriNavBar"><a class="PriNavBar" href="https://libpac.leegov.com/polaris/default.aspx?ctx=1.1033.0.0.1&amp;Header=1">
+               Library Info 
+            </a></td><td width="1%" class="TabRight"></td><td width="1">
+                
+            </td><td width="1%" nowrap="1" class="PriNavBar"><a class="PriNavBar" href="https://libpac.leegov.com/polaris/search/default.aspx?ctx=1.1033.0.0.1&amp;type=Default">
+               Search 
+            </a></td><td width="1%" class="TabRight"></td><td width="1">
+                
+            </td><td width="1%" nowrap="1" class="PriNavBarHighlight"><a class="PriNavBarHighlight" href="https://libpac.leegov.com/polaris/patronaccount/default.aspx?ctx=1.1033.0.0.1&amp;Header=1">
+               Patron Account 
+            </a></td><td width="1%" class="TabRightHighlight"></td><td width="1">
+                
+            </td><td width="1%" nowrap="1" class="PriNavBar"><a class="PriNavBar" href="https://libpac.leegov.com/polaris/help/default.aspx?ctx=1.1033.0.0.1&amp;Header=1">
+               Help 
+            </a></td><td width="1%" class="TabRight"></td></tr></table></td></tr></table><table border="0" width="100%" cellpadding="0" cellspacing="0"><tr><td class="navbar" width="100%" align="center"><span class="NavBarHighlight"><a class="NavBarHighlight" href="https://libpac.leegov.com/polaris/patronaccount/default.aspx?ctx=1.1033.0.0.1"> My Record 	</a></span><span class="NavBar"><font class="Separator">|</font></span><span class="NavBar"><a class="NavBar" href="https://libpac.leegov.com/polaris/patronaccount/itemsout.aspx?ctx=1.1033.0.0.1"> Items Out 	</a></span><span class="NavBar"><font class="Separator">|</font></span><span class="NavBar"><a class="NavBar" href="https://libpac.leegov.com/polaris/patronaccount/requests.aspx?ctx=1.1033.0.0.1"> Requests 	</a></span><span class="NavBar"><font class="Separator">|</font></span><span class="NavBar"><a class="NavBar" href="https://libpac.leegov.com/polaris/patronaccount/finesfees.aspx?ctx=1.1033.0.0.1"> Fines &amp; Fees 	</a></span><span class="NavBar"><font class="Separator">|</font></span><span class="NavBar"><a class="NavBar" href="https://libpac.leegov.com/polaris/patronaccount/searchagent.aspx?ctx=1.1033.0.0.1"> Saved Searches 	</a></span><span class="NavBar"><font class="Separator">|</font></span><span class="NavBar"><a class="NavBar" href="https://libpac.leegov.com/polaris/logon.aspx?ctx=1.1033.0.0.1&amp;logoff=1&amp;src=default.aspx"> Log Out 	</a></span></td><td class="navbar" width="1%"> </td></tr></table>
+
+
+
+
+			<table id="tableMain" cellspacing="0" cellpadding="0" border="0" style="border-width:0px;width:100%;border-collapse:collapse;">
+	<tr>
+		<td class="LeftPanel" valign="top" style="width:1%;">
+
+
+
+
+
+<script language="javascript">
+
+	function DashMouseOver(pBody, oCollapse, bOver)
+	{
+		if (pBody.style.display == "none")
+			oCollapse.src = bOver ? "https://libpac.leegov.com/polaris/themes/classic/expand_mo.gif" : "https://libpac.leegov.com/polaris/themes/classic/expand.gif";
+		else
+			oCollapse.src = bOver ? "https://libpac.leegov.com/polaris/themes/classic/collapse_mo.gif" : "https://libpac.leegov.com/polaris/themes/classic/collapse.gif";
+	}
+	
+	function DashExpand(pBody, oCollapse)
+	{
+		var bOver = (oCollapse.src.toLowerCase().indexOf("_mo.gif") != -1);
+
+		if (pBody.style.display == "none")
+		{
+			pBody.style.display = "";
+			oCollapse.src = bOver ? "https://libpac.leegov.com/polaris/themes/classic/collapse_mo.gif" : "https://libpac.leegov.com/polaris/themes/classic/collapse.gif";
+		}
+		else
+		{
+			pBody.style.display = "none";
+			oCollapse.src = bOver ? "https://libpac.leegov.com/polaris/themes/classic/expand_mo.gif" : "https://libpac.leegov.com/polaris/themes/classic/expand.gif";
+		}
+	}
+	
+	function StartTLHighlight()
+	{
+	}
+
+	function TLHighlightOn()
+	{
+	}
+
+	function TLHighlightOff()
+	{
+	}
+
+	function RemoveFromTitleList(strPos)
+	{
+		strURL = "https://libpac.leegov.com/polaris/Search/titlelist.aspx?delete=" + strPos + "&src=";
+        strURL += "https%3a%2f%2flibpac.leegov.com%2fpolaris%2fpatronaccount%2fdefault.aspx%3fctx%3d1.1033.0.0.1";
+		window.location = strURL;
+	}
+
+</script>
+
+<span id=dashboards>
+
+	<br/>
+	
+	
+	    <div style="width:100%" align="center">
+			<a class=dashextra href=https://libpac.leegov.com/polaris/patronaccount/default.aspx?ctx=1.1033.0.0.1&lp=1>Large Text</a>
+		</div>
+		<br />
+	
+	
+	
+	
+	<div id="panelLanguages" style="width:100%" align="center">
+		<div id="hdrLanguages" style="width:92%">
+			<table align=center width="100%" cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td id="titleLanguages" class="DashHeader" width="100%" onclick="DashExpand(bodyLanguages, collapseLanguages2);">Language</td>
+					<td id="collapseLanguages1" class="DashHeader" valign="top" width="1%" onclick="DashExpand(bodyLanguages, collapseLanguages2);"><img id="collapseLanguages2" src='https://libpac.leegov.com/polaris/themes/classic/collapse.gif' border="0" onmouseover="DashMouseOver(bodyLanguages, collapseLanguages2, true);" onmouseout="DashMouseOver(bodyLanguages, collapseLanguages2, false);"></td>
+				</tr>
+			</table>
+		</div>
+		<div id="bodyLanguages" class="DashBody" style="width:92%">
+			<table width="100%" cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td colspan="3" height="5"></td>
+				</tr>
+				
+						<tr>
+							<td valign="top" width="1"><img src="https://libpac.leegov.com/polaris/themes/classic/bullet.gif" /></td>
+							<td width="3"></td>
+							<td>
+								
+								<span class="RegularXSmall">English</span>
+							</td>
+						</tr>
+					
+						<tr>
+							<td valign="top" width="1"><img src="https://libpac.leegov.com/polaris/themes/classic/bullet.gif" /></td>
+							<td width="3"></td>
+							<td>
+								<a class="RegularXSmall" href="https://libpac.leegov.com/polaris/patronaccount/default.aspx?ctx=1.3082.0.0.1">Español</a>
+								
+							</td>
+						</tr>
+					
+						<tr><td colspan="3" height="5"></td></tr>
+					
+			</table>
+		</div>
+		<BR>
+	</div>
+	
+	
+    <div id=dashTitleList>
+	
+
+<div id="panelTitleList" style="width:100%" align="center">
+	<div id="hdrTitleList" style="width:95%">
+		<table width="100%" cellpadding="0" cellspacing="0" style="border-width:0px;border-collapse:collapse;">
+			<tr>
+				<td id="titleTitleList" valign="middle" class="DashHeader" onclick="DashExpand(bodyTitleList, collapseTitleList2);"  width="100%">My Lists</td>
+				<td id="collapseTitleList1" valign="top" class="DashHeader" onclick="DashExpand(bodyTitleList, collapseTitleList2);"  width="1%"><img id="collapseTitleList2" src='https://libpac.leegov.com/polaris/themes/classic/collapse.gif' style="border-width:0px;" onmouseover="DashMouseOver(bodyTitleList, collapseTitleList2, true);" onmouseout="DashMouseOver(bodyTitleList, collapseTitleList2, false);"></td>
+			</tr>
+		</table>
+	</div>
+	<div id="bodyTitleList" class="DashBody" style="width:95%">
+
+             
+		    <table width="100%" cellpadding="0" cellspacing="0" style="border-width:0px;border-collapse:collapse;">
+		        <tr><td colspan="2"></td><td align=left class="RegularXSmall"><br /><b>Saved Title Lists</b><br /></td></tr>
+			    <tr><td colspan="3" height="5"></td></tr>
+			    
+    			
+			    <tr><td colspan="3" height="5"></td></tr>
+			    <tr>
+				    <td colspan="3" nowrap align="center">
+					    <a class="RegularXSmall" href="https://libpac.leegov.com/polaris/Search/titlelistnew.aspx">Create new saved list...
+					    </a>
+				    </td>
+			    </tr>
+			    <tr><td colspan="3" height="5"></td></tr>
+		    </table>
+        
+	
+        
+	</div>
+	<BR>
+</div>
+
+
+	
+	</div>
+
+    <div id="dashNarrowSearch">
+	
+	</div>
+
+	
+	
+	<img src=https://libpac.leegov.com/polaris/themes/classic/1x1.gif width="180" height="1">
+
+</span>
+
+
+</td><td valign="top"><table id="tableBody" cellspacing="0" cellpadding="5" border="0" style="border-width:0px;width:100%;border-collapse:collapse;">
+			<tr>
+				<td style="width:100%;"><table id="ctrlBasicInfo_tableBasicInfo" cellspacing="0" cellpadding="0" border="0" style="border-width:0px;width:100%;border-collapse:collapse;">
+					<tr>
+						<td nowrap="nowrap" style="width:200px;"><span id="ctrlBasicInfo_labelPatronHeader" class="Title" style="font-weight:bold;">Name:&nbsp;</span></td><td nowrap="nowrap" colspan="2" style="width:100%;"><span id="ctrlBasicInfo_labelPatron" class="Results" style="font-weight:bold;">Humphries, Michael </span></td>
+					</tr><tr>
+						<td nowrap="nowrap" style="width:200px;"><span id="ctrlBasicInfo_labelBarcodeHeader" class="Title" style="font-weight:bold;">Barcode:&nbsp;</span></td><td nowrap="nowrap" colspan="2" style="width:100%;"><span id="ctrlBasicInfo_labelBarcode" class="Results" style="font-weight:bold;">**********2164</span></td>
+					</tr><tr>
+						<td nowrap="nowrap" style="width:200px;"><span id="ctrlBasicInfo_labelBranchNameHeader" class="Title">Registered at:&nbsp;</span></td><td colspan="2" style="width:100%;"><span id="ctrlBasicInfo_labelBranchName" class="Results">South County Regional Library</span></td>
+					</tr><tr>
+						<td nowrap="nowrap" style="width:200px;"><span id="ctrlBasicInfo_labelPatronCodeHeader" class="Title">Patron code:&nbsp;</span></td><td nowrap="nowrap" colspan="2" style="width:100%;"><span id="ctrlBasicInfo_labelPatronCode" class="Results">Adult</span></td>
+					</tr><tr>
+						<td nowrap="nowrap" style="width:200px;"><span id="ctrlBasicInfo_labelRegistrationDateHeader" class="Title">Date of original registration:&nbsp;</span></td><td nowrap="nowrap" colspan="2" style="width:100%;"><span id="ctrlBasicInfo_labelRegistrationDate" class="Results">7/5/2007</span></td>
+					</tr><tr>
+						<td nowrap="nowrap" style="width:200px;"><span id="ctrlBasicInfo_labelExpirationDateHeader" class="Title">Expiration date:&nbsp;</span></td><td nowrap="nowrap" style="width:100%;"><span id="ctrlBasicInfo_labelExpirationDate" class="Results">7/4/2010</span></td><td nowrap="nowrap" align="right" style="width:1%;"><a href="./itemsout.aspx">3&nbsp;items checked out</a>
+	    &nbsp;&nbsp;
+	</td>
+					</tr>
+				</table>
+
+<br>
+
+<hr></hr><div id="panelBasicInfo" style="width:100%;">
+					
+										<table id="tableBasicInfo" cellspacing="0" cellpadding="0" border="0" style="border-width:0px;width:100%;border-collapse:collapse;">
+						<tr>
+							<td style="width:200px;"><span id="labelPhoneHeader" class="Title">Phone number:&nbsp;</span></td><td style="width:400px;"><span id="labelPhone" class="Results">495-9216</span></td>
+						</tr><tr>
+							<td style="width:200px;"><span id="labelEmailHeader" class="Title">E-mail address:&nbsp;</span></td><td style="width:400px;"><span id="labelEmail" class="Results">thegreyspot@hotmail.com</span></td>
+						</tr><tr>
+							<td style="width:200px;"><span id="labelLanguageHeader" class="Title">Language:&nbsp;</span></td><td style="width:400px;"><span id="labelLanguage" class="Results">English</span></td>
+						</tr><tr>
+							<td style="width:200px;"><span id="labelCurrentBlocksHeader" class="Title">Current blocks:&nbsp;</span></td><td style="width:400px;"><span id="labelCurrentBlocks" class="Results"></span></td>
+						</tr><tr>
+							<td style="width:200px;"><span id="labelLastActivityDateHeader" class="Title">Last activity date:&nbsp;</span></td><td style="width:400px;"><span id="labelLastActivityDate" class="Results">3/17/2009</span></td>
+						</tr>
+					</table>
+										<p></p>
+										<table cellspacing="2" cellpadding="4" rules="all" border="0" id="datagridAddresses" style="border-width:0px;width:100%;">
+						<tr class="ColumnHeader">
+							<td class="TableHeader">
+														<img id="datagridAddresses__ctl1_imageInfoHeader" src="https://libpac.leegov.com/polaris/themes/classic/info_header.gif" style="border-width:0px;" />
+													</td><td class="TableHeader">
+														Address Type
+													</td><td class="TableHeader">
+														City
+													</td><td class="TableHeader">
+														State/Province
+													</td>
+						</tr><tr class="Headings1">
+							<td style="width:2%;">
+														<a id="datagridAddresses__ctl2_linkbuttonInfo" href="javascript:__doPostBack('datagridAddresses$_ctl2$linkbuttonInfo','')"><img id="datagridAddresses__ctl2_imageInfo" src="https://libpac.leegov.com/polaris/themes/classic/info.gif" style="border-width:0px;" /></a>
+													</td><td style="width:48%;">
+														<span id="datagridAddresses__ctl2_labelAddressType">Home</span>
+													</td><td style="width:25%;">
+														<span id="datagridAddresses__ctl2_labelCity">ESTERO</span>
+													</td><td style="width:25%;">
+														<span id="datagridAddresses__ctl2_labelState">FL</span>
+													</td>
+						</tr>
+					</table>
+									
+				</div>
+									<p></p>
+									<table id="tableNavigation" cellspacing="0" cellpadding="4" border="0" style="border-width:0px;width:100%;border-collapse:collapse;">
+					<tr>
+						<td style="width:1%;"></td><td style="width:1%;"></td><td class="CustomButton" nowrap="nowrap" style="width:1%;"><a id="linkbuttonChangeLogon" href="javascript:__doPostBack('linkbuttonChangeLogon','')">Change Logon</a></td><td style="width:1%;"></td><td style="width:100%;">&nbsp;</td><td class="CustomButton" nowrap="nowrap" style="width:1%;"><a id="hyperlinkLogoff" href="../logon.aspx?logoff=1&amp;src=default.aspx&amp;ctx=1.1033.0.0.1">Log Out</a></td>
+					</tr>
+				</table></td>
+			</tr>
+		</table></td><td class="RightPanel" valign="top" style="width:1%;">
+
+
+
+
+
+</td>
+	</tr>
+</table>
+			
+
+<?xml version="1.0" encoding="utf-16"?><p></p><table border="0" width="100%" class="BottomPanel"><tr><td width="33%" align="left"><a href="https://libpac.leegov.com/polaris/Children/default.aspx?ctx=1"><img border="0" src="https://libpac.leegov.com/polaris/themes/classic/childrenspac.gif" alt="Click here to go to the Children's PAC!"></img></a></td><td width="33%" nowrap="" align="center">Copyright © 2008 Polaris Library Systems<br /><font size="1">Version: 3.5.240</font></td><td width="33%" align="right"><img border="0" src="https://libpac.leegov.com/polaris/themes/classic/poweredbypolaris.jpg" alt="Polaris"></img></td></tr></table><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-4291320-5");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+
+
+		</form>
+	</body>
+</HTML>

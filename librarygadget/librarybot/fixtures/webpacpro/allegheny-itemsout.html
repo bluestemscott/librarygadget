@@ -1,0 +1,492 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/scripts/ProStyles.css" />
+<link rel="stylesheet" type="text/css" href="/screens/results.css" />
+<script language="JavaScript" type="text/javascript" src="/scripts/common.js"></script>
+<title>Patron View</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="/screens/main.css" rel="stylesheet" type="text/css">
+<script language="JavaScript">
+<!--
+function showdef(htmlpg) {
+  window.open(htmlpg,null,"height=300,width=600,status=no,toolbar=no,menubar=no,location=no")
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" background="/screens/gebglogo.gif">
+<tr><td width="750" height="132">
+
+<img src="/screens/acctinfohead.gif" width="750" height="132" border="0" usemap="#topmenu">
+  <map name="topmenu">
+    <area shape="rect" coords="425,18,540,38" href="https://iiisy1.einetwork.net/search" alt="Catalog Home">
+    <area shape="rect" coords="552,20,655,35" href="https://iiisy1.einetwork.net:443/patroninfo/" alt="My Account">
+    <area shape="rect" coords="665,20,727,35" href="/screens/help.html" alt="Help">
+    <area shape="rect" coords="9,82,122,95" href="http://www.einetwork.net/ils/libip.html" alt="Home Library Web Site">
+    <area shape="rect" coords="130,82,243,95" href="/screens/cantfind.html" alt="Search Tips">
+    <area shape="rect" coords="251,82,364,95" href="/screens/featured.html" alt="Featured Booklists">
+    <area shape="rect" coords="372,82,485,95" href="http://articles.einetwork.net/" alt="Find Articles">
+
+    <area shape="rect" coords="492,82,605,95" href="/screens/moreres.html" alt="More Resources">
+    <area shape="rect" coords="614,82,727,95" href="http://www.einetwork.net/ein/searchint.html" alt="Internet Search">
+  </map>
+</td>
+<td>&nbsp;</td></tr>
+</table>
+<!-- BEGIN SEARCH WIDGET -->
+<div align="center">
+
+<div  class="bibSearchtool">
+<script language="JavaScript" type="text/JavaScript">
+<!-- Hide the JS
+var savedTag;
+var savedSearch;
+var savedExactSearch = null; 
+
+var savedScope
+var sortButtonText = null;
+
+var sortTypes = new Array();
+var sortLabels = new Array();
+sortTypes[0] = "t";
+sortLabels[0] = "Title";
+sortTypes[1] = "a";
+sortLabels[1] = "Author";
+sortTypes[2] = "c";
+sortLabels[2] = "Year";
+sortTypes[3] = "r";
+sortLabels[3] = "Reverse Year";
+sortTypes[4] = "n";
+sortLabels[4] = "Call Number";
+sortTypes[5] = "m";
+sortLabels[5] = "Material Type";
+sortLabels[6] = "System Sorted";
+sortTypes[6] = "-";
+var sortSelectedValue = "6";
+var sortExactBrowseURL = ""
+var nonSortTags = "XYZprWw"
+// Unhide the JS -->
+</script>
+<form name="searchtool" target="_self" action="/search~S1/">
+      <select name="searchtype" id="searchtype" onChange="initSort()">
+
+        <option value="a"> AUTHOR</option>
+        <option value="t"> TITLE</option>
+        <option value="d"> SUBJECT</option>
+        <option value="c"> LC CALL NO</option>
+        <option value="h"> DEWEY CALL NO</option>
+
+        <option value="X" selected="selected"> KEYWORD</option>
+      </select>
+      &nbsp;
+      <input type="text" name="searcharg" size="30" maxlength="75" value="" />
+      &nbsp;
+      <select name="searchscope">
+        <option value="1" selected="selected"> All Libraries</option>
+
+        <option value="2"> All Juvenile</option>
+        <option value="3"> All East Region libraries</option>
+        <option value="4"> All North Region libraries</option>
+        <option value="5"> All South Region libraries</option>
+        <option value="6"> All West Region libraries</option>
+
+        <option value="7"> Allegheny Regional (CLP)</option>
+        <option value="8"> Allegheny Regional Juvenile (CLP)</option>
+        <option value="9"> Andrew Bayne</option>
+        <option value="10"> Andrew Bayne Juvenile</option>
+        <option value="11"> Andrew Carnegie Free</option>
+
+        <option value="12"> Andrew Carnegie Free Juvenile</option>
+        <option value="80"> Auburn Towers (Knowledge Connections)</option>
+        <option value="13"> Avalon</option>
+        <option value="14"> Avalon Juvenile</option>
+        <option value="15"> Baldwin Boro</option>
+
+        <option value="16"> Baldwin Boro Juvenile</option>
+        <option value="63"> Bedford Hope Center (Knowledge Connections)</option>
+        <option value="17"> Beechview (CLP)</option>
+        <option value="18"> Beechview Juvenile (CLP)</option>
+        <option value="19"> Bethel Park</option>
+
+        <option value="20"> Bethel Park Juvenile</option>
+        <option value="21"> Bookmobile Center</option>
+        <option value="22"> Bookmobile Center Juvenile</option>
+        <option value="23"> Braddock</option>
+        <option value="24"> Braddock Juvenile</option>
+
+        <option value="25"> Brentwood</option>
+        <option value="26"> Brentwood Juvenile</option>
+        <option value="27"> Bridgeville</option>
+        <option value="28"> Bridgeville Juvenile</option>
+        <option value="29"> Brookline (CLP)</option>
+
+        <option value="30"> Brookline Juvenile (CLP)</option>
+        <option value="31"> Burns Heights (Knowledge Connections)</option>
+        <option value="32"> C.C. Mellor, Edgewood</option>
+        <option value="33"> C.C. Mellor, Edgewood Juvenile</option>
+        <option value="34"> Carnegie Library of McKeesport (CLM) (All)</option>
+
+        <option value="37"> Carnegie Library of Pittsburgh (CLP) (All)</option>
+        <option value="38"> Carnegie Library of Pittsburgh, Main</option>
+        <option value="39"> Carnegie Library of Pittsburgh, Main Juvenile</option>
+        <option value="41"> Carrick (CLP)</option>
+        <option value="42"> Carrick Juvenile (CLP)</option>
+
+        <option value="43"> Castle Shannon</option>
+        <option value="44"> Castle Shannon Juvenile</option>
+        <option value="45"> Clairton</option>
+        <option value="46"> Clairton Juvenile</option>
+        <option value="40"> CMNH</option>
+
+        <option value="47"> Community Library of Allegheny Valley (CLAV) (All)</option>
+        <option value="48"> Coraopolis</option>
+        <option value="49"> Coraopolis Juvenile</option>
+        <option value="50"> Crafton</option>
+        <option value="51"> Crafton Juvenile</option>
+
+        <option value="52"> Dormont</option>
+        <option value="53"> Dormont Juvenile</option>
+        <option value="92"> Downtown & Business (CLP)</option>
+        <option value="93"> Downtown & Business Juvenile (CLP)</option>
+
+        <option value="54"> Duquesne (CLM)</option>
+        <option value="55"> Duquesne Juvenile (CLM)</option>
+        <option value="56"> East Liberty (CLP)</option>
+        <option value="57"> East Liberty Juvenile (CLP)</option>
+        <option value="167"> Eastridge</option>
+
+        <option value="168"> Eastridge Juvenile</option>
+        <option value="58"> Elizabeth Forward (CLM)</option>
+        <option value="59"> Elizabeth Forward Juvenile (CLM)</option>
+        <option value="60"> F.O.R. Sto-Rox</option>
+        <option value="61"> F.O.R. Sto-Rox Juvenile</option>
+
+        <option value="165"> Forest Hills</option>
+        <option value="166"> Forest Hills Juvenile</option>
+        <option value="62"> Garfield Heights (Knowledge Connections)</option>
+        <option value="64"> Green Tree</option>
+        <option value="65"> Green Tree Juvenile</option>
+
+        <option value="66"> Hampton</option>
+        <option value="67"> Hampton Juvenile</option>
+        <option value="68"> Harrison (CLAV)</option>
+        <option value="69"> Harrison Juvenile (CLAV)</option>
+        <option value="70"> Hawkins Village (Knowledge Connections)</option>
+
+        <option value="71"> Hays Manor (Knowledge Connections)</option>
+        <option value="72"> Hazelwood (CLP)</option>
+        <option value="73"> Hazelwood Juvenile (CLP)</option>
+        <option value="74"> Hill District (CLP)</option>
+        <option value="75"> Hill District Juvenile (CLP)</option>
+
+        <option value="76"> Homestead</option>
+        <option value="77"> Homestead Juvenile</option>
+        <option value="78"> Homewood (CLP)</option>
+        <option value="79"> Homewood Juvenile (CLP)</option>
+        <option value="81"> Jefferson Hills</option>
+
+        <option value="82"> Jefferson Hill Juvenile</option>
+        <option value="83"> Knowledge Connections (All)</option>
+        <option value="84"> Knoxville (CLP)</option>
+        <option value="85"> Knoxville Juvenile (CLP)</option>
+        <option value="86"> Lauri Ann West (All)</option>
+
+        <option value="87"> Lauri Ann West</option>
+        <option value="88"> Lauri Ann West Juvenile</option>
+        <option value="89"> Lawrenceville (CLP)</option>
+        <option value="90"> Lawrenceville Juvenile (CLP)</option>
+        <option value="91"> Library for Blind & Physically Handicapped (CLP)</option>
+
+        <option value="94"> Lincoln Park (Penn Hills)</option>
+        <option value="95"> Lincoln Park Juvenile (Penn Hills)</option>
+        <option value="35"> McKeesport</option>
+        <option value="36"> McKeesport Juvenile</option>
+        <option value="98"> Monview Heights (Knowledge Connections)</option>
+
+        <option value="99"> Moon Twp.</option>
+        <option value="100"> Moon Twp. Juvenile</option>
+        <option value="101"> Mooncrest (Knowledge Connections)</option>
+        <option value="102"> Mt. Lebanon</option>
+        <option value="103"> Mt. Lebanon Juvenile</option>
+
+        <option value="104"> Mt. Washington (CLP)</option>
+        <option value="105"> Mt. Washington Juvenile (CLP)</option>
+        <option value="106"> North Versailles</option>
+        <option value="107"> North Versailles Juvenile</option>
+        <option value="108"> Northern Tier (All)</option>
+
+        <option value="118"> Northern Tier Pine</option>
+        <option value="119"> Northern Tier Pine Juvenile</option>
+        <option value="109"> Northern Tier Richland</option>
+        <option value="110"> Northern Tier Richland Juvenile</option>
+        <option value="173"> Northland Public Library</option>
+
+        <option value="174"> Northland Public Library Juvenile</option>
+        <option value="111"> Northview Heights (Knowledge Connections)</option>
+        <option value="112"> Oakmont</option>
+        <option value="113"> Oakmont Juvenile</option>
+        <option value="115"> Penn Hills (All)</option>
+
+        <option value="116"> Penn Hills</option>
+        <option value="117"> Penn Hills Juvenile</option>
+        <option value="120"> Pleasant Hills</option>
+        <option value="121"> Pleasant Hills Juvenile</option>
+        <option value="114"> Pleasant Ridge (Knowledge Connections)</option>
+
+        <option value="122"> Plum</option>
+        <option value="123"> Plum Juvenile</option>
+        <option value="124"> Prospect Terrace (Knowledge Connections)</option>
+        <option value="170">  Robinson Township Library</option>
+        <option value="171">  Robinson Township Juvenile</option>
+
+        <option value="125"> Scott Twp.</option>
+        <option value="126"> Scott Twp. Juvenile</option>
+        <option value="127"> Sewickley</option>
+        <option value="128"> Sewickley Juvenile</option>
+        <option value="129"> Shaler</option>
+
+        <option value="130"> Shaler Juvenile</option>
+        <option value="131"> Sharpsburg (L.A. West)</option>
+        <option value="132"> Sharpsburg Juvenile (L.A. West)</option>
+        <option value="133"> Sheldon Park (Knowledge Connections)</option>
+        <option value="134"> Sheraden (CLP)</option>
+
+        <option value="135"> Sheraden Juvenile (CLP)</option>
+        <option value="136"> South Fayette</option>
+        <option value="137"> South Fayette Juvenile</option>
+        <option value="138"> South Park Twp.</option>
+        <option value="139"> South Park Twp. Juvenile</option>
+
+        <option value="140"> South Side (CLP)</option>
+        <option value="141"> South Side Juvenile (CLP)</option>
+        <option value="142"> Springdale</option>
+        <option value="143"> Springdale Juvenile</option>
+        <option value="144"> Squirrel Hill (CLP)</option>
+
+        <option value="145"> Squirrel Hill Juvenile (CLP)</option>
+        <option value="146"> St. Clair Village (Knowledge Connections)</option>
+        <option value="147"> Swissvale</option>
+        <option value="148"> Swissvale Juvenile</option>
+        <option value="149"> Tarentum (CLAV)</option>
+
+        <option value="150"> Tarentum Juvenile (CLAV)</option>
+        <option value="163"> Turtle Creek</option>
+        <option value="164"> Turtle Creek Juvenile</option>
+        <option value="172">  Upper St. Clair</option>
+        <option value="175">  Upper St. Clair Juvenile</option>
+
+        <option value="151"> West End (CLP)</option>
+        <option value="152"> West End Juvenile (CLP)</option>
+        <option value="153"> Western Allegheny</option>
+        <option value="154"> Western Allegheny Juvenile</option>
+        <option value="155"> White Oak (CLM)</option>
+
+        <option value="156"> White Oak Juvenile (CLM)</option>
+        <option value="157"> Whitehall</option>
+        <option value="158"> Whitehall Juvenile</option>
+        <option value="159"> Wilkinsburg</option>
+        <option value="160"> Wilkinsburg Juvenile</option>
+
+        <option value="161"> Woods Run (CLP)</option>
+        <option value="162"> Woods Run Juvenile (CLP)</option>
+        <option value="96"> -</option>
+        <option value="97"> -</option>
+        <option value="169"> -</option>
+
+      </select>
+      &nbsp;
+
+<span id="sort_cell">
+</span>
+
+<script language="JavaScript" type="text/JavaScript">
+<!-- Hide the JS
+initSort();
+// Unhide the JS -->
+</script>
+      <input type="hidden" name="SORT" value="D" /><input type="hidden" name="extended" value="0" /><input type="submit" name="SUBMIT" value="Search" />
+<div>
+      <input type="checkbox" name="availlim" value="1"  /> <EM>Show available items only</EM><br/>
+
+</div>
+</form>
+<div></div></div>
+</div>
+
+<!-- END SEARCH WIDGET -->
+<br>
+<form><TABLE WIDTH="100%" class="bodytext">
+<TR>
+<TD><p>
+<strong>MONTGOMERY, MICHELLE</strong><br />
+112 E UNDERCLIFF ST<br />
+PITTSBURGH PA  15223<br />
+<br />
+
+EXP DATE:08-29-2010<br />
+</p>
+<P>
+<a href="/logout?"><img src="/screens/logout.gif" NAME=startOver border="0"></a>
+&nbsp;<br></P>
+</td>
+
+<td><p>
+<a href="/patroninfo~S1/1169763/searchcatalog" target="_self">Search the Catalog</a>
+<br>
+<a href="/patroninfo~S1/1169763/getpsearches" target="_self">Preferred Searches</a>
+: <a href="/screens/helpprefsrch.html">How to Use...</a> 
+
+<!-- <a href="javascript:;" onClick="showdef('/screens/emailalerts.html')"><font color="#FF0000">Temporary Problem with Email Alerts</font></a> -->
+<br>
+- Please click here to renew items.
+<br>
+<a href="/patroninfo~S1/1169763/holds" target="_self">6 requests (holds).</a>
+<br>
+<a href="/patroninfo~S1/1169763/overdues" target="_self">$0.00 in unpaid fines and bills</a>
+<br>
+<a href="#" onClick="return open_new_window( '/patroninfo~S1/1169763/modpinfo' )">Modify Personal Information</a>
+<br>
+</p>
+<p><a href="/screens/notifyfaqlib.html">Frequently Asked Questions</a> about Library Notification.</p>
+
+</TD></tr>
+<tr>
+<td valign="top"><b>FIND OUT HOW To:</b><br>
+         <dd> <a href="http://catalog.einetwork.net/screens/helpmyacct.html#renewitems" target="_blank">Renew Items</a><br></dd>
+		 <dd> <a href="/screens/itemmessages.html#errormessages" target="_blank">Place Requests</a><br></dd>
+       <dd> <a href="http://catalog.einetwork.net/screens/helpnotify.html" target="_blank">Sign Up for Email Notification</a></dd>
+      <p><b>FIND OUT WHY</b> you received an error message when 
+        you tried to:<br>
+
+          <dd><a href="/screens/itemmessages.html">Renew your items</a><br>
+          <dd><a href="/screens/itemmessages.html#errormessages">Place requests 
+            for titles</a><br></p>
+      </td>
+      <td valign="top"><b>STATUS OF ITEMS:</b><br>
+<dd><b>READY. MUST PICKUP BY: </b> = the item is waiting for you at your designated pick-up<dd> library.
+<dd><b>IN TRANSIT</b> = the item is being sent to the designated pick-up library. Delivery can take a few days.
+
+<dd><b>AVAILABLE</b> = the item is available on the shelf at another library and will fill your request <dd> as soon as it can be delivered to your pickup library.
+<dd><b>CHECKED OUT</b> = the item is checked out to another borrower.
+<dd><b>X OF X HOLDS</b> = you are in the request queue to receive the item. </td>
+</tr></table>
+</form><p>
+
+<form method="GET" target="_self" action="/patroninfo~S1/1169763/sorteditems">
+<input type="SUBMIT" value="SORT BY DUE DATE" />
+
+</form>
+<div id="renewfailmsg" style="display:none"  class="errormessage">
+ Not all renewals were successful. See details below</div>
+<form name="renew_form_1" method="GET"><input type="SUBMIT" value="RENEW ALL" onClick="return onClickProcessAll( '/patroninfo~S1/1169763/items', 'renew','This will affect all items. Are you sure?' )" />
+</form>
+<form name="process_form_2" method="GET">
+<input type="SUBMIT" value="RENEW SELECTED ITEMS" onClick="return onClickProcessSome( process_form_2, '/patroninfo~S1/1169763/items', 'renew' )" />
+</nobr>
+<table border width="100%" class="patFunc">
+<tr class="patFuncTitle">
+<th colspan="5"  class="patFuncTitle">
+5 ITEMS CHECKED OUT</th>
+</tr>
+
+<tr class="patFuncHeaders">
+<th class="patFuncHeaders"> RENEW </th><th class="patFuncHeaders"> TITLE </th><th  class="patFuncHeaders"> BARCODE </th><th class="patFuncHeaders"> STATUS </th><th  class="patFuncHeaders"> CALL NUMBER </th>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew0" value="i7086274" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S1/1169763/item&2770230"> The war [videorecording] / a Ken Burns film ; a production of Florentine Films ; produced in associa </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 36714101512238 </td>
+<td align="left" class="patFuncStatus"> DUE 12-29-08 
+</td>
+<td align="left" class="patFuncCallNo"> DVD 940.54 W  </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew1" value="i6422918" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S1/1169763/item&2664719"> The Dick Van Dyke show. Season one [videorecording] / Calvada Productions ; produced and created by  </a>
+<br />
+
+</td>
+
+<td align="left" class="patFuncBarcode"> 34567010039954 </td>
+<td align="left" class="patFuncStatus"> DUE 12-29-08 
+</td>
+<td align="left" class="patFuncCallNo"> DVD 150  </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew2" value="i7179901" /></td><td align="left" class="patFuncTitle"><a href="/patroninfo~S1/1169763/item&2766481"> The war [sound recording] : a Ken Burns film : the soundtrack. </a>
+<br />
+
+</td>
+<td align="left" class="patFuncBarcode"> 31812036511336 </td>
+
+<td align="left" class="patFuncStatus"> DUE 12-15-08 
+</td>
+<td align="left" class="patFuncCallNo"> COMPACT DISC Tv War 32200  </td>
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew5" value="i162867@xzill" /></td><td align="left" class="patFuncTitle">/Making Marines;DVD;;;
+</td>
+<td align="left" class="patFuncBarcode"> 31812024985245 </td>
+<td align="left" class="patFuncStatus"> DUE 12-15-08 
+</td>
+<td align="left" class="patFuncCallNo"> No Call Number </td>
+
+</tr>
+<tr class="patFuncEntry"><td align="left" class="patFuncMark"><input type="checkbox" name="renew6" value="i163352@xzill" /></td><td align="left" class="patFuncTitle">/Hawaii Five-O.  The third season;3 DVDs;;;
+</td>
+<td align="left" class="patFuncBarcode"> 31812024989619 </td>
+<td align="left" class="patFuncStatus"> DUE 12-29-08 
+</td>
+<td align="left" class="patFuncCallNo"> No Call Number </td>
+</tr>
+</table>
+</form></dl>
+<form method="GET" target="_self" action="/patroninfo~S1/1169763/sorteditems">
+<input type="SUBMIT" value="SORT BY DUE DATE" />
+
+</form>
+<div id="renewfailmsg" style="display:none"  class="errormessage">
+ Not all renewals were successful. See details below</div>
+<form name="renew_form_1" method="GET"><input type="SUBMIT" value="RENEW ALL" onClick="return onClickProcessAll( '/patroninfo~S1/1169763/items', 'renew','This will affect all items. Are you sure?' )" />
+</form>
+<input type="SUBMIT" value="RENEW SELECTED ITEMS" onClick="return onClickProcessSome( process_form_2, '/patroninfo~S1/1169763/items', 'renew' )" />
+</nobr>
+<br />
+<link href="/screens/main.css" rel="stylesheet" type="text/css">
+<table border="0">
+<tr> 
+  <td><a href="http://www.einetwork.net/"><img src="/screens/einlogo.gif" alt="eiNetwork" width="92" height="54" vspace="3" border="0"></a></td>
+  <td width="569" valign="bottom" class="footertext"> &nbsp;&nbsp;The <a href="http://www.einetwork.net/"><img src="/screens/einlogotxt.gif" alt="eiNetwork" width="61" height="16" vspace="2" border="0" align="absbottom"></a>&nbsp;is a collaboration of the <a href="http://www.aclalibraries.org/" class="footertext">Allegheny 
+ County Library Association</a> and <a href="http://www.carnegielibrary.org" class="footertext">Carnegie Library of Pittsburgh</a></td>
+
+  <td width="137" valign="bottom"><a href="http://www.radworkshere.org" target="_blank"><img src="/screens/radworkslogo.gif" alt="RADWORKSHERE" width="68" height="39" border="0"></a></td>
+</tr>
+</table>
+<table width="813" border="0">
+<tr class="footertext"> 
+  <td width="89" height="25"><a href="/search/" class="footertext">Catalog Home</a></td>
+  <td width="3" class="pipespacers">|</td>
+  <td width="77"> <a href="https://iiisy1.einetwork.net/patroninfo/" class="footertext">My Account</a></td>
+  <td width="3" class="pipespacers">|</td>
+
+  <td width="30"> <a href="/screens/help.html" class="footertext" >Help</a></td>
+  <td width="3" class="pipespacers">|</td>
+  <td width="73"><a href="/screens/cantfind.html" class="footertext">Search Tips</a></td>
+  <td width="3" class="pipespacers">|</td>
+  <td width="114"><a href="/screens/featured.html" class="footertext">Featured Booklists </a></td>
+  <td width="5" class="pipespacers">|</td>
+
+  <td width="46"><a href="http://articles.einetwork.net/" class="footertext"> Find Articles</a></td>
+  <td width="3" class="pipespacers">|</td>
+  <td width="102"><a href="/screens/moreres.html" class="footertext">More Resources</a></td>
+  <td width="3" class="pipespacers">|</td>
+  <td width="93"><a href="http://www.einetwork.net/ein/searchint.html" class="footertext">Internet Search</a></td>
+  <td width="3"><span class="pipespacers">|</span></td>
+
+  <td width="93"><a href="http://www.einetwork.net/ils/comments.html">Comments</a></td>
+</tr>
+<tr><td colspan=17 align="center" class="footertext"><a href="/screens/helpabout.html#minreq" class="footertext">Site Requirements</a></td></tr>
+</table>
+</body></html>
+
+</p></BODY>
+</HTML>
+<!--this is customized <screens/patronview_web.html>-->

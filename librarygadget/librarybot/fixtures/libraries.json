@@ -1,0 +1,4652 @@
+[
+   {
+      "pk": 1, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.amespubliclibrary.org/ipac20/ipac.jsp?&menu=account", 
+         "name": "Ames Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "IA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 2, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://209.56.138.26/ipac20/ipac.jsp?menu=account", 
+         "name": "Burlington Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "IA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 3, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://libhip.desmoineslibrary.com/ipac20/ipac.jsp?menu=account", 
+         "name": "Des Moines Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "IA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 4, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://catalog.spl.org/ipac20/ipac.jsp?profile=dial&menu=account", 
+         "name": "Seattle Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "WA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 5, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://ipac.plymouthlibrary.org/ipac20/ipac.jsp?profile=pdlr&menu=account", 
+         "name": "Plymouth District Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "MI", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 6, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://libcat.uchicago.edu/ipac20/ipac.jsp?menu=account", 
+         "name": "University of Chicago Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "IL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 7, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://ipac.librarieshawaii.org/ipac20/ipac.jsp?profile=def&menu=account", 
+         "name": "Hawaii State Public Library System", 
+         "lastmodified": "2011-08-21", 
+         "state": "HI", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 9, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://ipac.librarypoint.org/ipac20/ipac.jsp?profile=remote&menu=account", 
+         "name": "Central Rappahannock Regional Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "VA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 10, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.mbln.org/ipac20/ipac.jsp?profile=bpl1&menu=account", 
+         "name": "Boston Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "MA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 11, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://hip.rpls.ws/ipac20/ipac.jsp?profile=spisalp&menu=account", 
+         "name": "Abraham Lincoln Presidential Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "IL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 12, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://lincpac.lincolntrail.info:8080/ipac20/ipac.jsp?profile=ltn&menu=account", 
+         "name": "Lincoln Trail Libraries System", 
+         "lastmodified": "2011-08-21", 
+         "state": "IL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 13, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://hzportal.daytonmetrolibrary.org/ipac20/ipac.jsp?&profile=def&menu=account", 
+         "name": "Dayton Metro Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "OH", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 14, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://ipac.hcplc.org/ipac20/ipac.jsp?profile=dial&menu=account", 
+         "name": "Hillsborough County Public Library Cooperative (HCPLC)", 
+         "lastmodified": "2011-08-21", 
+         "state": "FL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 15, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://librarycatalog.ebpl.org/ipac20/ipac.jsp?profile=ebl&menu=account", 
+         "name": "East Brunswick Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "NJ", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 16, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://hip.rpls.ws/ipac20/ipac.jsp?profile=decpdpl&menu=account", 
+         "name": "Decatur Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "IL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 17, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://catalog.nypl.org/iii/cas/login?null", 
+         "name": "New York Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "NY", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 18, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://webpac.barringtonarealibrary.org/ipac20/ipac.jsp?profile=bal&menu=account", 
+         "name": "Barrington Area Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "IL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 19, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.wcls.org/ipac20/ipac.jsp?profile=wrcat&menu=account", 
+         "name": "Whatcom County Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "WA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 20, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.wauclib.org/ipac20/ipac.jsp?profile=dial--1&menu=account", 
+         "name": "Wauconda Area Library", 
+         "lastmodified": "2011-08-25", 
+         "state": "IL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 22, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://199.120.252.134/ipac20/ipac.jsp?menu=account", 
+         "name": "New Orleans Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "LA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 23, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://wpl-pac.winnipeg.ca/ipac20/ipac.jsp?profile=wpl&menu=account", 
+         "name": "Winnipeg Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "MB", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 24, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://libwww.freelibrary.org/account/login.cfm", 
+         "name": "Free Library of Philadelphia", 
+         "lastmodified": "2011-08-21", 
+         "state": "PA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "sirsidynix", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 25, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://63.200.101.19/ipac20/ipac.jsp?profile=mdp&menu=account", 
+         "name": "Stanislaus County Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "CA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 26, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://kcmo.sirsi.net/uhtbin/cgisirsi/x/0/0/1/1166/X/BLASTOFF", 
+         "name": "Kansas City Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "MO", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 27, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.caro.lib.md.us/uhtbin/cgisirsi.exe/x/0/0/1/1166/X/BLASTOFF", 
+         "name": "Caroline County Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "MD", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 28, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://64.107.155.140/uhtbin/cgisirsi/CCS/x/0/57/49?user_id=webserver&password=public", 
+         "name": "Zion-Benton Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "IL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 30, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://libpac.leegov.com/polaris/logon.aspx?src=https%3a%2f%2flibpac.leegov.com%2fpolaris%2fpatronaccount%2fdefault.aspx%3fctx%3d1.1033.0.0.1&ctx=1.1033.0.0.1", 
+         "name": "Lee County Library System", 
+         "lastmodified": "2011-09-10", 
+         "state": "FL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 31, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://www.tds.sirsi.net/uhtbin/cgisirsi/x/0/0/1/1166/X/BLASTOFF", 
+         "name": "Blue Earth County Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "MN", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 33, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://cbpl.sirsi.net/uhtbin/cgisirsi/x/0/0/1/1166/X/BLASTOFF", 
+         "name": "Cobb County Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "GA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 34, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://pionrpb.sirsi.net/uhtbin/cgisirsi/x/x/0/1/1168/X/BLASTOFF", 
+         "name": "Pioneer Library System", 
+         "lastmodified": "2011-08-25", 
+         "state": "OK", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 36, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.cincinnatilibrary.org/uhtbin/cgisirsi/x/0/0/29/1167/X/1", 
+         "name": "Public Library of Cincinnati and Hamilton County", 
+         "lastmodified": "2011-12-12", 
+         "state": "OH", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 37, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://64.26.86.236/uhtbin/cgisirsi/x/0/0/1/1166/X/BLASTOFF", 
+         "name": "St. Mary's County Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "MD", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 38, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://216.125.140.44/uhtbin/cgisirsi/x/0/0/1/1166/X/BLASTOFF", 
+         "name": "Davenport Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "IA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 40, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://lwpl.sirsi.net/uhtbin/cgisirsi/x/0/0/1/1166/X/BLASTOFF", 
+         "name": "Lakewood Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "OH", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 41, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://hip1.sjvls.org/ipac20/ipac.jsp?profile=fhq&menu=account", 
+         "name": "Fresno County Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "CA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 42, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://165.139.43.227/ipac20/ipac.jsp?menu=account", 
+         "name": "Porter County Public Library System", 
+         "lastmodified": "2011-08-21", 
+         "state": "IN", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 43, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://puyallup.ipac.sirsidynix.net/ipac20/ipac.jsp?profile=ppl&menu=account", 
+         "name": "Puyallup Public Library", 
+         "lastmodified": "2011-08-25", 
+         "state": "WA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 44, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://ipac.ramsey.lib.mn.us/ipac20/ipac.jsp?&profile=zz&menu=account", 
+         "name": "Ramsey County Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "MN", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 45, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://myrcpl.ipac.sirsidynix.net/ipac20/ipac.jsp?profile=int&menu=account", 
+         "name": "Richland County Public Library", 
+         "lastmodified": "2011-08-25", 
+         "state": "SC", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 47, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://symphony.stdl.org/uhtbin/cgisirsi.exe/0/X/0/29/1167/X/1", 
+         "name": "Schaumburg Township District Library", 
+         "lastmodified": "2011-09-10", 
+         "state": "IL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 48, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://sddp.sirsi.net/uhtbin/cgisirsi/0/0/0/1/1168/X/BLASTOFF", 
+         "name": "San Diego Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "CA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 49, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://ipac3.vpl.ca/ipac20/ipac.jsp?profile=pac&menu=account", 
+         "name": "Vancouver Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "BC", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 51, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://easywls.org/uhtbin/cgisirsi/x/0/0/1/1168/X/BLASTOFF", 
+         "name": "Westchester Library System", 
+         "lastmodified": "2011-08-21", 
+         "state": "NY", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 52, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://64.218.238.238/ipac20/ipac.jsp?profile=aml&menu=account", 
+         "name": "Austin Memorial Library", 
+         "lastmodified": "2011-08-25", 
+         "state": "TX", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 53, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://ipac.arrowhead.lib.mn.us/ipac20/ipac.jsp?profile=cloque&menu=account", 
+         "name": "Cloquet Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "MN", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 54, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://library.roseville.ca.us/ipac20/ipac.jsp?profile=ros&menu=account", 
+         "name": "Roseville Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "CA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 56, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://hip.virl.bc.ca/ipac20/ipac.jsp?menu=account", 
+         "name": "Vancouver Island Regional Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "BC", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 57, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://librarycatalog.pwcgov.org/polaris/logon.aspx?src=http://librarycatalog.pwcgov.org/polaris/patronaccount/default.aspx%3fctx%3d1.1033.0.0.3&ctx=1.1033.0.0.3", 
+         "name": "Prince William Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "VA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 58, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.shastalibraries.org/uhtbin/cgisirsi/x/REDDING/0/1/54/X/BLASTOFF", 
+         "name": "Shasta Public Libraries", 
+         "lastmodified": "2011-08-21", 
+         "state": "CA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 59, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://www.lclscatalog.org/uhtbin/cgisirsi/x/0/0/1/1166/X/BLASTOFF", 
+         "name": "Lackawanna County Library System", 
+         "lastmodified": "2011-08-21", 
+         "state": "PA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 60, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://ibistro.aacpl.net/uhtbin/cgisirsi/x/0/0/1/1166/X/BLASTOFF", 
+         "name": "Anne Arundel County Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "MD", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 61, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://sflib1.sfpl.org/patroninfo~S1", 
+         "name": "San Francisco Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "CA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 62, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://www.saclibrarycatalog.org/patroninfo~S51", 
+         "name": "Sacramento County Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "CA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 63, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.akspl.org/ipac20/ipac.jsp?&profile=spl&menu=account", 
+         "name": "A. K. Smiley Public Library", 
+         "lastmodified": "2011-08-25", 
+         "state": "CA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 64, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://pac.epfl.net/uhtbin/cgisirsi/0/0/x/1/1166/X/3/BLASTOFF", 
+         "name": "Enoch Pratt Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "MD", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 65, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://countycat.mcfls.org/patroninfo", 
+         "name": "Milwaukee County Federated Library System", 
+         "lastmodified": "2011-08-21", 
+         "state": "WI", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 66, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://www.alisweb.org/patroninfo", 
+         "name": "Nassau Library System", 
+         "lastmodified": "2011-08-21", 
+         "state": "NY", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 67, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://nplencore.library.nashville.org/iii/cas/login?service=https%3A%2F%2Fwaldo.library.nashville.org%3A443%2Fpatroninfo~S43%2FIIITICKET&scope=43", 
+         "name": "Nashville Public Library", 
+         "lastmodified": "2011-09-10", 
+         "state": "TN", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 68, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://iii.ahml.info/patroninfo", 
+         "name": "Arlington Heights Memorial Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "IL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 70, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://iiisy1.einetwork.net/patroninfo~S1/", 
+         "name": "Carnegie Library of Pittsburgh", 
+         "lastmodified": "2011-08-21", 
+         "state": "PA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 71, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://ds1.starklibrary.org/patroninfo~S25", 
+         "name": "Stark County District Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "OH", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 72, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://sccl.santaclaraca.gov/patroninfo~S0", 
+         "name": "Santa Clara City Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "CA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 74, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.ci.santa-fe.nm.us/patroninfo", 
+         "name": "Santa Fe Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "NM", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 75, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://iii.ocls.info/patroninfo~S1", 
+         "name": "Orange County Library System", 
+         "lastmodified": "2011-08-21", 
+         "state": "FL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 76, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://iiisy1.einetwork.net/patroninfo/", 
+         "name": "Allegheny County Library Association", 
+         "lastmodified": "2011-08-21", 
+         "state": "PA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 77, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://webpac.slcl.org/patroninfo", 
+         "name": "St. Louis County Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "MO", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 78, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://alpha.stpaul.lib.mn.us/patroninfo", 
+         "name": "St. Paul Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "MN", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 79, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://catalog.toledolibrary.org/patroninfo~S1", 
+         "name": "Toledo-Lucas County Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "OH", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 80, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://catalog.slcpl.org/patroninfo/", 
+         "name": "Salt Lake City Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "UT", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 81, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://library.minlib.net/patroninfo~S1/", 
+         "name": "Newton Free Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "MA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 82, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://library.minlib.net/patroninfo~S1/", 
+         "name": "Minuteman Library Network", 
+         "lastmodified": "2011-08-21", 
+         "state": "MA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 83, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://www.niclibraries.org/patroninfo", 
+         "name": "North Illinois Cooperative", 
+         "lastmodified": "2011-08-21", 
+         "state": "IL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 84, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://www.alisweb.org/patroninfo", 
+         "name": "Rockville Centre Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "NY", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 85, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://ipac.slco.lib.ut.us/ipac20/ipac.jsp?profile=dial&menu=account", 
+         "name": "Salt Lake County Library Services", 
+         "lastmodified": "2011-08-21", 
+         "state": "UT", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 86, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://pvlils.pvld.org/patroninfo~S13", 
+         "name": "Palos Verdes Library District", 
+         "lastmodified": "2011-08-21", 
+         "state": "CA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 87, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://library.clamsnet.org/patroninfo", 
+         "name": "CLAMS", 
+         "lastmodified": "2011-08-21", 
+         "state": "MA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 88, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://sam.llcoop.org/patroninfo", 
+         "name": "Lakeland Library Cooperative", 
+         "lastmodified": "2011-08-21", 
+         "state": "MI", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 89, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://catalog.plsinfo.org/patroninfo~S1", 
+         "name": "San Mateo County Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "CA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 90, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://www2.library.barrie.on.ca/ipac20/ipac.jsp?profile=bpl&menu=account", 
+         "name": "Barrie Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "ON", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 91, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.oaklandlibrary.org/patroninfo", 
+         "name": "Oakland Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "CA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 92, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://catalog.collier-lib.org/patroninfo~S1/", 
+         "name": "Collier County Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "FL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 93, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://alam1.aclibrary.org/patroninfo~S2", 
+         "name": "Alameda County Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "CA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 94, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://sciron.cuyahoga.lib.oh.us/patroninfo~S41", 
+         "name": "Cuyahoga County Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "OH", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 95, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://ibistro.eldoradolibrary.org/uhtbin/cgisirsi.exe/x/0/0/1/1166/X/BLASTOFF", 
+         "name": "El Dorado County Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "CA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 97, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://wyld.state.wy.us/uhtbin/cgisirsi/x/0/0/57/1/1166/X/BLASTOFF?user_id=larmweb", 
+         "name": "Laramie County Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "WY", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 98, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://pac.provo.lib.ut.us/ipac20/ipac.jsp?profile=pcl&menu=account", 
+         "name": "Provo City Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "UT", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 99, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://catalog.lancasterlibraries.org/patroninfo~S1", 
+         "name": "Library System of Lancaster County", 
+         "lastmodified": "2011-08-21", 
+         "state": "PA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 100, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://vbplcat.vbgov.com/uhtbin/cgisirsi.exe/X/X/X/1/1166/X/BLASTOFF", 
+         "name": "Virginia Beach Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "VA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 102, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://sapl.sat.lib.tx.us/patroninfo", 
+         "name": "San Antonio Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "TX", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 104, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.tcfl.org/logon.aspx?src=http%3a%2f%2fcatalog.tcfl.org%2fpatronaccount%2fdefault.aspx%3fctx%3d1.1033.0.0.1&ctx=1.1033.0.0.1", 
+         "name": "Talbot County Free Library", 
+         "lastmodified": "2011-09-10", 
+         "state": "MD", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 105, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.siouxlandlib.org/ipac20/ipac.jsp?profile=dial&menu=account", 
+         "name": "Siouxland Libraries", 
+         "lastmodified": "2011-08-21", 
+         "state": "SD", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 106, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://hiprpa.greensborolibrary.org/ipac20/ipac.jsp?&menu=account", 
+         "name": "Greensboro Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "NC", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 107, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://webpac.portagecounty.lib.oh.us/patroninfo~S10/", 
+         "name": "Kent Free Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "OH", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 108, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://catalog.akronlibrary.org/patroninfo", 
+         "name": "Akron-Summit County Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "OH", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 109, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://216.125.140.44/uhtbin/cgisirsi/x/0/0/1/1166/X/BLASTOFF", 
+         "name": "Bourbonnais Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "IL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 111, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://catalog.cantonpl.org/patroninfo~S10", 
+         "name": "Canton Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "MI", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 112, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://twain.gwinnettpl.org/ipac20/ipac.jsp?profile=hq&menu=account", 
+         "name": "Gwinnett County Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "GA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 113, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://seoipac.seo.lib.oh.us/ipac20/ipac.jsp?profile=wod&menu=account", 
+         "name": "Wood County District Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "OH", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 114, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://wyld.state.wy.us/uhtbin/cgisirsi/x/0/0/1/1166/X/BLASTOFF", 
+         "name": "Sheridan County Library System", 
+         "lastmodified": "2011-08-21", 
+         "state": "WY", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 115, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://iii.brooklynpubliclibrary.org/patroninfo~S63/", 
+         "name": "Brooklyn Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "NY", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 116, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://dbpcosdcsgt.co.san-diego.ca.us/patroninfo~S38", 
+         "name": "San Diego County Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "CA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 117, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://catalog.oslri.net/patroninfo~S1", 
+         "name": "Westerly Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "RI", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 118, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://read.riversideca.gov/patroninfo~S9", 
+         "name": "Riverside Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "CA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 120, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://cmars.cwmars.org/patroninfo~S201", 
+         "name": "Worcester Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "MA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 121, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://pac.lcplin.org/polaris/logon.aspx?src=http%3a%2f%2fpac.lcplin.org%2fpolaris%2fpatronaccount%2fdefault.aspx%3fctx%3d1.1033.0.0.3&ctx=1.1033.0.0.3", 
+         "name": "Lake County Public Library", 
+         "lastmodified": "2012-01-15", 
+         "state": "IN", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 123, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://dcpld.sirsi.net/uhtbin/cgisirsi/X/DE/X/1/1168/X/BLASTOFF", 
+         "name": "Delta County Public Library", 
+         "lastmodified": "2011-08-25", 
+         "state": "CO", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 124, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://wmars.cwmars.org/patroninfo/", 
+         "name": "Pittsfield-Berkshire Athanaeum Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "MA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 125, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://eos.eou.edu/patroninfo~S1", 
+         "name": "Harney County Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "OR", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 127, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.durhamcountylibrary.org/ipac20/ipac.jsp?profile=m&menu=account", 
+         "name": "Durham County Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "NC", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 128, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://encore.cals.lib.ar.us/iii/cas/login?service=https%3A%2F%2Fvera.cals.lib.ar.us%3A443%2Fpatroninfo~S3%2FIIITICKET&scope=3", 
+         "name": "Central Arkansas Library System", 
+         "lastmodified": "2011-09-10", 
+         "state": "AR", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 129, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://clicnet.clic.edu/patroninfo", 
+         "name": "CLICnet", 
+         "lastmodified": "2011-08-21", 
+         "state": "MN", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 130, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://orion.wcls.lib.ar.us/patroninfo", 
+         "name": "Springdale Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "AR", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 131, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://ipac.hunterdon.lib.nj.us/polaris/logon.aspx", 
+         "name": "Hunterdon County Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "NJ", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 132, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://pals.polarislibrary.com/polaris/logon.aspx?src=http%3A%2F%2Fpals.polarislibrary.com%2Fpolaris%2Fpatronaccount%2Fdefault.aspx%3Fctx%3D1.1033.0.0.4&ctx=1.1033.0.0.4", 
+         "name": "Pinellas County Library System", 
+         "lastmodified": "2011-08-21", 
+         "state": "FL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 133, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://www.mcldaz.org/logon.aspx?src=https%3a%2f%2fwww.mcldaz.org%2fpatronaccount%2fdefault.aspx%3fctx%3d1.1033.0.0.6&ctx=1.1033.0.0.6", 
+         "name": "Maricopa County Library District", 
+         "lastmodified": "2011-09-10", 
+         "state": "AZ", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 134, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://polariscatalog.piercecountylibrary.org/polaris/logon.aspx?src=http%3a%2f%2fpolariscatalog.piercecountylibrary.org%2fpolaris%2fpatronaccount%2fdefault.aspx%3fctx%3d1.1033.0.0.1&ctx=1.1033.0.0.1", 
+         "name": "Pierce County Library", 
+         "lastmodified": "2011-09-10", 
+         "state": "WA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 135, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://www.easicat.net/polaris/logon.aspx?src=http%3a%2f%2fwww.easicat.net%2fpolaris%2fpatronaccount%2fdefault.aspx%3fctx%3d1.1033.0.0.1&ctx=1.1033.0.0.1", 
+         "name": "Eastern Shores Library System", 
+         "lastmodified": "2011-09-10", 
+         "state": "WI", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 136, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.oplib.org/polaris/logon.aspx?src=http%3a%2f%2fcatalog.oplib.org%2fpolaris%2fpatronaccount%2fdefault.aspx%3fctx%3d1.1033.0.0.1&ctx=1.1033.0.0.1", 
+         "name": "Ouachita Parish Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "LA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 137, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalogue.fvrl.bc.ca/patroninfo.asp", 
+         "name": "Fraser Valley Regional Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "BC", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 138, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://librarycatalog.eugene-or.gov/Polaris/logon.aspx?src=https%3a%2f%2flibrarycatalog.eugene-or.gov%2fPolaris%2fpatronaccount%2fdefault.aspx%3fctx%3d3.1033.0.0.1&ctx=3.1033.0.0.1", 
+         "name": "Eugene Public Library", 
+         "lastmodified": "2011-09-10", 
+         "state": "OR", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 139, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://catalog.faylib.org/polaris/logon.aspx?src=http%3a%2f%2fcatalog.faylib.org%2fpolaris%2fpatronaccount%2fdefault.aspx%3fctx%3d1.1033.0.0.1&ctx=1.1033.0.0.1", 
+         "name": "Fayetteville Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "AR", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 140, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://unicorn.midyork.org/uhtbin/cgisirsi/x/0/0/1/1166/X/BLASTOFF", 
+         "name": "Mid-York Library System", 
+         "lastmodified": "2011-08-21", 
+         "state": "NY", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 141, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://librarycatalog.lonestar.edu.mcplproxy.lonestar.edu/ipac20/ipac.jsp?profile=mcml&menu=account", 
+         "name": "Montgomery County Memorial Library System", 
+         "lastmodified": "2011-08-21", 
+         "state": "TX", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 142, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.mcl-lib.org/Polaris/logon.aspx?src=http%3a%2f%2fcatalog.mcl-lib.org%2fPolaris%2fpatronaccount%2fdefault.aspx%3fctx%3d1.1033.0.0.3&ctx=1.1033.0.0.3", 
+         "name": "Mid-Columbia Libraries", 
+         "lastmodified": "2011-08-21", 
+         "state": "WA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 143, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://www.wcpl.org/polaris/logon.aspx?src=https%3a%2f%2fwww.wcpl.org%2fpolaris%2fpatronaccount%2fdefault.aspx%3fctx%3d3.1033.0.0.1&ctx=3.1033.0.0.1", 
+         "name": "Wayne County Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "NC", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 144, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://mill1.sjlibrary.org/patroninfo/", 
+         "name": "San Jose Libraries", 
+         "lastmodified": "2011-08-21", 
+         "state": "CA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 146, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://seoipac.seo.lib.oh.us/ipac20/ipac.jsp?profile=ste&menu=account", 
+         "name": "Public Library of Steubenville and Jefferson County", 
+         "lastmodified": "2011-08-21", 
+         "state": "OH", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 147, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://catalog.houstonlibrary.org/patroninfo", 
+         "name": "Houston Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "TX", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 149, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://sanmarino.ipac.dynixasp.com/ipac20/ipac.jsp?menu=account", 
+         "name": "San Marino Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "CA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 152, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.galionlibrary.org/polaris/logon.aspx?src=http%3a%2f%2fcatalog.galionlibrary.org%2fpolaris%2fpatronaccount%2fdefault.aspx%3fctx%3d3.1033.0.0.1&ctx=3.1033.0.0.1", 
+         "name": "Galion Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "OH", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 154, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://216.125.140.44/uhtbin/cgisirsi/x/0/0/1/1166/X/BLASTOFF", 
+         "name": "Mokena Community Public Library District", 
+         "lastmodified": "2011-08-21", 
+         "state": "IL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 155, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://webcat.montgomerylibrary.org/uhtbin/cgisirsi/x/x/0/1/488/X/", 
+         "name": "Montgomery County Public Libraries", 
+         "lastmodified": "2011-08-21", 
+         "state": "MD", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 156, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://catalog.ccls.org/patroninfo", 
+         "name": "Chester County Library System", 
+         "lastmodified": "2011-08-21", 
+         "state": "PA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 157, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://itpld-hip.itpld.lib.il.us/ipac20/ipac.jsp?profile=itpld&menu=account", 
+         "name": "Indian Trails Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "IL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 158, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.urbandalelibrary.org/uhtbin/cgisirsi.exe/X/0/0/57/1/1166/X?user_id=urbandaleweb&password=0684", 
+         "name": "Urbandale Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "IA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 160, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.wccls.org/polaris/logon.aspx?src=http://catalog.wccls.org/polaris/patronaccount/default.aspx%3fctx%3d1.1033.0.0.1&ctx=1.1033.0.0.1", 
+         "name": "Washington County Cooperative Library Services", 
+         "lastmodified": "2011-08-21", 
+         "state": "OR", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 161, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://hip.douglascountylibraries.org/ipac20/ipac.jsp?profile=rem&menu=account", 
+         "name": "Douglas County Libraries", 
+         "lastmodified": "2011-08-21", 
+         "state": "CO", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 162, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://ilsweb.lvccld.org/patroninfo~S12", 
+         "name": "Las Vegas-Clark County Library District", 
+         "lastmodified": "2011-08-21", 
+         "state": "NV", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 164, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://catalog.bcpl.lib.md.us/polaris/logon.aspx?src=http%3a%2f%2fcatalog.bcpl.lib.md.us%2fpolaris%2fpatronaccount%2fDefault.aspx%3fctx%3d1.1033.0.0.3&ctx=1.1033.0.0.3", 
+         "name": "Baltimore County Public Library", 
+         "lastmodified": "2011-09-10", 
+         "state": "MD", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 165, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://pac.griver.org/ipac20/ipac.jsp?menu=account", 
+         "name": "Great River Regional Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "MN", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 166, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://www.rvl.info/uhtbin/cgisirsi/x/0/0/1/1166/X/BLASTOFF", 
+         "name": "Roanoke Valley Libraries", 
+         "lastmodified": "2011-08-21", 
+         "state": "VA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 167, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://libonline.wdm-ia.com/ipac20/ipac.jsp?profile=wdm&menu=account", 
+         "name": "West Des Moines Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "IA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": false
+      }
+   }, 
+   {
+      "pk": 168, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.oremlibrary.org/ipac20/ipac.jsp?profile=opl&menu=account", 
+         "name": "Orem Public Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "UT", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 169, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://hip.plcmc.org/ipac20/ipac.jsp?profile=plcmc&menu=account", 
+         "name": "Charlotte Mecklenburg Library", 
+         "lastmodified": "2011-08-21", 
+         "state": "NC", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "tested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 170, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://lib.cityofclive.com/patroninfo~S0/", 
+         "name": "Clive Public Library", 
+         "lastmodified": "2011-08-25", 
+         "state": "IA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": false
+      }
+   }, 
+   {
+      "pk": 171, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://www.linkcat.info/cgi-bin/koha/opac-user.pl", 
+         "name": "Madison Public Library", 
+         "lastmodified": "2011-10-13", 
+         "state": "WI", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "koha", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 172, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://lincoln.pioneer.kohalibrary.com/cgi-bin/koha/opac-user.pl", 
+         "name": "Lincoln City Libraries", 
+         "lastmodified": "2011-10-24", 
+         "state": "NE", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "koha", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 173, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://catalog.plsinfo.org/patroninfo", 
+         "name": "Peninsula Library System", 
+         "lastmodified": "2011-10-28", 
+         "state": "CA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 174, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://rpl1.rochesterpubliclibrary.org/Web2/tramp2.exe/do_ccl_search/guest?setting_key=rpl&servers=1home&screen=MyAccount_Intro.html&index=default", 
+         "name": "Rochester Public Library", 
+         "lastmodified": "2011-11-19", 
+         "state": "MN", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 175, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://mcls.sirsi.net/uhtbin/cgisirsi/x/HEADQRTRS/0/29/1169/X/3", 
+         "name": "Monmouth County Library System", 
+         "lastmodified": "2011-11-19", 
+         "state": "NJ", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 176, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://kitcat.krl.org/uhtbin/cgisirsi.exe/x/0/0/1/1166/X/BLASTOFF", 
+         "name": "Kitsap Regional Library", 
+         "lastmodified": "2011-11-21", 
+         "state": "WA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 177, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://kplcatalog.ankenyiowa.gov/polaris/logon.aspx", 
+         "name": "Kirkendall Public Library", 
+         "lastmodified": "2011-11-26", 
+         "state": "IA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 178, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.friscolibrary.com/uhtbin/cgisirsi.exe/0/0/x/1/1166/X/3/BLASTOFF", 
+         "name": "Frisco Public Library", 
+         "lastmodified": "2011-11-26", 
+         "state": "TX", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 179, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://libraryapp.carverlib.org/patroninfo~S10/", 
+         "name": "Carver County Library", 
+         "lastmodified": "2011-11-28", 
+         "state": "MN", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 180, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://discover.omahalibrary.org/iii/cas/login?service=https%3A%2F%2Fdiscover.omahalibrary.org%3A443%2Fpatroninfo~S2%2FIIITICKET&scope=2", 
+         "name": "Omaha Public Library", 
+         "lastmodified": "2011-12-09", 
+         "state": "NE", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 181, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "", 
+         "name": "Baright Public Library", 
+         "lastmodified": "2011-12-09", 
+         "state": "NE", 
+         "regional_system": 180, 
+         "active": true, 
+         "librarysystem": null, 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 182, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "", 
+         "name": "Metropolitan Community College", 
+         "lastmodified": "2011-12-09", 
+         "state": "NE", 
+         "regional_system": 180, 
+         "active": true, 
+         "librarysystem": null, 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 183, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://66.195.188.172/ipac20/ipac.jsp?menu=account", 
+         "name": "Ada Community Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "ID", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 184, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://207.215.17.3/ipac20/ipac.jsp?menu=account", 
+         "name": "Alameda Free Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "CA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 185, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://ipac.uhls.org/ipac20/ipac.jsp?menu=account", 
+         "name": "Altamont Free Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "NY", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 186, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://beaumont.ipac.dynixasp.com/ipac20/ipac.jsp?menu=account", 
+         "name": "Beaumont Public Library System", 
+         "lastmodified": "2011-12-23", 
+         "state": "TX", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 187, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://216.57.213.200/ipac20/ipac.jsp?menu=account", 
+         "name": "Bellingham Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "MA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 188, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://fwl.ipac.dynixasp.com/ipac20/ipac.jsp?menu=account", 
+         "name": "Benbrook Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "TX", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 189, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://bridgeport_hip1.biblio.org/ipac20/ipac.jsp?menu=account", 
+         "name": "Bridgeport Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "NE", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 190, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://cassd.ipac.sirsidynix.net/ipac20/ipac.jsp?menu=account", 
+         "name": "Cass District Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "MI", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 191, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://coralcat.coralvillepubliclibrary.org/ipac20/ipac.jsp?menu=account", 
+         "name": "Coralville Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "IA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 192, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://valcat.vlc.lib.mi.us/ipac20/ipac.jsp?menu=account", 
+         "name": "Dryden Township Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "MI", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 193, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://bronte.egvpl.org/ipac20/ipac.jsp?menu=account", 
+         "name": "Elk Grove Village Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "IL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 194, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://ipac.ci.escondido.ca.us/ipac20/ipac.jsp?menu=account", 
+         "name": "Escondido Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "CA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 195, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://hip.fmpl.ca:8080/ipac20/ipac.jsp?menu=account", 
+         "name": "Fort McMurray Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "AB", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 196, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://fwl.ipac.dynixasp.com/ipac20/ipac.jsp?menu=account", 
+         "name": "Fort Worth Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "TX", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 197, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://ipac.cityoffullerton.com/ipac20/ipac.jsp?menu=account", 
+         "name": "Fullerton Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "NE", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 198, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.glendalepubliclibrary.org/ipac20/ipac.jsp?menu=account", 
+         "name": "Glendale Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "CA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 200, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://38.111.103.29:8081/ipac20/ipac.jsp?menu=account", 
+         "name": "Gravenhurst Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "ON", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 201, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://hip.hamptonpubliclibrary.org/ipac20/ipac.jsp?menu=account", 
+         "name": "Hampton Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "IA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 202, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://kids.ipac.hancock.lib.ms.us/ipac20/ipac.jsp?menu=account", 
+         "name": "Hancock County Library System", 
+         "lastmodified": "2011-12-23", 
+         "state": "MS", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 203, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.hcpl.net/ipac20/ipac.jsp?menu=account", 
+         "name": "Harris County Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "TX", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 204, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://hip.cityofhemet.org/ipac20/ipac.jsp?menu=account", 
+         "name": "Hemet Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "CA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 205, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.mylibrary.us/ipac20/ipac.jsp?menu=account", 
+         "name": "High Plains Library District", 
+         "lastmodified": "2011-12-23", 
+         "state": "CO", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 206, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://216.237.225.202/ipac20/ipac.jsp?menu=account", 
+         "name": "High Point Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "NC", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 207, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.ifpl.org/ipac20/ipac.jsp?menu=account", 
+         "name": "Idaho Falls Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "ID", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 208, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://ipac.lafayette.lib.la.us:8080/ipac20/ipac.jsp?menu=account", 
+         "name": "Lafayette Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "NY", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 210, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://cat.lanepl.org/ipac20/ipac.jsp?menu=account", 
+         "name": "Lane Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "OH", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 211, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://valcat.vlc.lib.mi.us/ipac20/ipac.jsp?menu=account", 
+         "name": "Lapeer District Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "MI", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 212, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://library.ci.longmont.co.us/ipac20/ipac.jsp?menu=account", 
+         "name": "Longmont Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "CO", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 213, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://library.mymanatee.org/ipac20/ipac.jsp?menu=account", 
+         "name": "Manatee County Public Library System", 
+         "lastmodified": "2011-12-23", 
+         "state": "FL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 214, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://hip.marioncountyfl.org/ipac20/ipac.jsp?menu=account", 
+         "name": "Marion County Public Library System", 
+         "lastmodified": "2011-12-23", 
+         "state": "FL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 215, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://cat.mpl.on.ca/ipac20/ipac.jsp?menu=account", 
+         "name": "Milton Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "MA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 216, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://68.71.163.2:81/ipac20/ipac.jsp?menu=account", 
+         "name": "Mooresville Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "NC", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 217, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://classic.mppl.org/ipac20/ipac.jsp?menu=account", 
+         "name": "Mount Prospect Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "IL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 218, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://murray.ipac.dynixasp.com/ipac20/ipac.jsp?menu=account", 
+         "name": "Murray Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "UT", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 219, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://66.195.188.172/ipac20/ipac.jsp?menu=account", 
+         "name": "Nampa Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "ID", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 220, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://ipac.prl.ab.ca/ipac20/ipac.jsp?menu=account", 
+         "name": "Olds Municipal Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "AB", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 221, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://ipac1.ci.ontario.ca.us:8000/ipac20/ipac.jsp?menu=account", 
+         "name": "Ontario City Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "CA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 222, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.ottumwapubliclibrary.org/ipac20/ipac.jsp?menu=account", 
+         "name": "Ottumwa Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "IA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 223, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://park.ipac.dynixasp.com/ipac20/ipac.jsp?menu=account", 
+         "name": "Park County Public Libraries", 
+         "lastmodified": "2011-12-23", 
+         "state": "CO", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 224, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.cityofpasadena.net/ipac20/ipac.jsp?menu=account", 
+         "name": "Pasadena Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "TX", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 225, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://horizon.cefls.org/ipac20/ipac.jsp?menu=account", 
+         "name": "Plattsburgh Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "NY", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 226, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://207.102.242.173/ipac20/ipac.jsp?menu=account", 
+         "name": "Port Moody Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "BC", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 227, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://216.54.20.117/ipac20/ipac.jsp?menu=account", 
+         "name": "Portsmouth Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "VA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 228, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://vcat.wvls.lib.wi.us/ipac20/ipac.jsp?menu=account", 
+         "name": "Rhinelander District Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "WI", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 229, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://hip.cor.gov/ipac20/ipac.jsp?menu=account", 
+         "name": "Richardson Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "TX", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 230, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://valcat.vlc.lib.mi.us/ipac20/ipac.jsp?menu=account", 
+         "name": "Ruth Hughes Memorial Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "MI", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 231, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://ipac.shawls.lib.il.us:8080/ipac20/ipac.jsp?menu=account", 
+         "name": "Sallie Logan Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "IL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 232, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://search.ccfpl.org/ipac20/ipac.jsp?menu=account", 
+         "name": "Schlow Memorial Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "PA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 233, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://hip.sclibrary.ab.ca/ipac20/ipac.jsp?menu=account", 
+         "name": "Strathcona County Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "AB", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 234, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://www.leifpac.viking.lib.mn.us/ipac20/ipac.jsp?menu=account", 
+         "name": "Viking Library System", 
+         "lastmodified": "2011-12-23", 
+         "state": "MN", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 235, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://horizon.washco.utah.gov:8000/ipac20/ipac.jsp?menu=account", 
+         "name": "Washington County Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "UT", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "tested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 237, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.westportlibrary.org/ipac20/ipac.jsp?menu=account", 
+         "name": "Westport Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "CT", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 238, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://wfpl.ipac.dynixasp.com/ipac20/ipac.jsp?menu=account", 
+         "name": "Wichita Falls Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "TX", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 239, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://hip.willingboro.org/ipac20/ipac.jsp?menu=account", 
+         "name": "Willingboro Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "NJ", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 240, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.wiltonlibrary.org/ipac20/ipac.jsp?menu=account", 
+         "name": "Wilton Library Association", 
+         "lastmodified": "2011-12-23", 
+         "state": "CT", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 241, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.wppl.org/ipac20/ipac.jsp?menu=account", 
+         "name": "Winter Park Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "FL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 242, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://ipac.yorkcounty.gov:8080/ipac20/ipac.jsp?menu=account", 
+         "name": "York County Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "VA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 243, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://ipac.ypsilibrary.org:8080/ipac20/ipac.jsp?menu=account", 
+         "name": "Ypsilanti District Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "MI", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "ipac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 244, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://www.catalog.bhpl.net/cgi-bin/koha/opac-user.pl", 
+         "name": "Blue Hill Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "ME", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "koha", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 245, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://ican.kohalibrary.com", 
+         "name": "Harbor-Topky Memorial Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "OH", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "koha", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 246, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://apl.alc.org/uhtbin/cgisirsi.exe/x/0/0/57/1/1166/X/3?user_id=APL-MAINWEB", 
+         "name": "Abilene Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "TX", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 247, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://library.anoka.lib.mn.us/uhtbin/cgisirsi/x/x/0/49/", 
+         "name": "Anoka County Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "MN", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 248, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.arlibrary.org/uhtbin/cgisirsi/CtispduIOl/0/0/49", 
+         "name": "Appalachian Regional Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "NC", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 249, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://www.ci.austin.tx.us/uhtbin/cgisirsi/x/x/0/49", 
+         "name": "Austin Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "TX", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 250, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://66.77.127.97/uhtbin/cgisirsi.exe/0/CENTRAL/0/1/1184/X", 
+         "name": "Burbank Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "CA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 251, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://catalogue.calgarypubliclibrary.com/uhtbin/cgisirsi/x/x/0/49/", 
+         "name": "Calgary Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "AB", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 252, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.fvrl.org/uhtbin/cgisirsi.exe/0/CA/X/29/1171/X/3%20", 
+         "name": "Camas Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "WA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 253, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://webcat.cedarparktx.us/uhtbin/cgisirsi.exe/x/0/0/49", 
+         "name": "Cedar Park Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "TX", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 254, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://librarycatalog.cpcc.edu/uhtbin/cgisirsi/x/0/0/57/29/70/X/1?user_id=WEBSERVER", 
+         "name": "Central Piedmont Community College", 
+         "lastmodified": "2011-12-23", 
+         "state": "NC", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 255, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://library.chandleraz.gov/uhtbin/cgisirsi/0/0/0/1/58/X/1", 
+         "name": "Chandler Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "TX", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 256, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.colapl.org/uhtbin/cgisirsi/x/0/0/29/1169/X/1", 
+         "name": "County of Los Angeles Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "CA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 257, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.dodgelibrary.org/uhtbin/cgisirsi/x/0/0/49", 
+         "name": "Dodge City Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "KS", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 258, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://vega.co.forsyth.nc.us/uhtbin/cgisirsi.exe/x/x/0/49/", 
+         "name": "Forsyth County Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "NC", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 259, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://vega.co.forsyth.nc.us/uhtbin/cgisirsi.exe/x/x/0/49/", 
+         "name": "Forsyth County Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "NC", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 260, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://elib.greenvillelibrary.org/uhtbin/cgisirsi/x/x/0/49/", 
+         "name": "Greenville County Library System", 
+         "lastmodified": "2011-12-23", 
+         "state": "SC", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 261, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://jacks.sirsi.net/uhtbin/cgisirsi/x/0/0/1/1168/X/BLASTOFF", 
+         "name": "Jackson District Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "MI", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 262, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://elibrary.palnet.info/uhtbin/cgisirsi/x/0/0/57/49?user_id=kuweb", 
+         "name": "Kettering University", 
+         "lastmodified": "2011-12-23", 
+         "state": "MI", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 263, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://209.26.59.208/uhtbin/cgisirsi.exe/x/x/0/57/49?user_id=LEEWEB", 
+         "name": "Leesburg Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "FL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 264, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://library.cityoflewisville.com/uhtbin/cgisirsi/Q0BllwOQEa/0/0/49", 
+         "name": "Lewisville Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "TX", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 265, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://mtpl.sirsi.net/uhtbin/cgisirsi/x/0/0/49", 
+         "name": "Marshalltown Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "IA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 266, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://opac.mcpl.lib.mo.us/uhtbin/cgisirsi/x/x/0/5?srchfield1=GENERAL^SUBJECT^GENERAL^^words+or+phrase&searchdata1=Sabriel{TI}+AND+Nix", 
+         "name": "Mid-Continent Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "op", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "+Garth{AU}", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 267, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://webcat.co.mohave.az.us/uhtbin/cgisirsi/x/x/0/49", 
+         "name": "Mohave County Library District", 
+         "lastmodified": "2011-12-23", 
+         "state": "AZ", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 268, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://24.149.201.166:81/uhtbin/cgisirsi.exe/X/0/0/49", 
+         "name": "Moore Memorial Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "NY", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 269, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://wyldweb.state.wy.us/uhtbin/cgisirsi/x/0/0/57/49?user_id=natrweb", 
+         "name": "Natrona County Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "WY", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 270, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://opac.newriver.lib.fl.us/uhtbin/cgisirsi.exe/0/NEWRIVER/0/38/0/POWER_SEARCH", 
+         "name": "New River Public Library Cooperative", 
+         "lastmodified": "2011-12-23", 
+         "state": "FL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 271, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://209.52.67.33/uhtbin/cgisirsi.exe/x/x/x/60/1180/X", 
+         "name": "North Vancouver City Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "BC", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 272, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://www.cafelibraries.org/uhtbin/cgisirsi.exe/x/0/0/57/49?user_id=owweb", 
+         "name": "Oconomowoc Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "WI", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 273, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://ibistro.palsplus.org/uhtbin/cgisirsi.exe/x/0/0/29/1167/X/1", 
+         "name": "PALS Plus", 
+         "lastmodified": "2011-12-23", 
+         "state": "NJ", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 274, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://apcl.sirsi.net/uhtbin/cgisirsi/x/x/0/49", 
+         "name": "Placer County Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "CA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 275, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://csmpl.smpl.org/uhtbin/cgisirsi/x/0/0/57/29/39/X/1?user_id=WEBSERVER", 
+         "name": "Santa Monica Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "CA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 276, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://spll.sirsi.net/uhtbin/cgisirsi/x/0/0/49", 
+         "name": "Sparta Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "IL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 277, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://sirsi.stillwater.org/uhtbin/cgisirsi/C2QPz71stY/SIRSI/187300164/60/1173/X", 
+         "name": "Stillwater Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "OK", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 278, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://cat.trl.org/uhtbin/cgisirsi.exe/x/0/x/60/1180/X", 
+         "name": "Timberland Regional Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "WA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 279, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://208.180.46.50/uhtbin/cgisirsi/jpHCuT5V9A/x/x/29/1169/X/1", 
+         "name": "Victoria Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "TX", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 280, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://www.cafelibraries.org/uhtbin/cgisirsi.exe/0/WAUKESHA/0/57/29/1194/X/1?user_id=WKWEB", 
+         "name": "Waukesha Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "WI", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "opac", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 281, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.allenlibrary.org/polaris/logon.aspx?src=http%3a%2f%2fcatalog.allenlibrary.org%2fpolaris%2fpatronaccount%2fdefault.aspx%3fctx%3d3.1033.0.0.6&ctx=3.1033.0.0.6", 
+         "name": "Allen Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "TX", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 282, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://findit.gmilcs.org/polaris/logon.aspx?src=http://findit.gmilcs.org/polaris/patronaccount/default.aspx?ctx=3.1033.0.0.2&ctx=3.1033.0.0.2", 
+         "name": "Amherst Town Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "NH", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 283, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.pinalcountyaz.gov/polaris/logon.aspx?src=http%3a%2f%2fcatalog.pinalcountyaz.gov%2fpolaris%2fpatronaccount%2fdefault.aspx%3fctx%3d3.1033.0.0.5&ctx=3.1033.0.0.5", 
+         "name": "Apache Junction Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "AZ", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 284, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.athenslimestone.lib.al.us/polaris/logon.aspx?src=http%3a%2f%2fcatalog.athenslimestone.lib.al.us%2fpolaris%2fpatronaccount%2fdefault.aspx%3fctx%3d3.1033.0.0.1&ctx=3.1033.0.0.1", 
+         "name": "Athens-Limestone Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "AL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 285, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.cc-pl.org/polaris/logon.aspx?src=http%3a%2f%2fcatalog.cc-pl.org%2fpolaris%2fpatronaccount%2fdefault.aspx%3fctx%3d1.1033.0.0.1&ctx=1.1033.0.0.1", 
+         "name": "Campbell County Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "VA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 286, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://cat.cmclibrary.org/polaris/logon.aspx?Header=1&src=http://cat.cmclibrary.org/polaris/default.aspx", 
+         "name": "Cape May County Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "NJ", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 287, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.pinalcountyaz.gov/polaris/logon.aspx?Header=1&src=http://catalog.pinalcountyaz.gov/polaris/default.aspx", 
+         "name": "Casa Grande Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "AZ", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 288, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.ccpl.lib.oh.us/polaris/logon.aspx?ctx=1.1033.0.0.1&Header=1&src=default.aspx", 
+         "name": "Clark County Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "OH", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 289, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.eulesstx.gov/polaris/logon.aspx", 
+         "name": "Euless Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "TX", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 290, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://librarycatalog.flower-mound.com/polaris/logon.aspx?src=http://librarycatalog.flower-mound.com/polaris/patronaccount/default.aspx?ctx=3.1033.0.0.1&ctx=3.1033.0.0.1", 
+         "name": "Flower Mound Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "TX", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 291, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.library.guelph.on.ca/polaris/logon.aspx?src=http%3a%2f%2fcatalog.library.guelph.on.ca%2fpolaris%2fpatronaccount%2fdefault.aspx%3fctx%3d1.1033.0.0.1&ctx=1.1033.0.0.1", 
+         "name": "Guelph Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "ON", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 292, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://findit.gmilcs.org/polaris/logon.aspx?src=http://findit.gmilcs.org/polaris/patronaccount/default.aspx?ctx=13.1033.0.0.2&ctx=13", 
+         "name": "Hooksett Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "NH", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 293, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.klamathlibrary.org/polaris/logon.aspx?src=http%3a%2f%2fcatalog.klamathlibrary.org%2fpolaris%2fpatronaccount%2fitemsout.aspx%3fctx%3d1.1033.0.0.1&ctx=1.1033.0.0.1", 
+         "name": "Klamath County Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "OR", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 294, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://spica.mclinc.org/polaris/logon.aspx", 
+         "name": "Lower Merion Library System", 
+         "lastmodified": "2011-12-23", 
+         "state": "PA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 295, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://findit.gmilcs.org/polaris/logon.aspx?src=http%3a%2f%2ffindit.gmilcs.org%2fpolaris%2fpatronaccount%2fdefault.aspx%3fctx%3d17.1033.0.0.2&ctx=17.1033.0.0.2", 
+         "name": "Manchester City Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "NH", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 296, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.mlcook.lib.oh.us/polaris/logon.aspx?src=http%3a%2f%2fcatalog.mlcook.lib.oh.us%2fpolaris%2fpatronaccount%2fdefault.aspx%3fctx%3d3.1033.0.0.1&ctx=3.1033.0.0.1", 
+         "name": "Mary L Cook Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "OH", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 297, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://ipac.mckinneytexas.org/polaris/logon.aspx?Header=1&src=http://ipac.mckinneytexas.org/polaris/default.aspx", 
+         "name": "McKinney Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "TX", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 298, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://keyslibraries.polarislibrary.com/polaris/logon.aspx", 
+         "name": "Monroe County Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "WV", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 300, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://pac.nols.org/polaris/logon.aspx?src=http://pac.nols.org/polaris/patronaccount/", 
+         "name": "North Olympic Library System", 
+         "lastmodified": "2011-12-23", 
+         "state": "WA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 301, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://library.peoriaaz.gov/polaris/logon.aspx?Header=1&src=http://library.peoriaaz.gov/polaris/default.aspx", 
+         "name": "Peoria Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "IL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 302, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.saline.lib.ar.us/polaris/logon.aspx?src=http%3a%2f%2fcatalog.saline.lib.ar.us%2fpolaris%2fpatronaccount%2fdefault.aspx%3fctx%3d1.1033.0.0.1&ctx=1.1033.0.0.1", 
+         "name": "Saline County Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "AR", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 303, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.stanlycountylibrary.org/polaris/logon.aspx?src=http%3A//catalog.stanlycountylibrary.org/polaris/patronaccount/default.aspx?ctx=1.1033.0.0.1&ctx=1.1033.0.0.1", 
+         "name": "Stanly County Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "NC", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 304, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.webster.lib.la.us/polaris/logon.aspx?src=http%3a%2f%2fcatalog.webster.lib.la.us%2fpolaris%2fpatronaccount%2fdefault.aspx%3fctx%3d1.1033.0.0.6&ctx=1.1033.0.0.6", 
+         "name": "Webster Parish Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "LA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 305, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.wichita.lib.ks.us/polaris/logon.aspx", 
+         "name": "Wichita Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "KS", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "polaris", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 306, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.addisonlibrary.org/patroninfo/", 
+         "name": "Addison Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "IL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 307, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://aspen.ald.lib.co.us/patroninfo", 
+         "name": "Arapahoe Library District", 
+         "lastmodified": "2011-12-23", 
+         "state": "CO", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 308, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.bedfordlibrary.org/patroninfo", 
+         "name": "Bedford Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "IA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 311, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://www.berkeley-public.org/patroninfo", 
+         "name": "Berkeley Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "IL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 312, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://opac.cadl.org/patroninfo", 
+         "name": "Capital Area District Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "MI", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 313, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://innovative.cityofcarrollton.com/patroninfo/", 
+         "name": "Carrollton Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "TX", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 314, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://lrc.cod.edu/patroninfo/", 
+         "name": "College of DuPage Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "IL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 315, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://mls.concordnh.gov/patroninfo", 
+         "name": "Concord Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "NH", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 316, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.lioninc.org/patroninfo", 
+         "name": "East Lyme Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "CT", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 317, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://leap-catalog.leaplibraries.org/patroninfo", 
+         "name": "Hagaman Memorial Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "CT", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 318, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.icpl.org/patroninfo/", 
+         "name": "Iowa City Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "IA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 319, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://innopac.kcpl.lib.in.us/patroninfo/", 
+         "name": "Knox County Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "IN", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 320, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://ils.larl.org/patroninfo", 
+         "name": "Lake Agassiz Regional Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "MN", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 321, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://catalog.lincolntownshiplibrary.org/patroninfo~S2", 
+         "name": "Lincoln Township Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "MI", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 322, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://encore.londonpubliclibrary.ca/iii/cas/login?service=https://catalogue.londonpubliclibrary.ca:443/patroninfo0/IIITICKET", 
+         "name": "London Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "ON", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 323, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://library.naperville-lib.org/patroninfo", 
+         "name": "Naperville Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "IL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 324, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.lioninc.org/patroninfo", 
+         "name": "North Haven Memorial Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "CT", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 325, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://nrhcat.library.nrhtx.com/patroninfo.html", 
+         "name": "North Richland Hills Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "TX", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 326, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://ils.larl.org/patroninfo", 
+         "name": "Northwest Regional Library System", 
+         "lastmodified": "2011-12-23", 
+         "state": "AL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 327, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://swan.mls.lib.il.us/patroninfo", 
+         "name": "Oak Park Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "IL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 328, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://iii.pioneerland.lib.mn.us/patroninfo", 
+         "name": "Pioneerland Library System", 
+         "lastmodified": "2011-12-23", 
+         "state": "MN", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 329, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://minerva.maine.edu/patroninfo~S71", 
+         "name": "Pittsfield Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "IL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 330, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalogue.sasklibraries.ca/patroninfo%7ES3", 
+         "name": "Regina Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "SK", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 332, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://milcat.sunnyvalelibrary.org/patroninfo", 
+         "name": "Sunnyvale Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "CA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 333, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.lioninc.org/patroninfo", 
+         "name": "Wallingford Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "CT", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 334, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://books.kpl.org/iii/cas/login?service=http://books.kpl.org/patroninfo~S3/j_acegi_cas_security_check&lang=eng&scope=3", 
+         "name": "Waterloo Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "IA", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 336, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://minerva.maine.edu/patroninfo~S71", 
+         "name": "Waterville Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "KS", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 337, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://catalog.waukeganpl.org/patroninfo", 
+         "name": "Waukegan Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "IL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 338, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalogue.westvanlibrary.ca/patroninfo", 
+         "name": "West Vancouver Memorial Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "BC", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 339, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://catalog.westervillelibrary.org/patroninfo/", 
+         "name": "Westerville Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "OH", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 340, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://wpl.wheaton.lib.il.us/patroninfo", 
+         "name": "Wheaton Public Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "IL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 341, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "http://catalog.lioninc.org/patroninfo", 
+         "name": "Willoughby Wallace Memorial Library", 
+         "lastmodified": "2011-12-23", 
+         "state": "CT", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "True", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 342, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "https://swan.mls.lib.il.us/patroninfo~S1", 
+         "name": "SWAN Libraries", 
+         "lastmodified": "2012-01-11", 
+         "state": "IL", 
+         "regional_system": null, 
+         "active": true, 
+         "librarysystem": "webpacpro", 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }, 
+   {
+      "pk": 343, 
+      "model": "librarybot.library", 
+      "fields": {
+         "catalogurl": "", 
+         "name": "Elmwood Park Library", 
+         "lastmodified": "2012-01-11", 
+         "state": "IL", 
+         "regional_system": 342, 
+         "active": true, 
+         "librarysystem": null, 
+         "renew_supported_code": "untested", 
+         "pin_required": true
+      }
+   }
+]

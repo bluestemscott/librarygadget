@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Library Gadget: Account</title>
+<script type="text/javascript" src="/site_media/librarygadget.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {  
+    {% include "useraccounts.js" %}
+  });
+</script>
+{% endblock %}
+
+{% block content %} 
+
+
+	
+    {% if patrons|length > 0 %}
+
+        {% if free %}
+            <div class="section">
+            <h3>Upgrade your Account</h3>
+
+            <p>
+              <ul>
+                <li>Only {{ upgrade.total_cost }}/year</li>
+                <li>Email reminder before items are due</li>
+                <li>Daily email reminder about any overdue items</li>
+                <li>Automatically renew items for extended checkout periods</li>
+            </ul>
+            </p>
+
+
+
+             </div>
+
+            {% include "payment.html" %}
+
+        {% else %}
+            
+            <div class="section">
+            <h3>Account</h3>
+            <p>You have the premium plan.<p>
+            </div>
+        {% endif %}
+    {% endif %}
+
+    <div class="section">
+	{% include "useraccounts.html" %}
+
+	 <p><a href="{% url libraries %}">Add a library card</a></p>
+
+     <p><a href="http://www.google.com/ig/directory?type=gadgets&url=www.librarygadget.com/gadgets/igoogle/librarygadget.xml">Add to iGoogle</a>
+        </p>
+    </div>
+	
+{% endblock %}

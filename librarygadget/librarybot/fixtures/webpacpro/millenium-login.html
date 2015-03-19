@@ -1,0 +1,144 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- Version 2003.08.15 -->
+<head>
+<link rel="stylesheet" type="text/css" href="/scripts/ProStyles.css" />
+<link rel="stylesheet" type="text/css" href="/screens/styles.css" />
+<script language="JavaScript" type="text/javascript" src="/scripts/common.js"></script>
+<script language="JavaScript" type="text/javascript" src="/scripts/features.js"></script>
+<title>Millennium Web Catalog</title>
+<meta http-equiv="Content-Type" content="text/html" />
+<link rel="stylesheet" href="/screens/styles.css" type="TEXT/CSS" />
+</head>
+
+<body onLoad="document.forms[0].elements[0].focus();">
+
+<!--Begin the top logo table-->
+<!--TIP: this data should match the data used by the TOPLOGO web option-->
+<!--You will need to make any changes to all static HTML pages and to toplogo.html.-->
+<!--The Web server will need to be restarted for changes to toplogo.html to take effect.-->
+<table width="100%" border="0" cellspacing="0" cellpadding="2" align="center">
+<tr> 
+<td bgcolor="#0132A7" colspan="2"><img src="/screens/spacer.gif" height="2" width="1" alt="" /></td>
+</tr>
+<tr valign="middle"> 
+<td width="*" align="left" class="pageNavArea"> 
+<!--Beginning navigation bar at the top of the page-->
+<a href="/"><img src="/screens/home.gif" width="80" height="40" alt="Home" border="0" /></a><a href="/screens/help_index.html"><img src="/screens/help.gif" width="80" height="40" alt="Help" border="0" /></a> 
+<a href="/search"><img src="/screens/newsrch.gif" width="80" height="40" alt="New Search" border="0" /></a> 
+<!--End of the top navigation bar-->
+</td>
+<td width="479" align="right" class="pageNavArea"> 
+<!-- Beginning of library logo area -->
+
+<!a href="/"><!img src="/screens/logo.gif" width="166" height="25" border="0" alt="- Innovative Interfaces, Inc. -" /><!/a>&nbsp;<!-- End of library logo area -->
+<font face="Verdana" font size="5" font color="white">Marmot Library Network</font>
+</td>
+</tr>
+</table>
+<!--End the top logo table-->
+
+<br />
+
+<!--Begin the main content table-->
+<table width="90%" border="0" cellspacing="0" cellpadding="5" align="center">
+<tr valign="top" class="pageMainArea">
+<td class="pageMainArea">&nbsp;
+<!--Beginning main page content-->
+
+<span class="pageMainAreaHeader">My Millennium Login</span>
+
+<br />
+<form name="patform" method="POST">
+Please enter the following information:<br /><table width="100%">
+<tr><td width="30%"></td><td><font size="-1">
+For example, type "Jane Smith" and then press the TAB key.</font></td></tr><tr><td>
+Your Name:</td><td>
+<input name="name" value="" size="40" maxlength="40"></td></tr>
+<tr><td></td><td><font size="-1">
+For example, type "4080008484848" and then press the TAB key.</font></td></tr>
+<tr><td>
+Library Card Number</td><td>
+<input name="code" type="PASSWORD" value="" size="40" maxlength="40"></td></tr>
+
+</table>
+<p>
+<p>
+
+<input type="image" src="/screens/pat_submit.gif" border="0" value="submit">
+</form>
+<script language="javascript" >
+<!-- Hide the JS
+function replace_or_redraw( new_URL )
+{
+//var oBase = document.all.tags('base');
+//if (oBase && oBase.target) oBase.target = _self;
+if( navigator.appVersion.charAt( 0 ) < '3' )
+	location = new_URL;
+else
+	location.replace( new_URL );
+return false;
+}
+
+function replace_or_redraw_parent( new_URL )
+{
+//var oBase = document.all.tags('base');
+//if (oBase && oBase.target) oBase.target = _self;
+if( navigator.appVersion.charAt( 0 ) < '3' )
+	parent.location = new_URL;
+else
+	parent.location.replace( new_URL );
+return false;
+}
+
+function open_new_htpatpay_window( new_URL )
+{
+var w = (window.open(new_URL, 'patwin', 'width=760,height=650,status=yes,scrollbars=yes,resizable'));
+w.focus();
+return false;
+}
+
+function open_new_window( new_URL )
+{
+var w = (window.open(new_URL, 'patwin', 'width=550,height=650,status=yes,scrollbars=yes,resizable'));
+w.focus();
+return false;
+}
+
+// Unhide the JS -->
+</script>
+<noscript><p><font color="red" size="+2">
+To enable secure viewing of your record, this page requires JavaScript.  Please enable JavaScript in your browser and reload this page.
+</font></p></noscript>
+<form>
+<a href="/logout?" onClick="return replace_or_redraw( '/logout?' )"><img src="/screens/startover.gif" alt="Start Over" border=0 /></a>
+<br />
+</form>
+<br />
+<!--End of main page content-->
+</td>
+
+</tr>
+</table>
+<!--End the main content table-->
+
+<br />
+<!--Begin the bottom logo table-->
+<!--TIP: this data should match the data used by the BOTLOGO web option-->
+<table width="100%" border="0" cellspacing="0" cellpadding="2" align="center">
+<tr valign="middle"> 
+<td align="center" class="pageNavArea"> 
+<!--Beginning text-only navigation bar at the bottom of the page-->
+<a href="/" class="pageNavAreaText">Home</a> | <a href="/screens/help_index.html" class="pageNavAreaText">Help</a> 
+<!--End of bottom navigation bar-->
+
+</td>
+</tr>
+<tr> 
+<td bgcolor="#0132A7"><img src="/screens/spacer.gif" height="1" width="1" alt="" /></td>
+</tr>
+</table>
+<!--End the bottom logo table--> 
+
+</body>
+</html>
+<!--this is customized <screens/pverify_web.html>-->
